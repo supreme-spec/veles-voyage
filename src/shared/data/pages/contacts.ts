@@ -137,8 +137,8 @@ export const contactsOrganizationSchema = {
   "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 55.751244,
-    "longitude": 37.618421
+    "latitude": 55.738745,
+    "longitude": 36.982842
   },
   "openingHours": "Mo-Su 00:00-23:59",
   "priceRange": "₽₽"
@@ -289,8 +289,8 @@ export const contactsGEOEnhancedSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 55.751244,
-    "longitude": 37.618421
+    "latitude": 55.738745,
+    "longitude": 36.982842
   }
 };
 

@@ -60,9 +60,10 @@ const PushkinoPage = () => {
             },
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: 55.751244,
-              longitude: 37.618421,
+              latitude: 56.014488,
+              longitude: 37.846285,
             },
+            hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
             telephone: '+7-985-063-51-34',
             email: 'hello@veles-voyage.ru',
             openingHoursSpecification: [

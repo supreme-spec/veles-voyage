@@ -39,8 +39,8 @@ export default function ContactsPage() {
     ],
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 55.751244,
-      'longitude': 37.618421
+      'latitude': 55.738745,
+      'longitude': 36.982842
     },
     'contactPoint': {
       '@type': 'ContactPoint',
@@ -60,6 +60,7 @@ export default function ContactsPage() {
       'opens': '10:00',
       'closes': '16:00'
     }],
+    'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'areaServed': [
       { '@type': 'Country', 'name': 'Russia' },
       { '@type': 'Country', 'name': 'Belarus' },
@@ -119,8 +120,8 @@ export default function ContactsPage() {
     'url': `${SITE_URL}/contacts`,
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 55.751244,
-      'longitude': 37.618421
+      'latitude': 55.738745,
+      'longitude': 36.982842
     },
     'openingHoursSpecification': [{
       '@type': 'OpeningHoursSpecification',
@@ -133,6 +134,7 @@ export default function ContactsPage() {
       'opens': '10:00',
       'closes': '16:00'
     }],
+    'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'parentOrganization': {
       '@type': 'TravelAgency',
       'name': 'Велес Вояж',
@@ -157,8 +159,8 @@ export default function ContactsPage() {
     'url': `${SITE_URL}/contacts`,
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 56.0044,
-      'longitude': 37.8489
+      'latitude': 56.014488,
+      'longitude': 37.846285
     },
     'openingHoursSpecification': [{
       '@type': 'OpeningHoursSpecification',
@@ -171,6 +173,7 @@ export default function ContactsPage() {
       'opens': '10:00',
       'closes': '16:00'
     }],
+    'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'parentOrganization': {
       '@type': 'TravelAgency',
       'name': 'Велес Вояж',

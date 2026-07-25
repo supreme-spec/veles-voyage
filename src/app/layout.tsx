@@ -37,6 +37,8 @@ const globalSchema = {
       name: 'Велес Вояж',
       alternateName: 'Veles Voyage',
       url: siteUrl,
+      telephone: '+7-985-063-51-34',
+      email: 'hello@veles-voyage.ru',
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/images/logo.png`,
@@ -111,8 +113,8 @@ const globalSchema = {
       ],
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 55.751244,
-        longitude: 37.618421,
+        latitude: 55.738745,
+        longitude: 36.982842,
       },
       areaServed: [
         { '@type': 'Country', name: 'Russia' },
@@ -139,6 +141,7 @@ const globalSchema = {
           closes: '16:00',
         },
       ],
+      hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Туристические услуги',

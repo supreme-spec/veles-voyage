@@ -1,6 +1,7 @@
 export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'турция': {
     name: 'Турция',
+    nameAccusative: 'Турцию',
     slug: 'turkey',
     type: 'Country',
     description: 'Лидер пляжного отдыха: все включено, теплые моря и богатая история.',
@@ -23,6 +24,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'египет': {
     name: 'Египет',
+    nameAccusative: 'Египет',
+    preposition: 'в',
     slug: 'egypt',
     type: 'Country',
     description: 'Страна фараонов: пирамиды, Красное море и круглогодичное солнце.',
@@ -45,6 +48,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'оаэ': {
     name: 'ОАЭ',
+    nameAccusative: 'ОАЭ',
+    preposition: 'в',
     slug: 'uae',
     type: 'Country',
     description: 'Роскошь будущего: небоскребы Дубая, пустыни и шопинг мирового уровня.',
@@ -67,6 +72,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'таиланд': {
     name: 'Таиланд',
+    nameAccusative: 'Таиланд',
+    preposition: 'в',
     slug: 'thailand',
     type: 'Country',
     description: 'Страна улыбок: экзотика, буддийские храмы и лучшие пляжи Азии.',
@@ -89,6 +96,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'мальдивы': {
     name: 'Мальдивы',
+    nameAccusative: 'Мальдивы',
+    preposition: 'на',
     slug: 'maldives',
     type: 'Country',
     description: 'Икондарный островной отдых: водные виллы, лазурная вода и идеальные закаты.',
@@ -111,6 +120,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'шри-ланка': {
     name: 'Шри-Ланка',
+    nameAccusative: 'Шри-Ланку',
+    preposition: 'на',
     slug: 'sri-lanka',
     type: 'Country',
     description: 'Островная экзотика: чайные плантации, древние храмы и песчаные пляжи.',
@@ -133,6 +144,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'вьетнам': {
     name: 'Вьетнам',
+    nameAccusative: 'Вьетнам',
+    preposition: 'во',
     slug: 'vietnam',
     type: 'Country',
     description: 'Страна контрастов: Ханой, Халонг, пляжные курорты и уличная еда.',
@@ -245,6 +258,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'греция': {
     name: 'Греция',
+    nameAccusative: 'Грецию',
+    preposition: 'в',
     slug: 'greece',
     type: 'Country',
     description: 'Античная история, белые домики и лазурное Эгейское море.',

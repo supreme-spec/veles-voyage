@@ -454,7 +454,7 @@ export default async function Home() {
                           className="w-full h-full"
                         />
                       </div>
-                      <h3>Сколько стоит тур в {dest.name} и нужна ли виза?</h3>
+                      <h3>Сколько стоит тур {dest.preposition || 'в'} {dest.nameAccusative || dest.name} и нужна ли виза?</h3>
                       <p className="speakable-summary flex-1">{dest.description}</p>
                       <Link
                         href={`/wiki/${dest.slug}`}

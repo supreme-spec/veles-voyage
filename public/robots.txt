@@ -33,6 +33,9 @@ Disallow: /search.xml
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
@@ -40,6 +43,9 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: YandexGPT
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 # Sitemap (индекс с динамическими sitemap для всех стран и городов)
@@ -82,7 +88,6 @@ Disallow: /*.json$
 Disallow: /sw.js
 Disallow: /service-worker.js
 Disallow: /manifest.json
-Disallow: /ai.txt
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 
@@ -101,7 +106,6 @@ Disallow: /*.json$
 Disallow: /sw.js
 Disallow: /service-worker.js
 Disallow: /manifest.json
-Disallow: /ai.txt
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 
@@ -119,6 +123,5 @@ Disallow: /*.json$
 Disallow: /sw.js
 Disallow: /service-worker.js
 Disallow: /manifest.json
-Disallow: /ai.txt
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml

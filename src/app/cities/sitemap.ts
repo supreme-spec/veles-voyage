@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { allCities } from './all-cities';
 import { SITE_URL } from '@/shared/constants/seo';
 import { generateCitySlug } from '@/lib/slugify';
+import { FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
 
 const siteUrl = SITE_URL;
 const currentDate: Date = new Date();
@@ -59,6 +60,13 @@ const HIGH_PRIORITY_CITIES = new Set([
 ]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const districts = Object.keys(FEDERAL_DISTRICTS).map((slug) => ({
+    url: `${siteUrl}/cities/district/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
   const cityEntries: MetadataRoute.Sitemap = uniqueCities.map((slug) => {
     const isHighPriority = HIGH_PRIORITY_CITIES.has(slug);
     return {
@@ -76,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    ...districts,
     ...cityEntries,
   ];
 }

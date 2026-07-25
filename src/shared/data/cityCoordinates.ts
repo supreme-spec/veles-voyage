@@ -1117,6 +1117,68 @@ export type CityCoordinate = CityData;
 
 export type CityCoordinatesMap = Record<string, CityCoordinate>;
 
+export type FederalDistrict = 'central' | 'northwest' | 'south' | 'north-caucasus' | 'volga' | 'ural' | 'siberia' | 'far-east';
+
+export const FEDERAL_DISTRICTS: Record<FederalDistrict, { name: string; title: string }> = {
+  central: { name: 'Центральный', title: 'Туры из городов Центрального федерального округа' },
+  northwest: { name: 'Северо-Западный', title: 'Туры из городов Северо-Западного федерального округа' },
+  south: { name: 'Южный', title: 'Туры из городов Южного федерального округа' },
+  'north-caucasus': { name: 'Северо-Кавказский', title: 'Туры из городов Северо-Кавказского федерального округа' },
+  volga: { name: 'Приволжский', title: 'Туры из городов Приволжского федерального округа' },
+  ural: { name: 'Уральский', title: 'Туры из городов Уральского федерального округа' },
+  siberia: { name: 'Сибирский', title: 'Туры из городов Сибирского федерального округа' },
+  'far-east': { name: 'Дальневосточный', title: 'Туры из городов Дальневосточного федерального округа' },
+};
+
+export function getDistrictForRegion(region: string): FederalDistrict | null {
+  const r = region.toLowerCase();
+  if (r.includes('московская') || r.includes('москва') || r.includes('санкт-петербург') || r.includes('ленинградская') ||
+      r.includes('владимирская') || r.includes('воронежская') || r.includes('ивановская') || r.includes('калужская') ||
+      r.includes('костромская') || r.includes('курская') || r.includes('липецкая') || r.includes('орловская') ||
+      r.includes('рязанская') || r.includes('смоленская') || r.includes('тамбовская') || r.includes('тверская') ||
+      r.includes('тульская') || r.includes('ярославская') || r.includes('брянская') || r.includes('белгородская')) {
+    return 'central';
+  }
+  if (r.includes('архангельская') || r.includes('калининградская') || r.includes('муpманская') || r.includes('новгородская') ||
+      r.includes('псковская') || r.includes('вологодская') || r.includes('республика карелия') || r.includes('республика коми') ||
+      r.includes('ненецкий') || r.includes('ненц')) {
+    return 'northwest';
+  }
+  if (r.includes('астраханская') || r.includes('волгоградская') || r.includes('ростовская') || r.includes('республика адыгея') ||
+      r.includes('республика дагестан') || r.includes('республика ингушетия') || r.includes('республика кабардино-балкарская') ||
+      r.includes('республика калмыкия') || r.includes('республика карачаево-черкесская') || r.includes('краснодарский') ||
+      r.includes('республика северная осетия') || r.includes('ставропольский') || r.includes('чеченская') ||
+      r.includes('крым') || r.includes('севастополь')) {
+    return 'south';
+  }
+  if (r.includes('дагестан') || r.includes('ингушетия') || r.includes('кабардино-балкарская') || 
+      r.includes('карачаево-черкесская') || r.includes('северная осетия') || r.includes('чеченская') || r.includes('ставрополь')) {
+    return 'north-caucasus';
+  }
+  if (r.includes('башкортостан') || r.includes('марий эл') || r.includes('мордовия') || r.includes('татарстан') ||
+      r.includes('удмуртия') || r.includes('чувашия') || r.includes('кировская') || r.includes('нижегородская') ||
+      r.includes('оренбургская') || r.includes('пензенская') || r.includes('самарская') || r.includes('саратовская') ||
+      r.includes('ульяновская') || r.includes('чувашская')) {
+    return 'volga';
+  }
+  if (r.includes('курганская') || r.includes('свердловская') || r.includes('тюменская') || r.includes('ханты-мансийский') ||
+      r.includes('ямало-ненецкий') || r.includes('челябинская') || r.includes('югра') || r.includes('магаданская')) {
+    return 'ural';
+  }
+  if (r.includes('алтайский') || r.includes('алтай') || r.includes('кемеровская') || r.includes('красноярский') ||
+      r.includes('новосибирская') || r.includes('омская') || r.includes('томская') || r.includes('иркутская') ||
+      r.includes('республика бурятия') || r.includes('республика тыва') || r.includes('республика хакасия') ||
+      r.includes('республика саха') || r.includes('якутия') || r.includes('забайкальский') || r.includes('владимирская')) {
+    return 'siberia';
+  }
+  if (r.includes('приморский') || r.includes('хабаровский') || r.includes('амурская') || r.includes('сахалинская') ||
+      r.includes('камчатский') || r.includes('еврейская') || r.includes('чукотский') || r.includes('магаданская') ||
+      r.includes('сахалин') || r.includes('амур')) {
+    return 'far-east';
+  }
+  return null;
+}
+
 /**
  * Нормализует название города для поиска в базе
  */

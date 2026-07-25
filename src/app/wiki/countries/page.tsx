@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 
 import { getWikiPages } from '@/shared/data/wikiPages-mdx';
 import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
+import { getCountryFlag } from '@/shared/data/countryFlags';
 import {
   CONTINENT_LABELS,
   CONTINENT_ICONS,
@@ -99,40 +100,44 @@ async function CountriesContent() {
 
   const totalCount = Object.keys(wikiPages).length;
 
-  const CountryCard = ({ country, icon }: { country: CountryInfo; icon: string }) => (
-    <Link
-      href={`/wiki/${country.id}`}
-      prefetch={false}
-      className="group block bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 no-underline"
-      style={{ textDecoration: 'none' }}
-    >
-      <div className="relative w-full aspect-video overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-5xl opacity-90 group-hover:scale-110 transition-transform duration-300">
-            {icon}
-          </span>
+  const CountryCard = ({ country }: { country: CountryInfo }) => {
+    const flag = getCountryFlag(country.id);
+    return (
+      <Link
+        href={`/wiki/${country.id}`}
+        prefetch={false}
+        className="group block bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 no-underline"
+        style={{ textDecoration: 'none' }}
+      >
+        <div className="relative w-full aspect-video overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-5xl opacity-90 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+              {flag}
+            </span>
+            <span className="sr-only">{country.name}</span>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute bottom-3 left-4 right-4">
+            <h4 className="text-white font-bold text-lg drop-shadow-md group-hover:text-blue-100 transition-colors">
+              {country.name}
+            </h4>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-4 right-4">
-          <h4 className="text-white font-bold text-lg drop-shadow-md group-hover:text-blue-100 transition-colors">
-            {country.name}
-          </h4>
+        <div className="p-4 flex flex-col flex-grow">
+          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 mb-4 flex-grow leading-relaxed">
+            {country.description}
+          </p>
+          <div className="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300 transition-colors self-start">
+            Подробный путеводитель
+            <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </div>
         </div>
-      </div>
-      <div className="p-4 flex flex-col flex-grow">
-        <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 mb-4 flex-grow leading-relaxed">
-          {country.description}
-        </p>
-        <div className="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300 transition-colors self-start">
-          Подробный путеводитель
-          <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </div>
-      </div>
-    </Link>
-  );
+      </Link>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-900 pt-16 md:pt-20 pb-12">
@@ -198,7 +203,7 @@ async function CountriesContent() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {continent.countries.map(country => (
-                  <CountryCard key={`${continentKey}-${country.id}`} country={country} icon={continent.icon} />
+                  <CountryCard key={`${continentKey}-${country.id}`} country={country} />
                 ))}
               </div>
             </div>

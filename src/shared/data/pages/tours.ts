@@ -311,6 +311,35 @@ export const toursTouristTripSchema = {
   }
 };
 
+export const toursHowToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Как забронировать тур с Велес Вояж",
+  "description": "Пошаговая инструкция по поиску и бронированию туров по всему миру онлайн.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Выберите направление",
+      "text": "Ознакомьтесь с нашими туристическими маршрутами и выберите подходящий вариант."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Свяжитесь с нами",
+      "text": "Получите консультацию по телефону, Telegram или через форму на сайте."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Подберите тур",
+      "text": "Мы поможем выбрать оптимальный тур с учетом ваших предпочтений и бюджета."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Оформите бронирование",
+      "text": "Забронируйте тур онлайн с гарантией сохранности ваших средств."
+    }
+  ]
+};
+
 export const toursSchemas = [
   toursArticleSchema,
   toursFAQSchema,
@@ -329,7 +358,8 @@ export const toursSchemas = [
   toursAISchema,
   toursAEOSchema,
   toursGEOEnhancedSchema,
-  toursTouristTripSchema
+  toursTouristTripSchema,
+  toursHowToSchema
 ];
 
 // --- Мета-теги для SEO, соцсетей, Web3, мобильных приложений ---

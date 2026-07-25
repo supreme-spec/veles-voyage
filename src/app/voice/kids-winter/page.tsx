@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Куда поехать с детьми зимой 2026? Лучшие направления для семейного отдыха',
@@ -33,6 +34,47 @@ export const metadata: Metadata = generateEnhancedSEOMetadata({
 });
 
 export default function KidsWinterPage() {
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Куда поехать с детьми зимой 2026?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Куда поехать с детьми зимой 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Лучшие направления для семейного отдыха зимой: ОАЭ, Египет, Таиланд, Сингапур, Индонезия.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Безопасно ли ехать с детьми в Египет зимой?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Да, Египет зимой безопасен для семейного отдыха. Лучшие курорты Хургада и Шарм-эль-Шейх.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какое лучшее время для поездки в ОАЭ с детьми?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Зима, с ноября по март, идеальна для ОАЭ. Комфортная температура 20-30 градусов.',
+        },
+      },
+    ],
+  };
+
   // Countries good for winter with kids
   const kidsWinterCountries = [
     WORLD_DESTINATIONS_DATA['оаэ'],
@@ -45,6 +87,7 @@ export default function KidsWinterPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Куда поехать с детьми зимой 2026?

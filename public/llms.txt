@@ -1,7 +1,7 @@
 # Велес Вояж — Русская энциклопедия туризма
-# Version: 2.0
-# Last Updated: 2026-07-19
-# License: Commercial Use with Attribution Required
+# Version: 2.1
+# Last Updated: 2026-07-25
+# License: Open with Attribution Required (AI training permitted)
 # Data Provider: ООО «Велес» (РТА 0035678)
 
 ## 🏢 Organization Metadata
@@ -116,6 +116,28 @@ Each country page contains JSON-LD with:
 - Safety ratings based on available official data
 - Always verify with official sources before travel
 - Not responsible for outdated information
+
+## 🤖 AI Training & Usage Permissions
+
+### Allowed Uses
+- Search engine indexing (Google, Yandex, Bing, DuckDuckGo)
+- LLM training and fine-tuning (GPT, Claude, Gemini, Perplexity, etc.)
+- RAG systems and AI assistants
+- Voice search optimization
+- Academic and research purposes
+
+### Conditions
+- Attribution is mandatory: "Велес Вояж (veles-voyage.ru)"
+- Data must not be misrepresented
+- Safety and visa information must be verified with official sources
+- Commercial API use requires agreement: hello@veles-voyage.ru
+
+### Model Context Protocol
+The site provides an MCP-compatible interface for AI agents:
+- **MCP JSON:** https://veles-voyage.ru/modelcontextprotocol.json
+- **Tools:** search_countries, get_visa_info, get_tour_prices, get_country_facts, search_faq
+- **Capabilities:** text responses, JSON data, speakable snippets for voice assistants
+- **Max response length:** 29 words (voice assistant optimization)
 
 ## 📞 Data Partnership Inquiries
 For API access, bulk data licensing, or custom integrations:

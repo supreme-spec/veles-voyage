@@ -35,7 +35,7 @@ export default function ContactsPage() {
       'https://t.me/veles_voyage',
       'https://rutube.ru/u/velesvoyage/',
       'https://share.google/sWNqMpS7z0SJiMqO7',
-      'https://yandex.com/maps/-/CTfJm2lo'
+      'https://yandex.com/maps/?text=Велес+Вояж+Голицыно'
     ],
     'geo': {
       '@type': 'GeoCoordinates',
@@ -71,6 +71,35 @@ export default function ContactsPage() {
       { '@type': 'Country', 'name': 'Abkhazia' }
     ],
     'availableLanguage': ['Russian', 'English']
+  };
+
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    'name': 'Как связаться с Велес Вояж',
+    'description': 'Пошаговая инструкция по связи с турагентством для подбора тура.',
+    'step': [
+      {
+        '@type': 'HowToStep',
+        'name': 'Выберите способ связи',
+        'text': 'Используйте телефон +7 985 063-51-34, Telegram @veles_voyage, email или форму обратной связи.'
+      },
+      {
+        '@type': 'HowToStep',
+        'name': 'Опишите задачу',
+        'text': 'Напишите направление, даты, бюджет и количество туристов.'
+      },
+      {
+        '@type': 'HowToStep',
+        'name': 'Получите консультацию',
+        'text': 'Менеджер подберёт варианты и ответит в течение 15 минут.'
+      },
+      {
+        '@type': 'HowToStep',
+        'name': 'Подтвердите бронирование',
+        'text': 'Выберите тур и оформите документы онлайн или в офисе в Голицыно или Пушкино.'
+      }
+    ]
   };
 
   const golitsinoSchema = {
@@ -169,8 +198,19 @@ export default function ContactsPage() {
     answer: 'Вы можете заказать консультацию через форму на сайте, в Telegram или по телефону. Менеджер подберёт тур под ваши пожелания и бюджет.'
   }];
 
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Контакты и офисы Велес Вояж',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.voice-snippet', '#contact-us'],
+    },
+  };
+
   return (
     <article className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <SchemaScripts schemas={[contactSchema, golitsinoSchema, pushkinoSchema, speakableSchema]} />
       <div className="max-w-7xl mx-auto px-4 py-20 pt-20 md:pt-24">
         {/* Заголовок */}
         <header className="text-center mb-16">
@@ -356,7 +396,7 @@ export default function ContactsPage() {
                 </a>
 
                 <a
-                  href="https://yandex.com/maps/-/CTfJm2lo"
+                  href="https://yandex.com/maps/?text=Велес+Вояж+Голицыно"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg hover:bg-yellow-100 dark:hover:bg-yellow-900/40 transition-colors"
@@ -396,11 +436,12 @@ export default function ContactsPage() {
             <div className="flex justify-center">
               <TelegramButton />
             </div>
-            <SchemaScripts schemas={[
-              contactSchema,
-              golitsinoSchema,
-              pushkinoSchema,
-              {
+      <SchemaScripts schemas={[
+        contactSchema,
+        golitsinoSchema,
+        pushkinoSchema,
+        howToSchema,
+        {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
                 "mainEntity": faqData.map((item) => ({

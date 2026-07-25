@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Куда поехать в [месяц] без визы из Москвы? Безвизовые страны по месяцам',
@@ -53,8 +54,50 @@ const monthDestinations: Record<string, string[]> = {
 };
 
 export default function VisaMonthPage() {
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Куда поехать без визы из Москвы по месяцам?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Куда поехать в январе без визы из Москвы?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'В январе без визы из Москвы можно поехать в Турцию, Египет, ОАЭ, Таиланд, Мальдивы.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Куда поехать в феврале без визы?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'В феврале лучшие безвизовые направления: Турция, Египет, ОАЭ, Таиланд, Индонезия.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какие страны без визы подходят для зимнего отдыха?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Для зимнего отдыха без визы идеально подходят: Турция, Египет, ОАЭ, Таиланд, Мальдивы.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Куда поехать без визы из Москвы по месяцам?

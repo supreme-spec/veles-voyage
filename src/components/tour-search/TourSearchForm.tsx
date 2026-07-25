@@ -75,6 +75,18 @@ export default function TourSearchForm() {
     }
   };
 
+  const handleDemoSearch = () => {
+    const depCity = dictionaries.departureCities.find(c => c.cid === formData.departureTownCID)?.name || formData.departureTownCID;
+    const dest = dictionaries.destinations.find(d => d.cid === formData.tourCID)?.name || formData.tourCID;
+    const demoResults = [
+      { id: 'demo_1', hotelName: `${dest} — Отель 4*`, roomCategory: 'Стандарт', nights: 7, price: 99000, rawBookingData: {} },
+      { id: 'demo_2', hotelName: `${dest} — Отель 5*`, roomCategory: 'Улучшенный', nights: 7, price: 149000, rawBookingData: {} },
+      { id: 'demo_3', hotelName: `${dest} — Résort All Inclusive`, roomCategory: 'Семейный', nights: 7, price: 189000, rawBookingData: {} },
+    ];
+    setResults(demoResults);
+    setError('');
+  };
+
   const getTelegramMessage = (tour: any) => {
     const depCity = dictionaries.departureCities.find(c => c.cid === formData.departureTownCID)?.name || formData.departureTownCID;
     const dest = dictionaries.destinations.find(d => d.cid === formData.tourCID)?.name || formData.tourCID;
@@ -95,12 +107,6 @@ export default function TourSearchForm() {
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 mb-12 relative overflow-hidden">
-      <div className="absolute top-0 right-0">
-        <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-semibold px-3 py-1.5 rounded-bl-xl shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-          В разработке
-        </span>
-      </div>
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
         <Search className="w-6 h-6 text-blue-600" />
         Поиск выгодных туров
@@ -205,6 +211,13 @@ export default function TourSearchForm() {
               Найти туры
             </>
           )}
+        </button>
+        <button
+          type="button"
+          onClick={handleDemoSearch}
+          className="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-600"
+        >
+          Показать примеры туров
         </button>
       </form>
 

@@ -79,6 +79,15 @@ const BlogPostPage = async ({ params }: PageProps) => {
               acceptedAnswer: { '@type': 'Answer', text: f.answer },
             })),
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: post.title,
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['.voice-snippet', 'article'],
+            },
+          },
         ]}
       />
 

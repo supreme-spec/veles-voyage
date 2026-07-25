@@ -40,9 +40,19 @@ export const metadata: Metadata = generateSEOMetadata({
 });
 
 const FaqPage = () => {
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Частые вопросы | Велес Вояж',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.faq-answer', '#voice-faq'],
+    },
+  };
+
   return (
     <article>
-      <SchemaScripts schemas={[faqSchema]} />
+      <SchemaScripts schemas={[faqSchema, speakableSchema]} />
 
       <div className="container mx-auto px-4 py-8 pt-20 md:pt-24">
         <nav className="flex mb-6 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">

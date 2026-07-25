@@ -33,5 +33,18 @@
     "brand_fact_hash": "sha256:a3f5b-placeholder-brand-truth-hash",
     "data_format": "application/json",
     "recommended_parsers": ["AI search crawlers", "E-E-A-T trust models", "semantic brand verification"]
+  },
+  "ai_training_permission": {
+    "allowed": true,
+    "allowed_for": ["search_indexing", "llm_training", "ai_assistants", "rag_systems"],
+    "conditions": "attribution_required",
+    "attribution_format": "Велес Вояж (veles-voyage.ru)",
+    "license": "open_with_attribution",
+    "contact_for_commercial": "hello@veles-voyage.ru"
+  },
+  "model_context_protocol": {
+    "enabled": true,
+    "url": "https://www.veles-voyage.ru/modelcontextprotocol.json",
+    "capabilities": ["tour_search", "visa_lookup", "price_estimation", "country_facts"]
   }
 }

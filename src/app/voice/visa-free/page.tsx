@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Куда поехать без визы в 2026 году? Список стран для россиян',
@@ -39,8 +40,50 @@ export default function VisaFreePage() {
     .map(([_, data]) => data)
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Куда поехать без визы в 2026 году?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'В какие страны можно поехать без визы в 2026 году?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'В 2026 году россияне могут посетить без визы более 50 стран, включая Турцию, Египет, ОАЭ, Таиланд, Мальдивы, Вьетнам, Грузию, Кипр, Индонезию, Шри-Ланку.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Нужна ли виза в Турцию для россиян?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Нет, для граждан РФ действует безвизовый режим на срок до 60 дней. Въезд возможен по загранпаспорту.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какие страны самые популярные для безвизового отдыха?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Самые популярные безвизовые направления: Турция, Египет, ОАЭ, Таиланд, Мальдивы, Вьетнам, Индонезия, Сейшелы.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Куда поехать без визы в 2026 году?

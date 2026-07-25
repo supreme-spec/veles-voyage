@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Какие документы нужны для поездки в [страну]? Список документов для туристов',
@@ -33,6 +34,47 @@ export const metadata: Metadata = generateEnhancedSEOMetadata({
 });
 
 export default function DocumentsPage() {
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Какие документы нужны для поездки за границу?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Какие документы нужны для поездки в Турцию?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Для поездки в Турцию нужен загранпаспорт, медицинская страховка, обратные билеты и подтверждение отеля. Виза не требуется до 60 дней.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какие документы нужны для поездки в Египет?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Для Египта нужен загранпаспорт, виза по прилете или электронная, страховка, обратные билеты и бронирование отеля.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какие документы нужны для поездки в ОАЭ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Для ОАЭ нужен загранпаспорт, обратные билеты и подтверждение бронирования. Виза не требуется до 90 дней.',
+        },
+      },
+    ],
+  };
+
   const popularCountries = [
     WORLD_DESTINATIONS_DATA['турция'],
     WORLD_DESTINATIONS_DATA['египет'],
@@ -43,6 +85,7 @@ export default function DocumentsPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Какие документы нужны для поездки за границу?

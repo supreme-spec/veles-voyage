@@ -33,6 +33,25 @@ const fallbackImages: Record<string, string> = {
   vietnam: 'https://images.unsplash.com/photo-1528183429303-0b2e8e90e3d8?w=600&h=400&fit=crop&auto=format',
 };
 
+const slugToPath: Record<string, string> = {
+  europe: 'europe',
+  asia: 'asia',
+  africa: 'africa',
+  america: 'america',
+  cruise: 'cruises',
+  extreme: 'extreme',
+  oceania: 'oceania',
+  'south-america': 'south-america',
+  turkey: 'turkey-all-inclusive',
+  egypt: 'egypt-2026',
+  uae: 'uae-2026',
+  thailand: 'thailand',
+  maldives: 'maldives',
+  greece: 'greece',
+  'sri-lanka': 'sri-lanka',
+  vietnam: 'vietnam',
+};
+
 export default function TourCard({ id, title, description, imageAlt }: TourCardProps) {
   const [photo, setPhoto] = useState<TourPhoto | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -219,12 +238,12 @@ export default function TourCard({ id, title, description, imageAlt }: TourCardP
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
         <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{description}</p>
-        <Link
-          href={`/tours/${id}`}
-          className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline"
-        >
-          Подробнее
-        </Link>
+          <Link
+            href={`/tours/${slugToPath[id] || id}`}
+            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline"
+          >
+            Подробнее
+          </Link>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Безопасно ли ехать с детьми в [страну]? Безопасные страны для семейного отдыха',
@@ -42,6 +43,47 @@ const safetyRatings: Record<string, { rating: string; description: string }> = {
 };
 
 export default function SafeKidsPage() {
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Безопасно ли ехать с детьми за границу?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Безопасно ли ехать с детьми в Турцию?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Да, Турция безопасна для семейного отдыха. Отели имеют детские клубы, анимацию, безопасные пляжи.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Безопасно ли ехать с детьми в Египет?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Египет безопасен в курортных зонах Хургада и Шарм-эль-Шейх. Отели предлагают all inclusive с детскими бассейнами.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какие страны самые безопасные для детей?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Самые безопасные страны для детей: ОАЭ, Сингапур, Мальдивы. Турция и Таиланд также безопасны на курортах.',
+        },
+      },
+    ],
+  };
+
   const safeCountries = [
     WORLD_DESTINATIONS_DATA['оаэ'],
     WORLD_DESTINATIONS_DATA['сингапур'],
@@ -53,6 +95,7 @@ export default function SafeKidsPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Безопасно ли ехать с детьми за границу?

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SchemaScripts } from '@/components/SchemaScripts';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Сколько стоит тур на двоих в 2026 году? Цены на путевки по странам',
@@ -42,8 +43,50 @@ export default function TourPricesPage() {
     }))
     .sort((a, b) => parseInt(a.price.replace(/\D/g, '')) - parseInt(b.price.replace(/\D/g, '')));
 
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Сколько стоит тур на двоих в 2026 году?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.ai-citable', '.voice-snippet'],
+    },
+  };
+
+  const voiceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Сколько стоит тур в Турцию на двоих?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Тур в Турцию на двоих на 7 ночей все включено стоит от 100 000 рублей.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Сколько стоит тур в Египет на двоих?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Тур в Египет на двоих на 7 ночей все включено стоит от 120 000 рублей.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Какой бюджет нужен на путешествие на двоих?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Минимальный бюджет на двоих на 7 ночей: Турция от 100 000 рублей, Египет от 120 000 рублей, ОАЭ от 150 000 рублей, Таиланд от 180 000 рублей, Мальдивы от 250 000 рублей.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Сколько стоит тур на двоих в 2026 году?

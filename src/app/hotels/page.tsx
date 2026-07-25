@@ -6,7 +6,7 @@ import {
   CheckCircleIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline';
-import { hotelsSchema, breadcrumbSchema, faqSchema } from './metadata';
+import { hotelsSchema, breadcrumbSchema, faqSchema, howToSchema } from './metadata';
 import StructuredData from '@/components/SEO/StructuredData';
 import AviakassaWidget from '@/components/widgets/AviakassaWidget';
 import { generatePageBreadcrumbs } from '@/lib/seo/unifiedSEO';
@@ -479,7 +479,7 @@ export default function HotelsPage() {
         </div>
 
         {/* Structured Data */}
-        <StructuredData schemas={[hotelsSchema, breadcrumbSchema, faqSchema]} />
+        <StructuredData schemas={[hotelsSchema, breadcrumbSchema, faqSchema, howToSchema]} />
 
         {/* Web3 and voice search optimization schema */}
         <script

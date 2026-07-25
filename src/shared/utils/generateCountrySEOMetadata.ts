@@ -8,6 +8,7 @@ import { countryNamesDictionary, COUNTRY_NAMES_ACCUSATIVE } from '@/shared/data/
 import { generateEnhancedSEOMetadata, SEO_CONFIG } from '@/lib/seo/unifiedSEO';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 import { SITE_URL } from '@/shared/constants/seo';
+import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 
 interface CountrySEOMetadataOptions {
   countryId: string;
@@ -210,11 +211,18 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
   }
 
   // Генерируем уникальное описание по формуле: [Страна] 2026: виза, цены от [X]₽, лучший сезон, советы. Подбор туров от Велес Вояж.
-  const generateFallbackDescription = (country: string, frontmatter: any): string => {
+  const generateFallbackDescription = (country: string, countryId: string, frontmatter: any): string => {
     const year = new Date().getFullYear();
-    const visaInfo = frontmatter?.visaRequired !== false ? 'виза требуется' : 'безвизовый въезд';
-    const bestSeason = frontmatter?.bestSeason || 'круглый год';
-    const priceRange = frontmatter?.estimatedCost || '50 000';
+    
+    // Пытаемся получить данные из WORLD_DESTINATIONS_DATA
+    const destData = WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(
+      key => WORLD_DESTINATIONS_DATA[key].slug === countryId || 
+              WORLD_DESTINATIONS_DATA[key].name.toLowerCase() === country.toLowerCase()
+    ) || ''];
+    
+    const visaInfo = destData?.visaRequired !== false ? 'виза требуется' : 'безвизовый въезд';
+    const bestSeason = destData?.bestSeason || frontmatter?.bestSeason || 'круглый год';
+    const priceRange = destData?.estimatedCost || frontmatter?.estimatedCost || '50 000';
     
     return `${country} ${year}: ${visaInfo}, цены от ${priceRange}₽, лучший сезон: ${bestSeason}. Полный путеводитель, советы и рекомендации. Подбор туров от Велес Вояж.`;
   };
@@ -223,7 +231,8 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
   const canonicalUrl = url || `${SITE_URL}/wiki/${countryId}`;
   const seoMetadata = generateEnhancedSEOMetadata({
     title: chosenTitle,
-    description: mdxDescription || generateFallbackDescription(countryName, mdxData?.frontmatter),
+    // Всегда используем формулу для уникальных описаний, игнорируя MDX description
+    description: generateFallbackDescription(countryName, countryId, mdxData?.frontmatter),
     url: canonicalUrl,
     image: mdxImage,
     type: 'article',

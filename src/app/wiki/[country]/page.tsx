@@ -30,6 +30,7 @@ import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/u
 import { isDisputedTerritory, getPoliticalStatus, getPoliticalStatusNote } from '@/shared/constants/disputedTerritories';
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { ZkpBadge } from '@/components/ZkpTrustBadge';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 // Заглушка для CountryMap компонента
 const CountryMap = ({ countryName, countryId: _countryId, coordinates: _coordinates }: any) => (
@@ -279,6 +280,15 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     <div className="container mx-auto px-4 max-w-4xl">
       {/* Структурированные данные для SEO с универсальным скриптом */}
       <SchemaScripts schemas={schemas} />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { label: 'Главная', href: '/' },
+          { label: 'Энциклопедия', href: '/wiki' },
+          { label: countryNamesDictionary[country] || country, href: `/wiki/${country}` },
+        ]}
+      />
 
       <ZkpBadge
         subjectId={`wiki/${normalizedCountry}`}

@@ -209,11 +209,21 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
     }
   }
 
+  // Генерируем уникальное описание по формуле: [Страна] 2026: виза, цены от [X]₽, лучший сезон, советы. Подбор туров от Велес Вояж.
+  const generateFallbackDescription = (country: string, frontmatter: any): string => {
+    const year = new Date().getFullYear();
+    const visaInfo = frontmatter?.visaRequired !== false ? 'виза требуется' : 'безвизовый въезд';
+    const bestSeason = frontmatter?.bestSeason || 'круглый год';
+    const priceRange = frontmatter?.estimatedCost || '50 000';
+    
+    return `${country} ${year}: ${visaInfo}, цены от ${priceRange}₽, лучший сезон: ${bestSeason}. Полный путеводитель, советы и рекомендации. Подбор туров от Велес Вояж.`;
+  };
+
   // Генерируем полные SEO данные через unifiedSEO
   const canonicalUrl = url || `${SITE_URL}/wiki/${countryId}`;
   const seoMetadata = generateEnhancedSEOMetadata({
     title: chosenTitle,
-    description: mdxDescription || `Подробный путеводитель по ${countryName}`,
+    description: mdxDescription || generateFallbackDescription(countryName, mdxData?.frontmatter),
     url: canonicalUrl,
     image: mdxImage,
     type: 'article',

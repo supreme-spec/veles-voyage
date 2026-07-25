@@ -168,6 +168,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'индонезия': {
     name: 'Индонезия',
+    nameAccusative: 'Индонезию',
+    preposition: 'в',
     type: 'Country',
     description: 'Островная мечта: Бали, Комодо, джунгли и храмы древних королевств.',
     capital: 'Джакарта',
@@ -186,6 +188,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'малайзия': {
     name: 'Малайзия',
+    nameAccusative: 'Малайзию',
+    preposition: 'в',
     type: 'Country',
     description: 'Культурный микс: небоскребы Куала-Лумпура, джунгли Борнео и остров Лангкави.',
     capital: 'Куала-Лумпур',
@@ -204,6 +208,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'сейшелы': {
     name: 'Сейшелы',
+    nameAccusative: 'Сейшелы',
+    preposition: 'на',
     type: 'Country',
     description: 'Райские острова: черепахи, кокосы и первозданные пляжи.',
     capital: 'Виктория',
@@ -222,6 +228,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'доминикана': {
     name: 'Доминикана',
+    nameAccusative: 'Доминикану',
+    preposition: 'на',
     type: 'Country',
     description: 'Карибский рай: белые пляжи, лагуны и все включено.',
     capital: 'Санто-Доминго',
@@ -240,6 +248,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'куба': {
     name: 'Куба',
+    nameAccusative: 'Кубу',
+    preposition: 'на',
     type: 'Country',
     description: 'Остров свободы: старые автомобили, сигары и карибский ритм.',
     capital: 'Гавана',
@@ -282,6 +292,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'италия': {
     name: 'Италия',
+    nameAccusative: 'Италию',
+    preposition: 'в',
     type: 'Country',
     description: 'Искусство, еда и романтика: от Рима до Венеции.',
     capital: 'Рим',
@@ -300,6 +312,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'испания': {
     name: 'Испания',
+    nameAccusative: 'Испанию',
+    preposition: 'в',
     type: 'Country',
     description: 'Страна страстей: фламенко, архитектура Гауди и пляжи Коста-Бравы.',
     capital: 'Мадрид',
@@ -318,6 +332,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'кипр': {
     name: 'Кипр',
+    nameAccusative: 'Кипр',
+    preposition: 'на',
     type: 'Country',
     description: 'Остров Афродиты: история, виноделие и чистые пляжи.',
     capital: 'Никосия',
@@ -336,6 +352,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'кантарские-острова': {
     name: 'Канарские острова',
+    nameAccusative: 'Канарские острова',
+    preposition: 'на',
     type: 'Country',
     description: 'Вечная весна в Атлантике: Тенерифе, Гран-Канария и вулканы.',
     capital: 'Лас-Пальмас-де-Гран-Канария',
@@ -354,6 +372,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   },
   'сингапур': {
     name: 'Сингапур',
+    nameAccusative: 'Сингапур',
+    preposition: 'в',
     type: 'Country',
     description: 'Город-государство будущего: футуристические парки, шопинг и еда.',
     capital: 'Сингапур',

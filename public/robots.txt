@@ -29,6 +29,19 @@ Disallow: /manifest.json
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 
+# AI-боты (разрешены для индексации)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YandexGPT
+Allow: /
+
 # Sitemap (индекс с динамическими sitemap для всех стран и городов)
 Sitemap: https://veles-voyage.ru/api/sitemap-index
 
@@ -50,7 +63,6 @@ Disallow: /*.json$
 Disallow: /sw.js
 Disallow: /service-worker.js
 Disallow: /manifest.json
-Disallow: /ai.txt
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referrer&ref&yclid&openstat&_ga&_gid&_fbc&_fbp&gclid&fbclid

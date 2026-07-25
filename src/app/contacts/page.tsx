@@ -33,7 +33,9 @@ export default function ContactsPage() {
     'sameAs': [
       'https://vk.com/veles__voyage',
       'https://t.me/veles_voyage',
-      'https://rutube.ru/u/velesvoyage/'
+      'https://rutube.ru/u/velesvoyage/',
+      'https://share.google/sWNqMpS7z0SJiMqO7',
+      'https://yandex.com/maps/-/CTfJm2lo'
     ],
     'geo': {
       '@type': 'GeoCoordinates',
@@ -69,6 +71,82 @@ export default function ContactsPage() {
       { '@type': 'Country', 'name': 'Abkhazia' }
     ],
     'availableLanguage': ['Russian', 'English']
+  };
+
+  const golitsinoSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    'name': 'Велес Вояж - Офис в Голицыно',
+    'description': 'Офис турагентства Велес Вояж в Голицыно. Подбор туров, круизов и индивидуальных путешествий.',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'пр-т. Керамиков, 103',
+      'addressLocality': 'Голицыно',
+      'postalCode': '143041',
+      'addressCountry': 'RU'
+    },
+    'telephone': '+7 985 063-51-34',
+    'email': 'hello@veles-voyage.ru',
+    'url': `${SITE_URL}/contacts`,
+    'geo': {
+      '@type': 'GeoCoordinates',
+      'latitude': 55.751244,
+      'longitude': 37.618421
+    },
+    'openingHoursSpecification': [{
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      'opens': '09:00',
+      'closes': '19:00'
+    }, {
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Saturday', 'Sunday'],
+      'opens': '10:00',
+      'closes': '16:00'
+    }],
+    'parentOrganization': {
+      '@type': 'TravelAgency',
+      'name': 'Велес Вояж',
+      'url': SITE_URL
+    }
+  };
+
+  const pushkinoSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    'name': 'Велес Вояж - Офис в Пушкино',
+    'description': 'Офис турагентства Велес Вояж в Пушкино. Подбор туров, круизов и индивидуальных путешествий.',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'пр-т. Московский, 9/2',
+      'addressLocality': 'Пушкино',
+      'postalCode': '141207',
+      'addressCountry': 'RU'
+    },
+    'telephone': '+7 985 063-51-34',
+    'email': 'hello@veles-voyage.ru',
+    'url': `${SITE_URL}/contacts`,
+    'geo': {
+      '@type': 'GeoCoordinates',
+      'latitude': 56.0044,
+      'longitude': 37.8489
+    },
+    'openingHoursSpecification': [{
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      'opens': '09:00',
+      'closes': '19:00'
+    }, {
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Saturday', 'Sunday'],
+      'opens': '10:00',
+      'closes': '16:00'
+    }],
+    'parentOrganization': {
+      '@type': 'TravelAgency',
+      'name': 'Велес Вояж',
+      'url': SITE_URL
+    }
   };
 
   const faqData = [{
@@ -257,6 +335,39 @@ export default function ContactsPage() {
                 </a>
               </div>
             </section>
+
+            {/* Карты */}
+            <section className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8" aria-labelledby="maps">
+              <h2 id="maps" className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                🗺️ Мы на картах
+              </h2>
+
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <a
+                  href="https://share.google/sWNqMpS7z0SJiMqO7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors"
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <span className="text-2xl">📍</span>
+                  </div>
+                  <span className="font-medium text-gray-900 dark:text-white text-lg">Google Карты</span>
+                </a>
+
+                <a
+                  href="https://yandex.com/maps/-/CTfJm2lo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg hover:bg-yellow-100 dark:hover:bg-yellow-900/40 transition-colors"
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <span className="text-2xl">🗺️</span>
+                  </div>
+                  <span className="font-medium text-gray-900 dark:text-white text-lg">Яндекс Карты</span>
+                </a>
+              </div>
+            </section>
           </div>
 
           {/* Форма обратной связи */}
@@ -287,6 +398,8 @@ export default function ContactsPage() {
             </div>
             <SchemaScripts schemas={[
               contactSchema,
+              golitsinoSchema,
+              pushkinoSchema,
               {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
@@ -308,7 +421,9 @@ export default function ContactsPage() {
                 "sameAs": [
                   "https://vk.com/veles__voyage",
                   "https://t.me/veles_voyage",
-                  "https://rutube.ru/u/velesvoyage/"
+                  "https://rutube.ru/u/velesvoyage/",
+                  "https://share.google/sWNqMpS7z0SJiMqO7",
+                  "https://yandex.com/maps/-/CTfJm2lo"
                 ],
                 "contactPoint": [{
                   "@type": "ContactPoint",

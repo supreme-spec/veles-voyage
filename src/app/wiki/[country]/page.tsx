@@ -377,6 +377,33 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         );
       })()}
 
+      {/* Быстрый голосовой ответ */}
+      {(() => {
+        const destData = WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(
+          key => WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry || 
+                  WORLD_DESTINATIONS_DATA[key].name.toLowerCase() === (countryNamesDictionary[country] || country).toLowerCase()
+        ) || ''];
+        
+        if (!destData) return null;
+        
+        const visaInfo = destData.visaRequired !== false 
+          ? `Для поездки в ${destData.name} россиянам нужна виза.`
+          : `Для поездки в ${destData.name} виза россиянам не нужна. Вы можете находиться в стране до 60 дней без визы.`;
+        const bestSeason = destData.bestSeason || 'круглый год';
+        
+        return (
+          <div className="voice-answer mb-8 p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-purple-500 rounded-r-lg">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">🎙️</span>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Голосовой ответ:</h3>
+            </div>
+            <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+              {visaInfo} Лучший сезон для посещения: {bestSeason}. Рекомендуем бронировать тур заранее для лучших цен.
+            </p>
+          </div>
+        );
+      })()}
+
       {/* TL;DR + сводная таблица (AEO/SEO: структурированный ответ для сниппетов) */}
       <section
         id="tldr"

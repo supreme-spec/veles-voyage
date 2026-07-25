@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generateMetadata';
 import { SITE_URL } from '@/shared/constants/seo';
+import StructuredData from '@/components/SEO/StructuredData';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Партнёры Велес Вояж — надежные компании для путешествий',
@@ -20,6 +21,60 @@ export const metadata: Metadata = generateSEOMetadata({
     'индивидуальные занятия',
   ],
 });
+
+const breadcrumbsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Главная', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'Партнёры', item: `${SITE_URL}/partners` },
+  ],
+};
+
+const franglishSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Franglish',
+  alternateName: 'Колесникова Анастасия Юрьевна',
+  url: 'https://franglish-original.ru/',
+  telephone: '+7-985-063-51-34',
+  logo: 'https://franglish-original.ru/photo.webp',
+  image: 'https://franglish-original.ru/photo.webp',
+  description:
+    'Персональный репетитор английского и французского языков с 18-летним опытом работы. Индивидуальный подход, современные методики и гарантированный результат.',
+  foundingDate: '2006',
+  sameAs: [
+    'https://t.me/anastasia_franglish',
+    'https://wa.me/79850635134',
+    'https://franglish-original.ru/'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+7-985-063-51-34',
+    contactType: 'customer service',
+    availableLanguage: ['Russian', 'English', 'French']
+  },
+  knowsAbout: [
+    'Английский язык',
+    'Французский язык',
+    'Подготовка к ЕГЭ',
+    'Подготовка к ОГЭ',
+    'CAE',
+    'TKT',
+    'PTE',
+    'Разговорные курсы'
+  ]
+};
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Партнёры Велес Вояж',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.partner-speakable']
+  }
+};
 
 export default function PartnersPage() {
   const partners = [
@@ -39,6 +94,18 @@ export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto px-4 py-20 pt-20 md:pt-24">
+        
+        {/* Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-blue-600 hover:underline dark:hover:text-blue-400">Главная</Link>
+            </li>
+            <li aria-hidden="true" className="text-gray-400">/</li>
+            <li aria-current="page" className="font-medium text-gray-900 dark:text-gray-100">Партнёры</li>
+          </ol>
+        </nav>
+
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">
             Наши партнёры
@@ -47,6 +114,8 @@ export default function PartnersPage() {
             Мы сотрудничаем с проверенными профессионалами, чтобы сделать ваше путешествие и подготовку к нему комфортными и надёжными.
           </p>
         </div>
+
+        <StructuredData schemas={[breadcrumbsSchema, franglishSchema, speakableSchema]} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {partners.map((partner) => (
@@ -69,7 +138,7 @@ export default function PartnersPage() {
                   <p className="text-sm text-gray-500 dark:text-gray-400">{partner.description}</p>
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{partner.fullDescription}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 partner-speakable" dangerouslySetInnerHTML={{ __html: partner.fullDescription }} />
               <div className="flex flex-wrap gap-2 mb-4">
                 {partner.benefits.map((benefit) => (
                   <span

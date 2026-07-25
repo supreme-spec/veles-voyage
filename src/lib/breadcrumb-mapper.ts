@@ -27,7 +27,7 @@ const SLUG_TO_RUSSIAN_NAME: Record<string, string> = {
   culture: 'Культура',
   'travel-tips': 'Советы',
   places: 'Места',
-  cities: 'Города',
+  cities: 'Города вылета',
   mission: 'Миссия',
   values: 'Ценности',
   support: 'Поддержка',

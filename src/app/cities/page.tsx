@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import StructuredData from '@/components/SEO/StructuredData';
+import { CitySearchWidget } from '@/components/cities/CitySearchWidget';
 import { allCities } from './all-cities';
 import { SITE_URL } from '@/shared/constants/seo';
 
@@ -12,15 +12,6 @@ export const metadata: Metadata = {
     'Полный список городов вылета Велес Вояж: туры в Турцию, Египет, ОАЭ и Таиланд из Москвы, Санкт-Петербурга и регионов России. Выберите свой город и подберите тур онлайн.',
   alternates: { canonical: `${siteUrl}/cities` },
   robots: { index: true, follow: true },
-};
-
-const breadcrumbsSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Главная', item: `${siteUrl}/` },
-    { '@type': 'ListItem', position: 2, name: 'Города вылета', item: `${siteUrl}/cities` },
-  ],
 };
 
 const federalDistricts = [
@@ -38,18 +29,6 @@ export default function CitiesHubPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="mx-auto max-w-5xl px-4 py-16 pt-20 md:pt-24">
-        <StructuredData schemas={[breadcrumbsSchema]} />
-
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-600 dark:text-gray-400">
-          <ol className="flex flex-wrap items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-blue-600 hover:underline dark:hover:text-blue-400">Главная</Link>
-            </li>
-            <li aria-hidden="true" className="text-gray-400">/</li>
-            <li aria-current="page" className="font-medium text-gray-900 dark:text-gray-100">Города вылета</li>
-          </ol>
-        </nav>
 
         {/* Hero */}
         <div className="text-center mb-12">
@@ -63,16 +42,10 @@ export default function CitiesHubPage() {
 
         {/* Search */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-10 border border-gray-100 dark:border-gray-700">
-          <label htmlFor="city-search" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Поиск города
           </label>
-          <input
-            id="city-search"
-            type="text"
-            placeholder="Например, Москва"
-            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none"
-            autoComplete="off"
-          />
+          <CitySearchWidget />
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
             Доступно {allCities.length}+ городов России
           </p>

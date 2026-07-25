@@ -210,7 +210,6 @@ export default function ContactsPage() {
 
   return (
     <article className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <SchemaScripts schemas={[contactSchema, golitsinoSchema, pushkinoSchema, speakableSchema]} />
       <div className="max-w-7xl mx-auto px-4 py-20 pt-20 md:pt-24">
         {/* Заголовок */}
         <header className="text-center mb-16">
@@ -441,6 +440,7 @@ export default function ContactsPage() {
         golitsinoSchema,
         pushkinoSchema,
         howToSchema,
+        speakableSchema,
         {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",

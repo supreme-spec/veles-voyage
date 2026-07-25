@@ -2,41 +2,42 @@
 # Турагентство: индивидуальные туры и путешествия
 # Дата обновления: 2026-07-25
 
+# AI/LLM и поисковые боты
 User-agent: *
-Allow: /
-Allow: /_next/static/
-Allow: /images/
-Allow: /wiki/
-Allow: /tours/
-Allow: /cruises/
-Allow: /blog/
-Allow: /countries/
-Allow: /cities/
-Allow: /places/
-
-# AI/LLM данные — открыты для индексации всеми ботами
 Allow: /ai.txt
 Allow: /llms.txt
 Allow: /ai-data.json
 Allow: /llms-full.json
 Allow: /manifest.json
-
-# Запрет индексации служебных директорий
 Disallow: /api/
 Disallow: /admin/
 Disallow: /__tests__/
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /docs/
-
-# Запрет индексации служебных файлов
 Disallow: /*.json$
 Disallow: /sw.js
 Disallow: /service-worker.js
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 
-# AI-боты (разрешены для индексации и обучения)
+User-agent: ChatGPT-User
+Allow: /ai.txt
+Allow: /llms.txt
+Allow: /ai-data.json
+Allow: /llms-full.json
+Allow: /manifest.json
+Allow: /wiki/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /__tests__/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /docs/
+Disallow: /*.json$
+Disallow: /sw.js
+Disallow: /service-worker.js
+
 User-agent: GPTBot
 Allow: /
 Allow: /ai.txt
@@ -44,6 +45,7 @@ Allow: /llms.txt
 Allow: /ai-data.json
 Allow: /llms-full.json
 Allow: /manifest.json
+Allow: /wiki/
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -57,39 +59,22 @@ User-agent: ClaudeBot
 Allow: /
 Allow: /ai.txt
 Allow: /llms.txt
-Allow: /ai-data.json
-Allow: /llms-full.json
-Allow: /manifest.json
-
-User-agent: PerplexityBot
-Allow: /
-Allow: /ai.txt
-Allow: /llms.txt
-Allow: /ai-data.json
-Allow: /llms-full.json
-Allow: /manifest.json
-
-User-agent: YandexGPT
-Allow: /
-Allow: /ai.txt
-Allow: /llms.txt
-Allow: /ai-data.json
-Allow: /llms-full.json
-Allow: /manifest.json
-
-User-agent: Google-Extended
-Allow: /
-Allow: /ai.txt
-Allow: /llms.txt
-Allow: /ai-data.json
-Allow: /llms-full.json
-Allow: /manifest.json
 
 User-agent: anthropic-ai
 Allow: /
 Allow: /ai.txt
 Allow: /llms.txt
-Allow: /ai-data.json
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /ai.txt
+Allow: /llms.txt
+Allow: /wiki/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /ai.txt
+Allow: /llms.txt
 Allow: /llms-full.json
 Allow: /manifest.json
 
@@ -112,7 +97,6 @@ Disallow: /service-worker.js
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
 
-# Яндекс
 User-agent: Yandex
 Allow: /
 Allow: /ai.txt
@@ -132,7 +116,7 @@ Disallow: /service-worker.js
 Disallow: /manifest.json
 Disallow: /yandex-catalog.xml
 Disallow: /search.xml
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referrer&ref&yclid&openstat&_ga&_gid&_fbc&_fbp&gclid&fbclid
+Clean-param: utm_source&utm_medium&utm_campaign&from
 
 # Sitemap
-Sitemap: https://veles-voyage.ru/api/sitemap-index
+Sitemap: https://www.veles-voyage.ru/sitemap.xml

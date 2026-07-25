@@ -454,14 +454,18 @@ export default async function Home() {
                           className="w-full h-full"
                         />
                       </div>
-                      <h3>Сколько стоит тур {dest.preposition || 'в'} {dest.nameAccusative || dest.name} и нужна ли виза?</h3>
-                      <p className="speakable-summary flex-1">{dest.description}</p>
-                      <Link
-                        href={`/wiki/${dest.slug}`}
-                        className="more-link"
-                      >
-                        Подробнее →
-                      </Link>
+                      <div className="p-6 flex flex-col flex-grow relative z-10">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                          Сколько стоит тур {dest.preposition || 'в'} {dest.nameAccusative || dest.name} и нужна ли виза?
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{dest.description}</p>
+                        <Link
+                          href={`/wiki/${dest.slug}`}
+                          className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"
+                        >
+                          Подробнее →
+                        </Link>
+                      </div>
                     </article>
                 );
               })}

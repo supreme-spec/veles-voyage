@@ -1597,9 +1597,12 @@ span[style*='filter: none'] {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
+}
+
+.dark .country-card {
+  background: #1f2937;
 }
 
 .country-image {
@@ -1616,25 +1619,21 @@ span[style*='filter: none'] {
 }
 
 .country-card h3 {
-  padding: 16px 16px 8px;
   font-size: 20px;
   color: #1a1a1a;
 }
 
 .country-card p {
-  padding: 0 16px 12px;
   color: #666;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .more-link {
-  display: inline-block;
-  margin: 0 16px 16px;
-  padding: 8px 20px;
-  background: #007bff;
-  color: white;
   text-decoration: none;
-  border-radius: 6px;
   font-weight: 500;
+}
+
+.shadow-modern {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

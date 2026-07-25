@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import React from 'react';
 
 interface SchemaScriptsProps {
@@ -6,9 +5,15 @@ interface SchemaScriptsProps {
 }
 
 export function SchemaScripts({ schemas }: SchemaScriptsProps) {
+  const validSchemas = Array.isArray(schemas) ? schemas.filter(schema => schema && typeof schema === 'object') : [];
+
+  if (validSchemas.length === 0) {
+    return null;
+  }
+
   return (
     <>
-      {schemas.map((schema, index) => {
+      {validSchemas.map((schema, index) => {
         let html = '';
         try {
           html = JSON.stringify(schema);
@@ -17,7 +22,7 @@ export function SchemaScripts({ schemas }: SchemaScriptsProps) {
           html = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: 'Error' });
         }
         return (
-          <Script
+          <script
             key={`schema-${index}`}
             id={`ld-json-${index}`}
             type="application/ld+json"

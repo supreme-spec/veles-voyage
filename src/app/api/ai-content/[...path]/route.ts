@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import fs from 'fs/promises';
+import path from 'path';
 
 const AI_BOT_WHITELIST = [
   'GPTBot',
@@ -22,6 +24,7 @@ const AI_BOT_WHITELIST = [
 ];
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.veles-voyage.ru';
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
 
 function isAIBot(userAgent: string | null): boolean {
   if (!userAgent) return false;
@@ -47,6 +50,24 @@ function detectFormat(request: NextRequest): 'json-ld' | 'markdown' | 'html' {
   return 'html';
 }
 
+async function servePublicFile(cleanPath: string): Promise<{ title: string; description: string; content: string; type: string } | null> {
+  const filePath = path.join(PUBLIC_DIR, cleanPath);
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    const ext = path.extname(cleanPath).toLowerCase();
+    const baseName = path.basename(filePath, ext);
+
+    return {
+      title: baseName,
+      description: content.slice(0, 200),
+      content: content.slice(0, 10000),
+      type: ext.replace('.', '') || 'text',
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function getPageContent(path: string): Promise<{ title: string; description: string; content: string; type: string } | null> {
   const cleanPath = path.replace(/^\/+|\/+$/g, '');
 
@@ -56,6 +77,15 @@ async function getPageContent(path: string): Promise<{ title: string; descriptio
       description: 'Официальное турагентство Велес Вояж. Подбор туров в Турцию, Египет, ОАЭ и морских круизов.',
       content: 'Велес Вояж — турагентство с лицензией РТА 0035678. Индивидуальные туры и круизы по России и миру, энциклопедия по 200+ странам.',
       type: 'homepage',
+    };
+  }
+
+  if (cleanPath === 'voice' || cleanPath.startsWith('voice/')) {
+    return {
+      title: 'Голосовой помощник Велес Вояж',
+      description: 'Голосовой справочник для Алисы, Siri, Google Ассистента и Маруси. Ответы про визы, цены на туры, можно ли без визы, когда ехать.',
+      content: 'Частые вопросы: нужна ли виза в Турцию, сколько стоит тур на двоих, какие страны без визы, как добраться до Дубая, безопасно ли в Египте, когда лучше ехать в Таиланд, как выбрать круиз.',
+      type: 'voice',
     };
   }
 
@@ -97,26 +127,53 @@ async function getPageContent(path: string): Promise<{ title: string; descriptio
     };
   }
 
-  return {
-    title: 'Велес Вояж — туры и путешествия 2026',
-    description: 'Официальное турагентство Велес Вояж. Подбор туров в Турцию, Египет, ОАЭ и морских круизов.',
-    content: 'Велес Вояж — турагентство с лицензией РТА 0035678. Индивидуальные туры и круизы по России и миру, энциклопедия по 200+ странам.',
-    type: 'page',
-  };
+  if (cleanPath === 'faq') {
+    return {
+      title: 'Частые вопросы | Велес Вояж',
+      description: 'FAQ: визы, цены на туры, безопасность, курорты, документы. Короткие ответы для голосовых ассистентов.',
+      content: 'Частые вопросы: нужна ли виза в Турцию, сколько стоит тур в Египет, какие страны доступны без визы, безопасно ли путешествовать, лучший сезон для отдыха.',
+      type: 'faq',
+    };
+  }
+
+  if (cleanPath === 'contacts') {
+    return {
+      title: 'Контакты и офисы Велес Вояж',
+      description: 'Телефон +7 985 063-51-34, email hello@veles-voyage.ru, офисы в Голицыно и Пушкино. Поддержка 24/7.',
+      content: 'Свяжитесь с нами: телефон +7 985 063-51-34, Telegram @veles_voyage, email hello@veles-voyage.ru. Офисы: Голицыно, пр-т. Керамиков, 103; Пушкино, пр-т. Московский, 9/2.',
+      type: 'contacts',
+    };
+  }
+
+  if (cleanPath === 'hotels') {
+    return {
+      title: 'Отели по всему миру | Велес Вояж',
+      description: 'Поиск и бронирование отелей по всему миру. Удобный поиск, выгодные цены, мгновенное подтверждение.',
+      content: 'Бронирование отелей в более чем 200 странах мира. От бюджетных гостиниц до люксовых курортов. Поддержка 24/7.',
+      type: 'hotels',
+    };
+  }
+
+  const fileResult = await servePublicFile(cleanPath);
+  if (fileResult) {
+    return fileResult;
+  }
+
+  return null;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest, { params }: { params: { path?: string } }) {
   const url = new URL(request.url);
-  const requestedPath = url.searchParams.get('path') || '/';
+  const requestedPath = params.path ? '/' + params.path : '/';
   const format = detectFormat(request);
 
   const page = await getPageContent(requestedPath);
   if (!page) {
-    return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    return NextResponse.json({ error: 'Not found', path: requestedPath }, { status: 404 });
   }
 
   if (format === 'json-ld') {
-    const jsonLd = {
+    const schema: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': 'TravelAgency',
       '@id': `${SITE_URL}/#travelagency`,
@@ -164,7 +221,45 @@ export async function GET(request: NextRequest) {
       ],
     };
 
-    const response = NextResponse.json(jsonLd);
+    if (page.type === 'voice') {
+      schema['@type'] = 'WebPage';
+      schema.speakable = {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.voice-snippet', '.faq-answer'],
+      };
+    }
+
+    if (page.type === 'faq') {
+      schema['@type'] = 'FAQPage';
+      schema.mainEntity = [
+        {
+          '@type': 'Question',
+          name: 'Нужна ли виза в Турцию для россиян?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Нет, для граждан РФ действует безвизовый режим до 60 дней. Въезд по загранпаспорту.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Сколько стоит тур в Турцию на двоих?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Тур на двоих на 7 ночей все включено стоит от 100 000 рублей.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Какие страны доступны без визы в 2026 году?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Без визы: Турция, Египет, ОАЭ, Таиланд, Мальдивы, Вьетнам, Грузия, Кипр, Индонезия, Шри-Ланка.',
+          },
+        },
+      ];
+    }
+
+    const response = NextResponse.json(schema);
     response.headers.set('Content-Type', 'application/ld+json; charset=utf-8');
     response.headers.set('X-Content-Type-Options', 'nosniff');
     response.headers.set('X-AI-Bot-Allowed', 'true');

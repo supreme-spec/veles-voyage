@@ -374,7 +374,7 @@ export default async function Home() {
 
               <div className="group bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-teal-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 transition-modern pointer-events-none z-0"></div>
-                <div className="h-40 bg-gradient-to-r from-teal-500 to-blue-600 flex items-center justify-center relative z-10 overflow-hidden">
+                <div className="h-40 bg-gradient-to-r from-teal-500 to-blue-600 flex items-center justify-center relative z-10">
                   <div className="relative w-full h-full">
                     <WeeklyServicePhoto
                       serviceType="cruises"

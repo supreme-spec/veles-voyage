@@ -76,7 +76,6 @@ export default function TourSearchForm() {
   };
 
   const handleDemoSearch = () => {
-    const depCity = dictionaries.departureCities.find(c => c.cid === formData.departureTownCID)?.name || formData.departureTownCID;
     const dest = dictionaries.destinations.find(d => d.cid === formData.tourCID)?.name || formData.tourCID;
     const demoResults = [
       { id: 'demo_1', hotelName: `${dest} — Отель 4*`, roomCategory: 'Стандарт', nights: 7, price: 99000, rawBookingData: {} },

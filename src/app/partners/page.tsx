@@ -84,7 +84,7 @@ export default function PartnersPage() {
       description: 'Английский и французский',
       fullDescription:
         'Персональный репетитор английского и французского языков с 18-летним опытом работы. Индивидуальный подход, современные методики и гарантированный результат. Подготовка к ЕГЭ и ОГЭ, разговорные курсы, международные экзамены CAE, TKT, PTE.',
-      logo: '/images/partners/logo-franglish.jpg',
+      logo: '/images/partners/logo-franglish.webp',
       alt: 'Franglish — репетитор английского и французского',
       url: 'https://franglish-original.ru/',
       benefits: ['18+ лет опыта', 'Сертифицированный эксперт ЕГЭ', 'Индивидуальный подход', 'Онлайн-занятия'],

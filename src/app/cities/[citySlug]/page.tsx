@@ -455,7 +455,7 @@ export default async function CityDeparturePage({
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden bg-white border border-gray-100 flex-shrink-0">
                 <Image
-                  src="/images/partners/logo-franglish.jpg"
+                  src="/images/partners/logo-franglish.webp"
                   alt="Franglish — репетитор английского и французского"
                   width={80}
                   height={80}

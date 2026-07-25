@@ -750,6 +750,53 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {/* Partners */}
+        <section className="py-16 bg-white dark:bg-gray-800" aria-labelledby="home-partners-heading">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 id="home-partners-heading" className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white">
+                Наши партнёры
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Мы сотрудничаем с проверенными профессионалами, чтобы сделать ваше путешествие комфортным и unforgettable
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-6 border border-gray-100 dark:border-gray-600 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-white border border-gray-100 flex-shrink-0">
+                    <Image
+                      src="/images/partners/logo-franglish.jpg"
+                      alt="Franglish — репетитор английского и французского"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Franglish</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Английский и французский</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Персональный репетитор с 18+ лет опыта. Подготовка к ЕГЭ/ОГЭ, разговорные языки, международные экзамены CAE/TKT/PTE.
+                </p>
+                <a
+                  href="https://franglish-original.ru/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+                >
+                  franglish-original.ru
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

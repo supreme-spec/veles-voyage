@@ -113,7 +113,7 @@ export function Footer() {
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -152,6 +152,44 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <span className="text-gray-400 text-xs">⏰ Сб–Вс: 10:00–18:00</span>
               </div>
+            </div>
+          </div>
+
+          {/* Partners */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold mb-4 text-white">
+              Партнёры
+            </h4>
+            <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex-shrink-0">
+                  <Image
+                    src="/images/partners/logo-franglish.jpg"
+                    alt="Franglish — репетитор английского и французского"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <p className="text-white font-medium text-sm">Franglish</p>
+                  <p className="text-gray-400 text-xs">Английский и французский</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-xs mb-3 line-clamp-3">
+                Персональный репетитор английского и французского языков с 18-летним опытом. Индивидуальный подход, современные методики и гарантированный результат.
+              </p>
+              <a
+                href="https://franglish-original.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
+              >
+                Перейти на сайт партнёра
+                <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import StructuredData from '@/components/SEO/StructuredData';
 import Breadcrumbs from '@/shared/components/ui/Breadcrumbs';
 import { generateEnhancedSEOMetadata, generatePageBreadcrumbs } from '@/lib/seo/unifiedSEO';
@@ -448,6 +449,42 @@ export default async function CityDeparturePage({
               </div>
             ))}
           </div>
+
+          {/* Партнёр */}
+          <section className="mb-12 rounded-2xl bg-white border border-gray-200 shadow-sm p-6 sm:p-8" aria-labelledby="city-partners-heading">
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="w-20 h-20 rounded-full overflow-hidden bg-white border border-gray-100 flex-shrink-0">
+                <Image
+                  src="/images/partners/logo-franglish.jpg"
+                  alt="Franglish — репетитор английского и французского"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="text-center sm:text-left">
+                <h2 id="city-partners-heading" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                  Franglish — репетитор английского и французского
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  Персональный репетитор Анастасия Колесникова помогает освоить английский и французский languages
+                  с первого занятия. 18+ лет опыта, сертифицированный эксперт ЕГЭ, индивидуальный подход,
+                  современные методики. Подходит для школьников, студентов и взрослых.
+                </p>
+                <a
+                  href="https://franglish-original.ru/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+                >
+                  franglish-original.ru
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </section>
 
           {/* FAQ */}
           <div className="mt-12">

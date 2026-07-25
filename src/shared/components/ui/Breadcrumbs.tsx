@@ -23,7 +23,7 @@ function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.href.startsWith('http') ? item.href : `https://www.veles-voyage.ru${item.href}`,
+      item: item.href.startsWith('http') ? item.href : `https://veles-voyage.ru${item.href}`,
     })),
   };
 

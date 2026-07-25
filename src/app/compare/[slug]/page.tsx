@@ -108,7 +108,7 @@ const ComparePage = async ({ params }: { params: Promise<{ slug: string }> }) =>
       "@type": "TouristAttraction",
       "name": "Велес Вояж",
       "description": "Туристическое агентство Велес Вояж — эксперты в организации индивидуальных туров, морских круизов и путешествий по России и миру.",
-      "url": `https://www.veles-voyage.ru/compare/${slug}`,
+      "url": `https://veles-voyage.ru/compare/${slug}`,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Керамиков пр-т, д. 103",

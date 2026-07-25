@@ -24,7 +24,7 @@ describe('POST /api/web-vitals', () => {
       name: 'LCP',
       value: 2500,
       id: 'test-id-123',
-      page: 'https://www.veles-voyage.ru/',
+      page: 'https://veles-voyage.ru/',
       timestamp: Date.now(),
     };
 

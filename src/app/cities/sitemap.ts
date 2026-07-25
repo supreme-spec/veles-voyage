@@ -1,11 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 import { allCities } from './all-cities';
-import { SITE_URL } from '@/shared/constants/seo';
 import { generateCitySlug } from '@/lib/slugify';
 import { FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
 
 const siteUrl = SITE_URL;
-const currentDate: Date = new Date();
+const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
 
 const uniqueCities = Array.from(new Set(allCities.map(generateCitySlug))).sort();
 
@@ -62,7 +62,7 @@ const HIGH_PRIORITY_CITIES = new Set([
 export default function sitemap(): MetadataRoute.Sitemap {
   const districts = Object.keys(FEDERAL_DISTRICTS).map((slug) => ({
     url: `${siteUrl}/cities/district/${slug}`,
-    lastModified: currentDate,
+    lastModified: STATIC_DATE,
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
@@ -71,20 +71,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isHighPriority = HIGH_PRIORITY_CITIES.has(slug);
     return {
       url: `${siteUrl}/cities/${slug}`,
-      lastModified: currentDate,
-      changeFrequency: isHighPriority ? 'daily' : 'weekly',
-      priority: isHighPriority ? 0.8 : 0.5,
+      lastModified: STATIC_DATE,
+      changeFrequency: isHighPriority ? 'weekly' : 'monthly',
+      priority: isHighPriority ? 0.7 : 0.5,
     };
   });
 
-  return [
-    {
-      url: `${siteUrl}/cities`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    ...districts,
-    ...cityEntries,
-  ];
+  return [...districts, ...cityEntries];
 }

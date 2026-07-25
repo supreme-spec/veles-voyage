@@ -30,7 +30,7 @@ export const aboutArticleSchema = {
   "description": "Велес Вояж — турагентство с лицензией РТА 0035678 с 2023 года. Организуем индивидуальные туры и круизы по России и миру, ведём энциклопедию по 200+ странам, сопровождаем клиентов 24/7.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "О нас - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -56,13 +56,13 @@ export const aboutArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/about"
+    "@id": "https://veles-voyage.ru/about"
   },
   "articleSection": "О нас",
      "keywords": ["Велес Вояж", "турагентство", "лицензия турагентства", "путешествия", "туры", "круизы", "индивидуальные туры", "поддержка 24/7", "русская энциклопедия туризма", "путеводители по странам", "туризм 2026", "организация путешествий", "профессиональные гиды"],
@@ -75,7 +75,7 @@ export const aboutArticleSchema = {
 export const aboutSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/about",
+  "url": "https://veles-voyage.ru/about",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -144,8 +144,8 @@ export const aboutOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "founder": [
     {
@@ -190,7 +190,7 @@ export const aboutPersonSvistunovSchema = {
   "@type": "Person",
   "name": "Свистунов Сергей Григорьевич",
   "jobTitle": "Генеральный директор ООО «Велес»",
-  "image": "https://www.veles-voyage.ru/images/svistunov.webp",
+  "image": "https://veles-voyage.ru/images/svistunov.webp",
   "url": "https://www.finradun.ru/",
   "sameAs": [
     "https://www.finradun.ru/",
@@ -199,7 +199,7 @@ export const aboutPersonSvistunovSchema = {
   "worksFor": {
     "@type": "Organization",
     "name": "Велес Вояж",
-    "url": "https://www.veles-voyage.ru"
+    "url": "https://veles-voyage.ru"
   },
   "description": "Опытный предприниматель и путешественник с глубокими знаниями туристической индустрии. Основатель турагентства Велес Вояж с лицензией РТА 0035678.",
   "knowsAbout": [
@@ -215,7 +215,7 @@ export const aboutPersonKolesnikovaSchema = {
   "@type": "Person",
   "name": "Колесникова Анастасия Юрьевна",
   "jobTitle": "Директор ООО «Велес»",
-  "image": "https://www.veles-voyage.ru/images/kolesnikova.webp",
+  "image": "https://veles-voyage.ru/images/kolesnikova.webp",
   "url": "https://franglish-original.ru/",
   "sameAs": [
     "https://franglish-original.ru/",
@@ -224,7 +224,7 @@ export const aboutPersonKolesnikovaSchema = {
   "worksFor": {
     "@type": "Organization",
     "name": "Велес Вояж",
-    "url": "https://www.veles-voyage.ru"
+    "url": "https://veles-voyage.ru"
   },
   "description": "Эксперт в области туристических услуг и клиентского сопровождения. Директор турагентства Велес Вояж с лицензией РТА 0035678.",
   "knowsAbout": [
@@ -240,9 +240,9 @@ export const aboutVideoSchema = {
   "@type": "VideoObject",
   "name": "О нас - Велес Вояж",
   "description": "Видео о турагентстве Велес Вояж на Rutube-канале",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "О нас - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "О нас - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": aboutDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -251,8 +251,8 @@ export const aboutBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "О нас", "item": "https://www.veles-voyage.ru/about" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "О нас", "item": "https://veles-voyage.ru/about" }
   ]
 };
 
@@ -263,7 +263,7 @@ export const aboutWeb3Schema = {
   "description": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/about", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/about", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -275,7 +275,7 @@ export const aboutDarkWebSchema = {
   "description": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/about" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/about" }
 };
 
 export const aboutAltSearchSchema = {
@@ -285,7 +285,7 @@ export const aboutAltSearchSchema = {
   "description": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/about.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/about.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -317,10 +317,10 @@ export const aboutSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "О нас | Велес Вояж - Официальное турагентство",
   "text": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру. Индивидуальные туры, круизы, поддержка 24/7. #ВелесВояж #Туризм2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "О нас - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "О нас - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": aboutDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/about" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/about" }
 };
 
 export const aboutAccessibilitySchema = {
@@ -340,8 +340,8 @@ export const aboutAISchema = {
   "datePublished": aboutDatePublished,
   "dateModified": aboutDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/about" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/about" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -359,7 +359,7 @@ export const aboutAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const aboutGEOEnhancedSchema = {
@@ -408,16 +408,16 @@ export const aboutMetaTags = {
   keywords: "Велес Вояж, турагентство, лицензия турагентства, путешествия, туры, круизы, индивидуальные туры, поддержка 24/7, русская энциклопедия туризма, путеводители по странам, туризм 2026, организация путешествий, профессиональные гиды",
   "og:title": "О нас | Велес Вояж - Официальное турагентство",
   "og:description": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - О нас",
-  "og:url": "https://www.veles-voyage.ru/about",
+  "og:url": "https://veles-voyage.ru/about",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "О нас | Велес Вояж - Официальное турагентство",
   "twitter:description": "Турагентство Велес Вояж - профессиональная организация путешествий по России и миру.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "О нас - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -446,10 +446,10 @@ export const aboutMetaTags = {
 };
 
 export const aboutHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/about" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/about" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/about" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/about" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/about" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/about" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/about" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/about" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/about" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/about" }
 ];
 

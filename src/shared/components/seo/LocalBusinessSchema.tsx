@@ -12,9 +12,9 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "@id": "https://www.veles-voyage.ru/#business",
+    "@id": "https://veles-voyage.ru/#business",
     "name": "Велес Вояж",
-    "url": "https://www.veles-voyage.ru",
+    "url": "https://veles-voyage.ru",
     "description": "Туристическое агентство и энциклопедия путешествий с поддержкой Web3 технологий",
     "telephone": "+7-985-063-51-34",
     "email": "hello@veles-voyage.ru",

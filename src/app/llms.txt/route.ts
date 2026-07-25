@@ -35,7 +35,7 @@ export async function GET() {
 
 ## Контактная информация
 
-- **Сайт:** https://www.veles-voyage.ru
+- **Сайт:** https://veles-voyage.ru
 - **Email:** hello@veles-voyage.ru  
 - **Telegram:** https://t.me/veles_voyage
 - **VK:** https://vk.com/veles__voyage
@@ -45,7 +45,7 @@ export async function GET() {
 
 ### Путеводители по странам
 
-${countries.map(c => `- [${c.title}](https://www.veles-voyage.ru/wiki/${c.id}): ${c.description.substring(0, 100)}...`).join('\n')}
+${countries.map(c => `- [${c.title}](https://veles-voyage.ru/wiki/${c.id}): ${c.description.substring(0, 100)}...`).join('\n')}
 
 ## Типы контента
 
@@ -73,7 +73,7 @@ ${countries.map(c => `- [${c.title}](https://www.veles-voyage.ru/wiki/${c.id}): 
       },
     });
   } catch (error) {
-    return new NextResponse('# Велес Вояж\n\nТуристическая энциклопедия: https://www.veles-voyage.ru', {
+    return new NextResponse('# Велес Вояж\n\nТуристическая энциклопедия: https://veles-voyage.ru', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8' },
     });
   }

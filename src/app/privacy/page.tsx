@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.veles-voyage.ru/privacy',
+    canonical: 'https://veles-voyage.ru/privacy',
   },
 };
 
@@ -444,12 +444,12 @@ export default function PrivacyPage() {
             <p>
               9.4. Действующая Политика конфиденциальности размещена на странице по адресу{' '}
               <a 
-                href="https://www.veles-voyage.ru/privacy" 
+                href="https://veles-voyage.ru/privacy" 
                 className="text-indigo-600 dark:text-indigo-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://www.veles-voyage.ru/privacy
+                https://veles-voyage.ru/privacy
               </a>
             </p>
           </div>
@@ -494,7 +494,7 @@ export default function PrivacyPage() {
               "name": "Велес Вояж",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.veles-voyage.ru/logo.png"
+                "url": "https://veles-voyage.ru/logo.png"
               }
             },
             "datePublished": "2023-06-21",
@@ -502,7 +502,7 @@ export default function PrivacyPage() {
             "inLanguage": "ru",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://www.veles-voyage.ru/privacy"
+              "@id": "https://veles-voyage.ru/privacy"
             }
           })
         }}
@@ -515,8 +515,8 @@ export default function PrivacyPage() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "ООО Велес",
-            "url": "https://www.veles-voyage.ru",
-            "logo": "https://www.veles-voyage.ru/logo.png",
+            "url": "https://veles-voyage.ru",
+            "logo": "https://veles-voyage.ru/logo.png",
             "sameAs": [
               "https://vk.com/veles__voyage",
               "https://t.me/veles_voyage",
@@ -548,10 +548,10 @@ export default function PrivacyPage() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Велес Вояж",
-            "url": "https://www.veles-voyage.ru",
+            "url": "https://veles-voyage.ru",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://www.veles-voyage.ru/wiki/search?q={search_term_string}",
+              "target": "https://veles-voyage.ru/wiki/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })
@@ -566,9 +566,9 @@ export default function PrivacyPage() {
             "@context": "https://schema.org",
             "@type": "PrivacyPolicy",
             "name": "Политика конфиденциальности",
-            "url": "https://www.veles-voyage.ru/privacy",
+            "url": "https://veles-voyage.ru/privacy",
             "description": "Политика конфиденциальности ООО Велес. Защита персональных данных клиентов.",
-            "relatedLink": "https://www.veles-voyage.ru",
+            "relatedLink": "https://veles-voyage.ru",
             "datePublished": "2023-06-21",
             "dateModified": new Date().toISOString()
           })
@@ -586,13 +586,13 @@ export default function PrivacyPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Главная",
-                "item": "https://www.veles-voyage.ru"
+                "item": "https://veles-voyage.ru"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Политика конфиденциальности",
-                "item": "https://www.veles-voyage.ru/privacy"
+                "item": "https://veles-voyage.ru/privacy"
               }
             ]
           })

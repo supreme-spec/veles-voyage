@@ -15,7 +15,7 @@ describe('schemaLoader', () => {
     it('должен загружать базовые схемы', async () => {
       const config: SchemaConfig = {
         types: ['organization', 'breadcrumb'],
-        url: 'https://www.veles-voyage.ru/test',
+        url: 'https://veles-voyage.ru/test',
         title: 'Test Page',
         description: 'Test Description',
       };
@@ -38,7 +38,7 @@ describe('schemaLoader', () => {
           'review',
           'video',
         ],
-        url: 'https://www.veles-voyage.ru/test',
+        url: 'https://veles-voyage.ru/test',
         title: 'Test Page',
         description: 'Test Description',
       };
@@ -51,7 +51,7 @@ describe('schemaLoader', () => {
     it('должен возвращать пустой массив для неизвестных типов', async () => {
       const config: SchemaConfig = {
         types: [],
-        url: 'https://www.veles-voyage.ru/test',
+        url: 'https://veles-voyage.ru/test',
       };
 
       const schemas = await loadSchemas(config);
@@ -62,7 +62,7 @@ describe('schemaLoader', () => {
     it('должен обрабатывать ошибки загрузки gracefully', async () => {
       const config: SchemaConfig = {
         types: ['organization'],
-        url: 'https://www.veles-voyage.ru/test',
+        url: 'https://veles-voyage.ru/test',
       };
 
       // Мокаем импорт для проверки обработки ошибок

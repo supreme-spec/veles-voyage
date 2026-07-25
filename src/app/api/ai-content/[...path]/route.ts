@@ -23,7 +23,7 @@ const AI_BOT_WHITELIST = [
   'Yandex-Neuro',
 ];
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.veles-voyage.ru';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://veles-voyage.ru';
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 
 function isAIBot(userAgent: string | null): boolean {

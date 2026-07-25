@@ -28,7 +28,7 @@ const expertsSchema = {
   mainEntity: {
     '@type': 'Organization',
     name: 'Велес Вояж',
-    url: 'https://www.veles-voyage.ru',
+    url: 'https://veles-voyage.ru',
     description: 'Профессиональное турагентство с лицензией РТА 0035678',
     founder: [
       {

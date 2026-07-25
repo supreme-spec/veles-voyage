@@ -5,9 +5,9 @@ describe('generateCompleteSEO', () => {
   const baseConfig = {
     title: 'Test Page',
     description: 'Test description',
-    url: 'https://www.veles-voyage.ru/test',
+    url: 'https://veles-voyage.ru/test',
     type: 'article' as const,
-    image: 'https://www.veles-voyage.ru/images/logo.png',
+    image: 'https://veles-voyage.ru/images/logo.png',
     keywords: ['test', 'keywords'],
   };
 
@@ -16,7 +16,7 @@ describe('generateCompleteSEO', () => {
     
     expect(seoData.metaTags.title).toBe('Test Page');
     expect(seoData.metaTags.description).toBe('Test description');
-    expect(seoData.metaTags.url).toBe('https://www.veles-voyage.ru/test');
+    expect(seoData.metaTags.url).toBe('https://veles-voyage.ru/test');
     expect(seoData.metaTags.type).toBe('article');
   });
 
@@ -24,8 +24,8 @@ describe('generateCompleteSEO', () => {
     const seoData = generateCompleteSEO({
       ...baseConfig,
       breadcrumbs: [
-        { name: 'Home', url: 'https://www.veles-voyage.ru' },
-        { name: 'Test', url: 'https://www.veles-voyage.ru/test' },
+        { name: 'Home', url: 'https://veles-voyage.ru' },
+        { name: 'Test', url: 'https://veles-voyage.ru/test' },
       ],
     });
     

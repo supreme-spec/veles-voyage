@@ -1,134 +1,135 @@
 import type { MetadataRoute } from 'next';
-import { SITE_URL } from '@/shared/constants/seo';
+import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 import citiesSitemap from './cities/sitemap';
 import wikiSitemap from './wiki/sitemap';
 import visualSitemap from './visual-sitemap';
 
+const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
-  const currentDate: Date = new Date();
 
   const mainUrls: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contacts`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/mission`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/support`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/values`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/wiki`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/cities`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.9,
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/wiki/places`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/tours`,
-      lastModified: currentDate,
+      lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/tours/oceania`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/tours/south-america`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/cruises`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/news`,
-      lastModified: currentDate,
+      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/education`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
-      priority: 0.7
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/flights`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/hotels`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/partners`,
-      lastModified: currentDate,
+      lastModified: STATIC_DATE,
       changeFrequency: 'weekly',
       priority: 0.5,
-    }
+    },
   ];
 
   const noindexPatterns = [/\/api\//, /\/_next\//, /\/private\//, /\/admin\//, /\/search\?/];

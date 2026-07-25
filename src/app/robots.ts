@@ -2,43 +2,37 @@ import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/shared/constants/seo';
 
 export default function robots(): MetadataRoute.Robots {
+  const commonDisallow = [
+    '/api/',
+    '/private/',
+    '/admin/',
+    '/_next/',
+    '/static/',
+    '/*-gid', // Block old legacy slugs with -gid suffix
+  ];
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/private/',
-          '/admin/',
-          '/_next/',
-          '/static/',
-          '/*-gid', // Block old legacy slugs with -gid suffix
-        ],
+        disallow: commonDisallow,
       },
       // Specific rules for search engines
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/private/',
-          '/admin/',
-          '/_next/',
-          '/static/',
-        ],
+        disallow: commonDisallow,
       },
       {
         userAgent: 'Yandex',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/private/',
-          '/admin/',
-          '/_next/',
-          '/static/',
-          '/*-gid', // Block old legacy slugs with -gid suffix
-        ],
+        disallow: commonDisallow,
+      },
+      {
+        userAgent: 'YandexBot',
+        allow: '/',
+        disallow: commonDisallow,
       },
       // Retrieval-боты ИИ (разрешаем для цитирования в реальном времени)
       {
@@ -111,10 +105,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        userAgent: 'YandexBot',
-        allow: '/',
-      },
-      {
         userAgent: 'cohere-ai',
         allow: '/',
       },
@@ -129,6 +119,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL.replace(/^https?:\/\//, '')
   };
 }

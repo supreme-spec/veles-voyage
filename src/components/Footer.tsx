@@ -62,16 +62,16 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { 
-      href: 'https://vk.com/veles__voyage', 
+    {
+      href: 'https://vk.com/veles__voyage',
       label: 'ВКонтакте',
       icon: (
-        <div className="w-5 h-5 flex items-center justify-center">
+        <div className="w-8 h-8 flex items-center justify-center">
           <Image
             src="/images/vk.png"
             alt="Велес Вояж в VKontakte"
-            width={20}
-            height={20}
+            width={32}
+            height={32}
             className="object-contain"
           />
         </div>
@@ -81,12 +81,12 @@ export function Footer() {
       href: 'https://t.me/veles_voyage',
       label: 'Telegram',
       icon: (
-        <div className="w-5 h-5 flex items-center justify-center">
+        <div className="w-8 h-8 flex items-center justify-center">
           <Image
             src="/images/telegram.png"
             alt="Telegram канал Велес Вояж"
-            width={20}
-            height={20}
+            width={32}
+            height={32}
             className="object-contain"
           />
         </div>
@@ -96,12 +96,12 @@ export function Footer() {
       href: 'https://rutube.ru/channel/38701755/',
       label: 'Rutube',
       icon: (
-        <div className="w-5 h-5 flex items-center justify-center">
+        <div className="w-8 h-8 flex items-center justify-center">
           <Image
             src="/images/rutube.webp"
             alt="Rutube канал Велес Вояж"
-            width={20}
-            height={20}
+            width={32}
+            height={32}
             className="object-contain"
           />
         </div>
@@ -213,7 +213,7 @@ export function Footer() {
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-gray-200"
                 title={social.label}
               >
-                <span className="text-lg">{social.icon}</span>
+                {social.icon}
               </a>
             ))}
           </div>

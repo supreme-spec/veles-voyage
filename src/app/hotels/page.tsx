@@ -6,14 +6,12 @@ import {
   CheckCircleIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline';
-import { hotelsSchema, breadcrumbSchema, faqSchema, howToSchema } from './metadata';
+import { hotelsSchema, faqSchema, howToSchema } from './metadata';
 import StructuredData from '@/components/SEO/StructuredData';
 import AviakassaWidget from '@/components/widgets/AviakassaWidget';
-import { generatePageBreadcrumbs } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import Image from 'next/image';
 
-const breadcrumbs = generatePageBreadcrumbs('/hotels', 'Отели');
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1763094006165-7db02c4abb61?w=1200&h=630&fit=crop&auto=format';
 
 export default function HotelsPage() {
@@ -21,22 +19,6 @@ export default function HotelsPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 py-20 pt-20 md:pt-24">
         
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-600 dark:text-gray-400">
-          <ol className="flex flex-wrap items-center gap-2">
-            {breadcrumbs.items.map((item, index) => (
-              <li key={index}>
-                {index > 0 && <span aria-hidden="true" className="text-gray-400">/</span>}
-                {index === breadcrumbs.items.length - 1 ? (
-                  <span aria-current="page" className="font-medium text-gray-900 dark:text-gray-100">{item.name}</span>
-                ) : (
-                  <a href={item.href} className="hover:text-blue-600 hover:underline dark:hover:text-blue-400">{item.name}</a>
-                )}
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         {/* Hero Section */}
         <header className="text-center mb-16">
           <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-8">
@@ -479,7 +461,7 @@ export default function HotelsPage() {
         </div>
 
         {/* Structured Data */}
-        <StructuredData schemas={[hotelsSchema, breadcrumbSchema, faqSchema, howToSchema]} />
+        <StructuredData schemas={[hotelsSchema, faqSchema, howToSchema]} />
 
         {/* Web3 and voice search optimization schema */}
         <script

@@ -160,7 +160,7 @@ export const getCountryMdxData = cache(async (countryId: string): Promise<MdxDat
 
 // Функция для генерации расширенных SEO метаданных для стран на основе MDX
 export async function generateCountrySEOMetadata(options: CountrySEOMetadataOptions): Promise<Metadata> {
-  const { countryId, description, url, image, keywords, faqs } = options;
+  const { countryId, url, image, keywords, faqs } = options;
 
   // Получаем данные из MDX файла
   const mdxData = await getCountryMdxData(countryId);
@@ -170,7 +170,6 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
   const countryNameAccusative = COUNTRY_NAMES_ACCUSATIVE[countryId] || countryName;
   
   // Используем данные из MDX, если они есть, иначе используем переданные параметры
-  const mdxDescription = mdxData?.frontmatter.description || description;
   const mdxImage = mdxData?.frontmatter.image || image;
   
   // Обработка ключевых слов - поддержка как строки, так и массива

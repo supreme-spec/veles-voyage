@@ -76,7 +76,10 @@ export default function VisaMonthPage() {
         {months.map((month) => {
           const destinations = monthDestinations[month] || [];
           const countries = destinations
-            .map(slug => WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(k => WORLD_DESTINATIONS_DATA[k].slug === slug)])
+            .map(slug => {
+              const key = Object.keys(WORLD_DESTINATIONS_DATA).find(k => WORLD_DESTINATIONS_DATA[k].slug === slug);
+              return key ? WORLD_DESTINATIONS_DATA[key] : null;
+            })
             .filter(Boolean);
 
           return (

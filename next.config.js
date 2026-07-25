@@ -7,7 +7,7 @@ const nextConfig = {
     typedRoutes: true,
     optimizePackageImports: ['framer-motion', 'lucide-react', 'leaflet', 'mapbox-gl', 'react-leaflet'],
   },
-  // Force canonical URL with www
+  // Force canonical URL without www
   async redirects() {
     return [
       {
@@ -15,21 +15,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'veles-voyage.ru',
+            value: 'www.veles-voyage.ru',
           },
         ],
-        destination: 'https://www.veles-voyage.ru/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path((?!www).*)*',
-        has: [
-          {
-            type: 'host',
-            value: 'veles-voyage.ru',
-          },
-        ],
-        destination: 'https://www.veles-voyage.ru/:path*',
+        destination: 'https://veles-voyage.ru/:path*',
         permanent: true,
       },
       {
@@ -41,7 +30,7 @@ const nextConfig = {
             value: 'http',
           },
         ],
-        destination: 'https://www.veles-voyage.ru/:path*',
+        destination: 'https://veles-voyage.ru/:path*',
         permanent: true,
       },
       {

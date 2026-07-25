@@ -11,7 +11,7 @@ export const SEO_DESCRIPTION_MIN_LENGTH = 150;
 export const SEO_TITLE_MAX_LENGTH = 60;
 
 // Базовые URL
-export const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.veles-voyage.ru';
+export const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://veles-voyage.ru';
 export const LOGO_URL = `${SITE_URL}/images/logo.png`;
 
 // Организация

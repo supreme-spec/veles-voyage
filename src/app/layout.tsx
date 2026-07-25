@@ -11,8 +11,6 @@ import { TabletContactBar } from '@/components/TabletContactBar';
 import { PWABackButton } from '@/components/PWABackButton';
 import { PWANetworkStatus } from '@/components/PWANetworkStatus';
 import { PWAUpdateNotification } from '@/components/PWAUpdateNotification';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { WebVitals } from '@/components/analytics/WebVitals';
 import { AiSearchAssistant } from '@/shared/components/ui/AiSearchAssistant';
 import { SITE_URL } from '@/shared/constants/seo';
@@ -429,9 +427,8 @@ export default function RootLayout({
           </ClientProviders>
         </AuthProvider>
 
-        {/* Analytics & Performance Monitoring */}
-        <Analytics />
-        <SpeedInsights />
+        {/* Web Vitals */}
+        <WebVitals />
         <WebVitals />
         {/* JSON-LD */}
         <script

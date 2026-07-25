@@ -94,18 +94,6 @@ export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto px-4 py-20 pt-20 md:pt-24">
-        
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-600 dark:text-gray-400">
-          <ol className="flex flex-wrap items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-blue-600 hover:underline dark:hover:text-blue-400">Главная</Link>
-            </li>
-            <li aria-hidden="true" className="text-gray-400">/</li>
-            <li aria-current="page" className="font-medium text-gray-900 dark:text-gray-100">Партнёры</li>
-          </ol>
-        </nav>
-
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">
             Наши партнёры

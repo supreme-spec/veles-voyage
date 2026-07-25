@@ -99,29 +99,44 @@ async function CountriesContent() {
 
   const totalCount = Object.keys(wikiPages).length;
 
-  const CountryCard = ({ country }: { country: CountryInfo }) => (
+  const CountryCard = ({ country, icon }: { country: CountryInfo; icon: string }) => (
     <Link
       href={`/wiki/${country.id}`}
       prefetch={false}
-      className="group block border border-gray-200 rounded-xl p-5 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 transition-all duration-300 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1 no-underline"
+      className="group block bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 no-underline"
       style={{ textDecoration: 'none' }}
     >
-      <h4 className="text-blue-600 group-hover:text-blue-700 text-lg font-semibold transition-colors duration-200 mb-2">
-        {country.name}
-      </h4>
-      <p className="text-sm text-gray-600 group-hover:text-gray-700 line-clamp-2 mb-3 leading-relaxed">
-        {country.description}
-      </p>
-      <div className="flex items-center text-xs text-gray-500 group-hover:text-blue-600 transition-colors font-medium">
-        <span className="mr-1">→</span>
-        <span>Подробный путеводитель</span>
+      <div className="relative w-full aspect-video overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-5xl opacity-90 group-hover:scale-110 transition-transform duration-300">
+            {icon}
+          </span>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4">
+          <h4 className="text-white font-bold text-lg drop-shadow-md group-hover:text-blue-100 transition-colors">
+            {country.name}
+          </h4>
+        </div>
+      </div>
+      <div className="p-4 flex flex-col flex-grow">
+        <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 mb-4 flex-grow leading-relaxed">
+          {country.description}
+        </p>
+        <div className="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300 transition-colors self-start">
+          Подробный путеводитель
+          <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </div>
       </div>
     </Link>
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-16 md:pt-20 pb-12">
-      <div className="max-w-7xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-lg border border-gray-200 mt-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-900 pt-16 md:pt-20 pb-12">
+      <div className="max-w-7xl mx-auto p-6 md:p-8">
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h1 className="text-3xl font-extrabold">
@@ -137,15 +152,15 @@ async function CountriesContent() {
               📚 Исследовать Wiki
             </Link>
           </div>
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-lg p-5 mb-6 shadow-sm">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 border-l-4 border-blue-500 rounded-lg p-5 mb-6 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-2xl">📚</span>
-              <p className="text-blue-900 font-bold text-lg">
+              <p className="text-blue-900 dark:text-blue-200 font-bold text-lg">
                 Всего стран в путеводителе:{' '}
-                <span className="text-blue-600 text-xl">{totalCount}</span>
+                <span className="text-blue-600 dark:text-blue-400 text-xl">{totalCount}</span>
               </p>
             </div>
-            <p className="text-blue-700 text-sm ml-9">
+            <p className="text-blue-700 dark:text-blue-300 text-sm ml-9">
               Выберите страну для просмотра подробного путеводителя с актуальной информацией на 2026
               год.
             </p>
@@ -168,23 +183,22 @@ async function CountriesContent() {
           const continent = continents[continentKey];
           if (!continent) return null;
 
-          // Use a consistent ID for the HTML element that matches display expectations
           const continentId = continentKey;
 
           return (
             <div key={continentKey} className="mb-10 scroll-mt-24" id={continentId}>
-              <div className="p-5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow-md mb-6 sticky top-20 z-10">
-                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <span className="text-3xl">{continent.icon}</span>
-                  <span>{continent.name}</span>
-                  <span className="ml-auto bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-lg font-semibold">
-                    {continent.countries.length}
-                  </span>
-                </h3>
+              <div className="flex items-center gap-3 mb-4 pb-2 border-b-2 border-gray-200 dark:border-gray-700">
+                <span className="text-3xl">{continent.icon}</span>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  {continent.name}
+                </h2>
+                <span className="ml-auto text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                  {continent.countries.length} стран
+                </span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {continent.countries.map(country => (
-                  <CountryCard key={`${continentKey}-${country.id}`} country={country} />
+                  <CountryCard key={`${continentKey}-${country.id}`} country={country} icon={continent.icon} />
                 ))}
               </div>
             </div>

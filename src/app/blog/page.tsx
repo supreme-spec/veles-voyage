@@ -17,18 +17,6 @@ export const metadata: Metadata = generateSEOMetadata({
 const BlogPage = () => {
   return (
     <div className="container mx-auto px-4 py-8 pt-20 md:pt-24">
-      <nav className="flex mb-6 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
-        <ol className="inline-flex items-center space-x-1 md:space-x-2">
-          <li>
-            <Link href="/" className="hover:text-blue-600">Главная</Link>
-          </li>
-          <li className="flex items-center">
-            <span className="mx-1 md:mx-2 text-gray-400">/</span>
-            <span className="text-gray-800 dark:text-gray-200">Блог</span>
-          </li>
-        </ol>
-      </nav>
-
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">
           Блог Велес Вояж

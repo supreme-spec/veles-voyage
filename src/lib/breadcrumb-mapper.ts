@@ -32,6 +32,9 @@ const SLUG_TO_RUSSIAN_NAME: Record<string, string> = {
   values: 'Ценности',
   support: 'Поддержка',
   destinations: 'Направления',
+  hotels: 'Отели',
+  blog: 'Блог',
+  faq: 'Частые вопросы',
 
   // Continents & Regions - импортируем из единого источника
   ...CONTINENT_LABELS,

@@ -32,6 +32,7 @@ import { SchemaScripts } from '@/components/SchemaScripts';
 import { ZkpBadge } from '@/components/ZkpTrustBadge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
+import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 // Заглушка для CountryMap компонента
 const CountryMap = ({ countryName, countryId: _countryId, coordinates: _coordinates }: any) => (
   <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6">
@@ -351,6 +352,30 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           </p>
         </div>
       )}
+
+      {/* Цитируемый ответ для AI-ботов */}
+      {(() => {
+        const destData = WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(
+          key => WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry || 
+                  WORLD_DESTINATIONS_DATA[key].name.toLowerCase() === (countryNamesDictionary[country] || country).toLowerCase()
+        ) || ''];
+        
+        if (!destData) return null;
+        
+        const visaInfo = destData.visaRequired !== false ? 'виза требуется' : 'виза не нужна (до 60 дней)';
+        const bestSeason = destData.bestSeason || 'круглый год';
+        const priceRange = destData.estimatedCost || '100 000';
+        
+        return (
+          <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
+            <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+              По данным экспертов Велес Вояж (РТА 0035678), для поездки в {destData.name} в 2026 году {visaInfo}. 
+              Средний бюджет тура «всё включено» из Москвы на двоих — от {priceRange} ₽ за 7 ночей. 
+              Лучший сезон: {bestSeason}.
+            </p>
+          </blockquote>
+        );
+      })()}
 
       {/* TL;DR + сводная таблица (AEO/SEO: структурированный ответ для сниппетов) */}
       <section

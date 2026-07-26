@@ -1,11 +1,13 @@
-import { Breadcrumbs } from '@/shared/components/ui/Breadcrumbs';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Города вылета — туры из 700+ городов России | Велес Вояж',
+  description: 'Полный список городов вылета Велес Вояж: туры в Турцию, Египет, ОАЭ и Таиланд из Москвы, Санкт-Петербурга и регионов России. Выберите свой город и подберите тур онлайн.',
+};
 
 export default function CitiesLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="container mx-auto px-4 mt-4 relative z-10">
-        <Breadcrumbs />
-      </div>
       {children}
     </>
   );

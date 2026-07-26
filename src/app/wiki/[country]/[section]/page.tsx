@@ -112,7 +112,7 @@ export default function CountrySectionPage() {
   const countryName = page.title.split('—')[0].trim() || countryId;
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-4 py-8 pt-20 md:pt-24 max-w-4xl">
       {/* Breadcrumbs */}
       <nav className="text-sm text-gray-600 mb-6">
         <Link href="/wiki" className="hover:text-blue-600">

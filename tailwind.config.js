@@ -47,6 +47,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
   ],
   // Оптимизация для продакшена
   future: {

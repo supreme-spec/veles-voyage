@@ -7,32 +7,8 @@ const nextConfig = {
     typedRoutes: true,
     optimizePackageImports: ['framer-motion', 'lucide-react', 'leaflet', 'mapbox-gl', 'react-leaflet'],
   },
-  // Force canonical URL without www
   async redirects() {
     return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.veles-voyage.ru',
-          },
-        ],
-        destination: 'https://veles-voyage.ru/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'header',
-            key: 'x-forwarded-proto',
-            value: 'http',
-          },
-        ],
-        destination: 'https://veles-voyage.ru/:path*',
-        permanent: true,
-      },
       {
         source: '/places/:path*',
         destination: '/wiki/places',

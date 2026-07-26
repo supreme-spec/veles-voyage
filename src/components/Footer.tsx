@@ -250,14 +250,14 @@ export function Footer() {
             
             {/* Federal Registry Information - Mobile Optimized */}
             <div className="text-left text-xs text-gray-400 w-full hidden sm:block">
-              ООО "Велес" (ИНН 5032362524, ОГРН 1235000077685) включено в Единый Федеральный реестр турагентов, субагентов.{' '}
+              ООО «Велес» (ИНН 5032362524, ОГРН 1235000077685) включено в Единый Федеральный реестр турагентов, субагентов.{' '}
               <a 
                 href="https://ev.economy.gov.ru/lk_exp/registry/ta/b2f9be6b-d62c-4290-bffd-42b171b115f0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 underline"
               >
-                Запись в реестре №РТА 0035678 от 21.06.2023 г.
+                Запись в реестре № РТА 0035678 от 21.06.2023 г.
               </a>{' '}
               by Radun{' '}
               <Link 
@@ -270,7 +270,7 @@ export function Footer() {
             
             {/* Mobile Version - Shortened */}
             <div className="text-center text-xs text-gray-400 w-full sm:hidden">
-              ООО "Велес" (ИНН 5032362524, ОГРН 1235000077685) - РТА 0035678.{' '}
+              ООО «Велес» (ИНН 5032362524, ОГРН 1235000077685) — № РТА 0035678.{' '}
               <Link 
                 href="/privacy"
                 className="text-indigo-400 hover:text-indigo-300 underline"

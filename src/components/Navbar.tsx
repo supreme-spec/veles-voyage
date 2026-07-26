@@ -451,7 +451,7 @@ export function Navbar() {
             {/* Mobile Menu Footer */}
             <div className="p-4 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-                ООО "Велес" - РТА 0035678.{' '}
+                 ООО «Велес» — № РТА 0035678.{' '}
                 <Link
                   href="/privacy"
                   className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 no-underline"

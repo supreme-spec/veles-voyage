@@ -196,7 +196,7 @@ export default async function Home() {
                               Предоставляем лучшие цены
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
-                              Прямые договоренности с туроператорами
+                              Прямые контракты с туроператорами
                             </p>
                           </div>
                         </div>

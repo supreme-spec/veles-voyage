@@ -122,7 +122,7 @@ export const WeeklyHeroBackground: React.FC<WeeklyHeroBackgroundProps> = ({
           <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3">
             <div className="flex items-center space-x-2 text-white text-sm">
               <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></div>
-              <span>{photo ? 'Загружаем фото недели...' : 'Загружаем фоновое изображение...'}</span>
+              <span>{photo ? 'Загружаем фото недели...' : ''}</span>
             </div>
           </div>
         </div>

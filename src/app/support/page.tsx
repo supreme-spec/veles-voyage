@@ -304,7 +304,7 @@ export default function SupportPage() {
                 Реестровый номер турагента
               </h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                ООО "Велес" включено в Единый Федеральный реестр турагентов, субагентов.
+                ООО «Велес» включено в Единый Федеральный реестр турагентов, субагентов.
               </p>
               <a 
                 href="https://ev.economy.gov.ru/lk_exp/registry/ta/b2f9be6b-d62c-4290-bffd-42b171b115f0" 
@@ -312,7 +312,7 @@ export default function SupportPage() {
                 rel="noopener noreferrer"
                 className="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium"
               >
-                Запись в реестре №РТА 0035678 от 21.06.2023 г.
+                Запись в реестре № РТА 0035678 от 21.06.2023 г.
               </a>
             </div>
           </div>

@@ -6,6 +6,8 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/features/**/*.{js,ts,jsx,tsx,mdx}',
     './src/shared/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/content/**/*.{md,mdx}',
+    './src/templates/**/*.{md,mdx}',
   ],
   darkMode: 'class',
   theme: {

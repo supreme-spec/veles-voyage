@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGfm from 'remark-gfm';
 import {
   InfoBlock,
   FeatureGrid,
@@ -33,17 +34,15 @@ import { ZkpBadge } from '@/components/ZkpTrustBadge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
-// Заглушка для CountryMap компонента
-const CountryMap = ({ countryName, countryId: _countryId, coordinates: _coordinates }: any) => (
-  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6">
-    <div className="flex items-center">
-      <span className="text-2xl mr-3">🗺️</span>
-      <div>
-        <p className="font-medium text-blue-800">Карта {countryName}</p>
-        <p className="text-sm text-blue-600">
-          Интерактивная карта будет добавлена в следующем обновлении
-        </p>
-      </div>
+// CountryMap component using InteractiveMap
+const CountryMap = ({ countryName, countryId, coordinates }: any) => (
+  <div className="my-6">
+    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+      <span className="mr-2">🗺️</span>
+      Карта {countryName}
+    </h3>
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+      <InteractiveMap />
     </div>
   </div>
 );
@@ -184,6 +183,7 @@ async function getCountryContent(country: string) {
         options: { 
           parseFrontmatter: false,
           mdxOptions: {
+            remarkPlugins: [remarkGfm],
             rehypePlugins: [
               rehypeRaw,
               rehypeSlug,

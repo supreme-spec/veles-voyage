@@ -384,6 +384,31 @@ export default function ContactsPage() {
                 🗺️ Мы на картах
               </h2>
 
+              <div className="space-y-6 mb-6">
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Офис в Голицыно</h3>
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A129552746144&amp;source=constructor&amp;scroll=true&amp;utm_source=constructor"
+                    width="100%"
+                    height="300"
+                    frameBorder="0"
+                    className="rounded-lg border border-gray-200 dark:border-gray-700"
+                    title="Карта офиса Велес Вояж в Голицыно"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Офис в Пушкино</h3>
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=37.846285%2C56.014488&amp;z=15&amp;pt=37.846285,56.014488,pm2rdm"
+                    width="100%"
+                    height="300"
+                    frameBorder="0"
+                    className="rounded-lg border border-gray-200 dark:border-gray-700"
+                    title="Карта офиса Велес Вояж в Пушкино"
+                  />
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <a
                   href="https://share.google/sWNqMpS7z0SJiMqO7"

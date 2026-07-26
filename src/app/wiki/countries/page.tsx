@@ -10,6 +10,7 @@ import {
   CONTINENT_ORDER,
   normalizeContinentKey,
 } from '@/shared/constants/continents';
+import InteractiveMap from '@/components/mdx/InteractiveMap';
 
 // Определяем типы для информации о стране и континенте
 type CountryInfo = { id: string; name: string; description: string };
@@ -169,6 +170,17 @@ async function CountriesContent() {
               Выберите страну для просмотра подробного путеводителя с актуальной информацией на 2026
               год.
             </p>
+          </div>
+        </div>
+
+        {/* World Map Section */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <span className="mr-2">🗺️</span>
+            Интерактивная карта мира
+          </h2>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+            <InteractiveMap />
           </div>
         </div>
 

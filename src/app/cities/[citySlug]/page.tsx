@@ -7,6 +7,7 @@ import { generateEnhancedSEOMetadata, generatePageBreadcrumbs } from '@/lib/seo/
 import { allCities } from '../all-cities';
 import { DEPARTURE_CITIES_DATA } from '@/shared/data/departureCitiesData';
 import { CITY_COORDINATES, getDistrictForRegion, FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
+import { getCityUniqueContent } from '@/shared/data/cityUniqueContent';
 import { SITE_URL, CONTACT_PHONE, SOCIAL_LINKS } from '@/shared/constants/seo';
 import { HeroImage } from '@/components/HeroImage';
 import { generateCitySlug } from '@/lib/slugify';
@@ -58,21 +59,61 @@ function generateUniqueCityText(
   const district = getDistrictForRegion(region);
   const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
 
-  const position = cityCoords
+  const unique = getCityUniqueContent(cityName);
+  if (unique) return unique.overview;
+
+  const latBand = cityCoords
     ? cityCoords.latitude > 60
-      ? 'северном'
+      ? 'северных широтах'
       : cityCoords.latitude < 50
-        ? 'южном'
-        : 'центральном'
-    : 'уникальном';
+        ? 'юге России'
+        : 'центральной полосе'
+    : 'территории России';
 
-  const airportText = hasRealAirport
-    ? `Из аэропорта ${airportLabel} регулярно выполняются прямые чартерные и регулярные рейсы в Турцию, Египет, ОАЭ и Таиланд.`
+  const accessText = hasRealAirport
+    ? `Вылеты из аэропорта ${airportLabel} обеспечивают прямые чартерные и регулярные рейсы в Турцию, Египет, ОАЭ и Таиланд.`
     : nearestAirport
-      ? `Ближайший аэропорт — ${nearestAirport.name} (${Math.round(nearestAirport.distanceKm)} км от ${cityName}). Оттуда выполняются прямые чартерные и регулярные рейсы в популярные направления.`
-      : `Авиапутешествия организуются из ближайших аэропортов региона.`;
+      ? `Ближайший аэропорт ${nearestAirport.name} находится в ${Math.round(nearestAirport.distanceKm)} км. Оттуда выполняются прямые чартерные и регулярные рейсы в популярные страны.`
+      : `Вылеты организуются из ближайших аэропортов региона.`;
 
-  return `${cityName} — город в ${position} части ${districtName} федерального округа, административный центр ${region}. ${airportText} Город является отправной точкой для путешественников, ценящих комфорт и надёжность. Мы подбираем оптимальные варианты перелёта с учётом стоимости и удобства.`;
+  return `${cityName} расположен на ${latBand} ${region}, ${districtName} федеральный округ. ${accessText} Для путешественников из этого города мы подбираем туры с учётом сезона, цен и удобства трансфера.`;
+}
+
+function generateCityDescription(
+  cityName: string,
+  region: string,
+  hasRealAirport: boolean,
+  airportLabel: string,
+  nearestAirport: { name: string; distanceKm: number } | null,
+  cityCoords: { latitude: number; longitude: number } | null,
+  isRegion: boolean
+): string {
+  const unique = getCityUniqueContent(cityName);
+  if (unique) return unique.overview;
+
+  const district = getDistrictForRegion(region);
+  const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
+  const parts: string[] = [];
+
+  if (isRegion) {
+    parts.push(`Подбираем выгодные путевки по направлению ${cityName}.`);
+    parts.push(`Вылеты из ближайших аэропортов ${districtName} федерального округа.`);
+    parts.push(`Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка.`);
+  } else if (hasRealAirport) {
+    parts.push(`Туры из ${cityName} с вылетом из ${airportLabel}.`);
+    parts.push(`${cityName} — город в ${region}, ${districtName} федеральный округ.`);
+    parts.push(`Подбор путевок в Турцию, Египет, ОАЭ и Таиланд.`);
+  } else if (nearestAirport && cityCoords) {
+    parts.push(`Туры из ${cityName}.`);
+    parts.push(`Ближайший аэропорт — ${nearestAirport.name} (${Math.round(nearestAirport.distanceKm)} км).`);
+    parts.push(`Вылеты из ${districtName} федерального округа в популярные страны.`);
+  } else {
+    parts.push(`Подбор туров из ${cityName}.`);
+    parts.push(`${cityName} расположен в ${region}.`);
+    parts.push(`Вылеты из ближайших аэропортов региона.`);
+  }
+
+  return parts.join(' ');
 }
 
 function extractIataCode(airportString: string): string | null {
@@ -133,15 +174,20 @@ function generateDepartureFAQs(
   hasRealAirport: boolean,
   cityCoords?: { latitude: number; longitude: number } | null
 ): FAQ[] {
+  const unique = getCityUniqueContent(cityName);
   const base: FAQ[] = isRegion
     ? [
         {
           question: `Откуда вылетают туры из ${cityName}?`,
-          answer: `Мы подбираем вылеты из аэропортов ${cityName}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём ближайший удобный аэропорт.`,
+          answer: unique
+            ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${unique.flightContext}`
+            : `Мы подбираем вылеты из ближайших аэропортов ${cityName}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём оптимальный вариант.`,
         },
         {
           question: `Какие направления доступны из ${cityName}?`,
-          answer: `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд, а также другие популярные страны. Точный список и цены зависят от сезона.`,
+          answer: unique
+            ? `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд. ${unique.overview}`
+            : `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд, а также другие популярные страны. Точный список и цены зависят от сезона и даты вылета.`,
         },
         {
           question: `За сколько дней лучше бронировать тур?`,
@@ -151,15 +197,17 @@ function generateDepartureFAQs(
     : [
         {
           question: `Есть ли прямые рейсы из ${cityName}?`,
-          answer: `Да, из аэропорта ${airportName} выполняются прямые регулярные и чартерные рейсы в популярные страны. Время перелета зависит от направления и составляет от 3 до 7 часов.`,
+          answer: hasRealAirport
+            ? `Да, из аэропорта ${airportName} выполняются прямые регулярные и чартерные рейсы в популярные страны. Время перелета зависит от направления.`
+            : `Прямые рейсы из ${cityName} обычно выполняются через ближайшие аэропорты региона. Мы подберём удобную схему вылета.`,
         },
         {
           question: `Сколько стоят горящие туры из ${cityName}?`,
-          answer: `Стоимость горящих туров начинается от 35 000 рублей на человека. Цена зависит от сезона, звездности отеля и даты вылета. Мы подберем лучший вариант под ваш бюджет.`,
+          answer: `Стоимость горящих туров начинается от 35 000 рублей на человека. Цена зависит от сезона, звездности отеля и даты вылета. Подберём вариант под ваш бюджет.`,
         },
         {
           question: `За сколько дней лучше бронировать тур?`,
-          answer: `Для получения лучшей цены рекомендуем бронировать за 2-3 месяца до вылета. Горящие предложения появляются за 3-7 дней до даты вылета из ${airportName}.`,
+          answer: `Для получения лучшей цены рекомендуем бронировать за 2-3 месяца до вылета. Горящие предложения появляются за 3-7 дней до даты вылета из ${airportName || 'ближайшего аэропорта'}.`,
         },
       ];
 
@@ -205,18 +253,26 @@ export async function generateMetadata({
   const hasRealAirport = !!cityData?.airport;
   const airportLabel = cityData?.airport || (isRegion ? cityName : `аэропорт г. ${cityName}`);
   const cityCoords = getCityCoordinates(cityName);
-  const description = isRegion
-    ? `Горящие туры из ${cityName}. Подбор путевок в Турцию, Египет, ОАЭ и Таиланд. Цены от 35 000 ₽, онлайн-бронирование, поддержка 24/7.`
-    : `Горящие туры из ${cityName} с вылетом из ${airportLabel}. Подбор путевок в Турцию, Египет, ОАЭ и Таиланд. Цены от 35 000 ₽, онлайн-бронирование, поддержка 24/7.`;
+  const district = getDistrictForRegion(cityCoords?.region || '');
+  const districtName = district ? FEDERAL_DISTRICTS[district].name : '';
+  const nearestAirport = !hasRealAirport && cityCoords ? findNearestAirport(cityCoords) : null;
+  const uniqueContent = getCityUniqueContent(cityName);
+  const description = uniqueContent ? uniqueContent.overview : generateCityDescription(cityName, cityCoords?.region || '', hasRealAirport, airportLabel, nearestAirport, cityCoords, isRegion);
 
   return generateEnhancedSEOMetadata({
     title: isRegion
-      ? `Туры по направлению ${cityName} — Турция, Египет, ОАЭ 2026 | Велес Вояж`
-      : `Туры из ${cityName} в Турцию, Египет и ОАЭ 2026 | Велес Вояж`,
+      ? `Туры по направлению ${cityName} — ${districtName || 'Россия'} | Велес Вояж`
+      : `Туры из ${cityName} — ${cityCoords?.region || 'Россия'} | Велес Вояж`,
     description,
     url: `${siteUrl}/cities/${generateCitySlug(cityName)}`,
     type: 'website',
-    keywords: [`туры из ${cityName}`, `горящие туры из ${cityName}`, `путевки ${cityName} Турция Египет`, `вылеты из ${cityName}`],
+    keywords: [
+      `туры из ${cityName}`,
+      `горящие туры ${cityName}`,
+      `вылеты ${districtName || ''}`,
+      `${cityName} ${cityCoords?.region || ''}`,
+      `путевки из ${cityName}`
+    ],
     faqs: generateDepartureFAQs(cityName, airportLabel, isRegion, hasRealAirport, cityCoords),
   });
 }
@@ -246,6 +302,9 @@ export default async function CityDeparturePage({
   const iataCode = hasRealAirport ? extractIataCode(airportLabel) : null;
   const cityCoords = getCityCoordinates(cityName);
   const nearestAirport = !hasRealAirport && cityCoords ? findNearestAirport(cityCoords) : null;
+  const district = getDistrictForRegion(cityCoords?.region || '');
+  const districtName = district ? FEDERAL_DISTRICTS[district].name : '';
+  const uniqueContent = getCityUniqueContent(cityName);
 
   const flightText = (v?: string, dest?: DestKey) => {
     if (v) return `~${v} ч. (прямой)`;
@@ -260,9 +319,11 @@ export default async function CityDeparturePage({
     '@context': 'https://schema.org',
     '@type': 'TouristDestination',
     name: `Туры из ${cityName}`,
-    description: isRegion
-      ? `Подбор и бронирование туров по направлению ${cityName}.`
-      : `Подбор и бронирование туров с вылетом из ${airportLabel}.`,
+    description: uniqueContent
+      ? uniqueContent.overview
+      : isRegion
+        ? `Подбор и бронирование туров по направлению ${cityName}.`
+        : `Подбор и бронирование туров с вылетом из ${airportLabel}.`,
     url: `${siteUrl}/cities/${slug}`,
     geo: cityCoords ? {
       '@type': 'GeoCoordinates',
@@ -309,9 +370,11 @@ export default async function CityDeparturePage({
       '@context': 'https://schema.org',
       '@type': 'TravelAgency',
       name: `Велес Вояж - офис подбора туров${isRegion ? '' : ` из ${cityName}`}`,
-      description: isRegion
-        ? `Подбор и бронирование туров по направлению ${cityName}.`
-        : `Подбор и бронирование туров с вылетом из ${airportLabel}.`,
+      description: uniqueContent
+        ? uniqueContent.overview
+        : isRegion
+          ? `Подбор и бронирование туров по направлению ${cityName}.`
+          : `Подбор и бронирование туров с вылетом из ${airportLabel}.`,
       areaServed: isRegion
         ? { '@type': 'AdministrativeArea', name: cityName }
         : { '@type': 'City', name: cityName },
@@ -404,12 +467,16 @@ export default async function CityDeparturePage({
               className="w-full h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
-              <h1 className="text-3xl md:text-4xl font-extrabold drop-shadow-lg">
-                {isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityName}`}
-              </h1>
-              <p className="text-white/90 mt-2 text-lg">Турция, Египет, ОАЭ, Таиланд и другие направления</p>
-            </div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h1 className="text-3xl md:text-4xl font-extrabold drop-shadow-lg">
+                  {isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityName}`}
+                </h1>
+                <p className="text-white/90 mt-2 text-lg">
+                  {isRegion
+                    ? `${districtName || cityCoords?.region || ''} — вылеты из ближайших аэропортов`
+                    : `${districtName || ''} ${cityCoords?.region || ''} — аэропорт ${airportLabel}`}
+                </p>
+              </div>
           </div>
 
           {/* Speakable summary */}
@@ -430,9 +497,11 @@ export default async function CityDeparturePage({
         </p>
 
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
-          {isRegion
-            ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
-            : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`}
+          {uniqueContent
+            ? uniqueContent.overview
+            : isRegion
+              ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
+              : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`}
         </p>
 
           {/* Flight info */}

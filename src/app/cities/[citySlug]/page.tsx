@@ -8,6 +8,7 @@ import { allCities } from '../all-cities';
 import { DEPARTURE_CITIES_DATA } from '@/shared/data/departureCitiesData';
 import { CITY_COORDINATES, getDistrictForRegion, FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
 import { getCityUniqueContent } from '@/shared/data/cityUniqueContent';
+import { getCityManualContent } from '@/shared/data/cityManualContent';
 import { SITE_URL, CONTACT_PHONE, SOCIAL_LINKS } from '@/shared/constants/seo';
 import { HeroImage } from '@/components/HeroImage';
 import { generateCitySlug } from '@/lib/slugify';
@@ -56,11 +57,14 @@ function generateUniqueCityText(
   nearestAirport: { name: string; distanceKm: number } | null,
   cityCoords: { latitude: number; longitude: number } | null
 ): string {
-  const district = getDistrictForRegion(region);
-  const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
+  const manual = getCityManualContent(cityName);
+  if (manual?.overview) return manual.overview;
 
   const unique = getCityUniqueContent(cityName);
   if (unique) return unique.overview;
+
+  const district = getDistrictForRegion(region);
+  const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
 
   const latBand = cityCoords
     ? cityCoords.latitude > 60
@@ -88,6 +92,9 @@ function generateCityDescription(
   cityCoords: { latitude: number; longitude: number } | null,
   isRegion: boolean
 ): string {
+  const manual = getCityManualContent(cityName);
+  if (manual?.overview) return manual.overview;
+
   const unique = getCityUniqueContent(cityName);
   if (unique) return unique.overview;
 
@@ -174,20 +181,25 @@ function generateDepartureFAQs(
   hasRealAirport: boolean,
   cityCoords?: { latitude: number; longitude: number } | null
 ): FAQ[] {
+  const manual = getCityManualContent(cityName);
   const unique = getCityUniqueContent(cityName);
   const base: FAQ[] = isRegion
     ? [
         {
           question: `Откуда вылетают туры из ${cityName}?`,
-          answer: unique
-            ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${unique.flightContext}`
-            : `Мы подбираем вылеты из ближайших аэропортов ${cityName}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём оптимальный вариант.`,
+          answer: manual
+            ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${manual.flightContext || unique?.flightContext || ''}`
+            : unique
+              ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${unique.flightContext}`
+              : `Мы подбираем вылеты из ближайших аэропортов ${cityName}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём оптимальный вариант.`,
         },
         {
           question: `Какие направления доступны из ${cityName}?`,
-          answer: unique
-            ? `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд. ${unique.overview}`
-            : `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд, а также другие популярные страны. Точный список и цены зависят от сезона и даты вылета.`,
+          answer: manual
+            ? `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд. ${manual.overview}`
+            : unique
+              ? `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд. ${unique.overview}`
+              : `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд, а также другие популярные страны. Точный список и цены зависят от сезона и даты вылета.`,
         },
         {
           question: `За сколько дней лучше бронировать тур?`,
@@ -497,11 +509,14 @@ export default async function CityDeparturePage({
         </p>
 
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
-          {uniqueContent
-            ? uniqueContent.overview
-            : isRegion
+          {(() => {
+            const manual = getCityManualContent(cityName);
+            if (manual?.overview) return manual.overview;
+            if (uniqueContent) return uniqueContent.overview;
+            return isRegion
               ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
-              : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`}
+              : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`;
+          })()}
         </p>
 
           {/* Flight info */}

@@ -35,6 +35,11 @@
       "source": "/contacts-en.html",
       "destination": "/contacts",
       "permanent": true
+    },
+    {
+      "source": "/flights-en.html",
+      "destination": "/flights",
+      "permanent": true
     }
   ]
 }

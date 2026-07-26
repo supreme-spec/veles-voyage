@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allCities } from '@/app/cities/all-cities';
+import { generateCitySlug } from '@/lib/slugify';
 
 export function CitySearchWidget() {
   const [q, setQ] = useState('');
@@ -33,7 +34,7 @@ export function CitySearchWidget() {
           {found.map((city) => (
             <li key={city}>
               <Link
-                href={`/cities/${encodeURIComponent(city.toLowerCase())}`}
+                href={`/cities/${generateCitySlug(city)}`}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
               >
                 {city}

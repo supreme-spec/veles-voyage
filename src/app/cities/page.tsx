@@ -2,9 +2,32 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CitySearchWidget } from '@/components/cities/CitySearchWidget';
 import { allCities } from './all-cities';
+import { generateCitySlug } from '@/lib/slugify';
+import { CITY_COORDINATES, getDistrictForRegion, FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
 import { SITE_URL } from '@/shared/constants/seo';
 
 const siteUrl = SITE_URL;
+
+const districtDisplay: Record<string, string> = {};
+for (const [key, value] of Object.entries(FEDERAL_DISTRICTS)) {
+  districtDisplay[key] = value.name;
+}
+
+function groupCitiesByDistrict(cities: string[]) {
+  const groups: Record<string, string[]> = {};
+  for (const city of cities) {
+    const coords = CITY_COORDINATES[city.toLowerCase() as keyof typeof CITY_COORDINATES];
+    const region = coords?.region || '';
+    const district = getDistrictForRegion(region) || 'central';
+    const districtName = districtDisplay[district] || district;
+    if (!groups[districtName]) groups[districtName] = [];
+    groups[districtName].push(city);
+  }
+  return groups;
+}
+
+const cityGroups = groupCitiesByDistrict(allCities);
+const sortedDistrictNames = Object.keys(cityGroups).sort();
 
 export const metadata: Metadata = {
   title: 'Города вылета — туры из 700+ городов России | Велес Вояж',
@@ -13,17 +36,6 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/cities` },
   robots: { index: true, follow: true },
 };
-
-const federalDistricts = [
-  { slug: 'central', name: 'Центральный' },
-  { slug: 'northwest', name: 'Северо-Западный' },
-  { slug: 'south', name: 'Южный' },
-  { slug: 'north-caucasus', name: 'Северо-Кавказский' },
-  { slug: 'volga', name: 'Приволжский' },
-  { slug: 'ural', name: 'Уральский' },
-  { slug: 'siberia', name: 'Сибирский' },
-  { slug: 'far-east', name: 'Дальневосточный' },
-];
 
 export default function CitiesHubPage() {
   return (
@@ -56,19 +68,28 @@ export default function CitiesHubPage() {
           Города по округам
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          {federalDistricts.map((district) => (
-            <Link
-              key={district.slug}
-              href={`/cities/district/${district.slug}`}
-              className="block rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-5 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-700 transition-all"
+          {sortedDistrictNames.map((districtName) => (
+            <div
+              key={districtName}
+              className="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-5"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                {district.name} округ
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {districtName}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Туры из городов {district.name} федерального округа
-              </p>
-            </Link>
+              <div className="flex flex-wrap gap-2">
+                {(cityGroups[districtName] || [])
+                  .sort((a, b) => a.localeCompare(b, 'ru'))
+                  .map((city) => (
+                    <Link
+                      key={city}
+                      href={`/cities/${generateCitySlug(city)}`}
+                      className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      {city}
+                    </Link>
+                  ))}
+              </div>
+            </div>
           ))}
         </div>
 

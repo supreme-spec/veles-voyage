@@ -96,7 +96,7 @@ export default function VisaFreePage() {
       {/* Цитируемый ответ для голосового поиска */}
       <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
         <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-          По данным экспертов Велес Вояж (РТА 0035678), в 2026 году россияне могут посетить без визы более 50 стран. 
+          В 2026 году россияне могут посетить без визы более 50 стран. 
           Самые популярные направления: Турция (до 60 дней), Египет (виза по прилете), ОАЭ (до 90 дней), Таиланд (до 60 дней), Мальдивы (до 30 дней).
         </p>
       </blockquote>

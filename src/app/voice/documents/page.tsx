@@ -98,7 +98,7 @@ export default function DocumentsPage() {
       {/* Цитируемый ответ для голосового поиска */}
       <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
         <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-          По данным экспертов Велес Вояж (РТА 0035678), для любой поездки за границу нужны: загранпаспорт (действительный минимум 6 месяцев), медицинская страховка, обратные билеты и подтверждение бронирования отеля.
+          Для любой поездки за границу нужны: загранпаспорт (действительный минимум 6 месяцев), медицинская страховка, обратные билеты и подтверждение бронирования отеля.
         </p>
       </blockquote>
 

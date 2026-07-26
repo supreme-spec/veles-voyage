@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "2.0",
-    "generated": "2026-07-26T12:29:50.239Z",
+    "generated": "2026-07-26T12:38:55.733Z",
     "provider": "ООО «Велес» (РТА 0035678)",
     "website": "https://www.veles-voyage.ru"
   },
@@ -19,7 +19,7 @@
       "oceania": 16
     },
     "totalSize": 163996,
-    "processingTime": 902
+    "processingTime": 824
   },
   "organization": {
     "name": "Велес Вояж",

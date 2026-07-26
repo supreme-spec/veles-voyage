@@ -373,7 +373,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         return (
           <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
             <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-               По данным экспертов Велес Вояж (РТА 0035678), для поездки в {destData.nameAccusative || destData.name} в 2026 году {visaInfo}. 
+               Для поездки в {destData.nameAccusative || destData.name} в 2026 году {visaInfo}. 
               Средний бюджет тура «всё включено» из Москвы на двоих — от {priceRange} ₽ за 7 ночей. 
               Лучший сезон: {bestSeason}.
             </p>

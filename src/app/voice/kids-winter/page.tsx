@@ -100,7 +100,7 @@ export default function KidsWinterPage() {
       {/* Цитируемый ответ для голосового поиска */}
       <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
         <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-          По данным экспертов Велес Вояж (РТА 0035678), лучшие направления для семейного отдыха зимой: ОАЭ (Дубай с парками развлечений), Египет (отели all inclusive с детскими клубами), Таиланд (Пхукет с безопасными пляжами), Сингапур (много аттракций для детей).
+          Лучшие направления для семейного отдыха зимой: ОАЭ (Дубай с парками развлечений), Египет (отели all inclusive с детскими клубами), Таиланд (Пхукет с безопасными пляжами), Сингапур (много аттракций для детей).
         </p>
       </blockquote>
 

@@ -285,7 +285,6 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
-          { label: 'Главная', href: '/' },
           { label: 'Энциклопедия', href: '/wiki' },
           { label: countryNamesDictionary[country] || country, href: `/wiki/${country}` },
         ]}

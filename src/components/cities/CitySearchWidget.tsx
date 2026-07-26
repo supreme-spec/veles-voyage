@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { allCities } from '@/app/cities/all-cities';
 import { generateCitySlug } from '@/lib/slugify';
@@ -8,6 +8,7 @@ import { generateCitySlug } from '@/lib/slugify';
 export function CitySearchWidget() {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const found = useMemo(() => {
     const normalized = q.trim().toLowerCase();
@@ -18,14 +19,18 @@ export function CitySearchWidget() {
   }, [q]);
 
   return (
-    <div className="relative">
+    <div ref={containerRef} className="relative">
       <input
         type="text"
         placeholder="Введите город, например: Москва"
         value={q}
         onChange={(e) => setQ(e.target.value)}
         onFocus={() => setOpen(true)}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        onBlur={() => setTimeout(() => {
+          if (!containerRef.current?.contains(document.activeElement)) {
+            setOpen(false);
+          }
+        }, 150)}
         className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none"
         autoComplete="off"
       />

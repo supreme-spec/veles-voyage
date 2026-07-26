@@ -122,9 +122,6 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
 
       <nav className="text-sm text-gray-600 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-2">
-          <li>
-            <Link href="/" className="hover:text-blue-600">Главная</Link>
-          </li>
           <li className="flex items-center">
             <span className="mx-1 md:mx-2 text-gray-400">/</span>
             <Link href="/wiki" className="hover:text-blue-600">Энциклопедия</Link>

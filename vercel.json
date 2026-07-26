@@ -12,11 +12,6 @@
       "permanent": true
     },
     {
-      "source": "/flights-en.html",
-      "destination": "/flights",
-      "permanent": true
-    },
-    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true

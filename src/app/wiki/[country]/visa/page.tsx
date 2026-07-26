@@ -68,9 +68,8 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
     };
   }
 
-  const rawName = countryData?.title?.split('—')[0]?.trim() || country;
+  const cleanCountryName = (countryData?.title?.split('—')[0]?.trim() || country).replace(/\s*\d{4}\s*/g, '').trim();
   const countryName = countryNamesDictionary[country] || cleanCountryName;
-  const cleanCountryName = rawName.replace(/\s*\d{4}\s*/g, '').trim();
 
   return generateUniversalMetadata({
     title: `Виза в ${countryName} 2026 | Велес Вояж`,
@@ -99,7 +98,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
     notFound();
   }
 
-  const rawName = countryData?.title?.split('—')[0]?.trim() || country;
+  const cleanCountryName = (countryData?.title?.split('—')[0]?.trim() || country).replace(/\s*\d{4}\s*/g, '').trim();
   const countryName = countryNamesDictionary[country] || cleanCountryName;
   const mdxData = await getCountryMdxData(country);
   const visaRequired = mdxData?.frontmatter?.visaRequirements ?? true;

@@ -138,29 +138,29 @@ export default async function Home() {
                 {/* Buttons - left side */}
                 <div className="order-1 lg:order-1 flex flex-col gap-5 justify-center lg:justify-start">
                   <Link
-                    href="/wiki"
-                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-5 px-10 rounded-2xl text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                  >
+                     href="/wiki"
+                     className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">📚</span>
                       <span>Исследовать Wiki</span>
                     </span>
                   </Link>
-                  <Link
-                    href="/wiki/countries"
-                    className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-5 px-10 rounded-2xl text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                  >
+                   <Link
+                     href="/wiki/countries"
+                     className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">🌍</span>
                       <span>Страны мира</span>
                     </span>
                   </Link>
-                  <Link
-                    href="/wiki/places"
-                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-5 px-10 rounded-2xl text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                  >
+                   <Link
+                     href="/wiki/places"
+                     className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">🗺️</span>

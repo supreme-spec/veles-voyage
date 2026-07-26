@@ -6,8 +6,8 @@
 const sw = self;
 
 // Cache name for versioning
-const CACHE_NAME = 'veles-voyage-static-v1';
-const ASSETS_CACHE = 'static-assets';
+const CACHE_NAME = 'veles-voyage-static-v2';
+const ASSETS_CACHE = 'static-assets-v2';
 
 sw.addEventListener('install', (/** @type {ExtendableEvent} */ event) => {
   console.log('[Service Worker] Install');
@@ -49,10 +49,14 @@ sw.addEventListener('fetch', (/** @type {FetchEvent} */ event) => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
   
+  // Skip Next.js static chunks - let the server/cdn handle caching
+  if (event.request.url.includes('/_next/static/')) {
+    return;
+  }
+  
   // Simple cache-first strategy for static assets
   if (event.request.destination === 'image' || 
-      event.request.destination === 'font' ||
-      event.request.url.includes('/_next/static/')) {
+      event.request.destination === 'font') {
     
     event.respondWith(
       caches.open(ASSETS_CACHE).then(cache => {

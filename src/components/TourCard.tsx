@@ -175,13 +175,13 @@ export default function TourCard({ id, title, description, imageAlt }: TourCardP
   if (!isClient) {
     return (
       <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
-        <div className={`h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`} />
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{description}</p>
+        <div className={`h-40 sm:h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`} />
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow text-sm sm:text-base">{description}</p>
           <Link
             href={`/tours/${id}`}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline"
+            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline text-sm sm:text-base"
           >
             Подробнее
           </Link>
@@ -194,13 +194,13 @@ export default function TourCard({ id, title, description, imageAlt }: TourCardP
   if (isLoading || imageError || !photo) {
     return (
       <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
-        <div className={`h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`} />
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{description}</p>
+        <div className={`h-40 sm:h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`} />
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow text-sm sm:text-base">{description}</p>
           <Link
             href={`/tours/${id}`}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline"
+            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline text-sm sm:text-base"
           >
             Подробнее
           </Link>
@@ -211,7 +211,7 @@ export default function TourCard({ id, title, description, imageAlt }: TourCardP
 
   return (
     <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
-      <div className={`h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`}>
+      <div className={`h-40 sm:h-48 relative overflow-hidden bg-gradient-to-r ${getGradientClass()}`}>
         {photo.url.includes('unsplash.com') ? (
           // Use img tag for Unsplash images to avoid optimization issues
           <img
@@ -235,12 +235,12 @@ export default function TourCard({ id, title, description, imageAlt }: TourCardP
           />
         )}
       </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{description}</p>
+      <div className="p-4 sm:p-6 flex flex-col flex-grow">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow text-sm sm:text-base">{description}</p>
           <Link
             href={`/tours/${slugToPath[id] || id}`}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline"
+            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 self-start mt-auto inline-block text-center no-underline text-sm sm:text-base"
           >
             Подробнее
           </Link>

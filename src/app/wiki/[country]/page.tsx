@@ -35,7 +35,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 // CountryMap component using InteractiveMap
-const CountryMap = ({ countryName, countryId, coordinates }: any) => (
+const CountryMap = ({ countryName }: any) => (
   <div className="my-6">
     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
       <span className="mr-2">🗺️</span>

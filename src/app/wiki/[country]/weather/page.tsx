@@ -59,6 +59,7 @@ export default async function WeatherPage({ params }: { params: Promise<{ countr
   }
 
   const countryName = countryData?.title?.split('—')[0]?.trim() || country;
+  const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
   const bestTime = countryData?.description || 'круглый год';
   const seasons = {};
   const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: '' };

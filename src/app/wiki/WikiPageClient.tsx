@@ -55,7 +55,7 @@ export function WikiPageClient({ stats }: WikiPageClientProps) {
                     </div>
 
                     {/* Категории энциклопедии */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 mb-12">
                         <Link href="/wiki/intro" prefetch={true} className="group">
                             <div className="h-full flex flex-col p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg border border-indigo-100 hover:border-indigo-200 hover:shadow-md transition-all">
                                 <div className="flex items-center mb-3">

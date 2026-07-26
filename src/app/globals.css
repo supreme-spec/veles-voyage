@@ -1532,14 +1532,22 @@ span[style*='filter: none'] {
 /* Навигационный мини-герб */
 .nav-eagle-badge {
   position: relative;
-  width: 54px; /* Увеличено для видимости флага по бокам */
-  height: 24px;
+  width: 42px; /* Оптимизировано для мобильных */
+  height: 20px;
   perspective: 500px;
-  margin-left: 12px;
+  margin-left: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-eagle-badge {
+    width: 54px;
+    height: 24px;
+    margin-left: 12px;
+  }
 }
 
 .nav-flag-base {
@@ -1557,14 +1565,21 @@ span[style*='filter: none'] {
 .nav-eagle-container {
   position: absolute;
   z-index: 50;
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateZ(15px);
   animation: alive-float 10s ease-in-out infinite;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
   pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .nav-eagle-container {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .stripe-white { background: #ffffff !important; }
@@ -1608,8 +1623,20 @@ span[style*='filter: none'] {
 .country-image {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .country-image {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .country-image {
+    height: 250px;
+  }
 }
 
 .country-image img {

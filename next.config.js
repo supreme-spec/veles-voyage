@@ -20,6 +20,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/countries/:path*',
+        destination: '/wiki/countries',
+        permanent: true,
+      },
+      {
         source: '/encyclopedia',
         destination: '/wiki',
         permanent: true,
@@ -56,22 +61,9 @@ const nextConfig = {
       },
     ];
   },
-  // Fix ChunkLoadError with automatic reload
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
-        chunks: 'all',
-        cacheGroups: {
-          default: false,
-          vendors: false,
-          commons: {
-            name: 'commons',
-            chunks: 'all',
-            minChunks: 2,
-          },
-        },
-      };
+      config.output.crossOriginLoading = 'anonymous';
     }
     return config;
   },

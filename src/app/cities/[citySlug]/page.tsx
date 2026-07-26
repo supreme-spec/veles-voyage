@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import StructuredData from '@/components/SEO/StructuredData';
 import Breadcrumbs from '@/shared/components/ui/Breadcrumbs';
 import { generateEnhancedSEOMetadata, generatePageBreadcrumbs } from '@/lib/seo/unifiedSEO';
@@ -164,12 +163,27 @@ function estimateFlightHours(
 function findNearestAirport(coords: { latitude: number; longitude: number }) {
   if (!coords) return null;
   const { RUSSIAN_AIRPORTS } = require('@/shared/data/russianAirports');
-  return (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number }>)
+  const excluded = new Set(['москва', 'жуковский']);
+  const majorAirports = (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number; citySlug: string }>)
+    .filter(a => !excluded.has(a.citySlug) && !a.iata?.startsWith('RU-') && a.iata !== '')
     .map((a) => ({
       ...a,
       distanceKm: haversineKm(coords.latitude, coords.longitude, a.latitude, a.longitude)
     }))
-    .sort((a: any, b: any) => a.distanceKm - b.distanceKm)[0] || null;
+    .sort((a: any, b: any) => a.distanceKm - b.distanceKm);
+  
+  if (majorAirports.length > 0 && (majorAirports[0] as any)?.distanceKm < 300) {
+    return majorAirports[0] as any;
+  }
+  
+  const allAirports = (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number }>)
+    .map((a) => ({
+      ...a,
+      distanceKm: haversineKm(coords.latitude, coords.longitude, a.latitude, a.longitude)
+    }))
+    .sort((a: any, b: any) => a.distanceKm - b.distanceKm);
+  
+  return (allAirports[0] as any) || null;
 }
 
 type FAQ = { question: string; answer: string };
@@ -263,7 +277,7 @@ export async function generateMetadata({
   const isRegion = isRegionEntity(cityName);
   const cityData = DEPARTURE_CITIES_DATA[cityName.toLowerCase()];
   const hasRealAirport = !!cityData?.airport;
-  const airportLabel = cityData?.airport || (isRegion ? cityName : `аэропорт г. ${cityName}`);
+  const airportLabel = cityData?.airport || (isRegion ? cityName : 'ближайшие аэропорты региона');
   const cityCoords = getCityCoordinates(cityName);
   const district = getDistrictForRegion(cityCoords?.region || '');
   const districtName = district ? FEDERAL_DISTRICTS[district].name : '';
@@ -310,7 +324,7 @@ export default async function CityDeparturePage({
   const isRegion = isRegionEntity(cityName);
   const cityData = DEPARTURE_CITIES_DATA[cityName.toLowerCase()];
   const hasRealAirport = !!cityData?.airport;
-  const airportLabel = cityData?.airport || (isRegion ? cityName : `аэропорт г. ${cityName}`);
+  const airportLabel = cityData?.airport || (isRegion ? cityName : 'ближайшие аэропорты региона');
   const iataCode = hasRealAirport ? extractIataCode(airportLabel) : null;
   const cityCoords = getCityCoordinates(cityName);
   const nearestAirport = !hasRealAirport && cityCoords ? findNearestAirport(cityCoords) : null;
@@ -505,17 +519,11 @@ export default async function CityDeparturePage({
 
         {/* Unique city text */}
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-          {generateUniqueCityText(cityName, cityCoords?.region || '', hasRealAirport, airportLabel, nearestAirport, cityCoords)}
-        </p>
-
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
           {(() => {
             const manual = getCityManualContent(cityName);
             if (manual?.overview) return manual.overview;
             if (uniqueContent) return uniqueContent.overview;
-            return isRegion
-              ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
-              : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`;
+            return generateUniqueCityText(cityName, cityCoords?.region || '', hasRealAirport, airportLabel, nearestAirport, cityCoords);
           })()}
         </p>
 
@@ -571,42 +579,6 @@ export default async function CityDeparturePage({
                 </div>
             ))}
           </div>
-
-          {/* Партнёр */}
-          <section className="mb-12 rounded-2xl bg-white border border-gray-200 shadow-sm p-6 sm:p-8" aria-labelledby="city-partners-heading">
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <div className="w-20 h-20 rounded-full overflow-hidden bg-white border border-gray-100 flex-shrink-0">
-                <Image
-                  src="/images/partners/logo-franglish.webp"
-                  alt="Franglish — репетитор английского и французского"
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="text-center sm:text-left">
-                <h2 id="city-partners-heading" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                  Franglish — репетитор английского и французского
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-3">
-                  Персональный репетитор Анастасия Колесникова помогает освоить английский и французский languages
-                  с первого занятия. 18+ лет опыта, сертифицированный эксперт ЕГЭ, индивидуальный подход,
-                  современные методики. Подходит для школьников, студентов и взрослых.
-                </p>
-                <a
-                  href="https://franglish-original.ru/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
-                >
-                  franglish-original.ru
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </section>
 
           {/* FAQ */}
           <div className="mt-12">

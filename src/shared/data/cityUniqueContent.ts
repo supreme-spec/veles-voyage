@@ -49,12 +49,27 @@ function estimateFlightHours(coords: { latitude: number; longitude: number }, de
 
 function getNearestAirport(coords: { latitude: number; longitude: number }) {
   const { RUSSIAN_AIRPORTS } = require('@/shared/data/russianAirports');
-  return (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number }>)
+  const excluded = new Set(['москва', 'жуковский']);
+  const majorAirports = (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number; citySlug: string }>)
+    .filter(a => !excluded.has(a.citySlug) && !a.iata?.startsWith('RU-') && a.iata !== '')
     .map((a) => ({
       ...a,
       distanceKm: haversineKm(coords.latitude, coords.longitude, a.latitude, a.longitude)
     }))
-    .sort((a: any, b: any) => a.distanceKm - b.distanceKm)[0] || null;
+    .sort((a: any, b: any) => a.distanceKm - b.distanceKm);
+  
+  if (majorAirports.length > 0 && (majorAirports[0] as any)?.distanceKm < 300) {
+    return majorAirports[0] as any;
+  }
+  
+  const allAirports = (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number }>)
+    .map((a) => ({
+      ...a,
+      distanceKm: haversineKm(coords.latitude, coords.longitude, a.latitude, a.longitude)
+    }))
+    .sort((a: any, b: any) => a.distanceKm - b.distanceKm);
+  
+  return (allAirports[0] as any) || null;
 }
 
 export function getCityUniqueContent(cityName: string): CityUniqueContent | null {
@@ -65,7 +80,7 @@ export function getCityUniqueContent(cityName: string): CityUniqueContent | null
   const districtName = getDistrictName(region);
   const cityData = DEPARTURE_CITIES_DATA[cityName.toLowerCase()];
   const hasRealAirport = !!cityData?.airport;
-  const airportLabel = cityData?.airport || `аэропорт г. ${cityName}`;
+  const airportLabel = cityData?.airport || 'ближайшие аэропорты региона';
   const nearestAirport = !hasRealAirport ? getNearestAirport(coords) : null;
 
   const flightToTurkey = cityData?.flightTimes?.turkey ? `${cityData.flightTimes.turkey} ч.` : estimateFlightHours(coords, DEST_COORDS.turkey) ? `≈${estimateFlightHours(coords, DEST_COORDS.turkey)} ч.` : 'по запросу';

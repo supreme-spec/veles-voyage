@@ -50,11 +50,13 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
   });
 }
 
-const getCurrencyFaqs = (countryName: string) => [
-  {
-    question: `Какая валюта используется в ${countryName}?`,
-    answer: `Официальная валюта ${cleanCountryName}. Рекомендуем обменять рубли на местную валюту в банках или официальных обменниках для получения выгодного курса.`
-  },
+const getCurrencyFaqs = (countryName: string) => {
+  const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
+  return [
+    {
+      question: `Какая валюта используется в ${countryName}?`,
+      answer: `Официальная валюта ${cleanCountryName}. Рекомендуем обменять рубли на местную валюту в банках или официальных обменниках для получения выгодного курса.`
+    },
   {
     question: 'Где лучше обменять валюту?',
     answer: 'Лучше обменивать валюту в официальных банках или лицензированных обменниках. Избегайте обмена в аэропортах и отелях — курс обычно невыгодный. Всегда сохраняйте чеки об обмене.'
@@ -67,7 +69,8 @@ const getCurrencyFaqs = (countryName: string) => [
     question: 'Нужно ли оставлять чаевые?',
     answer: 'Чаевые не обязательны, но приветствуются. В ресторанах обычно оставляют 5-10% от счета, в такси — округление до удобной суммы, в гостиницах — 1-2 USD за ночь.'
   }
-];
+  ];
+};
 
 export default async function CurrencyPage({ params }: { params: Promise<{ country: string }> }) {
   const { country } = await params;
@@ -82,6 +85,7 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
 
   const countryName = countryData?.title?.split('—')[0]?.trim() || country;
   const mdxData = await getCountryMdxData(country);
+  const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
   const currency = mdxData?.frontmatter?.currency || 'местная валюта';
   const faqs = getCurrencyFaqs(countryName);
   const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: '' };

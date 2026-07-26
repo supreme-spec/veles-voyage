@@ -254,6 +254,91 @@ export const DEPARTURE_CITIES_DATA: Record<string, any> = {
     flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
     prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
   },
+  'голицыно': {
+    airport: 'Шереметьево (SVO) / Внуково (VKO)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'пушкино': {
+    airport: 'Шереметьево (SVO) / Домодедово (DME)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'подольск': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'мытищи': {
+    airport: 'Шереметьево (SVO)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'коломна': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'орехово-зуево': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'егорьевск': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'жуковский': {
+    airport: 'Жуковский (ZIA)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'сергиев посад': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'дмитров': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'красногорск': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'чехов': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'серпухов': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'воскресенск': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'раменское': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'солнечногорск': {
+    airport: 'Шереметьево (SVO)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
+  'ивантеевка': {
+    airport: 'Москва (все аэропорты)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },
+    prices: { turkey: '41 000', egypt: '51 000', uae: '61 000', thailand: '76 000' }
+  },
   'смоленск': {
     airport: 'Москва (все аэропорты)',
     flightTimes: { turkey: '3.5', egypt: '4.5', uae: '5', thailand: '9' },

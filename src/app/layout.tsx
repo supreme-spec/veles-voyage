@@ -397,13 +397,28 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Handle ChunkLoadError - automatically reload page
-              window.addEventListener('error', function(e) {
-                if (e.message && e.message.includes('ChunkLoadError')) {
-                  console.log('ChunkLoadError detected, reloading page...');
-                  window.location.reload();
-                }
-              });
+              (function() {
+                var reloaded = false;
+                window.addEventListener('error', function(e) {
+                  if (reloaded) return;
+                  var target = e.target || {};
+                  if ((e.message && e.message.includes('ChunkLoadError')) || (target.tagName && target.tagName.toLowerCase() === 'script' && target.src && target.src.indexOf('/_next/static/') !== -1)) {
+                    reloaded = true;
+                    console.warn('ChunkLoadError detected, reloading page...');
+                    setTimeout(function() { window.location.reload(); }, 100);
+                  }
+                });
+                window.addEventListener('unhandledrejection', function(e) {
+                  if (reloaded) return;
+                  var reason = e && e.reason;
+                  var msg = (reason && (reason.message || String(reason))) || '';
+                  if (msg.indexOf('ChunkLoadError') !== -1 || msg.indexOf('Loading chunk') !== -1) {
+                    reloaded = true;
+                    console.warn('ChunkLoadError detected in promise, reloading page...');
+                    setTimeout(function() { window.location.reload(); }, 100);
+                  }
+                });
+              })();
             `,
           }}
         />

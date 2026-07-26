@@ -171,7 +171,7 @@ export function Navbar() {
               </span>
 
               {/* Миниатюрный 3D-герб в меню */}
-              <div className="nav-eagle-badge scale-[0.7] md:scale-90 transition-transform duration-300">
+              <div className="nav-eagle-badge scale-[0.55] sm:scale-[0.65] md:scale-90 transition-transform duration-300">
                 <div className="nav-flag-base">
                   <div className="flex flex-col h-full">
                     <div className="flex-1 stripe-white"></div>

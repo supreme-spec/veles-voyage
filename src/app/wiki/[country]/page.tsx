@@ -278,7 +278,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const { content: mdxContent } = countryData;
 
   return (
-    <div className="container mx-auto px-4 max-w-4xl mt-20 md:mt-24">
+    <div className="container mx-auto px-4 max-w-4xl">
       {/* Структурированные данные для SEO с универсальным скриптом */}
       <SchemaScripts schemas={schemas} />
 
@@ -306,7 +306,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       />
 
       {/* Верхнее прокручивающееся меню - Оптимизированный адаптивный дизайн */}
-      <div className="sticky top-16 md:top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 py-3 mb-8 -mx-4 px-4 z-[50] shadow-xl mt-4">
+      <div className="sticky top-16 md:top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 py-3 mb-8 -mx-4 px-4 z-[50] shadow-xl">
         <div className="max-w-6xl mx-auto relative group">
           {/* Левый градиент-индикатор (только для мобильных) */}
           <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white dark:from-gray-900 to-transparent z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>

@@ -73,8 +73,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { Breadcrumbs } from '@/shared/components/ui/Breadcrumbs';
-
 export default function WikiLayout({
   children,
 }: {
@@ -82,9 +80,6 @@ export default function WikiLayout({
 }) {
   return (
     <>
-      <div className="container mx-auto px-4 mt-4">
-        <Breadcrumbs />
-      </div>
       {children}
     </>
   );

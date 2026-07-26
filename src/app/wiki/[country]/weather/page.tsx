@@ -29,19 +29,20 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
   }
 
   const countryName = countryData?.title?.split('—')[0]?.trim() || country;
+  const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
 
   return generateSEOMetadata({
-    title: `Погода в ${countryName} 2026 | Велес Вояж`,
-    description: `Климат ${countryName}, температура по месяцам, лучшее время для посещения. Сезонность и рекомендации.`,
+    title: `Погода в ${cleanCountryName} 2026 | Велес Вояж`,
+    description: `Климат ${cleanCountryName}, температура по месяцам, лучшее время для посещения. Сезонность и рекомендации.`,
     url: `/wiki/${country}/weather`,
     type: 'article',
     keywords: [
-      `погода в ${countryName}`,
-      `климат ${countryName}`,
-      `температура ${countryName}`,
-      `лучшее время для поездки в ${countryName}`,
-      `сезоны ${countryName}`,
-      `погода ${countryName} по месяцам`,
+      `погода в ${cleanCountryName}`,
+      `климат ${cleanCountryName}`,
+      `температура ${cleanCountryName}`,
+      `лучшее время для поездки в ${cleanCountryName}`,
+      `сезоны ${cleanCountryName}`,
+      `погода ${cleanCountryName} по месяцам`,
     ],
   });
 }
@@ -64,7 +65,7 @@ export default async function WeatherPage({ params }: { params: Promise<{ countr
 
   const weatherFaqs = [
     {
-      question: `Какое лучшее время для поездки в ${countryName}?`,
+      question: `Какое лучшее время для поездки в ${cleanCountryName}?`,
       answer: `Оптимальное время для поездки в ${countryName}: ${bestTime}. Рекомендуем учитывать сезонные особенности и погодные условия при планировании.`
     },
     {
@@ -83,14 +84,14 @@ export default async function WeatherPage({ params }: { params: Promise<{ countr
 
   const schemas = [
     ...(await generateUniversalSchemas({
-      title: `Погода в ${countryName} 2026 | Велес Вояж`,
-      description: `Климат ${countryName}, температура по месяцам, лучшее время для посещения. Сезонность и рекомендации.`,
+      title: `Погода в ${cleanCountryName} 2026 | Велес Вояж`,
+      description: `Климат ${cleanCountryName}, температура по месяцам, лучшее время для посещения. Сезонность и рекомендации.`,
       url: `/wiki/${country}/weather`,
       type: 'article',
       keywords: [
-        `погода в ${countryName}`,
-        `климат ${countryName}`,
-        `температура ${countryName}`,
+        `погода в ${cleanCountryName}`,
+        `климат ${cleanCountryName}`,
+        `температура ${cleanCountryName}`,
       ],
       geo: {
         latitude: coords.latitude,

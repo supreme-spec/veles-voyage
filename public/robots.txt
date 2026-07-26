@@ -8,6 +8,9 @@ Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
 
+# Host (Yandex)
+Host: veles-voyage.ru
+
 # Sitemap
 Sitemap: https://veles-voyage.ru/sitemap.xml
 

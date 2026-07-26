@@ -16,7 +16,7 @@ export function generateArticleSchema(config: ArticleSchemaConfig): ArticleSchem
     '@type': 'Article',
     headline: config.title,
     description: config.description,
-    image: config.image || 'https://www.veles-voyage.ru/images/logo.png',
+    image: config.image || 'https://veles-voyage.ru/images/logo.png',
     datePublished: config.datePublished || new Date().toISOString(),
     dateModified: config.dateModified || new Date().toISOString(),
     author: {
@@ -28,7 +28,7 @@ export function generateArticleSchema(config: ArticleSchemaConfig): ArticleSchem
       name: 'Велес Вояж | Экспертная редакция',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.veles-voyage.ru/images/logo.png',
+        url: 'https://veles-voyage.ru/images/logo.png',
       },
     },
     mainEntityOfPage: {

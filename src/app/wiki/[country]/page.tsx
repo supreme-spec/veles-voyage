@@ -95,7 +95,7 @@ export async function generateMetadata({
     // Сначала пробуем использовать существующую функцию генерации метаданных
     const metadata = await generateCountrySEOMetadata({
       countryId: normalizedCountry,
-      url: `https://www.veles-voyage.ru/wiki/${normalizedCountry}`,
+      url: `https://veles-voyage.ru/wiki/${normalizedCountry}`,
     });
 
     return metadata;

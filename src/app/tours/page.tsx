@@ -23,7 +23,7 @@ const faqSchema = toursSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Туры и Путешествия 2026 | Велес Вояж',
   description: articleSchema?.description || 'Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы. Бронирование онлайн, поддержка 24/7.',
-  url: 'https://www.veles-voyage.ru/tours',
+  url: 'https://veles-voyage.ru/tours',
   type: 'article',
   image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=630&fit=crop',
   keywords: articleSchema?.keywords || [],

@@ -30,7 +30,7 @@ export const toursAfricaArticleSchema: any = {
   "description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Найроби, Дар-эс-Салам, Кейптаун, Каир, Марракеш, Виндхук, Габороне, Стоун-Таун. Сафари, дикая природа, национальные парки, экзотические пейзажи, комфортное проживание, профессиональные гиды.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Африканские туры - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const toursAfricaArticleSchema: any = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/tours/africa"
+    "@id": "https://veles-voyage.ru/tours/africa"
   },
   "articleSection": "Африканские туры",
   "keywords": ["африканские туры", "сафари туры", "туры по Африке", "африканские туры 2026", "Кения туры", "Танзания туры", "ЮАР туры", "Египет туры", "Марокко туры", "Кейптаун", "Каир", "Марракеш", "сафари", "дикая природа", "национальные парки", "профессиональные гиды", "туризм 2026"],
@@ -64,7 +64,7 @@ export const toursAfricaArticleSchema: any = {
 export const toursAfricaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/tours/africa",
+  "url": "https://veles-voyage.ru/tours/africa",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -133,8 +133,8 @@ export const toursAfricaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -159,9 +159,9 @@ export const toursAfricaVideoSchema = {
   "@type": "VideoObject",
   "name": "Африканские туры - Видеогид",
   "description": "Видеообзоры африканских туров на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Африканские туры - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Африканские туры - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursAfricaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -170,9 +170,9 @@ export const toursAfricaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Африканские туры", "item": "https://www.veles-voyage.ru/tours/africa" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Африканские туры", "item": "https://veles-voyage.ru/tours/africa" }
   ]
 };
 
@@ -183,7 +183,7 @@ export const toursAfricaWeb3Schema = {
   "description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Сафари, дикая природа, национальные парки.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/africa", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/africa", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -195,7 +195,7 @@ export const toursAfricaDarkWebSchema = {
   "description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Сафари, дикая природа, национальные парки.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Африке", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours/africa" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours/africa" }
 };
 
 export const toursAfricaAltSearchSchema = {
@@ -205,7 +205,7 @@ export const toursAfricaAltSearchSchema = {
   "description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Сафари, дикая природа, национальные парки.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/africa.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/africa.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -242,10 +242,10 @@ export const toursAfricaSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Африканские туры 2026 | Велес Вояж",
   "text": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Сафари, дикая природа, национальные парки, комфортное проживание. #АфриканскиеТуры2026 #Сафари",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Африканские туры - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Африканские туры - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursAfricaDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours/africa" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours/africa" }
 };
 
 export const toursAfricaAccessibilitySchema = {
@@ -265,8 +265,8 @@ export const toursAfricaAISchema = {
   "datePublished": toursAfricaDatePublished,
   "dateModified": toursAfricaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/africa" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/africa" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -284,7 +284,7 @@ export const toursAfricaAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const toursAfricaGEOEnhancedSchema = {
@@ -346,16 +346,16 @@ export const toursAfricaMetaTags = {
   keywords: "африканские туры, туры по Африке, Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар, Кейптаун, Каир, Марракеш, сафари, дикая природа, национальные парки, профессиональные гиды, туризм 2026",
   "og:title": "Африканские туры 2026 | Велес Вояж",
   "og:description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Найроби, Дар-эс-Салам, Кейптаун, Каир, Марракеш, Виндхук, Габороне, Стоун-Таун.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Африканские туры",
-  "og:url": "https://www.veles-voyage.ru/tours/africa",
+  "og:url": "https://veles-voyage.ru/tours/africa",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Африканские туры 2026 | Велес Вояж",
   "twitter:description": "Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Найроби, Дар-эс-Салам, Кейптаун, Каир, Марракеш, Виндхук, Габороне, Стоун-Таун.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Африканские туры - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -383,9 +383,9 @@ export const toursAfricaMetaTags = {
 };
 
 export const toursAfricaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/africa" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/tours/africa" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/tours/africa" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/tours/africa" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/africa" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/africa" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/africa" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/africa" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/africa" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/africa" }
 ];

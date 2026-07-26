@@ -30,7 +30,7 @@ export const toursExtremeArticleSchema: any = {
   "description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Эверест, Килиманджаро, Эльбрус, Анды, Альпы, Гималаи. Приключения, экстрим, адреналин, профессиональные инструкторы, бронирование онлайн.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Экстремальные туры - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const toursExtremeArticleSchema: any = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/tours/extreme"
+    "@id": "https://veles-voyage.ru/tours/extreme"
   },
   "articleSection": "Экстремальные туры",
   "keywords": ["экстремальные туры", "приключения", "экстрим туры", "экстремальные туры 2026", "альпинизм", "рафтинг", "дайвинг", "парашютный спорт", "бейсджампинг", "кайтсерфинг", "сноуборд", "горные лыжи", "Эверест", "Килиманджаро", "Эльбрус", "профессиональные инструкторы", "туризм 2026"],
@@ -64,7 +64,7 @@ export const toursExtremeArticleSchema: any = {
 export const toursExtremeSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/tours/extreme",
+  "url": "https://veles-voyage.ru/tours/extreme",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -133,8 +133,8 @@ export const toursExtremeOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -159,9 +159,9 @@ export const toursExtremeVideoSchema = {
   "@type": "VideoObject",
   "name": "Экстремальные туры - Видеогид",
   "description": "Видеообзоры экстремальных туров на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Экстремальные туры - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Экстремальные туры - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursExtremeDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -170,9 +170,9 @@ export const toursExtremeBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Экстремальные туры", "item": "https://www.veles-voyage.ru/tours/extreme" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Экстремальные туры", "item": "https://veles-voyage.ru/tours/extreme" }
   ]
 };
 
@@ -183,7 +183,7 @@ export const toursExtremeWeb3Schema = {
   "description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Приключения, экстрим, адреналин.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/extreme", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/extreme", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -195,7 +195,7 @@ export const toursExtremeDarkWebSchema = {
   "description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Приключения, экстрим, адреналин.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по экстриму", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours/extreme" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours/extreme" }
 };
 
 export const toursExtremeAltSearchSchema = {
@@ -205,7 +205,7 @@ export const toursExtremeAltSearchSchema = {
   "description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Приключения, экстрим, адреналин.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/extreme.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/extreme.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -242,10 +242,10 @@ export const toursExtremeSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Экстремальные туры 2026 | Велес Вояж",
   "text": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Приключения, экстрим, адреналин, комфортное проживание. #ЭкстремальныеТуры2026 #Экстрим",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Экстремальные туры - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Экстремальные туры - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursExtremeDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours/extreme" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours/extreme" }
 };
 
 export const toursExtremeAccessibilitySchema = {
@@ -265,8 +265,8 @@ export const toursExtremeAISchema = {
   "datePublished": toursExtremeDatePublished,
   "dateModified": toursExtremeDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/extreme" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/extreme" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -284,7 +284,7 @@ export const toursExtremeAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const toursExtremeGEOEnhancedSchema = {
@@ -346,16 +346,16 @@ export const toursExtremeMetaTags = {
   keywords: "экстремальные туры, приключения, альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи, Эверест, Килиманджаро, Эльбрус, Анды, Альпы, Гималаи, экстрим, адреналин, профессиональные инструкторы, туризм 2026",
   "og:title": "Экстремальные туры 2026 | Велес Вояж",
   "og:description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Эверест, Килиманджаро, Эльбрус, Анды, Альпы, Гималаи.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Экстремальные туры",
-  "og:url": "https://www.veles-voyage.ru/tours/extreme",
+  "og:url": "https://veles-voyage.ru/tours/extreme",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Экстремальные туры 2026 | Велес Вояж",
   "twitter:description": "Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Эверест, Килиманджаро, Эльбрус, Анды, Альпы, Гималаи.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Экстремальные туры - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -383,9 +383,9 @@ export const toursExtremeMetaTags = {
 };
 
 export const toursExtremeHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/extreme" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/tours/extreme" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/tours/extreme" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/tours/extreme" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/extreme" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/extreme" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/extreme" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/extreme" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/extreme" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/extreme" }
 ];

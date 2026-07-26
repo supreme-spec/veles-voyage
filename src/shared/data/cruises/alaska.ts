@@ -25,7 +25,7 @@ export const alaskaArticleSchema = {
   "description": "Круизы в Аляску: ледники, дикая природа, киты, медведи, олени, орланы. Юно, Ситка, Кетчикан, Скагуэй. Национальные парки, фьорды, круизные лайнеры, порты, экскурсии, бронирование от 130 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Круизы в Аляску - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -40,13 +40,13 @@ export const alaskaArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/alaska"
+    "@id": "https://veles-voyage.ru/cruises/alaska"
   },
   "articleSection": "Круизы в Аляску",
   "keywords": ["круизы Аляска", "круизы по Аляске", "круизы в Аляску 2026", "круизы ледники Аляска", "круизы дикая природа Аляска", "круизы Юно", "круизы Ситка", "круизы Кетчикан", "круизы Скагуэй", "круизы Ициас-Бей", "круизы Глендейн", "круизы Ванкувер", "круизы Сиэтл", "круизы Северная Америка", "ледники Аляски", "ледник Менделеев", "ледник Хаббард", "ледник Ламберт", "национальные парки Аляски", "фьорды Тонгасса", "горы Чугач", "дикие животные", "киты", "медведи", "олени", "орланы", "круизные лайнеры", "морские путешествия", "круизные туры", "порты Аляски", "экскурсии в портах", "что посмотреть в Аляске", "лучшие маршруты круизов", "сколько стоит круиз в Аляску", "когда лучше ехать в круиз", "продолжительность круиза", "какие порты посещает круиз", "природные достопримечательности", "наблюдение за дикой природой", "фотосафари", "североамериканские путешествия", "круизы для семей", "романтические круизы", "круизы для пожилых", "круизы для молодых", "бронирование круизов", "цены на круизы", "скидки на круизы", "раннее бронирование", "последняя минута круизы", "морские круизы 2026"],
@@ -59,7 +59,7 @@ export const alaskaArticleSchema = {
 export const alaskaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/cruises/alaska",
+  "url": "https://veles-voyage.ru/cruises/alaska",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -120,8 +120,8 @@ export const alaskaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -146,9 +146,9 @@ export const alaskaVideoSchema = {
   "@type": "VideoObject",
   "name": "Круизы в Аляску - Видеогид",
   "description": "Видеообзоры круизов в Аляску, ледников и достопримечательностей на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Круизы в Аляску - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Круизы в Аляску - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": alaskaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -157,9 +157,9 @@ export const alaskaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Круизы в Аляску", "item": "https://www.veles-voyage.ru/cruises/alaska" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Круизы в Аляску", "item": "https://veles-voyage.ru/cruises/alaska" }
   ]
 };
 
@@ -170,7 +170,7 @@ export const alaskaWeb3Schema = {
   "description": "Круизы в Аляску: ледники, дикая природа, киты, медведи, олени, орланы. Юно, Ситка, Кетчикан, Скагуэй, Ициас-Бей, Глендейн, Ванкувер, Сиэтл. Ледники Менделеева, Хаббард, Ламберт, национальные парки, фьорды Тонгасса, горы Чугач.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/alaska", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/alaska", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -182,7 +182,7 @@ export const alaskaDarkWebSchema = {
   "description": "Круизы в Аляску: ледники, дикая природа, киты, медведи, олени, орланы. Юно, Ситка, Кетчикан, Скагуэй, Ициас-Бей, Глендейн, Ванкувер, Сиэтл. Ледники Менделеева, Хаббард, Ламберт, национальные парки, фьорды Тонгасса, горы Чугач.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Аляске", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/cruises/alaska" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/cruises/alaska" }
 };
 
 export const alaskaAltSearchSchema = {
@@ -192,7 +192,7 @@ export const alaskaAltSearchSchema = {
   "description": "Круизы в Аляску: ледники, дикая природа, киты, медведи, олени, орланы. Юно, Ситка, Кетчикан, Скагуэй, Ициас-Бей, Глендейн, Ванкувер, Сиэтл. Ледники Менделеева, Хаббард, Ламберт, национальные парки, фьорды Тонгасса, горы Чугач.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/alaska.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/alaska.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -229,10 +229,10 @@ export const alaskaSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Круизы в Аляску 2026 | Велес Вояж",
   "text": "Круизы в Аляску: ледники, дикая природа, киты, медведи. Юно, Ситка, Кетчикан, Скагуэй. Национальные парки, фьорды. От 130 000₽. #АляскаКруизы #Круизы2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Круизы в Аляску - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Круизы в Аляску - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": alaskaDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/cruises/alaska" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/cruises/alaska" }
 };
 
 export const alaskaAccessibilitySchema = {
@@ -252,8 +252,8 @@ export const alaskaAISchema = {
   "datePublished": alaskaDatePublished,
   "dateModified": alaskaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/cruises/alaska" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/cruises/alaska" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -271,7 +271,7 @@ export const alaskaAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты круизов", "Порты и достопримечательности", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const alaskaGEOEnhancedSchema = {
@@ -329,10 +329,10 @@ export const alaskaSchemas = [
 ];
 
 export const alaskaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises/alaska" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/cruises/alaska" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/cruises/alaska" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/cruises/alaska" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises/alaska" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/alaska" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/cruises/alaska" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/cruises/alaska" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/cruises/alaska" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/alaska" }
 ];
 

@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { country: string }
 
     const countryTitle = frontmatter.title || `${country} - Путеводитель`;
     const description = frontmatter.description || `Гид по стране ${country}`;
-    const url = `https://www.veles-voyage.ru/wiki/${country}/mdx`;
-    const image = frontmatter.image || 'https://www.veles-voyage.ru/images/logo.png';
+    const url = `https://veles-voyage.ru/wiki/${country}/mdx`;
+    const image = frontmatter.image || 'https://veles-voyage.ru/images/logo.png';
 
     const stats = fs.statSync(filePath);
     const fileLastModified = stats.mtime.toISOString().split('T')[0];

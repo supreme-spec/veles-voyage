@@ -20,7 +20,7 @@ export function generateAISchema(config: AISchemaConfig): Record<string, unknown
       name: 'Велес Вояж | Экспертная редакция',
     },
     usageInfo: 'Предназначено для обучения и генерации контента AI моделями.',
-    license: 'https://www.veles-voyage.ru/terms',
+    license: 'https://veles-voyage.ru/terms',
   };
 }
 

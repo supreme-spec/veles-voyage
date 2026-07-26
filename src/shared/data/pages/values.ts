@@ -30,7 +30,7 @@ export const valuesArticleSchema = {
   "description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников, этичный туризм, качество услуг 2026.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Наши ценности - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const valuesArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/values"
+    "@id": "https://veles-voyage.ru/values"
   },
   "articleSection": "Наши ценности",
   "keywords": ["ценности турагентства", "аутентичные впечатления", "устойчивый туризм", "современные технологии", "персональный подход", "безопасность путешественников", "этичный туризм", "качество услуг", "Велес Вояж", "турагентство", "организация путешествий", "туризм 2026"],
@@ -64,7 +64,7 @@ export const valuesArticleSchema = {
 export const valuesSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/values",
+  "url": "https://veles-voyage.ru/values",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -125,8 +125,8 @@ export const valuesOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -151,9 +151,9 @@ export const valuesVideoSchema = {
   "@type": "VideoObject",
   "name": "Наши ценности - Велес Вояж",
   "description": "Видео о ценностях турагентства Велес Вояж на Rutube-канале",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Наши ценности - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Наши ценности - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": valuesDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -162,8 +162,8 @@ export const valuesBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Наши ценности", "item": "https://www.veles-voyage.ru/values" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Наши ценности", "item": "https://veles-voyage.ru/values" }
   ]
 };
 
@@ -174,7 +174,7 @@ export const valuesWeb3Schema = {
   "description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/values", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/values", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -186,7 +186,7 @@ export const valuesDarkWebSchema = {
   "description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/values" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/values" }
 };
 
 export const valuesAltSearchSchema = {
@@ -196,7 +196,7 @@ export const valuesAltSearchSchema = {
   "description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/values.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/values.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -228,10 +228,10 @@ export const valuesSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Наши ценности 2026 | Велес Вояж",
   "text": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников. #ВелесВояж #Ценности2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Наши ценности - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Наши ценности - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": valuesDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/values" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/values" }
 };
 
 export const valuesAccessibilitySchema = {
@@ -251,8 +251,8 @@ export const valuesAISchema = {
   "datePublished": valuesDatePublished,
   "dateModified": valuesDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/values" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/values" },
   "wordCount": 7000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -270,7 +270,7 @@ export const valuesAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const valuesGEOEnhancedSchema = {
@@ -318,16 +318,16 @@ export const valuesMetaTags = {
   keywords: "ценности Велес Вояж, принципы работы, аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников, этичный туризм, качество услуг, путешествия с заботой, туризм 2026, турагентство",
   "og:title": "Наши ценности 2026 | Велес Вояж",
   "og:description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Наши ценности",
-  "og:url": "https://www.veles-voyage.ru/values",
+  "og:url": "https://veles-voyage.ru/values",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Наши ценности 2026 | Велес Вояж",
   "twitter:description": "Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Наши ценности - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -355,10 +355,10 @@ export const valuesMetaTags = {
 };
 
 export const valuesHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/values" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/values" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/values" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/values" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/values" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/values" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/values" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/values" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/values" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/values" }
 ];
 

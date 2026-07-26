@@ -30,7 +30,7 @@ export const missionArticleSchema = {
   "description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм, культурный обмен, образовательные путешествия 2026.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Наша миссия - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const missionArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/mission"
+    "@id": "https://veles-voyage.ru/mission"
   },
   "articleSection": "Наша миссия",
   "keywords": ["миссия турагентства", "философия путешествий", "индивидуальные туры", "качество услуг", "устойчивый туризм", "путешествия по России", "международные туры", "путешествия 2026", "культурный обмен", "образовательные путешествия", "Велес Вояж", "турагентство", "организация путешествий", "туризм 2026"],
@@ -64,7 +64,7 @@ export const missionArticleSchema = {
 export const missionSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/mission",
+  "url": "https://veles-voyage.ru/mission",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -125,8 +125,8 @@ export const missionOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -151,9 +151,9 @@ export const missionVideoSchema = {
   "@type": "VideoObject",
   "name": "Наша миссия - Велес Вояж",
   "description": "Видео о миссии турагентства Велес Вояж на Rutube-канале",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Наша миссия - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Наша миссия - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": missionDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -162,8 +162,8 @@ export const missionBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Наша миссия", "item": "https://www.veles-voyage.ru/mission" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Наша миссия", "item": "https://veles-voyage.ru/mission" }
   ]
 };
 
@@ -174,7 +174,7 @@ export const missionWeb3Schema = {
   "description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/mission", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/mission", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -186,7 +186,7 @@ export const missionDarkWebSchema = {
   "description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/mission" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/mission" }
 };
 
 export const missionAltSearchSchema = {
@@ -196,7 +196,7 @@ export const missionAltSearchSchema = {
   "description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/mission.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/mission.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -228,10 +228,10 @@ export const missionSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Наша миссия 2026 | Велес Вояж",
   "text": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм. #ВелесВояж #Миссия2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Наша миссия - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Наша миссия - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": missionDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/mission" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/mission" }
 };
 
 export const missionAccessibilitySchema = {
@@ -251,8 +251,8 @@ export const missionAISchema = {
   "datePublished": missionDatePublished,
   "dateModified": missionDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/mission" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/mission" },
   "wordCount": 7000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -270,7 +270,7 @@ export const missionAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const missionGEOEnhancedSchema = {
@@ -318,16 +318,16 @@ export const missionMetaTags = {
   keywords: "миссия Велес Вояж, философия путешествий, индивидуальный подход, качество услуг, устойчивый туризм, культурный обмен, образовательные путешествия, путешествия по России, международные туры, туризм 2026, турагентство, организация путешествий",
   "og:title": "Наша миссия 2026 | Велес Вояж",
   "og:description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Наша миссия",
-  "og:url": "https://www.veles-voyage.ru/mission",
+  "og:url": "https://veles-voyage.ru/mission",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Наша миссия 2026 | Велес Вояж",
   "twitter:description": "Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Наша миссия - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -355,10 +355,10 @@ export const missionMetaTags = {
 };
 
 export const missionHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/mission" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/mission" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/mission" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/mission" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/mission" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/mission" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/mission" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/mission" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/mission" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/mission" }
 ];
 

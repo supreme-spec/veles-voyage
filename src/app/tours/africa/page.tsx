@@ -23,7 +23,7 @@ const faqSchema = toursAfricaSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Африканские туры 2026 | Велес Вояж',
   description: articleSchema?.description || 'Африканские туры: Кения, Танзания, ЮАР, Египет, Марокко, Намибия, Ботсвана, Занзибар. Сафари, дикая природа, национальные парки, экзотические пейзажи, комфортное проживание, профессиональные гиды, бронирование онлайн, туризм 2026.',
-  url: 'https://www.veles-voyage.ru/tours/africa',
+  url: 'https://veles-voyage.ru/tours/africa',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursAfricaDatePublished,

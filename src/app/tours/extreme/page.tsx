@@ -29,7 +29,7 @@ export const metadata: Metadata = generateSEOMetadata({
   description:
     articleSchema?.description ||
     'Экстремальные туры: альпинизм, рафтинг, дайвинг, парашютный спорт, бейсджампинг, кайтсерфинг, сноуборд, горные лыжи. Приключения, экстрим, адреналин, комфортное проживание, профессиональные инструкторы, бронирование онлайн, туризм 2026.',
-  url: 'https://www.veles-voyage.ru/tours/extreme',
+  url: 'https://veles-voyage.ru/tours/extreme',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursExtremeDatePublished,

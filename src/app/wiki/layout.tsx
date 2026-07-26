@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'Энциклопедия стран мира | Велес Вояж',
     description: 'Полная энциклопедия стран мира с подробными путеводителями: визы, достопримечательности, культура, транспорт, проживание.',
     type: 'website',
-    url: 'https://www.veles-voyage.ru/wiki',
+    url: 'https://veles-voyage.ru/wiki',
     siteName: 'Велес Вояж',
     locale: 'ru_RU',
   },

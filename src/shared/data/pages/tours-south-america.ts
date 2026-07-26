@@ -31,7 +31,7 @@ export const toursSouthAmericaArticleSchema = {
   "description": "Туры в Южную Америку: Бразилия, Аргентина, Чили, Перу, Колумбия, Уругвай, Боливия, Эквадор. Рио-де-Жанейро, Буэнос-Айрес, Мачу-Пикчу, Амазония, Патагония, Галапагосы. Индивидуальные маршруты под запрос, комфортное проживание, профессиональные гиды, бронирование онлайн.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Туры в Южную Америку - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -46,13 +46,13 @@ export const toursSouthAmericaArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/tours/south-america"
+    "@id": "https://veles-voyage.ru/tours/south-america"
   },
   "articleSection": "Туры в Южную Америку",
   "keywords": ["туры в Южную Америку", "отдых в Южной Америке", "Бразилия туры", "Аргентина туры", "Чили туры", "Перу туры", "Колумбия туры", "Мачу-Пикчу", "Рио-де-Жанейро", "Патагония", "Галапагосы", "индивидуальные маршруты", "туризм 2026"],
@@ -65,7 +65,7 @@ export const toursSouthAmericaArticleSchema = {
 export const toursSouthAmericaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/tours/south-america",
+  "url": "https://veles-voyage.ru/tours/south-america",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -116,8 +116,8 @@ export const toursSouthAmericaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -142,9 +142,9 @@ export const toursSouthAmericaVideoSchema = {
   "@type": "VideoObject",
   "name": "Туры в Южную Америку - Видеогид",
   "description": "Видеообзоры туров в Южную Америку на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Туры в Южную Америку - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Туры в Южную Америку - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursSouthAmericaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -153,9 +153,9 @@ export const toursSouthAmericaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Туры в Южную Америку", "item": "https://www.veles-voyage.ru/tours/south-america" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Туры в Южную Америку", "item": "https://veles-voyage.ru/tours/south-america" }
   ]
 };
 
@@ -167,8 +167,8 @@ export const toursSouthAmericaAISchema = {
   "datePublished": toursSouthAmericaDatePublished,
   "dateModified": toursSouthAmericaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/south-america" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/south-america" },
   "wordCount": 6000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -208,16 +208,16 @@ export const toursSouthAmericaMetaTags = {
   keywords: "туры в Южную Америку, отдых в Южной Америке, Бразилия туры, Аргентина туры, Чили туры, Перу туры, Колумбия туры, Мачу-Пикчу, Рио-де-Жанейро, Патагония, Галапагосы, индивидуальные маршруты, туризм 2026",
   "og:title": "Туры в Южную Америку 2026 | Велес Вояж",
   "og:description": "Туры в Южную Америку: Бразилия, Аргентина, Чили, Перу, Колумбия. Индивидуальные маршруты под запрос.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Туры в Южную Америку",
-  "og:url": "https://www.veles-voyage.ru/tours/south-america",
+  "og:url": "https://veles-voyage.ru/tours/south-america",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Туры в Южную Америку 2026 | Велес Вояж",
   "twitter:description": "Туры в Южную Америку: Бразилия, Аргентина, Чили, Перу, Колумбия. Индивидуальные маршруты под запрос.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Туры в Южную Америку - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -237,6 +237,6 @@ export const toursSouthAmericaMetaTags = {
 };
 
 export const toursSouthAmericaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/south-america" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/south-america" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/south-america" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/south-america" }
 ];

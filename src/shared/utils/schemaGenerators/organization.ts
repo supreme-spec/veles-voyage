@@ -5,10 +5,10 @@ export function generateOrganizationSchema(): OrganizationSchema {
     '@context': 'https://schema.org' as const,
     '@type': 'Organization',
     name: 'Велес Вояж | Экспертная редакция',
-    url: 'https://www.veles-voyage.ru/',
+    url: 'https://veles-voyage.ru/',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.veles-voyage.ru/images/logo.png',
+      url: 'https://veles-voyage.ru/images/logo.png',
     },
     foundingDate: '2023',
     contactPoint: {

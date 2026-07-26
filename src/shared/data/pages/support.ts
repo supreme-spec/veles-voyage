@@ -30,7 +30,7 @@ export const supportArticleSchema = {
   "description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, бронирование, круглосуточная поддержка.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Поддержка клиентов - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const supportArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/support"
+    "@id": "https://veles-voyage.ru/support"
   },
   "articleSection": "Поддержка клиентов",
   "keywords": ["поддержка клиентов", "консультации по турам", "помощь в выборе туров", "сопровождение во время путешествий", "визы", "страховка", "трансфер", "экскурсии", "бронирование", "круглосуточная поддержка", "Велес Вояж", "турагентство", "туризм 2026"],
@@ -64,7 +64,7 @@ export const supportArticleSchema = {
 export const supportSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/support",
+  "url": "https://veles-voyage.ru/support",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -125,8 +125,8 @@ export const supportOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -158,9 +158,9 @@ export const supportVideoSchema = {
   "@type": "VideoObject",
   "name": "Поддержка клиентов - Велес Вояж",
   "description": "Видео о поддержке клиентов турагентства Велес Вояж на Rutube-канале",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Поддержка клиентов - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Поддержка клиентов - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": supportDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -169,8 +169,8 @@ export const supportBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Поддержка клиентов", "item": "https://www.veles-voyage.ru/support" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Поддержка клиентов", "item": "https://veles-voyage.ru/support" }
   ]
 };
 
@@ -181,7 +181,7 @@ export const supportWeb3Schema = {
   "description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/support", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/support", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -193,7 +193,7 @@ export const supportDarkWebSchema = {
   "description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/support" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/support" }
 };
 
 export const supportAltSearchSchema = {
@@ -203,7 +203,7 @@ export const supportAltSearchSchema = {
   "description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/support.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/support.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -235,10 +235,10 @@ export const supportSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Поддержка клиентов 2026 | Велес Вояж",
   "text": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, круглосуточная поддержка. #ВелесВояж #Поддержка2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Поддержка клиентов - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Поддержка клиентов - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": supportDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/support" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/support" }
 };
 
 export const supportAccessibilitySchema = {
@@ -258,8 +258,8 @@ export const supportAISchema = {
   "datePublished": supportDatePublished,
   "dateModified": supportDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/support" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/support" },
   "wordCount": 6000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -277,7 +277,7 @@ export const supportAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим", "Чат поддержки"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const supportGEOEnhancedSchema = {
@@ -325,16 +325,16 @@ export const supportMetaTags = {
   keywords: "поддержка клиентов, помощь туристам, консультации по турам, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, бронирование, круглосуточная поддержка, туризм 2026, турагентство, организация путешествий",
   "og:title": "Поддержка клиентов 2026 | Велес Вояж",
   "og:description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, бронирование, круглосуточная поддержка.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Поддержка клиентов",
-  "og:url": "https://www.veles-voyage.ru/support",
+  "og:url": "https://veles-voyage.ru/support",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Поддержка клиентов 2026 | Велес Вояж",
   "twitter:description": "Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, бронирование, круглосуточная поддержка.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Поддержка клиентов - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -362,10 +362,10 @@ export const supportMetaTags = {
 };
 
 export const supportHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/support" },
-  { rel: "alternate", hreflang: "en", href: "https://www.veles-voyage.ru/en/support" },
-  { rel: "alternate", hreflang: "zh", href: "https://www.veles-voyage.ru/zh/support" },
-  { rel: "alternate", hreflang: "de", href: "https://www.veles-voyage.ru/de/support" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/support" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/support" },
+  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/support" },
+  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/support" },
+  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/support" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/support" }
 ];
 

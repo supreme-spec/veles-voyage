@@ -7,7 +7,7 @@ export interface BreadcrumbItem {
 
 export function generateBreadcrumbSchema(currentUrl: string, items?: BreadcrumbItem[]): BreadcrumbListSchema {
   const defaultItems: BreadcrumbItem[] = items || [
-    { name: 'Главная', url: 'https://www.veles-voyage.ru/' },
+    { name: 'Главная', url: 'https://veles-voyage.ru/' },
   ];
 
   // Добавляем текущую страницу, если её нет в списке

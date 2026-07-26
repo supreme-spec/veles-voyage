@@ -9,7 +9,7 @@ export function generateGlobalSearchSchema(name: string): Record<string, unknown
       { '@value': name, '@language': 'de' },
     ],
     description: `Информация о ${name} для глобального поиска на разных языках.`,
-    url: `https://www.veles-voyage.ru/wiki/${name.toLowerCase()}`,
+    url: `https://veles-voyage.ru/wiki/${name.toLowerCase()}`,
   };
 }
 

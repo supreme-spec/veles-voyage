@@ -271,7 +271,7 @@ export default async function Home() {
                 </span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
-                Мы создаем незабываемые путешествия для наших клиентов
+                 Мы создаём незабываемые путешествия для наших клиентов
               </p>
             </div>
 
@@ -689,7 +689,7 @@ export default async function Home() {
                   Лучшие цены
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Прямые договоренности с поставщиками услуг и эксклюзивные предложения позволяют
+                  Прямые контракты с поставщиками услуг и эксклюзивные предложения позволяют
                   предлагать лучшие цены на рынке.
                 </p>
               </div>

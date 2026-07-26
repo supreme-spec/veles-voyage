@@ -278,7 +278,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const { content: mdxContent } = countryData;
 
   return (
-    <div className="container mx-auto px-4 max-w-4xl">
+    <div className="container mx-auto px-4 max-w-4xl mt-20 md:mt-24">
       {/* Структурированные данные для SEO с универсальным скриптом */}
       <SchemaScripts schemas={schemas} />
 

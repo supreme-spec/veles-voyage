@@ -142,8 +142,8 @@ export default function RequisitesPage() {
 
             {/* Company Details */}
             <section className="border-t border-gray-200 dark:border-gray-700 pt-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ВЕЛЕС" / LLC "VELES"
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ВЕЛЕС» / LLC "VELES"
               </h2>
               
               <div className="space-y-4">

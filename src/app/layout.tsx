@@ -102,7 +102,7 @@ const globalSchema = {
         },
         {
           '@type': 'PostalAddress',
-          streetAddress: 'пр-т. Московский, 9/2',
+          streetAddress: 'пр-кт Московский, д. 9/2',
           addressLocality: 'Пушкино',
           addressRegion: 'Московская область',
           postalCode: '141207',

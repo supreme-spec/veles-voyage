@@ -100,7 +100,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     preposition: 'на',
     slug: 'maldives',
     type: 'Country',
-    description: 'Иконичный островной отдых: водные виллы, лазурная вода и идеальные закаты.',
+    description: 'Легендарный островной отдых: водные виллы, лазурная вода и идеальные закаты.',
     image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop&auto=format',
     alt: 'Мальдивы - Водные виллы',
     capital: 'Мале',

@@ -319,6 +319,16 @@ export const DEPARTURE_CITIES_DATA: Record<string, any> = {
     flightTimes: { turkey: '4.5', egypt: '5.5', uae: '5', thailand: '9' },
     prices: { turkey: '43 000', egypt: '55 000', uae: '65 000', thailand: '80 000' }
   },
+  'чечня': {
+    airport: 'Грозный (GRV)',
+    flightTimes: { turkey: '3.5', egypt: '4.5', uae: '4', thailand: '8' },
+    prices: { turkey: '40 000', egypt: '52 000', uae: '62 000', thailand: '75 000' }
+  },
+  'чегем': {
+    airport: 'Минеральные Воды (MRV)',
+    flightTimes: { turkey: '3', egypt: '4', uae: '3.5', thailand: '7.5' },
+    prices: { turkey: '38 000', egypt: '50 000', uae: '60 000', thailand: '72 000' }
+  },
   'саранск': {
     airport: 'Саранск (SKX)',
     flightTimes: { turkey: '4.5', egypt: '5.5', uae: '5', thailand: '9' },

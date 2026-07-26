@@ -290,6 +290,11 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         ]}
       />
 
+      {/* H1 заголовок для SEO */}
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white">
+        {countryData?.frontmatter?.title?.split(' | ')[0] || countryNamesDictionary[country] || country}
+      </h1>
+
       <ZkpBadge
         subjectId={`wiki/${normalizedCountry}`}
         schema="veles-voyage:wiki-editorial-v1"
@@ -488,26 +493,6 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
       {/* Основной контент с MDX */}
       <article className="prose prose-lg max-w-none dark:prose-invert">{mdxContent}</article>
-
-      {/* FAQ из фронтматтера — видимый блок, совпадающий с JSON-LD */}
-      {faqs.length > 0 && (
-        <div id="faq" className="scroll-mt-28 mb-12">
-          <h2 className="text-3xl font-extrabold mb-8 flex items-center gap-3 !mt-0">
-            <span className="text-4xl">❓</span> Часто задаваемые вопросы
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq: { question: string; answer: string }, idx: number) => (
-              <div key={idx} className="p-4 bg-white dark:bg-gray-800/40 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg group hover:shadow-blue-500/10 transition-all">
-                <div className="font-bold text-lg mb-2 text-gray-900 dark:text-white flex items-center gap-2">
-                  <span className="w-6 h-6 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-full text-xs">Q</span>
-                  {faq.question}
-                </div>
-                <div className="text-gray-600 dark:text-gray-400 pl-8 text-sm">{faq.answer}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* People Also Ask (PAA) — AEO-блок вопросов-связок */}
       {faqs.length > 0 && (

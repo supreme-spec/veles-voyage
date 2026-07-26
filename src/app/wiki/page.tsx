@@ -29,8 +29,12 @@ export default async function WikiPage() {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <WikiPageClient stats={stats} />
-    </Suspense>
+    <>
+      {/* H1 заголовок для SEO (server-side) */}
+      <h1 className="sr-only">Энциклопедия стран мира 2026: путеводители по 195+ странам</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <WikiPageClient stats={stats} />
+      </Suspense>
+    </>
   );
 }

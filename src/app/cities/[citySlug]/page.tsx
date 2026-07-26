@@ -6,7 +6,7 @@ import Breadcrumbs from '@/shared/components/ui/Breadcrumbs';
 import { generateEnhancedSEOMetadata, generatePageBreadcrumbs } from '@/lib/seo/unifiedSEO';
 import { allCities } from '../all-cities';
 import { DEPARTURE_CITIES_DATA } from '@/shared/data/departureCitiesData';
-import { CITY_COORDINATES } from '@/shared/data/cityCoordinates';
+import { CITY_COORDINATES, getDistrictForRegion, FEDERAL_DISTRICTS } from '@/shared/data/cityCoordinates';
 import { SITE_URL, CONTACT_PHONE, SOCIAL_LINKS } from '@/shared/constants/seo';
 import { HeroImage } from '@/components/HeroImage';
 import { generateCitySlug } from '@/lib/slugify';
@@ -45,6 +45,34 @@ function isRegionEntity(name: string): boolean {
     name.startsWith('Республика ') ||
     REGION_SHORT_NAMES.includes(name)
   );
+}
+
+function generateUniqueCityText(
+  cityName: string,
+  region: string,
+  hasRealAirport: boolean,
+  airportLabel: string,
+  nearestAirport: { name: string; distanceKm: number } | null,
+  cityCoords: { latitude: number; longitude: number } | null
+): string {
+  const district = getDistrictForRegion(region);
+  const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
+
+  const position = cityCoords
+    ? cityCoords.latitude > 60
+      ? 'северном'
+      : cityCoords.latitude < 50
+        ? 'южном'
+        : 'центральном'
+    : 'уникальном';
+
+  const airportText = hasRealAirport
+    ? `Из аэропорта ${airportLabel} регулярно выполняются прямые чартерные и регулярные рейсы в Турцию, Египет, ОАЭ и Таиланд.`
+    : nearestAirport
+      ? `Ближайший аэропорт — ${nearestAirport.name} (${Math.round(nearestAirport.distanceKm)} км от ${cityName}). Оттуда выполняются прямые чартерные и регулярные рейсы в популярные направления.`
+      : `Авиапутешествия организуются из ближайших аэропортов региона.`;
+
+  return `${cityName} — город в ${position} части ${districtName} федерального округа, административный центр ${region}. ${airportText} Город является отправной точкой для путешественников, ценящих комфорт и надёжность. Мы подбираем оптимальные варианты перелёта с учётом стоимости и удобства.`;
 }
 
 function extractIataCode(airportString: string): string | null {
@@ -393,14 +421,19 @@ export default async function CityDeparturePage({
               <li><strong>До Хургады:</strong> {flightText(cityData?.flightTimes?.egypt, 'egypt')}</li>
               <li><strong>До Дубая:</strong> {flightText(cityData?.flightTimes?.uae, 'uae')}</li>
               <li><strong>Цены от:</strong> {priceText(cityData?.prices?.turkey)}</li>
-            </ul>
-          </div>
+          </ul>
+        </div>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
-            {isRegion
-              ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
-              : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`}
-          </p>
+        {/* Unique city text */}
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+          {generateUniqueCityText(cityName, cityCoords?.region || '', hasRealAirport, airportLabel, nearestAirport, cityCoords)}
+        </p>
+
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
+          {isRegion
+            ? `Подбираем выгодные путевки по направлению ${cityName}. Вылеты из ближайших аэропортов, прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`
+            : `Подбираем выгодные путевки с вылетом из ${airportLabel}. Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка включены.`}
+        </p>
 
           {/* Flight info */}
           <div className="bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 rounded-xl p-6 mb-10">
@@ -434,19 +467,24 @@ export default async function CityDeparturePage({
               { country: 'Египет', price: priceText(cityData?.prices?.egypt), icon: '🇪🇬' },
               { country: 'ОАЭ', price: priceText(cityData?.prices?.uae), icon: '🇦🇪' }
             ].map((dest) => (
-              <div key={dest.country} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-3">{dest.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Туры в {dest.country} из {cityName}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
-                  Регулярные и чартерные вылеты из {airportLabel}. Все включено, лучшие отели.
-                </p>
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">{dest.price}</span>
-                  <Link href={`/tours?from=${slug}&to=${dest.country.toLowerCase()}`}                   className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
-                    Найти тур →
-                  </Link>
+                <div key={dest.country} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div className="text-4xl mb-3">{dest.icon}</div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Туры в {dest.country} из {cityName}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                    {dest.country === 'Турция'
+                      ? `Прямые чартерные рейсы из ${airportLabel} в Анталью и другие курорты: ${flightText(cityData?.flightTimes?.turkey, 'turkey')}.`
+                      : dest.country === 'Египет'
+                        ? `Прямые чартерные рейсы из ${airportLabel} в Хургаду и Шарм-эш-Шейх: ${flightText(cityData?.flightTimes?.egypt, 'egypt')}.`
+                        : `Прямые чартерные рейсы из ${airportLabel} в Дубай и Шарджу: ${flightText(cityData?.flightTimes?.uae, 'uae')}.`}
+                    Все включено, лучшие отели.
+                  </p>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">{dest.price}</span>
+                    <Link href={`/tours?from=${slug}&to=${dest.country.toLowerCase()}`}                   className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                      Найти тур →
+                    </Link>
+                  </div>
                 </div>
-              </div>
             ))}
           </div>
 

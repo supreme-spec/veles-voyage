@@ -133,7 +133,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     bestSeason: 'Декабрь - Март',
     flightTimeFromMoscow: '9.5 часа',
     visaRequired: true,
-    topAttractions: ['Сигирия', 'Храм Зуба Будды', 'Чайные плантации Нuwara Eliya', 'Пляж Мирисса'],
+    topAttractions: ['Сигирия', 'Храм Зуба Будды', 'Чайные плантации Нувара-Элия', 'Пляж Мирисса'],
     popularResorts: ['Бентота', 'Негомбо', 'Унаватуна', 'Тангалле'],
     keywords: ['туры на Шри-Ланку', 'отдых на острове', 'чайные плантации'],
     faq: [
@@ -158,7 +158,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     flightTimeFromMoscow: '10 часов',
     visaRequired: false,
     topAttractions: ['Халонг', 'Хойань', 'Фантьет', 'Ханой'],
-    popularResorts: ['Нячанг', 'Фантьет', 'Мойне', 'Дананг'],
+    popularResorts: ['Нячанг', 'Фантьет', 'Муйне', 'Дананг'],
     keywords: ['туры во Вьетнам', 'отдых Халонг', 'уличная еда Ханой'],
     faq: [
       { q: 'Нужна ли виза во Вьетнам?', a: 'Для граждан РФ безвизовый въезд до 15 дней.' },
@@ -202,7 +202,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     bestSeason: 'Март - Октябрь',
     flightTimeFromMoscow: '10.5 часов',
     visaRequired: false,
-    topAttractions: ['Башни Петронас', 'Лангкави', 'Борнео', 'Мальacca'],
+    topAttractions: ['Башни Петронас', 'Лангкави', 'Борнео', 'Малакка'],
     popularResorts: ['Пенанг', 'Лангкави', 'Куала-Лумпур', 'Кота-Кинабалу'],
     keywords: ['туры в Малайзию', 'Лангкави отдых', 'Куала-Лумпур туры'],
     faq: [
@@ -268,8 +268,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     bestSeason: 'Ноябрь - Апрель',
     flightTimeFromMoscow: '12.5 часа',
     visaRequired: true,
-    topAttractions: ['Гавана', 'Варрадеро', 'Тринидад', 'Валье-де-Виньялес'],
-    popularResorts: ['Варрадеро', 'Варадеро', 'Кайо-Коко', 'Санта-Люсия'],
+    topAttractions: ['Гавана', 'Варадеро', 'Тринидад', 'Валье-де-Виньялес'],
+    popularResorts: ['Варадеро', 'Варадеро', 'Кайо-Коко', 'Санта-Люсия'],
     keywords: ['туры на Кубу', 'Гавана отдых', 'Карибский отдых'],
     faq: [
       { q: 'Нужна ли виза на Кубу?', a: 'Для граждан РФ виза оформляется в консульстве, карта туриста обязательна.' },
@@ -290,13 +290,13 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Греческий',
     bestSeason: 'Май - Октябрь',
     flightTimeFromMoscow: '4.5 часа',
-    visaRequired: false,
-    topAttractions: ['Акрополь', 'Сantorini', 'Микены', 'Дельфы'],
-    popularResorts: ['Сantorini', 'Родос', 'Крит', 'Корфу'],
-    keywords: ['туры в Грецию', 'Сantorini отдых', 'пляжи Греции'],
+    visaRequired: true,
+    topAttractions: ['Акрополь', 'Санторини', 'Микены', 'Дельфы'],
+    popularResorts: ['Санторини', 'Родос', 'Крит', 'Корфу'],
+    keywords: ['туры в Грецию', 'Санторини отдых', 'пляжи Греции'],
     faq: [
       { q: 'Нужна ли виза в Грецию?', a: 'Да, Греция входит в зону Шенгена — гражданам РФ необходима шенгенская виза.' },
-      { q: 'Что посмотреть в Греции за неделю?', a: 'Афины, Сароникос, Сantorini и Микены.' }
+      { q: 'Что посмотреть в Греции за неделю?', a: 'Афины, Сароникос, Санторини и Микены.' }
     ],
     wikipediaUrl: 'https://ru.wikipedia.org/wiki/Греция'
   },
@@ -313,7 +313,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Итальянский',
     bestSeason: 'Апрель - Июнь, Сентябрь - Октябрь',
     flightTimeFromMoscow: '4 часа',
-    visaRequired: false,
+    visaRequired: true,
     topAttractions: ['Колизей', 'Венеция', 'Флоренция', 'Помпеи'],
     popularResorts: ['Рим', 'Венеция', 'Флоренция', 'Амальфи'],
     keywords: ['туры в Италию', 'экскурсии Рим', 'отдых в Венеции'],
@@ -335,13 +335,13 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Испанский',
     bestSeason: 'Май - Октябрь',
     flightTimeFromMoscow: '5.5 часа',
-    visaRequired: false,
+    visaRequired: true,
     topAttractions: ['Саграда-Фамилия', 'Альгамбра', 'Парк Гюэль', 'Мадрид'],
     popularResorts: ['Барселона', 'Валенсия', 'Севилья', 'Коста-Брава'],
     keywords: ['туры в Испанию', 'Барселона отдых', 'Саграда-Фамилия'],
     faq: [
       { q: 'Нужна ли виза в Испанию?', a: 'Для граждан РФ безвизовый въезд на срок до 90 дней.' },
-      { q: 'Что посмотреть в Барселоне за 3 дня?', a: 'Саграда-Фамилия, Парк Гюэль, Баррикотико и пляж Барселонета.' }
+      { q: 'Что посмотреть в Барселоне за 3 дня?', a: 'Саграда-Фамилия, Парк Гюэль, Готический квартал (Барри-Готик) и пляж Барселонета.' }
     ]
   },
   'кипр': {
@@ -357,7 +357,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Греческий',
     bestSeason: 'Апрель - Октябрь',
     flightTimeFromMoscow: '4 часа',
-    visaRequired: false,
+    visaRequired: true,
     topAttractions: ['Пафос', 'Лимассол', 'Айя-Напа', 'Курион'],
     popularResorts: ['Айя-Напа', 'Лимассол', 'Пафос', 'Протарас'],
     keywords: ['туры на Кипр', 'Айя-Напа отдых', 'пляжи Кипра'],
@@ -401,7 +401,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Английский',
     bestSeason: 'Февраль - Апрель',
     flightTimeFromMoscow: '10.5 часа',
-    visaRequired: false,
+    visaRequired: true,
     topAttractions: ['Marina Bay Sands', 'Gardens by the Bay', 'Сентоза', 'Чайнатаун'],
     popularResorts: ['Марина-Бей', 'Орчард', 'Сентоза', 'Кланг'],
     keywords: ['туры в Сингапур', 'Сентоза отдых', 'шопинг туры'],

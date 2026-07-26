@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "2.0",
-    "generated": "2026-07-26T11:01:36.326Z",
+    "generated": "2026-07-26T11:30:08.666Z",
     "provider": "ООО «Велес» (РТА 0035678)",
     "website": "https://www.veles-voyage.ru"
   },
@@ -18,8 +18,8 @@
       "south-america": 12,
       "oceania": 16
     },
-    "totalSize": 164001,
-    "processingTime": 550
+    "totalSize": 163998,
+    "processingTime": 405
   },
   "organization": {
     "name": "Велес Вояж",
@@ -1068,7 +1068,7 @@
       "language": "арабский",
       "bestTimeToVisit": "октябрь, ноябрь, март, апрель",
       "estimatedCost": "110000",
-      "visaRequirements": false,
+      "visaRequirements": true,
       "keywords": [
         "Египет 2026, путеводитель Египет, отдых в Египте, виза Египет,  туры в Египет, Каир 2026, Пирамиды Гизы, Шарм-эль-Шейх отели,  Хургада, Луксор храмы, безопасность Египет, круизы по Нилу"
       ],

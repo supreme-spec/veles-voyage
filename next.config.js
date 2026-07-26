@@ -15,6 +15,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/countries',
+        destination: '/wiki/countries',
+        permanent: true,
+      },
+      {
+        source: '/encyclopedia',
+        destination: '/wiki',
+        permanent: true,
+      },
+      {
         source: '/wiki/bolgariya/:path*',
         destination: '/wiki/bulgaria/:path*',
         permanent: true,

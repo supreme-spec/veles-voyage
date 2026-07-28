@@ -510,9 +510,6 @@ export const mediterraneanSchemas = [
 // Hreflang
 export const mediterraneanHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/mediterranean" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/cruises/mediterranean" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/cruises/mediterranean" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/cruises/mediterranean" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/mediterranean" }
 ];
 

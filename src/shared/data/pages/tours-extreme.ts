@@ -384,8 +384,5 @@ export const toursExtremeMetaTags = {
 
 export const toursExtremeHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/extreme" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/extreme" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/extreme" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/extreme" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/extreme" }
 ];

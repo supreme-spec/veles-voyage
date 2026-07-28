@@ -384,8 +384,5 @@ export const toursAmericaMetaTags = {
 
 export const toursAmericaHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/america" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/america" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/america" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/america" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/america" }
 ];

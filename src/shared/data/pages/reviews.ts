@@ -376,9 +376,6 @@ export const reviewsMetaTags = {
 
 export const reviewsHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/reviews" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/reviews" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/reviews" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/reviews" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/reviews" }
 ];
 

@@ -199,9 +199,6 @@ export const placesMetaTags: Record<string, string> = {
 // Hreflang
 export const placesHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/wiki/places" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/wiki/places" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/wiki/places" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/wiki/places" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/wiki/places" }
 ];
 

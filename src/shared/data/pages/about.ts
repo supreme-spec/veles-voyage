@@ -447,9 +447,6 @@ export const aboutMetaTags = {
 
 export const aboutHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/about" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/about" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/about" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/about" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/about" }
 ];
 

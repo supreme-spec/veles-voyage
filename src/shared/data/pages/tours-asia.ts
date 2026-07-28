@@ -392,8 +392,5 @@ export const toursAsiaMetaTags = {
 
 export const toursAsiaHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/asia" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/asia" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/asia" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/asia" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/asia" }
 ];

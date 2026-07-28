@@ -417,9 +417,6 @@ export const toursEuropeMetaTags = {
 
 export const toursEuropeHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/europe" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/europe" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/europe" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/europe" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/europe" }
 ];
 

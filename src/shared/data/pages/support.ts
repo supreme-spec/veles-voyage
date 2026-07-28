@@ -363,9 +363,6 @@ export const supportMetaTags = {
 
 export const supportHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/support" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/support" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/support" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/support" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/support" }
 ];
 

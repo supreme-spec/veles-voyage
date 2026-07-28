@@ -356,9 +356,6 @@ export const missionMetaTags = {
 
 export const missionHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/mission" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/mission" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/mission" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/mission" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/mission" }
 ];
 

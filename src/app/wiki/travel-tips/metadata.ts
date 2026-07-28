@@ -13,7 +13,6 @@ export const travelTipsMetadata: Metadata = {
     canonical: '/wiki/travel-tips',
     languages: {
       'ru-RU': '/wiki/travel-tips',
-      'en-US': '/en/wiki/travel-tips',
     },
   },
   openGraph: {

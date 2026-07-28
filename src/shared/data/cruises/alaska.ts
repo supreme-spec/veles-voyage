@@ -330,9 +330,6 @@ export const alaskaSchemas = [
 
 export const alaskaHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/alaska" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/cruises/alaska" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/cruises/alaska" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/cruises/alaska" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/alaska" }
 ];
 

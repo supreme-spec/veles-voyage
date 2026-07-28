@@ -360,9 +360,6 @@ export const contactsMetaTags = {
 
 export const contactsHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/contacts" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/contacts" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/contacts" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/contacts" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/contacts" }
 ];
 

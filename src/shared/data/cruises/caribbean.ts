@@ -330,9 +330,6 @@ export const caribbeanSchemas = [
 
 export const caribbeanHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/caribbean" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/cruises/caribbean" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/cruises/caribbean" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/cruises/caribbean" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/caribbean" }
 ];
 

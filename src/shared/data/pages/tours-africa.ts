@@ -384,8 +384,5 @@ export const toursAfricaMetaTags = {
 
 export const toursAfricaHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/africa" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/africa" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/africa" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/africa" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/africa" }
 ];

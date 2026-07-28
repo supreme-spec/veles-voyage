@@ -376,8 +376,5 @@ export const toursCruiseMetaTags = {
 
 export const toursCruiseHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/cruise" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/tours/cruise" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/tours/cruise" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/tours/cruise" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/cruise" }
 ];

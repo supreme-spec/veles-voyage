@@ -50,9 +50,6 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: 'https://veles-voyage.ru/wiki/places',
       languages: {
         ru: 'https://veles-voyage.ru/wiki/places',
-        en: 'https://veles-voyage.ru/en/wiki/places',
-        zh: 'https://veles-voyage.ru/zh/wiki/places',
-        de: 'https://veles-voyage.ru/de/wiki/places',
         'x-default': 'https://veles-voyage.ru/wiki/places',
       },
     },

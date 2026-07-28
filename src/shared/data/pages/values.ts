@@ -356,9 +356,6 @@ export const valuesMetaTags = {
 
 export const valuesHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/values" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/values" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/values" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/values" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/values" }
 ];
 

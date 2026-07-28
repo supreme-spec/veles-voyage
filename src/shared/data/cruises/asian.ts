@@ -330,9 +330,6 @@ export const asianSchemas = [
 
 export const asianHreflang = [
   { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/asian" },
-  { rel: "alternate", hreflang: "en", href: "https://veles-voyage.ru/en/cruises/asian" },
-  { rel: "alternate", hreflang: "zh", href: "https://veles-voyage.ru/zh/cruises/asian" },
-  { rel: "alternate", hreflang: "de", href: "https://veles-voyage.ru/de/cruises/asian" },
   { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/asian" }
 ];
 

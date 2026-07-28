@@ -37,6 +37,7 @@ export const SOCIAL_LINKS = {
   rutube: 'https://rutube.ru/u/velesvoyage/',
   instagram: 'https://www.instagram.com/radun.veles/',
   twitter: '@veles_voyage',
+  max: 'https://max.ru/id5032362524_biz',
   yandexBusiness: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
   googleBusiness: 'https://share.google/TBbHMZqo9vhqFPcPv',
   gis2: 'https://2gis.ru/pushkino/firm/70000001112858240',

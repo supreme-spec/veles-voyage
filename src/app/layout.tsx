@@ -76,6 +76,7 @@ const globalSchema = {
         SOCIAL_LINKS.telegram,
         SOCIAL_LINKS.vk,
         SOCIAL_LINKS.rutube,
+        SOCIAL_LINKS.max,
         'https://www.rata.ru/agent/0035678',
         ...(SOCIAL_LINKS.yandexBusiness ? [SOCIAL_LINKS.yandexBusiness] : []),
         ...(SOCIAL_LINKS.gis2 ? [SOCIAL_LINKS.gis2] : []),

@@ -1,4 +1,5 @@
 import type { OrganizationSchema } from '@/shared/types/schema';
+import { SOCIAL_LINKS } from '@/shared/constants/seo';
 
 export function generateOrganizationSchema(): OrganizationSchema {
   return {
@@ -25,8 +26,10 @@ export function generateOrganizationSchema(): OrganizationSchema {
       addressCountry: 'RU',
     },
     sameAs: [
-      'https://vk.com/veles__voyage',
-      'https://t.me/veles_voyage',
+      SOCIAL_LINKS.vk,
+      SOCIAL_LINKS.telegram,
+      SOCIAL_LINKS.rutube,
+      SOCIAL_LINKS.max,
     ],
     priceRange: '₽₽',
     areaServed: { '@type': 'Country', name: 'Russia' },

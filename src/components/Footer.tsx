@@ -107,6 +107,15 @@ export function Footer() {
           />
         </div>
       )
+    },
+    {
+      href: 'https://max.ru/id5032362524_biz',
+      label: 'MAX',
+      icon: (
+        <div className="w-8 h-8 flex items-center justify-center text-xs font-bold text-white bg-indigo-600 rounded-full">
+          MAX
+        </div>
+      )
     }
   ];
 

@@ -102,6 +102,7 @@ const GolicynoPage = () => {
               SOCIAL_LINKS.vk,
               SOCIAL_LINKS.telegram,
               SOCIAL_LINKS.rutube,
+              SOCIAL_LINKS.max,
               SOCIAL_LINKS.yandexBusiness,
               SOCIAL_LINKS.gis2,
             ],

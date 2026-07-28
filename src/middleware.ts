@@ -81,6 +81,15 @@ const WIKI_STATIC = new Set([
   'places', 'travel-tips', 'intro',
 ]);
 
+// Справочник для разрешения битых slug блога
+const BLOG_SLUG_MAP: Record<string, string> = {
+  'top-10-oteley-dubaya-2026': 'top-10-oteley-dubaya',
+  'top-10-oteley-dubaya-2026-ot-layfstayl-luksa-do-semeynyh-kurortov': 'top-10-oteley-dubaya',
+  'skolko-stoit-tur-v-turciyu-2026': 'skolko-stoit-tur-v-turciyu-na-dvoih',
+  'skolko-stoit-tur-v-turciyu-na-dvoih-v-2026-razbor-cen-po-sezonam': 'skolko-stoit-tur-v-turciyu-na-dvoih',
+  'kuda-poehat-v-fevrale-2026-7-teplyh-napravleniy': 'kuda-poehat-v-fevrale-2026',
+};
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get('user-agent') || '';
@@ -128,6 +137,17 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL(`/cities/${name}`, request.url), 301);
       }
       return NextResponse.redirect(new URL('/wiki', request.url), 301);
+    }
+  }
+
+  // 301-редирект битых slug блога на канонические
+  if (pathname.startsWith('/blog/')) {
+    const slug = pathname.replace('/blog/', '').split('/')[0];
+    if (slug) {
+      const canonical = BLOG_SLUG_MAP[slug as keyof typeof BLOG_SLUG_MAP];
+      if (canonical) {
+        return NextResponse.redirect(new URL(`/blog/${canonical}`, request.url), 301);
+      }
     }
   }
 

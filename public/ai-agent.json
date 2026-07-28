@@ -1,32 +1,12 @@
 {
-  "name": "Велес Вояж",
-  "description": "Турагентство Велес Вояж — эксперты по подбору туров, круизов и индивидуальных путешествий по России и за рубеж. Лицензия РТА 0035678.",
-  "url": "https://veles-voyage.ru",
-  "logo": "https://veles-voyage.ru/logo.png",
-  "contact": {
-    "phone": "+7 985 063-51-34",
-    "email": "hello@veles-voyage.ru",
-    "address": {
-      "street": "пр-т. Керамиков, 103",
-      "city": "Голицыно",
-      "region": "Московская область",
-      "postalCode": "143041",
-      "country": "RU"
-    }
+  "agent_name": "Veles Voyage AI Gateway",
+  "description": "API для автономного бронирования туров ИИ-ассистентами.",
+  "capabilities": ["check_availability", "get_pricing", "book_tour"],
+  "api_endpoint": "https://veles-voyage.ru/api/v1/agent",
+  "authentication": "bearer_token",
+  "affiliate_policy": {
+    "commission_for_ai_platform": "5%",
+    "priority_booking": true
   },
-  "social": {
-    "vk": "https://vk.com/veles__voyage",
-    "telegram": "https://t.me/veles_voyage",
-    "rutube": "https://rutube.ru/u/velesvoyage/"
-  },
-  "capabilities": [
-    "Подбор туров",
-    "Круизы",
-    "Индивидуальные маршруты",
-    "Визовая поддержка",
-    "Трансфер",
-    "Страхование"
-  ],
-  "languages": ["ru", "en"],
-  "category": "travel-agency"
+  "documentation_url": "https://veles-voyage.ru/ai-api-docs"
 }

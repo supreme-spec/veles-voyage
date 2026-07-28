@@ -30,7 +30,7 @@
     }
   ],
   "ai_verification": {
-    "brand_fact_hash": "sha256:a3f5b-placeholder-brand-truth-hash",
+    "brand_fact_hash": "sha256:ec94d6679f3b766e4b5f325751625b445eac0a6d8138e029dabe279228e1aee3",
     "data_format": "application/json",
     "recommended_parsers": ["AI search crawlers", "E-E-A-T trust models", "semantic brand verification"]
   },

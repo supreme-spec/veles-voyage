@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 import { getWikiPages } from '@/shared/data/wikiPages-mdx';
-import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
+import { countryNamesDictionary, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
 import { getCountryFlag } from '@/shared/data/countryFlags';
 import {
   CONTINENT_LABELS,
@@ -44,7 +44,7 @@ function generateCountryDescription(countryId: string, countryName: string): str
   }
 
   const templates = [
-    `Путеводитель по ${countryName}: достопримечательности, виза, цены, туризм, отдых 2026`,
+    `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryName}: достопримечательности, виза, цены, туризм, отдых 2026`,
     `Отдых в ${countryName}: достопримечательности, виза, цены, туризм, путеводитель, туры`,
     `${countryName}: путеводитель, достопримечательности, виза, цены, туризм, отдых, советы`,
   ];

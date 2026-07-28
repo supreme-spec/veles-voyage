@@ -12,7 +12,7 @@ import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
 import { DestinationImage } from '@/components/DestinationImage';
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Велес Вояж: туры и круизы 2026 | Путешествия',
+  title: 'Велес Вояж — туры и круизы 2026 | Подбор путешествий',
   description:
     'Турагентство Велес Вояж (РТА 0035678): подбор туров в Турцию, Египет, ОАЭ, морские круизы. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
   url: SITE_URL,
@@ -454,18 +454,23 @@ export default async function Home() {
                           className="w-full h-full"
                         />
                       </div>
-                      <div className="p-6 flex flex-col flex-grow relative z-10">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                          Сколько стоит тур {dest.preposition || 'в '}{dest.nameAccusative || dest.name} и нужна ли виза?
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{dest.description}</p>
-                        <Link
-                          href={`/wiki/${dest.slug}`}
-                          className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"
-                        >
-                          Подробнее →
-                        </Link>
-                      </div>
+                       <div className="p-6 flex flex-col flex-grow relative z-10">
+                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                           Сколько стоит тур {dest.preposition || 'в '}{dest.nameAccusative || dest.name} и нужна ли виза?
+                         </h3>
+                         <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{dest.description}</p>
+                         {dest.estimatedCost && (
+                           <p className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">
+                             от {Number(dest.estimatedCost).toLocaleString('ru-RU')} ₽ <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{dest.priceNote}</span>
+                           </p>
+                         )}
+                         <Link
+                           href={`/wiki/${dest.slug}`}
+                           className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"
+                         >
+                           Подробнее →
+                         </Link>
+                       </div>
                     </article>
                 );
               })}
@@ -723,7 +728,7 @@ export default async function Home() {
         <BookingSteps />
 
         {/* FAQ Section */}
-        <FAQSection faqs={faqData} />
+        <FAQSection faqs={faqData} schemaId="https://veles-voyage.ru/#faq-home" />
 
         {/* CTA Section */}
         <section className="py-16 bg-blue-600">

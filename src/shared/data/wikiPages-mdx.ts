@@ -1,7 +1,7 @@
 // Экспорт данных из MDX файлов для wiki страниц
 // Использует серверные функции для избежания проблем с fs модулем
 
-import { countryNamesDictionary } from './country-names-dictionary';
+import { countryNamesDictionary, COUNTRY_NAMES_PREPOSITIONAL } from './country-names-dictionary';
 import { normalizeContinentKey } from '@/shared/constants/continents';
 
 interface WikiPage {
@@ -63,7 +63,7 @@ async function initializeWikiData() {
         cachedWikiPages[countryId] = {
           id: countryId,
           title: data.title || countryId,
-          description: data.description || `Путеводитель по ${data.title || countryId}`,
+          description: data.description || `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryNamesDictionary[countryId] || countryId}`,
           content: content,
           lastModified: new Date().toISOString(),
           tags: Array.isArray(data.keywords)
@@ -82,7 +82,7 @@ async function initializeWikiData() {
         cachedWikiPages[countryId] = {
           id: countryId,
           title: countryNamesDictionary[countryId] || countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
-          description: `Путеводитель по ${countryNamesDictionary[countryId] || countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())}`,
+          description: `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryNamesDictionary[countryId] || countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())}`,
           content: '',
           lastModified: new Date().toISOString(),
           tags: [],

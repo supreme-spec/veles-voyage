@@ -6,25 +6,32 @@ import StructuredData from '@/components/SEO/StructuredData';
 import { FAQSection } from '@/components/FAQSection';
 import { SITE_URL, SOCIAL_LINKS } from '@/shared/constants/seo';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Турагентство в Пушкино — туры из Пушкино, вылет из Шереметьево | Велес Вояж',
-  description: 'Турагентство Велес Вояж в Пушкино: офис на Московском проспекте, 9/2. Туры из Пушкино с вылетом из Шереметьево. Индивидуальные подборы, поддержка 24/7, лицензия РТА 0035678.',
-  url: `${SITE_URL}/tours/pushkino`,
-  type: 'website',
-  keywords: [
-    'турагентство пушкино',
-    'туры из пушкино',
-    'турфирма пушкино',
-    'купить тур в пушкино',
-    'вылет из шереметьево',
-    'туры из московской области',
-  ],
-});
+export const metadata: Metadata = {
+  ...generateSEOMetadata({
+    title: 'Турагентство в Пушкино — туры из Пушкино, вылет из Шереметьево | Велес Вояж',
+    description: 'Турагентство Велес Вояж в Пушкино: офис на Московском проспекте, 9/2. Туры из Пушкино с вылетом из Шереметьево. Индивидуальные подборы, поддержка 24/7, лицензия РТА 0035678.',
+    url: `${SITE_URL}/tours/pushkino`,
+    type: 'website',
+    keywords: [
+      'турагентство пушкино',
+      'туры из пушкино',
+      'турфирма пушкино',
+      'купить тур в пушкино',
+      'вылет из шереметьево',
+      'туры из московской области',
+    ],
+  }),
+  other: {
+    'geo.region': 'RU-MOS',
+    'geo.placename': 'Пушкино',
+    'ICBM': '56.014488, 37.846285',
+  },
+};
 
 const faqs = [
   {
     question: 'Где находится офис Велес Вояж в Пушкино?',
-    answer: 'Офис Велес Вояж в Пушкино находится по адресу пр-т. Московский, 9/2. Работаем Пн-Пт 9:00-19:00, Сб-Вс 10:00-16:00.',
+    answer: 'Офис Велес Вояж в Пушкино находится по адресу пр-т. Московский, 9/2. Работаем Пн-Пт 9:00-21:00, Сб-Вс 10:00-16:00.',
   },
   {
     question: 'Как организован вылет из Пушкино?',
@@ -47,15 +54,15 @@ const PushkinoPage = () => {
         schemas={[
           {
             '@context': 'https://schema.org',
-            '@type': 'TravelAgency',
-            name: 'Велес Вояж',
-            license: 'РТА 0035678',
+            '@type': 'LocalBusiness',
+            name: 'Велес Вояж - Офис в Пушкино',
+            description: 'Офис турагентства Велес Вояж в Пушкино. Подбор туров, круизов и индивидуальных путешествий.',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'пр-т. Московский, 9/2',
               addressLocality: 'Пушкино',
               addressRegion: 'Московская область',
-              postalCode: '141207',
+              postalCode: '141200',
               addressCountry: 'RU',
             },
             geo: {
@@ -63,15 +70,15 @@ const PushkinoPage = () => {
               latitude: 56.014488,
               longitude: 37.846285,
             },
-            hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
             telephone: '+7-985-063-51-34',
             email: 'hello@veles-voyage.ru',
+            url: `${SITE_URL}/tours/pushkino`,
             openingHoursSpecification: [
               {
                 '@type': 'OpeningHoursSpecification',
                 dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
                 opens: '09:00',
-                closes: '19:00',
+                closes: '21:00',
               },
               {
                 '@type': 'OpeningHoursSpecification',
@@ -80,9 +87,15 @@ const PushkinoPage = () => {
                 closes: '16:00',
               },
             ],
+            hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
             areaServed: {
               '@type': 'City',
               name: 'Пушкино',
+            },
+            parentOrganization: {
+              '@type': 'TravelAgency',
+              name: 'Велес Вояж',
+              url: SITE_URL,
             },
             sameAs: [
               SOCIAL_LINKS.vk,
@@ -156,13 +169,13 @@ const PushkinoPage = () => {
             <div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Адрес</h3>
               <p className="text-gray-700 dark:text-gray-300">пр-т. Московский, 9/2</p>
-              <p className="text-gray-700 dark:text-gray-300">Пушкино, 141207</p>
+               <p className="text-gray-700 dark:text-gray-300">Пушкино, 141200</p>
               <p className="text-gray-700 dark:text-gray-300">Россия</p>
             </div>
             <div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Время работы</h3>
-              <p className="text-gray-700 dark:text-gray-300">Пн-Пт: 9:00 - 19:00</p>
-              <p className="text-gray-700 dark:text-gray-300">Сб-Вс: 10:00 - 16:00</p>
+               <p className="text-gray-700 dark:text-gray-300">Пн-Пт: 9:00 - 21:00</p>
+               <p className="text-gray-700 dark:text-gray-300">Сб-Вс: 10:00 - 16:00</p>
             </div>
           </div>
           <div className="mt-4">
@@ -188,7 +201,28 @@ const PushkinoPage = () => {
           </div>
         </section>
 
-        <FAQSection faqs={faqs} title="Вопросы жителям Пушкино" />
+        {/* Map */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">🗺️</span> Как добраться
+          </h2>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.846285%2C56.014488&z=16&pt=37.846285,56.014488,pm2rdm"
+              width="100%"
+              height="400"
+              frameBorder="0"
+              allowFullScreen
+              title="Карта офиса Велес Вояж в Пушкино"
+              className="w-full"
+            />
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center">
+            Офис Велес Вояж в Пушкино: пр-т. Московский, 9/2. Телефон: +7 985 063-51-34
+          </p>
+        </section>
+
+        <FAQSection faqs={faqs} title="Вопросы жителям Пушкино" schemaId="https://veles-voyage.ru/tours/pushkino/#faq" />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-green-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Популярные направления</h3>

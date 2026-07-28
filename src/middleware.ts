@@ -85,6 +85,13 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get('user-agent') || '';
 
+  // 301 редирект с www на не-www
+  const host = request.headers.get('host') || '';
+  if (host.startsWith('www.')) {
+    const newUrl = new URL(pathname, `https://${host.replace(/^www\./, '')}${request.nextUrl.search}`);
+    return NextResponse.redirect(newUrl, 301);
+  }
+
   // Whitelist для ИИ-ботов - разрешаем доступ без rate limiting
   const isAIBot = AI_BOT_WHITELIST.some((bot: string) => userAgent.includes(bot));
   if (isAIBot) {
@@ -145,5 +152,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/wiki/:path*', '/cities/:path*'],
+  matcher: ['/((?!api|_next|favicon).*)'],
 };

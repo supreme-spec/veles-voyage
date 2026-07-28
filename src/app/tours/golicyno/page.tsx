@@ -6,26 +6,33 @@ import StructuredData from '@/components/SEO/StructuredData';
 import { FAQSection } from '@/components/FAQSection';
 import { SITE_URL, SOCIAL_LINKS } from '@/shared/constants/seo';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Турагентство в Голицыно — туры из Голицыно, вылет из Домодедово/Внуково | Велес Вояж',
-  description: 'Турагентство Велес Вояж в Голицыно: офис на пр-т. Керамиков, 103. Туры из Голицыно с вылетом из Домодедово и Внуково. Индивидуальные подборы, поддержка 24/7, лицензия РТА 0035678.',
-  url: `${SITE_URL}/tours/golicyno`,
-  type: 'website',
-  keywords: [
-    'турагентство голицыно',
-    'туры из голицыно',
-    'турфирма голицыно',
-    'купить тур в голицыно',
-    'вылет из домодедово',
-    'вылет из внуково',
-    'туры из одинцовского района',
-  ],
-});
+export const metadata: Metadata = {
+  ...generateSEOMetadata({
+    title: 'Турагентство в Голицыно — туры из Голицыно, вылет из Домодедово/Внуково | Велес Вояж',
+    description: 'Турагентство Велес Вояж в Голицыно: офис на пр-т. Керамиков, 103. Туры из Голицыно с вылетом из Домодедово и Внуково. Индивидуальные подборы, поддержка 24/7, лицензия РТА 0035678.',
+    url: `${SITE_URL}/tours/golicyno`,
+    type: 'website',
+    keywords: [
+      'турагентство голицыно',
+      'туры из голицыно',
+      'турфирма голицыно',
+      'купить тур в голицыно',
+      'вылет из домодедово',
+      'вылет из внуково',
+      'туры из одинцовского района',
+    ],
+  }),
+  other: {
+    'geo.region': 'RU-MOS',
+    'geo.placename': 'Голицыно',
+    'ICBM': '55.738745, 36.982842',
+  },
+};
 
 const faqs = [
   {
     question: 'Где находится офис Велес Вояж в Голицыно?',
-    answer: 'Офис Велес Вояж в Голицыно находится по адресу пр-т. Керамиков, 103. Работаем Пн-Пт 9:00-19:00, Сб-Вс 10:00-16:00.',
+    answer: 'Офис Велес Вояж в Голицыно находится по адресу пр-т. Керамиков, 103. Работаем Пн-Пт 9:00-21:00, Сб-Вс 10:00-16:00.',
   },
   {
     question: 'Как организован вылет из Голицыно?',
@@ -48,9 +55,9 @@ const GolicynoPage = () => {
         schemas={[
           {
             '@context': 'https://schema.org',
-            '@type': 'TravelAgency',
-            name: 'Велес Вояж',
-            license: 'РТА 0035678',
+            '@type': 'LocalBusiness',
+            name: 'Велес Вояж - Офис в Голицыно',
+            description: 'Офис турагентства Велес Вояж в Голицыно. Подбор туров, круизов и индивидуальных путешествий.',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'пр-т. Керамиков, 103',
@@ -61,17 +68,18 @@ const GolicynoPage = () => {
             },
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: 55.5833,
-              longitude: 36.9833,
+              latitude: 55.738745,
+              longitude: 36.982842,
             },
             telephone: '+7-985-063-51-34',
             email: 'hello@veles-voyage.ru',
+            url: `${SITE_URL}/tours/golicyno`,
             openingHoursSpecification: [
               {
                 '@type': 'OpeningHoursSpecification',
                 dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
                 opens: '09:00',
-                closes: '19:00',
+                closes: '21:00',
               },
               {
                 '@type': 'OpeningHoursSpecification',
@@ -80,9 +88,15 @@ const GolicynoPage = () => {
                 closes: '16:00',
               },
             ],
+            hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
             areaServed: {
               '@type': 'City',
               name: 'Голицыно',
+            },
+            parentOrganization: {
+              '@type': 'TravelAgency',
+              name: 'Велес Вояж',
+              url: SITE_URL,
             },
             sameAs: [
               SOCIAL_LINKS.vk,
@@ -161,8 +175,8 @@ const GolicynoPage = () => {
             </div>
             <div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Время работы</h3>
-              <p className="text-gray-700 dark:text-gray-300">Пн-Пт: 9:00 - 19:00</p>
-              <p className="text-gray-700 dark:text-gray-300">Сб-Вс: 10:00 - 16:00</p>
+               <p className="text-gray-700 dark:text-gray-300">Пн-Пт: 9:00 - 21:00</p>
+               <p className="text-gray-700 dark:text-gray-300">Сб-Вс: 10:00 - 16:00</p>
             </div>
           </div>
           <div className="mt-4">
@@ -188,7 +202,28 @@ const GolicynoPage = () => {
           </div>
         </section>
 
-        <FAQSection faqs={faqs} title="Вопросы жителям Голицыно" />
+        {/* Map */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">🗺️</span> Как добраться
+          </h2>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=36.982842%2C55.738745&z=16&pt=36.982842,55.738745,pm2rdm"
+              width="100%"
+              height="400"
+              frameBorder="0"
+              allowFullScreen
+              title="Карта офиса Велес Вояж в Голицыно"
+              className="w-full"
+            />
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center">
+            Офис Велес Вояж в Голицыно: пр-т. Керамиков, 103. Телефон: +7 985 063-51-34
+          </p>
+        </section>
+
+        <FAQSection faqs={faqs} title="Вопросы жителям Голицыно" schemaId="https://veles-voyage.ru/tours/golicyno/#faq" />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-blue-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Популярные направления</h3>

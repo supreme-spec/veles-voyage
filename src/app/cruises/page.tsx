@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import CruiseCard from '@/components/CruiseCard';
 import ClientInfoflotWidget from '@/shared/components/cruises/ClientInfoflotWidget';
 import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generateMetadata';
@@ -49,42 +50,42 @@ const cruiseData = [
     id: 'mediterranean',
     emoji: '🌊',
     title: 'Средиземноморские круизы',
-    description: 'Исследуйте древние цивилизации и солнечные побережья Средиземного моря',
+    description: 'Круизы от 75 000 ₽: Италия, Греция, Испания, Хорватия. Все включено, русские гиды, бесплатные shore-excursions для детей',
     cruiseType: 'mediterranean' as const
   },
   {
     id: 'caribbean',
     emoji: '🌴',
     title: 'Карибские круизы',
-    description: 'Погрузитесь в тропическую атмосферу белоснежных пляжей и пальм',
+    description: 'Круизы от 95 000 ₽: Мексика, Куба, Доминикана, Барбадос. Пляжи, дайвинг, все включено',
     cruiseType: 'caribbean' as const
   },
   {
     id: 'scandinavian',
     emoji: '⛷️',
     title: 'Скандинавские фьорды',
-    description: 'Откройте дикую природу и величественные фьорды Скандинавии',
+    description: 'Круизы от 85 000 ₽: Норвегия, Исландия, Шпицберген. Фьорды, северное сияние, викинги',
     cruiseType: 'scandinavian' as const
   },
   {
     id: 'asian',
     emoji: '🏯',
     title: 'Азиатские воды',
-    description: 'Исследуйте экзотические острова и богатую культуру Юго-Восточной Азии',
+    description: 'Круизы от 65 000 ₽: Сингапур, Таиланд, Вьетнам, ОАЭ. Храмы, пляжи, шоппинг',
     cruiseType: 'asian' as const
   },
   {
     id: 'alaska',
     emoji: '🏔️',
     title: 'Круизы в Аляску',
-    description: 'Путешествие к ледникам и дикой природе последнего рубежа',
+    description: 'Круизы от 110 000 ₽: ледники, медведи, фьорды. Лучший сезон май-сентябрь',
     cruiseType: 'alaska' as const
   },
   {
     id: 'world',
     emoji: '🌍',
     title: 'Кругосветные круизы',
-    description: 'Уникальное приключение по самым экзотическим уголкам планеты',
+    description: 'Круизы от 250 000 ₽: 60+ стран за 90+ дней. Кругосветка на лайнерах MSC, Royal Caribbean',
     cruiseType: 'world' as const
   }
 ];
@@ -130,6 +131,36 @@ export default async function CruisesPage() {
               cruiseType={cruise.cruiseType}
             />
           ))}
+        </div>
+
+        {/* Featured concrete offers */}
+        <div className="my-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+          <h2 className="text-3xl font-extrabold mb-6 text-center">
+            <span className="mr-2">🔥</span>
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-md">
+              Популярные круизы 2026: цены и маршруты
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Средиземное море', price: 'от 75 000 ₽', days: '7-14 ночей', cruiseType: 'mediterranean', tag: 'Европа' },
+              { title: 'Карибский бассейн', price: 'от 95 000 ₽', days: '7-10 ночей', cruiseType: 'caribbean', tag: 'Пляжи' },
+              { title: 'Скандинавские фьорды', price: 'от 85 000 ₽', days: '7-12 ночей', cruiseType: 'scandinavian', tag: 'Север' },
+              { title: 'Азиатские воды', price: 'от 65 000 ₽', days: '5-10 ночей', cruiseType: 'asian', tag: 'Экзотика' },
+              { title: 'Аляска и ледники', price: 'от 110 000 ₽', days: '10-14 ночей', cruiseType: 'alaska', tag: 'Природа' },
+              { title: 'Кругосветка', price: 'от 250 000 ₽', days: '90+ дней', cruiseType: 'world', tag: 'Мечты' },
+            ].map((offer) => (
+              <div key={offer.cruiseType} className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-xl p-6 border border-blue-100 dark:border-gray-600 flex flex-col">
+                <span className="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 w-fit">{offer.tag}</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{offer.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{offer.days}</p>
+                <p className="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">{offer.price}</p>
+                <Link href={`/cruises#${offer.cruiseType}`} className="mt-auto inline-flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+                  Подробнее
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* SEO Content Section */}

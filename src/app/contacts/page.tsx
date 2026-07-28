@@ -53,7 +53,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       'opens': '09:00',
-      'closes': '19:00'
+      'closes': '21:00'
     }, {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
@@ -127,7 +127,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       'opens': '09:00',
-      'closes': '19:00'
+      'closes': '21:00'
     }, {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
@@ -151,7 +151,7 @@ export default function ContactsPage() {
       '@type': 'PostalAddress',
       'streetAddress': 'пр-т. Московский, 9/2',
       'addressLocality': 'Пушкино',
-      'postalCode': '141207',
+      'postalCode': '141200',
       'addressCountry': 'RU'
     },
     'telephone': '+7 985 063-51-34',
@@ -166,7 +166,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       'opens': '09:00',
-      'closes': '19:00'
+      'closes': '21:00'
     }, {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
@@ -195,7 +195,7 @@ export default function ContactsPage() {
     answer: 'У нас есть офисы в Голицыно по адресу пр-т. Керамиков, 103 и в Пушкино по адресу пр-т. Московский, 9/2. Также работаем дистанционно по всей России.'
   }, {
     question: 'Какие часы работы у Велес Вояж?',
-    answer: 'Мы работаем с 9:00 до 19:00 по будням и с 10:00 до 16:00 по выходным (время московское, UTC+3).'
+    answer: 'Мы работаем с 9:00 до 21:00 по будням и с 10:00 до 16:00 по выходным (время московское, UTC+3).'
   }, {
     question: 'Как заказать консультацию?',
     answer: 'Вы можете заказать консультацию через форму на сайте, в Telegram или по телефону. Менеджер подберёт тур под ваши пожелания и бюджет.'
@@ -298,11 +298,11 @@ export default function ContactsPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Время работы</h3>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      Пн-Пт: 9:00 - 19:00<br />
-                      Сб-Вс: 10:00 - 16:00<br />
-                      МСК (UTC+3)
-                    </p>
+                     <p className="text-gray-600 dark:text-gray-300">
+                       Пн-Пт: 9:00 - 21:00<br />
+                       Сб-Вс: 10:00 - 16:00<br />
+                       МСК (UTC+3)
+                     </p>
                   </div>
                 </div>
               </div>

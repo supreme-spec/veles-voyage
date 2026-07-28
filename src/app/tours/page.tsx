@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generateMetadata';
 import StructuredData from '@/components/SEO/StructuredData';
 import TourCard from '@/components/TourCard';
@@ -50,49 +51,49 @@ const tourData = [
   {
     id: 'europe',
     title: '🏰 Европейские туры',
-    description: 'Исследуйте богатую историю и культуру Европы',
+    description: 'Туры в Европу от 45 000 ₽: Италия, Испания, Греция, Франция. Прямые рейсы, виза Schengen, поддержка 24/7',
     imageAlt: 'Европейские достопримечательности'
   },
   {
     id: 'asia',
     title: '🏯 Азиатские приключения',
-    description: 'Погрузитесь в древние традиции и современные чудеса Азии',
+    description: 'Туры в Азию от 35 000 ₽: Таиланд, Вьетнам, ОАЭ, Китай. Безвиз или e-visa, трансфер, отели 4-5*',
     imageAlt: 'Азиатские храмы и пейзажи'
   },
   {
     id: 'africa',
     title: '🦁 Африканские сафари',
-    description: 'Откройте дикую природу и удивительные пейзажи Африки',
+    description: 'Туры в Африку от 85 000 ₽: Египет, Марокко, Кения, Танзания. Сафари, пирамиды, пляжи Красного моря',
     imageAlt: 'Африканское сафари'
   },
   {
     id: 'america',
     title: '🗽 Американские маршруты',
-    description: 'От небоскребов до национальных парков',
+    description: 'Туры в Америку от 95 000 ₽: США, Мексика, Куба, Бразилия. Американа, Кармен, Ниагарский водопад',
     imageAlt: 'Американские достопримечательности'
   },
   {
     id: 'cruise',
     title: '🚢 Океанские круизы',
-    description: 'Откройте красоты океанских островов',
+    description: 'Морские круизы от 75 000 ₽: Средиземное море, Карибы, Скандинавия. Все включено, русские гиды',
     imageAlt: 'Океанские круизы'
   },
   {
     id: 'extreme',
     title: '⛰️ Экстремальные туры',
-    description: 'Для любителей острых ощущений и приключений',
+    description: 'Экстрим-туры от 55 000 ₽: альпинизм, дайвинг, рафтинг, парашют. Профессиональные инструкторы, страховка',
     imageAlt: 'Экстремальные туры'
   },
   {
     id: 'oceania',
     title: '🏝️ Туры в Океанию',
-    description: 'Австралия, Новая Зеландия, Фиджи и острова Тихого океана',
+    description: 'Туры в Океанию от 120 000 ₽: Австралия, Новая Зеландия, Фиджи. Вива пляжи, дайвинг, австралийская природа',
     imageAlt: 'Океания — острова Тихого океана'
   },
   {
     id: 'south-america',
     title: '🌎 Туры в Южную Америку',
-    description: 'Бразилия, Аргентина, Чили, Перу, Колумбия',
+    description: 'Туры в Южную Америку от 110 000 ₽: Бразилия, Аргентина, Чили, Перу. Мачу-Пикчу, Амазония, Анды, Рио-де-Жанейро',
     imageAlt: 'Южная Америка — Анды и Амазония'
   }
 ];
@@ -141,6 +142,34 @@ export default async function ToursPage() {
               imageAlt={tour.imageAlt}
             />
           ))}
+        </div>
+
+        {/* Featured concrete offers */}
+        <div className="my-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+          <h2 className="text-3xl font-extrabold mb-6 text-center">
+            <span className="mr-2">🔥</span>
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-md">
+              Популярные туры 2026: цены и направления
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Турция «всё включено»', price: 'от 90 000 ₽', days: '7 ночей', slug: 'turkey-all-inclusive', tag: 'Хит продаж' },
+              { title: 'Египет: Хургада / Шарм', price: 'от 85 000 ₽', days: '7 ночей', slug: 'egypt-2026', tag: 'Безвиз' },
+              { title: 'ОАЭ: Дубай', price: 'от 120 000 ₽', days: '5-7 ночей', slug: 'uae-2026', tag: 'Премиум' },
+              { title: 'Европа: Шенген', price: 'от 95 000 ₽', days: '7-10 ночей', slug: 'europe', tag: 'Групповые' },
+            ].map((offer) => (
+              <div key={offer.slug} className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-xl p-6 border border-blue-100 dark:border-gray-600 flex flex-col">
+                <span className="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 w-fit">{offer.tag}</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{offer.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{offer.days}</p>
+                <p className="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">{offer.price}</p>
+                <Link href={`/tours/${offer.slug}`} className="mt-auto inline-flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+                  Подробнее
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* SEO Content Section */}

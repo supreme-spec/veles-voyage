@@ -14,7 +14,7 @@ const articleSchema = aboutSchemas.find(s => s['@type'] === 'Article') as any;
 const faqSchema = aboutSchemas.find(s => s['@type'] === 'FAQPage') as any;
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'О компании Велес Вояж: туры и круизы 2026 | Эксперты',
+  title: 'О компании Велес Вояж: экспертные путешествия с 2023 года',
   description: 'Турагентство Велес Вояж с лицензией РТА 0035678. Индивидуальные туры и круизы по России и миру, энциклопедия по 200+ странам, круглосуточная поддержка.',
   url: 'https://veles-voyage.ru/about',
   type: 'article',
@@ -428,7 +428,7 @@ export default function AboutPage() {
             
             <div className="mt-8 text-center">
               <p className="text-gray-700 dark:text-gray-300">
-                Режим работы: Пн-Пт 09:00-19:00, Сб-Вс 10:00-16:00
+                Режим работы: Пн-Пт 09:00-21:00, Сб-Вс 10:00-16:00
               </p>
               <div className="mt-6 p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl inline-block">
                 <p className="text-white font-bold text-lg">

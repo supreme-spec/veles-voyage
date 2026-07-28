@@ -81,6 +81,7 @@ const FaqPage = () => {
         <FAQSection
           faqs={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
           title="Вопросы и ответы"
+          schemaId="https://veles-voyage.ru/faq/#faq"
         />
 
         <div className="mt-12 text-center">

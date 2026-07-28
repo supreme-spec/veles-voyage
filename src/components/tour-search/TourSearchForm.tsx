@@ -95,15 +95,6 @@ export default function TourSearchForm() {
     );
   };
 
-  if (dictLoading) {
-    return (
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-12 flex flex-col items-center justify-center text-gray-500">
-        <Loader2 className="w-8 h-8 animate-spin mb-4 text-blue-600" />
-        <p>Загрузка доступных направлений...</p>
-      </div>
-    );
-  }
-
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 mb-12 relative overflow-hidden">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
@@ -120,7 +111,8 @@ export default function TourSearchForm() {
             <select
               value={formData.departureTownCID}
               onChange={(e) => setFormData({ ...formData, departureTownCID: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-white dark:bg-gray-700 dark:text-white"
+              disabled={dictLoading}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {dictionaries.departureCities.map(city => (
                 <option key={city.cid} value={city.cid}>{city.name}</option>
@@ -135,7 +127,8 @@ export default function TourSearchForm() {
             <select
               value={formData.tourCID}
               onChange={(e) => setFormData({ ...formData, tourCID: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-white dark:bg-gray-700 dark:text-white"
+              disabled={dictLoading}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {dictionaries.destinations.map(dest => (
                 <option key={dest.cid} value={dest.cid}>{dest.name}</option>
@@ -152,13 +145,15 @@ export default function TourSearchForm() {
                 type="date"
                 value={formData.dateFrom}
                 onChange={(e) => setFormData({ ...formData, dateFrom: e.target.value })}
-                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white"
+                disabled={dictLoading}
+                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <input
                 type="date"
                 value={formData.dateTo}
                 onChange={(e) => setFormData({ ...formData, dateTo: e.target.value })}
-                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white"
+                disabled={dictLoading}
+                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
           </div>
@@ -171,7 +166,8 @@ export default function TourSearchForm() {
               <select
                 value={formData.adults}
                 onChange={(e) => setFormData({ ...formData, adults: Number(e.target.value) })}
-                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white"
+                disabled={dictLoading}
+                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {[1, 2, 3, 4].map(n => (
                   <option key={n} value={n}>
@@ -182,7 +178,8 @@ export default function TourSearchForm() {
               <select
                 value={formData.children}
                 onChange={(e) => setFormData({ ...formData, children: Number(e.target.value) })}
-                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white"
+                disabled={dictLoading}
+                className="w-1/2 px-3 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm bg-white dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {[0, 1, 2, 3].map(n => (
                   <option key={n} value={n}>
@@ -194,9 +191,16 @@ export default function TourSearchForm() {
           </div>
         </div>
 
+        {dictLoading && (
+          <div className="flex items-center justify-center py-3 text-blue-600 text-sm">
+            <Loader2 className="w-4 h-4 animate-spin mr-2" />
+            Загружаем справочники...
+          </div>
+        )}
+
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || dictLoading}
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
         >
           {loading ? (
@@ -214,7 +218,8 @@ export default function TourSearchForm() {
         <button
           type="button"
           onClick={handleDemoSearch}
-          className="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-600"
+          disabled={dictLoading}
+          className="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Показать примеры туров
         </button>

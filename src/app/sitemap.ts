@@ -3,6 +3,7 @@ import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 import citiesSitemap from './cities/sitemap';
 import wikiSitemap from './wiki/sitemap';
 import visualSitemap from './visual-sitemap';
+import { blogPosts } from '@/shared/data/blogPosts';
 
 const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
 
@@ -100,6 +101,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: STATIC_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.dateModified),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     {
       url: `${baseUrl}/news`,
       lastModified: new Date(),

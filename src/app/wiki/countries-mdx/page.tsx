@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 
 // Импортируем новые функции для работы с MDX
 import { getWikiPages, getContinentStats } from '@/shared/data/wikiPages-client';
+import { COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
 
 type CountryInfo = {
   id: string;
@@ -275,7 +276,7 @@ function generateCountryDescription(countryId: string, countryName: string): str
 
   // Генерация описания на основе названия страны
   const templates = [
-    `Путеводитель по ${countryName}: достопримечательности, виза, цены, туризм, отдых 2026`,
+    `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryName}: достопримечательности, виза, цены, туризм, отдых 2026`,
     `Отдых в ${countryName}: достопримечательности, виза, цены, туризм, путеводитель, туры`,
     `${countryName}: путеводитель, достопримечательности, виза, цены, туризм, отдых, советы`,
     `Туризм в ${countryName}: достопримечательности, виза, цены, путеводитель, туры, отдых`,

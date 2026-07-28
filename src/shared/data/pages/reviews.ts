@@ -26,7 +26,7 @@ export function setReviewsDates({ published, modified }: { published: string, mo
 export const reviewsArticleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Реальные отзывы путешественников о Велес Вояж | Велес Вояж",
+  "headline": "Реальные отзывы путешественников о Велес Вояж",
   "description": "Реальные отзывы путешественников о Велес Вояж. Более 500 гостей поделились впечатлениями о турах в Турцию, Дубай, Египет и Абхазию. Публикуем отзывы без цензуры, сохраняя авторский стиль и конструктивную критику. Оценка 4.9 из 5.",
   "image": {
     "@type": "ImageObject",

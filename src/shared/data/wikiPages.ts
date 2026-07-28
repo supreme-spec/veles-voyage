@@ -1,4 +1,5 @@
 import type { WikiPage } from '@/features/wiki/types';
+import { countryNamesDictionary, COUNTRY_NAMES_PREPOSITIONAL } from './country-names-dictionary';
 
 // Интеграция данных из MDX файлов
 let countryIds: string[] = [];
@@ -231,8 +232,8 @@ const wikiPages: Record<string, WikiPage> = {};
 countryIds.forEach((countryId: string) => {
   wikiPages[countryId] = {
     id: countryId,
-    title: countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
-    description: `Путеводитель по ${countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())}`,
+    title: countryNamesDictionary[countryId] || countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
+    description: `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryNamesDictionary[countryId] || countryId.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())}`,
     content: '',
     lastModified: new Date().toISOString(),
     tags: [],

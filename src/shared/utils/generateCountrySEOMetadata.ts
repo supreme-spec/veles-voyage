@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import React, { cache } from 'react';
-import { countryNamesDictionary, COUNTRY_NAMES_ACCUSATIVE } from '@/shared/data/country-names-dictionary';
+import { countryNamesDictionary, COUNTRY_NAMES_ACCUSATIVE, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
 import { generateEnhancedSEOMetadata, SEO_CONFIG } from '@/lib/seo/unifiedSEO';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 import { SITE_URL } from '@/shared/constants/seo';
@@ -292,7 +292,7 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
       "@type": "WebPage",
       "@id": countryUrl
     },
-    "articleSection": `Путеводитель по ${countryName}`,
+    "articleSection": `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryName}`,
     "about": {
       "@type": "Place",
       "name": countryName
@@ -392,7 +392,7 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
     "@type": "TouristDestination",
     "@id": `${countryUrl}#destination`,
     "name": countryName,
-    "description": mdxData?.frontmatter.description || `Путеводитель по ${countryName}`,
+    "description": mdxData?.frontmatter.description || `Путеводитель по ${COUNTRY_NAMES_PREPOSITIONAL[countryId] || countryName}`,
     "url": countryUrl,
     "containsPlace": [
       {

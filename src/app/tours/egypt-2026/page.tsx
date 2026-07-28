@@ -280,7 +280,7 @@ const Egypt2026Page = () => {
           </ul>
         </section>
 
-        <FAQSection faqs={faqs} title="Вопросы о турах в Египет" />
+        <FAQSection faqs={faqs} title="Вопросы о турах в Египет" schemaId="https://veles-voyage.ru/tours/egypt-2026/#faq" />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-amber-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Полезные ссылки</h3>

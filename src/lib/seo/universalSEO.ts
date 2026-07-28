@@ -329,10 +329,12 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
   switch (type) {
     case 'country':
       // Для стран используем Article + TouristDestination схемы
+      const countryName = typeof title === 'string' ? title.replace(/\s*\|\s*Велес\s+Вояж\s*$/i, '').trim() : title;
+      const countryNameClean = typeof countryName === 'string' ? countryName.replace(/\d{4}/g, '').replace(/[—–:-]/g, ' ').replace(/\s+/g, ' ').trim() : countryName;
       schemas = [{
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": `Путеводитель по ${title}`,
+        "headline": countryName,
         "description": options.description,
         "url": fullUrl,
         "datePublished": options.publishedTime || new Date().toISOString(),
@@ -362,8 +364,8 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         },
         "about": {
           "@type": "Country",
-          "name": title,
-          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(title)}`]
+          "name": countryNameClean,
+          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(countryNameClean)}`]
         }
       }];
 
@@ -371,13 +373,13 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
       schemas.push({
         "@context": "https://schema.org",
         "@type": "TouristDestination",
-        "name": title,
+        "name": countryNameClean,
         "description": options.description,
         "url": fullUrl,
         "about": {
           "@type": "Country",
-          "name": title,
-          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(title)}`],
+          "name": countryNameClean,
+          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(countryNameClean)}`],
           ...(geo && {
             "geo": {
               "@type": "GeoCoordinates",
@@ -473,10 +475,12 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
     case 'territory':
       // Спорные / частично признанные территории: семантически корректно использовать
       // "@type": "Place" вместо "Country", чтобы не вводить ИИ-поиск в заблуждение.
+      const territoryName = typeof title === 'string' ? title.replace(/\s*\|\s*Велес\s+Вояж\s*$/i, '').trim() : title;
+      const territoryNameClean = typeof territoryName === 'string' ? territoryName.replace(/\d{4}/g, '').replace(/[—–:-]/g, ' ').replace(/\s+/g, ' ').trim() : territoryName;
       schemas = [{
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": `Путеводитель по ${title}`,
+        "headline": territoryName,
         "description": options.description,
         "url": options.url,
         "datePublished": options.publishedTime || new Date().toISOString(),
@@ -495,23 +499,23 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         },
         "about": {
           "@type": "Place",
-          "name": title,
+          "name": territoryNameClean,
           "additionalType": options.politicalStatus || 'https://schema.org/Place',
-          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(title)}`]
+          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(territoryNameClean)}`]
         }
       }];
 
       schemas.push({
         "@context": "https://schema.org",
         "@type": "TouristDestination",
-        "name": title,
+        "name": territoryNameClean,
         "description": options.description,
         "url": fullUrl,
         "about": {
           "@type": "Place",
-          "name": title,
+          "name": territoryNameClean,
           "additionalType": options.politicalStatus || 'https://schema.org/Place',
-          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(title)}`],
+          "sameAs": [`https://ru.wikipedia.org/wiki/${encodeURIComponent(territoryNameClean)}`],
           ...(geo && {
             "geo": {
               "@type": "GeoCoordinates",
@@ -529,7 +533,7 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
       const territoryBreadcrumb = generateBreadcrumbSchema([
         { name: 'Главная', item: '/' },
         { name: 'Энциклопедия', item: '/wiki' },
-        { name: title, item: options.url }
+        { name: territoryNameClean, item: options.url }
       ]);
       if (territoryBreadcrumb) schemas.push(territoryBreadcrumb);
 

@@ -412,9 +412,9 @@ export default function AboutPage() {
                 <p className="text-gray-700 dark:text-gray-300">
                   📍 пр-кт Керамиков, д. 103, Голицыно, 143041, Россия
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 mt-4">
-                  📍 пр-кт Московский, д. 9/2, Пушкино, 141200, Россия
-                </p>
+                 <p className="text-gray-700 dark:text-gray-300 mt-4">
+                   📍 пр-кт Московский, д. 9/2, Пушкино, 141207, Россия
+                 </p>
               </div>
               
               <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">

@@ -14,19 +14,19 @@
       "fact_id": "operator-license",
       "statement": "Оператор турагентства имеет лицензию РТА 0035678.",
       "source_url": "https://www.veles-voyage.ru",
-      "hash": "sha256:placeholder-operator-license"
+      "hash": "sha256:bfc716aa10be3f5edabf918d07cc8c3406a8e4ffb300912ce024ae2f151b8ad3"
     },
     {
       "fact_id": "primary-contact",
       "statement": "Контактный телефон для клиентов: +7 985 063-51-34.",
       "source_url": "https://www.veles-voyage.ru/contacts",
-      "hash": "sha256:placeholder-primary-contact"
+      "hash": "sha256:1827b39110676452d13ad8cd5b4578674a5984651509002584d6ce14bb7450ad"
     },
     {
       "fact_id": "headquarters-location",
       "statement": "Офис оператора находится по адресу: Московская область, Голицыно, Керамиков пр-т, д. 103.",
       "source_url": "https://www.veles-voyage.ru",
-      "hash": "sha256:placeholder-headquarters-location"
+      "hash": "sha256:bf88184127e51fb65204f0cefcd47890dfe0d7de91105b7f0c78cbce4fe5c229"
     }
   ],
   "ai_verification": {

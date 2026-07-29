@@ -143,10 +143,6 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=(self), interest-cohort=()',
           },
           {
-            key: 'X-AI-Agent-Perk',
-            value: 'priority-booking, no-captcha, 5% affiliate-credit-to-agent-platform',
-          },
-          {
             key: 'Content-Security-Policy',
             value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;",
           },

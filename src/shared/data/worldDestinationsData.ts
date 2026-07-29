@@ -27,7 +27,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'египет': {
     name: 'Египет',
     nameAccusative: 'Египет',
-    preposition: 'в',
+    preposition: 'в ',
     slug: 'egypt',
     type: 'Country',
     description: 'Страна фараонов: пирамиды, Красное море и круглогодичное солнце.',
@@ -53,7 +53,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'оаэ': {
     name: 'ОАЭ',
     nameAccusative: 'ОАЭ',
-    preposition: 'в',
+    preposition: 'в ',
     slug: 'uae',
     type: 'Country',
     description: 'Роскошь будущего: небоскребы Дубая, пустыни и шопинг мирового уровня.',
@@ -79,7 +79,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'таиланд': {
     name: 'Таиланд',
     nameAccusative: 'Таиланд',
-    preposition: 'в',
+    preposition: 'в ',
     slug: 'thailand',
     type: 'Country',
     description: 'Страна улыбок: экзотика, буддийские храмы и лучшие пляжи Азии.',
@@ -105,7 +105,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'мальдивы': {
     name: 'Мальдивы',
     nameAccusative: 'Мальдивы',
-    preposition: 'на',
+    preposition: 'на ',
     slug: 'maldives',
     type: 'Country',
     description: 'Легендарный островной отдых: водные виллы, лазурная вода и идеальные закаты.',
@@ -131,7 +131,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'шри-ланка': {
     name: 'Шри-Ланка',
     nameAccusative: 'Шри-Ланку',
-    preposition: 'на',
+    preposition: 'на ',
     slug: 'sri-lanka',
     type: 'Country',
     description: 'Островная экзотика: чайные плантации, древние храмы и песчаные пляжи.',
@@ -157,7 +157,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'вьетнам': {
     name: 'Вьетнам',
     nameAccusative: 'Вьетнам',
-    preposition: 'во',
+    preposition: 'во ',
     slug: 'vietnam',
     type: 'Country',
     description: 'Страна контрастов: Ханой, Халонг, пляжные курорты и уличная еда.',
@@ -183,7 +183,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'индонезия': {
     name: 'Индонезия',
     nameAccusative: 'Индонезию',
-    preposition: 'в',
+    preposition: 'в ',
     type: 'Country',
     description: 'Островная мечта: Бали, Комодо, джунгли и храмы древних королевств.',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop&auto=format',
@@ -205,7 +205,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'малайзия': {
     name: 'Малайзия',
     nameAccusative: 'Малайзию',
-    preposition: 'в',
+    preposition: 'в ',
     type: 'Country',
     description: 'Культурный микс: небоскребы Куала-Лумпура, джунгли Борнео и остров Лангкави.',
     image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=400&fit=crop&auto=format',
@@ -227,7 +227,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'сейшелы': {
     name: 'Сейшелы',
     nameAccusative: 'Сейшелы',
-    preposition: 'на',
+    preposition: 'на ',
     type: 'Country',
     description: 'Райские острова: черепахи, кокосы и первозданные пляжи.',
     image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop&auto=format',
@@ -249,7 +249,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'доминикана': {
     name: 'Доминикана',
     nameAccusative: 'Доминикану',
-    preposition: 'на',
+    preposition: 'на ',
     type: 'Country',
     description: 'Карибский рай: белые пляжи, лагуны и все включено.',
     image: 'https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?w=600&h=400&fit=crop&auto=format',
@@ -271,7 +271,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'куба': {
     name: 'Куба',
     nameAccusative: 'Кубу',
-    preposition: 'на',
+    preposition: 'на ',
     type: 'Country',
     description: 'Остров свободы: старые автомобили, сигары и карибский ритм.',
     image: 'https://images.unsplash.com/photo-1500759285222-a95626b934cb?w=600&h=400&fit=crop&auto=format',
@@ -293,7 +293,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'греция': {
     name: 'Греция',
     nameAccusative: 'Грецию',
-    preposition: 'в',
+    preposition: 'в ',
     slug: 'greece',
     type: 'Country',
     description: 'Античная история, белые домики и лазурное Эгейское море.',
@@ -319,7 +319,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'италия': {
     name: 'Италия',
     nameAccusative: 'Италию',
-    preposition: 'в',
+    preposition: 'в ',
     type: 'Country',
     description: 'Искусство, еда и романтика: от Рима до Венеции.',
     image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&h=400&fit=crop&auto=format',
@@ -341,7 +341,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'испания': {
     name: 'Испания',
     nameAccusative: 'Испанию',
-    preposition: 'в',
+    preposition: 'в ',
     type: 'Country',
     description: 'Страна страстей: фламенко, архитектура Гауди и пляжи Коста-Бравы.',
     image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=400&fit=crop&auto=format',
@@ -363,7 +363,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'кипр': {
     name: 'Кипр',
     nameAccusative: 'Кипр',
-    preposition: 'на',
+    preposition: 'на ',
     type: 'Country',
     description: 'Остров Афродиты: история, виноделие и чистые пляжи.',
     image: 'https://images.unsplash.com/photo-1601581875039-e899893d520c?w=600&h=400&fit=crop&auto=format',
@@ -385,7 +385,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'кантарские-острова': {
     name: 'Канарские острова',
     nameAccusative: 'Канарские острова',
-    preposition: 'на',
+    preposition: 'на ',
     type: 'Country',
     description: 'Вечная весна в Атлантике: Тенерифе, Гран-Канария и вулканы.',
     image: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&h=400&fit=crop&auto=format',
@@ -407,7 +407,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
   'сингапур': {
     name: 'Сингапур',
     nameAccusative: 'Сингапур',
-    preposition: 'в',
+    preposition: 'в ',
     type: 'Country',
     description: 'Город-государство будущего: футуристические парки, шопинг и еда.',
     image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&h=400&fit=crop&auto=format',

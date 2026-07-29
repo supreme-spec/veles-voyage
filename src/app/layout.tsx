@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/features/auth/context/AuthContext.simple';
@@ -25,6 +25,13 @@ const mainFont = Inter({
 });
 
 const siteUrl = SITE_URL;
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
 
 const globalSchema = {
   '@context': 'https://schema.org',
@@ -219,13 +226,6 @@ const globalSchema = {
         '.speakable-summary',
         '.direct-answer',
       ],
-      xpath: [
-        '//h1',
-        '//h2',
-        '//h3',
-        '//*[contains(@class, "speakable-summary")]',
-        '//*[contains(@class, "direct-answer")]',
-      ],
     },
     {
       '@type': 'Person',
@@ -273,18 +273,9 @@ const globalSchema = {
 export const metadata: Metadata = {
   title: {
     default: 'Велес Вояж — туры и путешествия 2026',
-    template: '%s',
+    template: '%s | Велес Вояж',
   },
   description: 'Турагентство Велес Вояж: индивидуальные туры, круизы, путеводители по 200+ странам. Поддержка 24/7, лицензия РТА 0035678. Забронируйте тур онлайн!',
-  keywords: [
-    'турагентство',
-    'туры',
-    'круизы',
-    'путеводитель по странам',
-    'отдых 2026',
-    'Велес Вояж'
-  ],
-
   // Авторство
   authors: [{ name: 'Велес Вояж' }],
   creator: 'Велес Вояж',
@@ -348,14 +339,6 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/images/og-default.jpg`],
     creator: '@veles_voyage',
     site: '@veles_voyage',
-  },
-
-  // Viewport для адаптивности
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
   },
 
   // Дополнительные метатеги

@@ -17,22 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: commonDisallow,
-      },
-      // Specific rules for search engines
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: commonDisallow,
-      },
-      {
-        userAgent: 'Yandex',
-        allow: '/',
-        disallow: commonDisallow,
-      },
-      {
-        userAgent: 'YandexBot',
-        allow: '/',
-        disallow: commonDisallow,
+        crawlDelay: 1,
       },
       // Retrieval-боты ИИ (разрешаем для цитирования в реальном времени)
       {
@@ -85,10 +70,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        userAgent: 'Bytespider',
-        disallow: '/',
-      },
-      {
         userAgent: 'Amazonbot',
         allow: '/',
       },
@@ -96,19 +77,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'FacebookBot',
         allow: '/',
       },
-      {
-        userAgent: 'Applebot',
-        allow: '/',
-      },
-      {
-        userAgent: 'Applebot-Extended',
-        allow: '/',
-      },
-      {
-        userAgent: 'cohere-ai',
-        allow: '/',
-      },
-      // Rules for web3 crawlers
+// Rules for web3 crawlers
       {
         userAgent: 'ipfs',
         allow: '/',

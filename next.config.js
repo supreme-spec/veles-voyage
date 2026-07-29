@@ -2,10 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  optimizeFonts: true,
   experimental: {
     typedRoutes: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react', 'leaflet', 'mapbox-gl', 'react-leaflet'],
+    optimizePackageImports: ['framer-motion', 'lucide-react', 'leaflet', 'react-leaflet'],
   },
   async redirects() {
     return [
@@ -127,6 +126,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; child-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;",
   },
   async headers() {
     return [
@@ -138,7 +138,6 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
-          { key: 'X-XSS-Protection', value: '1; mode=block' },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self), interest-cohort=()',
@@ -146,6 +145,10 @@ const nextConfig = {
           {
             key: 'X-AI-Agent-Perk',
             value: 'priority-booking, no-captcha, 5% affiliate-credit-to-agent-platform',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;",
           },
         ],
       },

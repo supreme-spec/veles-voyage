@@ -22,7 +22,6 @@ const AI_BOT_WHITELIST = [
   'Applebot-Extended',
   'cohere-ai',
   'anthropic-ai',
-  'Bytespider'
 ];
 
 const LEGACY_SLUG_MAP: Record<string, string> = {

@@ -416,7 +416,6 @@ export function generateEnhancedSEOMetadata(data: SEOData): Metadata {
   const {
     title,
     description,
-    keywords = [],
     url = '',
     image = SEO_CONFIG.defaultImage,
     type = 'website',
@@ -442,7 +441,6 @@ export function generateEnhancedSEOMetadata(data: SEOData): Metadata {
     // Base metadata
     title,
     description,
-    keywords: generateKeywords(keywords),
     
     // Authorship
     authors: [{ name: author }],
@@ -684,7 +682,6 @@ export function generateMetaTags(title: string, description: string, url: string
   return {
     title,
     description,
-    keywords: generateKeywords([title, description]),
     authors: [{ name: SEO_CONFIG.organization }],
     creator: SEO_CONFIG.siteName,
     publisher: SEO_CONFIG.siteName,

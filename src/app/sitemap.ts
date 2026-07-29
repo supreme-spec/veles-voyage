@@ -1,11 +1,35 @@
 import type { MetadataRoute } from 'next';
-import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
+import { SITE_URL } from '@/shared/constants/seo';
 import citiesSitemap from './cities/sitemap';
 import wikiSitemap from './wiki/sitemap';
 import visualSitemap from './visual-sitemap';
 import { blogPosts } from '@/shared/data/blogPosts';
 
-const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
+const LASTMOD = {
+  home: '2026-07-26',
+  tours: '2026-07-26',
+  blog: '2026-07-26',
+  cruises: '2026-07-15',
+  about: '2026-06-20',
+  contacts: '2026-06-20',
+  mission: '2026-05-01',
+  privacy: '2026-04-15',
+  terms: '2026-04-15',
+  support: '2026-06-20',
+  values: '2026-05-15',
+  wiki: '2026-07-15',
+  cities: '2026-07-15',
+  wikiPlaces: '2026-07-15',
+  destination: '2026-07-15',
+  education: '2026-05-01',
+  flights: '2026-06-01',
+  hotels: '2026-06-01',
+  partners: '2026-03-01',
+};
+
+function lastmod(key: keyof typeof LASTMOD): Date {
+  return new Date(LASTMOD[key] + 'T00:00:00.000Z');
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
@@ -13,97 +37,97 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const mainUrls: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: lastmod('home'),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('about'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contacts`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('contacts'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/mission`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('mission'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('privacy'),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('terms'),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/support`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('support'),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/values`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('values'),
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/wiki`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('wiki'),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/cities`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('cities'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/wiki/places`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('wikiPlaces'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/tours`,
-      lastModified: new Date(),
+      lastModified: lastmod('tours'),
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/tours/oceania`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('tours'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/tours/south-america`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('tours'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/cruises`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('cruises'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('blog'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
@@ -115,25 +139,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: `${baseUrl}/education`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('education'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/flights`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('flights'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/hotels`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('hotels'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/partners`,
-      lastModified: STATIC_DATE,
+      lastModified: lastmod('partners'),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
@@ -160,8 +184,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     console.error('visualSitemap error:', e);
   }
 
+  const sitemapImages = [
+    { loc: `${baseUrl}/images/og-default.jpg` },
+  ];
+
   const filtered = [
-    ...mainUrls,
+    ...mainUrls.map((url) => ({ ...url, images: sitemapImages })),
     ...wiki,
     ...cities,
     ...visual,

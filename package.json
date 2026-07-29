@@ -11,8 +11,8 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "clean": "taskkill /f /im node.exe 2>nul & rmdir /s /q .next 2>nul",
-    "clean-all": "taskkill /f /im node.exe 2>nul & rmdir /s /q .next 2>nul & rmdir /s /q node_modules 2>nul",
+    "clean": "rimraf .next",
+    "clean-all": "rimraf .next node_modules",
     "fresh": "npm run clean && npm run dev",
     "fresh-install": "npm run clean-all && npm install --legacy-peer-deps && npm run dev",
     "type-check": "tsc --noEmit",
@@ -33,7 +33,6 @@
     "update:data": "npm run update:cities && npm run update:airports"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^2.0.2",
     "@heroicons/react": "^2.0.18",
     "@types/node": "^20.5.1",
     "@types/nodemailer": "^7.0.1",
@@ -52,7 +51,6 @@
     "groq-sdk": "^0.37.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.539.0",
-    "mapbox-gl": "^3.18.0",
     "next": "^14.2.0",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.4.6",

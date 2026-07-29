@@ -32,6 +32,7 @@ import { isDisputedTerritory, getPoliticalStatus, getPoliticalStatusNote } from 
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { ZkpBadge } from '@/components/ZkpTrustBadge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { MdxTableOfContents } from '@/components/MdxTableOfContents';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 // CountryMap component using InteractiveMap
@@ -289,6 +290,9 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           { label: countryNamesDictionary[country] || country, href: `/wiki/${country}` },
         ]}
       />
+
+      {/* Table of Contents */}
+      <MdxTableOfContents mdxContent={null} compactMode={true} showReadingTime={true} />
 
       {/* H1 заголовок для SEO */}
       <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white">
@@ -561,6 +565,30 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           ← Вернуться к списку стран
         </Link>
       </div>
+
+      {/* CTA: Подобрать тур */}
+      <section className="mt-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-center">
+        <h3 className="text-xl font-bold text-white mb-3">
+          Подберём тур в {countryNamesDictionary[country] || country} под ваш бюджет
+        </h3>
+        <p className="text-blue-100 mb-4">
+          Оставьте заявку и наш менеджер свяжется с вами в течение 15 минут
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/tours"
+            className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded-lg text-lg transition-colors"
+          >
+            Посмотреть туры
+          </Link>
+          <Link
+            href="/contacts"
+            className="inline-flex items-center justify-center bg-transparent hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors border-2 border-white"
+          >
+            Связаться с нами
+          </Link>
+        </div>
+      </section>
     </div >
   );
 }

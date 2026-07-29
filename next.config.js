@@ -144,7 +144,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;",
+            value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https://bitrix.infoflot.com; frame-src 'self' https://bitrix.infoflot.com;",
           },
         ],
       },

@@ -148,7 +148,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline' https://bitrix.infoflot.com https://widgets.aviakassa.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' wss: https://bitrix.infoflot.com https://widgets.aviakassa.com; frame-src 'self' https://bitrix.infoflot.com https://widgets.aviakassa.com; worker-src 'self' blob:",
+             value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline' https://bitrix.infoflot.com https://widgets.aviakassa.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' wss: https://bitrix.infoflot.com https://widgets.aviakassa.com https://images.unsplash.com https://api4.aviakassa.com; frame-src 'self' https://bitrix.infoflot.com https://widgets.aviakassa.com https://yandex.ru; worker-src 'self' blob:",
           },
         ],
       },

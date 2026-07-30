@@ -28,13 +28,18 @@ import {
 import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/universalSEO';
-import { isDisputedTerritory, getPoliticalStatus, getPoliticalStatusNote } from '@/shared/constants/disputedTerritories';
+import {
+  isDisputedTerritory,
+  getPoliticalStatus,
+  getPoliticalStatusNote,
+} from '@/shared/constants/disputedTerritories';
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { ZkpBadge } from '@/components/ZkpTrustBadge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { MdxTableOfContents } from '@/components/MdxTableOfContents';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import { SITE_URL } from '@/shared/constants/seo';
 // CountryMap component using InteractiveMap
 const CountryMap = ({ countryName }: any) => (
   <div className="my-6">
@@ -104,7 +109,13 @@ export async function generateMetadata({
 
     // Возвращаем базовые метаданные в случае ошибки
     try {
-      const filePath = path.join(process.cwd(), 'src', 'content', 'countries', `${normalizedCountry}.mdx`);
+      const filePath = path.join(
+        process.cwd(),
+        'src',
+        'content',
+        'countries',
+        `${normalizedCountry}.mdx`
+      );
       if (!fs.existsSync(filePath)) {
         throw new Error(`File not found: ${filePath}`);
       }
@@ -165,7 +176,13 @@ async function getCountryContent(country: string) {
   }
 
   try {
-    const filePath = path.join(process.cwd(), 'src', 'content', 'countries', `${normalizedCountry}.mdx`);
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'content',
+      'countries',
+      `${normalizedCountry}.mdx`
+    );
     console.log(`[Wiki] Attempting to load MDX: ${filePath}`);
 
     if (!fs.existsSync(filePath)) {
@@ -181,15 +198,11 @@ async function getCountryContent(country: string) {
       const strippedContent = rawContent.replace(/<div id="faq"[\s\S]*?(?=<hr|$)/, '');
       const { content: compiledContent } = await compileMDX({
         source: strippedContent,
-        options: { 
+        options: {
           parseFrontmatter: false,
           mdxOptions: {
             remarkPlugins: [remarkGfm],
-            rehypePlugins: [
-              rehypeRaw,
-              rehypeSlug,
-              [rehypeAutolinkHeadings, { behavior: 'wrap' }],
-            ],
+            rehypePlugins: [rehypeRaw, rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
           },
         },
         components,
@@ -200,7 +213,7 @@ async function getCountryContent(country: string) {
       // Fallback to raw content wrapped in a div if compilation fails
       return {
         frontmatter,
-        content: <div dangerouslySetInnerHTML={{ __html: rawContent }} />
+        content: <div dangerouslySetInnerHTML={{ __html: rawContent }} />,
       };
     }
   } catch (error) {
@@ -215,20 +228,27 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const countryData = await getCountryContent(normalizedCountry);
 
   // Парсинг FAQ из фронтматтера (формат: Вопрос|Ответ;;Вопрос|Ответ)
-  const faqs = countryData?.frontmatter?.faqs && typeof countryData.frontmatter.faqs === 'string'
-    ? countryData.frontmatter.faqs.split(';;').map((pair: string) => {
-      const parts = pair.split('|');
-      return {
-        question: parts[0]?.trim() || '',
-        answer: parts[1]?.trim() || ''
-      };
-    }).filter((f: any) => f.question && f.answer)
-    : [];
+  const faqs =
+    countryData?.frontmatter?.faqs && typeof countryData.frontmatter.faqs === 'string'
+      ? countryData.frontmatter.faqs
+          .split(';;')
+          .map((pair: string) => {
+            const parts = pair.split('|');
+            return {
+              question: parts[0]?.trim() || '',
+              answer: parts[1]?.trim() || '',
+            };
+          })
+          .filter((f: any) => f.question && f.answer)
+      : [];
 
   // Парсинг ключевых слов
-  const keywords = typeof countryData?.frontmatter?.keywords === 'string'
-    ? countryData.frontmatter.keywords.split(',').map((k: string) => k.trim())
-    : (Array.isArray(countryData?.frontmatter?.keywords) ? countryData.frontmatter.keywords : []);
+  const keywords =
+    typeof countryData?.frontmatter?.keywords === 'string'
+      ? countryData.frontmatter.keywords.split(',').map((k: string) => k.trim())
+      : Array.isArray(countryData?.frontmatter?.keywords)
+        ? countryData.frontmatter.keywords
+        : [];
 
   // Определяем, является ли страна спорной/частично признанной территорией.
   // Для таких страниц используем тип 'territory' (в JSON-LD — "@type": "Place", а не "Country"),
@@ -239,9 +259,10 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     (disputed ? getPoliticalStatus(normalizedCountry) : undefined);
 
   // Получаем JSON-LD схемы для SEO с использованием универсальной функции
-  const schemas = await generateUniversalSchemas({
-    title: countryData?.frontmatter?.title || `${normalizedCountry} - путеводитель | Велес Вояж`,
-    description: countryData?.frontmatter?.description || `Подробный путеводитель по ${normalizedCountry}`,
+  const baseSchemas = await generateUniversalSchemas({
+    title: countryData?.frontmatter?.title || `${normalizedCountry} - путеводитель | Veles Voyage`,
+    description:
+      countryData?.frontmatter?.description || `Подробный путеводитель по ${normalizedCountry}`,
     url: `/wiki/${normalizedCountry}`,
     image: countryData?.frontmatter?.image,
     keywords,
@@ -257,6 +278,25 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     politicalStatus,
   });
 
+  const touristTripSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: `Туры в ${countryNamesDictionary[country] || country} 2026`,
+    description: `Пляжный отдых, ${countryData?.frontmatter?.bestTimeToVisit || 'круглый год'}, лучшие курорты ${countryNamesDictionary[country] || country}.`,
+    touristType: 'Пляжный отдых',
+    offers: {
+      '@type': 'Offer',
+      price: countryData?.frontmatter?.estimatedCost
+        ? String(countryData.frontmatter.estimatedCost).replace(/\s/g, '')
+        : '70000',
+      priceCurrency: 'RUB',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/wiki/${normalizedCountry}`,
+    },
+  };
+
+  const schemas = [...baseSchemas, touristTripSchema];
+
   if (!countryData) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -264,7 +304,9 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 capitalize">
             {countryNamesDictionary[country] || country}
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">Контент для этой страны временно недоступен</p>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Контент для этой страны временно недоступен
+          </p>
           <Link
             href="/wiki/countries"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
@@ -296,7 +338,9 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
       {/* H1 заголовок для SEO */}
       <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white">
-        {countryData?.frontmatter?.title?.split(' | ')[0] || countryNamesDictionary[country] || country}
+        {countryData?.frontmatter?.title?.split(' | ')[0] ||
+          countryNamesDictionary[country] ||
+          country}
       </h1>
 
       <ZkpBadge
@@ -305,7 +349,9 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         contentText={
           typeof countryData?.content === 'string'
             ? countryData.content
-            : (countryData?.frontmatter?.description || countryData?.frontmatter?.title || normalizedCountry)
+            : countryData?.frontmatter?.description ||
+              countryData?.frontmatter?.title ||
+              normalizedCountry
         }
         claims={{
           reviewedBy: 'editorial',
@@ -356,29 +402,36 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       {disputed && politicalStatus && (
         <div className="mb-8 p-4 bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 rounded-lg">
           <p className="text-sm text-amber-900 dark:text-amber-200">
-            <strong>Политический статус:</strong> {politicalStatus}. {getPoliticalStatusNote(normalizedCountry)}
+            <strong>Политический статус:</strong> {politicalStatus}.{' '}
+            {getPoliticalStatusNote(normalizedCountry)}
           </p>
         </div>
       )}
 
       {/* Цитируемый ответ для AI-ботов */}
       {(() => {
-        const destData = WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(
-          key => WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry || 
-                  WORLD_DESTINATIONS_DATA[key].name.toLowerCase() === (countryNamesDictionary[country] || country).toLowerCase()
-        ) || ''];
-        
+        const destData =
+          WORLD_DESTINATIONS_DATA[
+            Object.keys(WORLD_DESTINATIONS_DATA).find(
+              key =>
+                WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry ||
+                WORLD_DESTINATIONS_DATA[key].name.toLowerCase() ===
+                  (countryNamesDictionary[country] || country).toLowerCase()
+            ) || ''
+          ];
+
         if (!destData) return null;
-        
-        const visaInfo = destData.visaRequired !== false ? 'виза требуется' : 'виза не нужна (до 60 дней)';
+
+        const visaInfo =
+          destData.visaRequired !== false ? 'виза требуется' : 'виза не нужна (до 60 дней)';
         const bestSeason = destData.bestSeason || 'круглый год';
         const priceRange = destData.estimatedCost || '100 000';
-        
+
         return (
           <blockquote className="ai-citable mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-green-500 rounded-r-lg">
             <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-               Для поездки в {destData.nameAccusative || destData.name} в 2026 году {visaInfo}. 
-              Средний бюджет тура «всё включено» из Москвы на двоих — от {priceRange} ₽ за 7 ночей. 
+              Для поездки в {destData.nameAccusative || destData.name} в 2026 году {visaInfo}.
+              Средний бюджет тура «всё включено» из Москвы на двоих — от {priceRange} ₽ за 7 ночей.
               Лучший сезон: {bestSeason}.
             </p>
           </blockquote>
@@ -387,18 +440,24 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
       {/* Быстрый голосовой ответ */}
       {(() => {
-        const destData = WORLD_DESTINATIONS_DATA[Object.keys(WORLD_DESTINATIONS_DATA).find(
-          key => WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry || 
-                  WORLD_DESTINATIONS_DATA[key].name.toLowerCase() === (countryNamesDictionary[country] || country).toLowerCase()
-        ) || ''];
-        
+        const destData =
+          WORLD_DESTINATIONS_DATA[
+            Object.keys(WORLD_DESTINATIONS_DATA).find(
+              key =>
+                WORLD_DESTINATIONS_DATA[key].slug === normalizedCountry ||
+                WORLD_DESTINATIONS_DATA[key].name.toLowerCase() ===
+                  (countryNamesDictionary[country] || country).toLowerCase()
+            ) || ''
+          ];
+
         if (!destData) return null;
-        
-        const visaInfo = destData.visaRequired !== false 
-          ? `Для поездки в ${destData.nameAccusative || destData.name} россиянам нужна виза.`
-          : `Для поездки в ${destData.nameAccusative || destData.name} виза россиянам не нужна. Вы можете находиться в стране до 60 дней без визы.`;
+
+        const visaInfo =
+          destData.visaRequired !== false
+            ? `Для поездки в ${destData.nameAccusative || destData.name} россиянам нужна виза.`
+            : `Для поездки в ${destData.nameAccusative || destData.name} виза россиянам не нужна. Вы можете находиться в стране до 60 дней без визы.`;
         const bestSeason = destData.bestSeason || 'круглый год';
-        
+
         return (
           <div className="voice-answer mb-8 p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-purple-500 rounded-r-lg">
             <div className="flex items-center gap-2 mb-3">
@@ -406,7 +465,8 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               <h3 className="font-semibold text-gray-900 dark:text-white">Голосовой ответ:</h3>
             </div>
             <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-              {visaInfo} Лучший сезон для посещения: {bestSeason}. Рекомендуем бронировать тур заранее для лучших цен.
+              {visaInfo} Лучший сезон для посещения: {bestSeason}. Рекомендуем бронировать тур
+              заранее для лучших цен.
             </p>
           </div>
         );
@@ -418,65 +478,100 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         className="direct-answer mb-10 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-blue-100 dark:border-gray-700"
       >
         <div id="speakable-summary">
-        <h2 className="text-2xl font-extrabold mb-3 flex items-center gap-2 !mt-0">
-          <span className="text-3xl">⚡</span> Краткий ответ: {countryData?.frontmatter?.title?.split(' | ')[0] || countryNamesDictionary[country] || country}
-        </h2>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
-          {(typeof countryData?.frontmatter?.visaRequirements === 'boolean'
-            ? (countryData.frontmatter.visaRequirements
+          <h2 className="text-2xl font-extrabold mb-3 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">⚡</span> Краткий ответ:{' '}
+            {countryData?.frontmatter?.title?.split(' | ')[0] ||
+              countryNamesDictionary[country] ||
+              country}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
+            {typeof countryData?.frontmatter?.visaRequirements === 'boolean'
+              ? countryData.frontmatter.visaRequirements
                 ? 'Виза требуется. '
-                : 'Виза не требуется (по прибытии или безвизовый въезд). ')
-            : '')}
-          {countryData?.frontmatter?.currency ? `Валюта — ${countryData.frontmatter.currency}. ` : ''}
-          {countryData?.frontmatter?.bestTimeToVisit ? `Лучший сезон: ${countryData.frontmatter.bestTimeToVisit}. ` : ''}
-          {countryData?.frontmatter?.estimatedCost ? `Средний чек: от ${Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽.` : ''}
-        </p>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
-            <tbody>
-              {(countryData?.frontmatter?.capital && (
-                <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Столица</th>
-                  <td className="text-gray-900 dark:text-white py-2">{countryData.frontmatter.capital}</td>
-                </tr>
-              )) || null}
-              {(typeof countryData?.frontmatter?.visaRequirements === 'boolean' && (
-                <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Виза</th>
-                  <td className="text-gray-900 dark:text-white py-2">
-                    {countryData.frontmatter.visaRequirements ? 'Требуется' : 'Не требуется'}
-                  </td>
-                </tr>
-              )) || null}
-              {(countryData?.frontmatter?.currency && (
-                <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Валюта</th>
-                  <td className="text-gray-900 dark:text-white py-2">{countryData.frontmatter.currency}</td>
-                </tr>
-              )) || null}
-              {(countryData?.frontmatter?.language && (
-                <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Язык</th>
-                  <td className="text-gray-900 dark:text-white py-2">{countryData.frontmatter.language}</td>
-                </tr>
-              )) || null}
-              {(countryData?.frontmatter?.bestTimeToVisit && (
-                <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Лучший сезон</th>
-                  <td className="text-gray-900 dark:text-white py-2">{countryData.frontmatter.bestTimeToVisit}</td>
-                </tr>
-              )) || null}
-              {(countryData?.frontmatter?.estimatedCost && (
-                <tr>
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Средний чек</th>
-                  <td className="text-gray-900 dark:text-white py-2">
-                    от {Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽
-                  </td>
-                </tr>
-              )) || null}
-            </tbody>
-          </table>
-        </div>
+                : 'Виза не требуется (по прибытии или безвизовый въезд). '
+              : ''}
+            {countryData?.frontmatter?.currency
+              ? `Валюта — ${countryData.frontmatter.currency}. `
+              : ''}
+            {countryData?.frontmatter?.bestTimeToVisit
+              ? `Лучший сезон: ${countryData.frontmatter.bestTimeToVisit}. `
+              : ''}
+            {countryData?.frontmatter?.estimatedCost
+              ? `Средний чек: от ${Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽.`
+              : ''}
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <tbody>
+                {(countryData?.frontmatter?.capital && (
+                  <tr className="border-b border-blue-100 dark:border-gray-700">
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Столица
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      {countryData.frontmatter.capital}
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+                {(typeof countryData?.frontmatter?.visaRequirements === 'boolean' && (
+                  <tr className="border-b border-blue-100 dark:border-gray-700">
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Виза
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      {countryData.frontmatter.visaRequirements ? 'Требуется' : 'Не требуется'}
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+                {(countryData?.frontmatter?.currency && (
+                  <tr className="border-b border-blue-100 dark:border-gray-700">
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Валюта
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      {countryData.frontmatter.currency}
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+                {(countryData?.frontmatter?.language && (
+                  <tr className="border-b border-blue-100 dark:border-gray-700">
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Язык
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      {countryData.frontmatter.language}
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+                {(countryData?.frontmatter?.bestTimeToVisit && (
+                  <tr className="border-b border-blue-100 dark:border-gray-700">
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Лучший сезон
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      {countryData.frontmatter.bestTimeToVisit}
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+                {(countryData?.frontmatter?.estimatedCost && (
+                  <tr>
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Средний чек
+                    </th>
+                    <td className="text-gray-900 dark:text-white py-2">
+                      от {Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽
+                    </td>
+                  </tr>
+                )) ||
+                  null}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -484,14 +579,21 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       {(countryData?.frontmatter?.author || countryData?.frontmatter?.dateModified) && (
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 dark:text-gray-400 mb-6">
           {countryData?.frontmatter?.author && (
-            <span>✍️ Автор: <strong className="text-gray-700 dark:text-gray-200">{countryData.frontmatter.author}</strong></span>
+            <span>
+              ✍️ Автор:{' '}
+              <strong className="text-gray-700 dark:text-gray-200">
+                {countryData.frontmatter.author}
+              </strong>
+            </span>
           )}
-          {countryData?.frontmatter?.dateModified && countryData.frontmatter.dateModified !== 'dynamic' && (
-            <span>🕒 Обновлено: {countryData.frontmatter.dateModified}</span>
-          )}
-          {countryData?.frontmatter?.datePublished && countryData.frontmatter.datePublished !== 'dynamic' && (
-            <span>📅 Опубликовано: {countryData.frontmatter.datePublished}</span>
-          )}
+          {countryData?.frontmatter?.dateModified &&
+            countryData.frontmatter.dateModified !== 'dynamic' && (
+              <span>🕒 Обновлено: {countryData.frontmatter.dateModified}</span>
+            )}
+          {countryData?.frontmatter?.datePublished &&
+            countryData.frontmatter.datePublished !== 'dynamic' && (
+              <span>📅 Опубликовано: {countryData.frontmatter.datePublished}</span>
+            )}
         </div>
       )}
 
@@ -510,7 +612,9 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 <details className="group bg-white dark:bg-gray-800/40 rounded-xl border border-gray-100 dark:border-gray-700 px-4 py-3">
                   <summary className="flex items-center justify-between cursor-pointer list-none text-gray-900 dark:text-white font-medium">
                     <span>{faq.question}</span>
-                    <span className="ml-3 text-blue-600 dark:text-blue-400 transition-transform group-open:rotate-45">+</span>
+                    <span className="ml-3 text-blue-600 dark:text-blue-400 transition-transform group-open:rotate-45">
+                      +
+                    </span>
                   </summary>
                   <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">{faq.answer}</p>
                 </details>
@@ -522,40 +626,57 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
       {/* Внутренняя перелинковка — Hub & Spoke */}
       <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-blue-100 dark:border-gray-700">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">🔗 Связанные разделы</h3>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+          🔗 Связанные разделы
+        </h3>
         <div className="flex flex-wrap gap-3">
-          <Link href="/wiki/places" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+          <Link
+            href="/wiki/places"
+            className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+          >
             Ключевые места мира
           </Link>
-          <Link href="/cities" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+          <Link
+            href="/cities"
+            className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+          >
             Города вылета
           </Link>
-          <Link href="/wiki/countries" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+          <Link
+            href="/wiki/countries"
+            className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+          >
             Все страны
           </Link>
-          <Link href="/tours" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+          <Link
+            href="/tours"
+            className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+          >
             Туры и направления
           </Link>
         </div>
       </div>
 
       {/* Связанные страны для Internal Linking */}
-      {countryData?.frontmatter?.relatedCountries && countryData.frontmatter.relatedCountries.length > 0 && (
-        <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-green-100 dark:border-gray-700">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">🌍 Похожие страны</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {countryData.frontmatter.relatedCountries.map((relatedCountry: string) => (
-              <Link
-                key={relatedCountry}
-                href={`/wiki/${relatedCountry.toLowerCase()}`}
-                className="px-4 py-3 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-green-400 hover:shadow-md transition text-center"
-              >
-                {relatedCountry}
-              </Link>
-            ))}
+      {countryData?.frontmatter?.relatedCountries &&
+        countryData.frontmatter.relatedCountries.length > 0 && (
+          <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-green-100 dark:border-gray-700">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              🌍 Похожие страны
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {countryData.frontmatter.relatedCountries.map((relatedCountry: string) => (
+                <Link
+                  key={relatedCountry}
+                  href={`/wiki/${relatedCountry.toLowerCase()}`}
+                  className="px-4 py-3 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-green-400 hover:shadow-md transition text-center"
+                >
+                  {relatedCountry}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       <div className="mt-12 pt-8 border-t border-gray-200">
         <Link
@@ -589,6 +710,6 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           </Link>
         </div>
       </section>
-    </div >
+    </div>
   );
 }

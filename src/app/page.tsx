@@ -12,9 +12,9 @@ import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
 import { DestinationImage } from '@/components/DestinationImage';
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Велес Вояж — туры и круизы 2026 | Подбор путешествий',
+  title: 'Туры и круизы 2026 — Veles Voyage | Подбор путешествий',
   description:
-    'Турагентство Велес Вояж (РТА 0035678): подбор туров в Турцию, Египет, ОАЭ, морские круизы. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
+    'Турагентство Veles Voyage (РТА 0035678): подбор туров в Турцию, Египет, ОАЭ, морские круизы. Индивидуальные маршруты, поддержка 24/7, лучшие цены 2026.',
   url: SITE_URL,
   type: 'website',
   keywords: [
@@ -22,24 +22,22 @@ export const metadata: Metadata = generateSEOMetadata({
     'авторские путешествия',
     'морские круизы 2026',
     'путеводители по странам',
-    'турагентство Велес Вояж',
-    'РТА 0035678'
+    'турагентство Veles Voyage',
+    'РТА 0035678',
   ],
   faqs: [
     {
-      question: 'Как забронировать тур в Велес Вояж?',
+      question: 'Как забронировать тур в Veles Voyage?',
       answer:
-        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.'
+        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
     },
     {
       question: 'Работаете ли вы с турами по России?',
       answer:
-        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.'
-    }
+        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
+    },
   ],
 });
-
-
 
 const POPULAR_DESTINATION_SLUGS = [
   'турция',
@@ -54,9 +52,9 @@ const POPULAR_DESTINATION_SLUGS = [
 
 export default async function Home() {
   const schemas = await generateUniversalSchemas({
-    title: 'Велес Вояж: туры, круизы и путешествия 2026',
+    title: 'Туры и круизы 2026 — Veles Voyage',
     description:
-      'Официальное турагентство Велес Вояж (РТА 0035678). Подбор туров в Турцию, Египет, ОАЭ и морских круизов. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
+      'Турагентство Veles Voyage (РТА 0035678). Подбор туров в Турцию, Египет, ОАЭ и морских круизов. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
     url: SITE_URL,
     type: 'website',
     keywords: [
@@ -64,30 +62,30 @@ export default async function Home() {
       'авторские путешествия',
       'морские круизы 2026',
       'путеводители по странам',
-      'турагентство Велес Вояж',
-      'РТА 0035678'
+      'турагентство Veles Voyage',
+      'РТА 0035678',
     ],
     faqs: [
       {
-        question: 'Как забронировать тур в Велес Вояж?',
+        question: 'Как забронировать тур в Veles Voyage?',
         answer:
-          'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.'
+          'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
       },
       {
         question: 'Работаете ли вы с турами по России?',
         answer:
-          'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.'
+          'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
       },
       {
         question: 'Нужна ли виза в Египет в 2026 году?',
         answer:
-          'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.'
+          'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.',
       },
       {
         question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
         answer:
-          'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.'
-      }
+          'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Veles Voyage.',
+      },
     ],
   });
 
@@ -95,23 +93,23 @@ export default async function Home() {
     {
       question: 'Как забронировать тур в Велес Вояж?',
       answer:
-        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.'
+        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
     },
     {
       question: 'Работаете ли вы с турами по России?',
       answer:
-        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.'
+        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
     },
     {
       question: 'Нужна ли виза в Египет в 2026 году?',
       answer:
-        'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.'
+        'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.',
     },
     {
       question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
       answer:
-        'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.'
-    }
+        'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.',
+    },
   ];
 
   return (
@@ -124,7 +122,7 @@ export default async function Home() {
             <div className="mt-12 md:mt-20">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight drop-shadow-2xl">
                 <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
-                  Турагентство Велес Вояж — подбор туров и путешествий 2026
+                  Туры и круизы 2026 — Veles Voyage
                 </span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 font-medium leading-relaxed drop-shadow-lg">
@@ -138,29 +136,29 @@ export default async function Home() {
                 {/* Buttons - left side */}
                 <div className="order-1 lg:order-1 flex flex-col gap-5 justify-center lg:justify-start">
                   <Link
-                     href="/wiki"
-                     className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                   >
+                    href="/wiki"
+                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                  >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">📚</span>
                       <span>Исследовать Wiki</span>
                     </span>
                   </Link>
-                   <Link
-                     href="/wiki/countries"
-                     className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                   >
+                  <Link
+                    href="/wiki/countries"
+                    className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                  >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">🌍</span>
                       <span>Страны мира</span>
                     </span>
                   </Link>
-                   <Link
-                     href="/wiki/places"
-                     className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-                   >
+                  <Link
+                    href="/wiki/places"
+                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-4 px-6 sm:py-5 sm:px-10 rounded-2xl text-base sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                  >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <span className="text-2xl">🗺️</span>
@@ -262,7 +260,10 @@ export default async function Home() {
         </WeeklyHeroBackground>
 
         {/* Why Choose Us Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+        <section
+          aria-label="Почему выбирают Велес Вояж"
+          className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -271,7 +272,7 @@ export default async function Home() {
                 </span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
-                 Мы создаём незабываемые путешествия для наших клиентов
+                Мы создаём незабываемые путешествия для наших клиентов
               </p>
             </div>
 
@@ -339,7 +340,7 @@ export default async function Home() {
         </section>
 
         {/* Featured Services */}
-        <section className="py-16 bg-white dark:bg-gray-900">
+        <section aria-label="Наши услуги" className="py-16 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -403,7 +404,10 @@ export default async function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-pink-500/0 to-rose-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-rose-500/10 transition-modern pointer-events-none z-0"></div>
                 <div className="h-40 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center relative z-10">
                   <div className="relative w-full h-full">
-                    <WeeklyServicePhoto serviceType="support" alt="Круглосуточная поддержка клиентов 24/7 от Велес Вояж" />
+                    <WeeklyServicePhoto
+                      serviceType="support"
+                      alt="Круглосуточная поддержка клиентов 24/7 от Велес Вояж"
+                    />
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow relative z-10">
@@ -426,7 +430,10 @@ export default async function Home() {
         </section>
 
         {/* Popular Destinations (GEO: "Туры В ...") */}
-        <section className="py-16 bg-gradient-to-br from-sky-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
+        <section
+          aria-label="Популярные направления 2026"
+          className="py-16 bg-gradient-to-br from-sky-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -440,38 +447,44 @@ export default async function Home() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {POPULAR_DESTINATION_SLUGS.map((slug) => {
+              {POPULAR_DESTINATION_SLUGS.map(slug => {
                 const dest = WORLD_DESTINATIONS_DATA[slug];
                 if (!dest) return null;
                 return (
-                    <article key={slug} className="country-card">
-                      <div className="country-image">
-                        <DestinationImage
-                          src={dest.image}
-                          alt={`Туры в ${dest.name} - популярное направление 2026 от Велес Вояж`}
-                          width={600}
-                          height={400}
-                          className="w-full h-full"
-                        />
-                      </div>
-                       <div className="p-6 flex flex-col flex-grow relative z-10">
-                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                           Сколько стоит тур {dest.preposition ? dest.preposition + ' ' : 'в '}{dest.nameAccusative || dest.name} и нужна ли виза?
-                         </h3>
-                         <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{dest.description}</p>
-                         {dest.estimatedCost && (
-                           <p className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">
-                             от {Number(dest.estimatedCost).toLocaleString('ru-RU')} ₽ <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{dest.priceNote}</span>
-                           </p>
-                         )}
-                         <Link
-                           href={`/wiki/${dest.slug}`}
-                           className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"
-                         >
-                           Подробнее →
-                         </Link>
-                       </div>
-                    </article>
+                  <article key={slug} className="country-card">
+                    <div className="country-image">
+                      <DestinationImage
+                        src={dest.image}
+                        alt={`Туры в ${dest.name} - популярное направление 2026 от Велес Вояж`}
+                        width={600}
+                        height={400}
+                        className="w-full h-full"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow relative z-10">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        Сколько стоит тур {dest.preposition ? dest.preposition + ' ' : 'в '}
+                        {dest.nameAccusative || dest.name} и нужна ли виза?
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                        {dest.description}
+                      </p>
+                      {dest.estimatedCost && (
+                        <p className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">
+                          от {Number(dest.estimatedCost).toLocaleString('ru-RU')} ₽{' '}
+                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                            {dest.priceNote}
+                          </span>
+                        </p>
+                      )}
+                      <Link
+                        href={`/wiki/${dest.slug}`}
+                        className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"
+                      >
+                        Подробнее →
+                      </Link>
+                    </div>
+                  </article>
                 );
               })}
             </div>
@@ -488,7 +501,10 @@ export default async function Home() {
         </section>
 
         {/* Mission & Values */}
-        <section className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+        <section
+          aria-label="Наша философия и ценности"
+          className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -578,7 +594,7 @@ export default async function Home() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-white dark:bg-gray-900">
+        <section aria-label="Наша команда" className="py-16 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -644,7 +660,10 @@ export default async function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section
+          aria-label="Преимущества работы с нами"
+          className="py-16 bg-gray-50 dark:bg-gray-800"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -731,7 +750,7 @@ export default async function Home() {
         <FAQSection faqs={faqData} schemaId="https://veles-voyage.ru/#faq-home" />
 
         {/* CTA Section */}
-        <section className="py-16 bg-blue-600">
+        <section aria-label="Призыв к действию" className="py-16 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Готовы начать путешествие?

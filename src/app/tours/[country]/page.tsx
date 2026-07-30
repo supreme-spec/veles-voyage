@@ -47,7 +47,25 @@ const TourCountryPage = async ({ params }: PageProps) => {
         ? 'Требуется'
         : 'Не требуется'
       : 'Уточняйте в консульстве';
-  const price = fm.estimatedCost ? `${Number(fm.estimatedCost).toLocaleString('ru-RU')} ₽` : 'по запросу';
+  const price = fm.estimatedCost
+    ? `${Number(fm.estimatedCost).toLocaleString('ru-RU')} ₽`
+    : 'по запросу';
+  const updateDate = '30.07.2026';
+
+  const touristTripSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: `Туры в ${name} 2026`,
+    description: `Пляжный отдых, ${fm.bestTimeToVisit || 'круглый год'}, лучшие курорты ${name}.`,
+    touristType: 'Пляжный отдых',
+    offers: {
+      '@type': 'Offer',
+      price: fm.estimatedCost ? String(fm.estimatedCost).replace(/\s/g, '') : '70000',
+      priceCurrency: 'RUB',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/tours/${country}`,
+    },
+  };
 
   const faqs = [
     {
@@ -79,10 +97,11 @@ const TourCountryPage = async ({ params }: PageProps) => {
     <article>
       <StructuredData
         schemas={[
+          touristTripSchema,
           {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
+            mainEntity: faqs.map(f => ({
               '@type': 'Question',
               name: f.question,
               acceptedAnswer: { '@type': 'Answer', text: f.answer },
@@ -92,14 +111,112 @@ const TourCountryPage = async ({ params }: PageProps) => {
       />
 
       <div className="container mx-auto px-4 py-8 pt-20 md:pt-24">
+        {/* Visa and Entry Rules */}
+        <section
+          aria-label="Виза и правила въезда"
+          className="mb-10 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-blue-100 dark:border-gray-700"
+        >
+          <h2 className="text-2xl font-extrabold mb-3 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">🛂</span> Виза и правила въезда в {name}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            <strong>Статус на {updateDate}:</strong>{' '}
+            {typeof fm.visaRequirements === 'boolean'
+              ? fm.visaRequirements
+                ? `Гражданам РФ виза ${name} требуется. Точные условия и список документов уточняйте у менеджера Велес Вояж.`
+                : `Гражданам РФ виза в ${name} не требуется при поездке до 60 дней.`
+              : 'Актуальные визовые требования уточняйте у менеджера Велес Вояж.'}
+          </p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
+            Правила могут меняться. Перед поездкой рекомендуем проверить информацию на сайте МИД РФ
+            или консульстве {name}.
+          </p>
+          <p className="text-gray-600 dark:text-gray-300 text-sm">
+            <strong>Дата обновления:</strong> {updateDate}
+          </p>
+          <p className="mt-3 text-sm">
+            Источник:{' '}
+            <a href="https://www.mid.ru" rel="nofollow" className="text-blue-600 hover:underline">
+              МИД РФ
+            </a>
+          </p>
+        </section>
+
+        {/* Price Block */}
+        <section
+          aria-label="Цены на туры"
+          className="mb-10 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-green-100 dark:border-gray-700"
+        >
+          <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">💰</span> Цены на туры в {name}
+          </h2>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-green-600 dark:text-green-400 font-bold">🔹</span>
+              <span>
+                <strong>Эконом:</strong> от {price} за 7 ночей, 2 взрослых, всё включено.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 dark:text-blue-400 font-bold">🔹</span>
+              <span>
+                <strong>Комфорт:</strong> от {Number(fm.estimatedCost || 90000) + 20000} ₽ за 7
+                ночей.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-purple-600 dark:text-purple-400 font-bold">🔹</span>
+              <span>
+                <strong>Премиум:</strong> от {Number(fm.estimatedCost || 90000) + 60000} ₽ за 7
+                ночей.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Best Time and Resorts */}
+        <section
+          aria-label="Когда лучше ехать"
+          className="mb-10 p-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-amber-100 dark:border-gray-700"
+        >
+          <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 !mt-0">
+            <span className="text-3xl">📅</span> Когда лучше ехать в {name}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {fm.bestTimeToVisit
+              ? `Лучший сезон для поездки в ${name}: ${fm.bestTimeToVisit}.`
+              : 'Сезонность поездки в Турцию зависит от ваших предпочтений. Менеджер подскажет оптимальные даты.'}
+          </p>
+          {fm.topAttractions && (
+            <>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                Лучшие курорты
+              </h3>
+              <ul className="space-y-1 text-gray-600 dark:text-gray-300">
+                {(Array.isArray(fm.topAttractions) ? fm.topAttractions : []).map(
+                  (attraction: string, idx: number) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <span className="text-green-500">✓</span> {attraction}
+                    </li>
+                  )
+                )}
+              </ul>
+            </>
+          )}
+        </section>
+
         <nav className="flex mb-6 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2">
             <li>
-              <Link href="/" className="hover:text-blue-600">Главная</Link>
+              <Link href="/" className="hover:text-blue-600">
+                Главная
+              </Link>
             </li>
             <li className="flex items-center">
               <span className="mx-1 md:mx-2 text-gray-400">/</span>
-              <Link href="/tours" className="hover:text-blue-600">Туры</Link>
+              <Link href="/tours" className="hover:text-blue-600">
+                Туры
+              </Link>
             </li>
             <li className="flex items-center">
               <span className="mx-1 md:mx-2 text-gray-400">/</span>
@@ -113,8 +230,8 @@ const TourCountryPage = async ({ params }: PageProps) => {
             Туры в {name} 2026
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Индивидуальные туры и пакеты «всё включено» из Москвы. Поддержка 24/7, подбор
-            отеля и экскурсий под ваши интересы.
+            Индивидуальные туры и пакеты «всё включено» из Москвы. Поддержка 24/7, подбор отеля и
+            экскурсий под ваши интересы.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -148,34 +265,46 @@ const TourCountryPage = async ({ params }: PageProps) => {
               <tbody>
                 {fm.capital && (
                   <tr className="border-b border-blue-100 dark:border-gray-700">
-                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Столица</th>
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Столица
+                    </th>
                     <td className="text-gray-900 dark:text-white py-2">{fm.capital}</td>
                   </tr>
                 )}
                 <tr className="border-b border-blue-100 dark:border-gray-700">
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Виза</th>
+                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                    Виза
+                  </th>
                   <td className="text-gray-900 dark:text-white py-2">{visa}</td>
                 </tr>
                 {fm.currency && (
                   <tr className="border-b border-blue-100 dark:border-gray-700">
-                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Валюта</th>
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Валюта
+                    </th>
                     <td className="text-gray-900 dark:text-white py-2">{fm.currency}</td>
                   </tr>
                 )}
                 {fm.language && (
                   <tr className="border-b border-blue-100 dark:border-gray-700">
-                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Язык</th>
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Язык
+                    </th>
                     <td className="text-gray-900 dark:text-white py-2">{fm.language}</td>
                   </tr>
                 )}
                 {fm.bestTimeToVisit && (
                   <tr className="border-b border-blue-100 dark:border-gray-700">
-                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Лучший сезон</th>
+                    <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                      Лучший сезон
+                    </th>
                     <td className="text-gray-900 dark:text-white py-2">{fm.bestTimeToVisit}</td>
                   </tr>
                 )}
                 <tr>
-                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Средний чек</th>
+                  <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">
+                    Средний чек
+                  </th>
                   <td className="text-gray-900 dark:text-white py-2">от {price}</td>
                 </tr>
               </tbody>
@@ -183,18 +312,31 @@ const TourCountryPage = async ({ params }: PageProps) => {
           </div>
         </section>
 
-        <FAQSection faqs={faqs} title={`Вопросы о турах в ${name}`} schemaId={`https://veles-voyage.ru/tours/${country}/#faq`} />
+        <FAQSection
+          faqs={faqs}
+          title={`Вопросы о турах в ${name}`}
+          schemaId={`https://veles-voyage.ru/tours/${country}/#faq`}
+        />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-blue-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Полезные ссылки</h3>
           <div className="flex flex-wrap gap-3">
-            <Link href={`/wiki/${country}`} className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+            <Link
+              href={`/wiki/${country}`}
+              className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+            >
               Путеводитель по {name}
             </Link>
-            <Link href="/tours" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+            <Link
+              href="/tours"
+              className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+            >
               Все направления
             </Link>
-            <Link href="/cruises" className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition">
+            <Link
+              href="/cruises"
+              className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-400 transition"
+            >
               Морские круизы
             </Link>
           </div>

@@ -11,11 +11,11 @@ interface WeeklyServicePhotoProps {
   className?: string;
 }
 
-export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({ 
+export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({
   serviceType,
   cruiseType,
   alt,
-  className = "" 
+  className = '',
 }) => {
   const [photo, setPhoto] = useState<ServicePhoto | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,7 @@ export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({
   useEffect(() => {
     setIsClient(true);
     setImageError(false); // Reset error state
-    
+
     const loadServicePhoto = async () => {
       try {
         setIsLoading(true);
@@ -49,13 +49,18 @@ export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({
 
   // Don't render anything on the server to prevent hydration mismatch
   if (!isClient) {
-    const gradientClass = 
-      serviceType === 'cruises' ? 'bg-gradient-to-r from-teal-500 to-blue-600' :
-      serviceType === 'tours' ? 'bg-gradient-to-r from-green-500 to-emerald-600' :
-      'bg-gradient-to-r from-purple-500 to-pink-600';
-    
+    const gradientClass =
+      serviceType === 'cruises'
+        ? 'bg-gradient-to-r from-teal-500 to-blue-600'
+        : serviceType === 'tours'
+          ? 'bg-gradient-to-r from-green-500 to-emerald-600'
+          : 'bg-gradient-to-r from-purple-500 to-pink-600';
+
     return (
-      <div className={`relative w-full h-full ${gradientClass} ${className}`} style={{ minHeight: '100%', minWidth: '100%' }} />
+      <div
+        className={`relative w-full h-full ${gradientClass} ${className}`}
+        style={{ minHeight: '100%', minWidth: '100%' }}
+      />
     );
   }
 
@@ -69,25 +74,35 @@ export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({
   // Show placeholder while loading or if error - используем градиент, соответствующий типу сервиса
   if (isLoading || !photo || imageError) {
     return (
-      <div className={`relative w-full h-full ${getGradientClass()} ${className}`} style={{ minHeight: '100%', minWidth: '100%' }} />
+      <div
+        className={`relative w-full h-full ${getGradientClass()} ${className}`}
+        style={{ minHeight: '100%', minWidth: '100%' }}
+      />
     );
   }
 
   // Validate photo URL before rendering
   if (!photo.url || !photo.url.startsWith('http')) {
     return (
-      <div className={`relative w-full h-full ${getGradientClass()} ${className}`} style={{ minHeight: '100%', minWidth: '100%' }} />
+      <div
+        className={`relative w-full h-full ${getGradientClass()} ${className}`}
+        style={{ minHeight: '100%', minWidth: '100%' }}
+      />
     );
   }
 
   return (
-    <div className={`relative w-full h-full ${className}`} style={{ minHeight: '100%', minWidth: '100%' }}>
+    <div
+      className={`relative w-full h-full ${className}`}
+      style={{ minHeight: '100%', minWidth: '100%' }}
+    >
       {photo.url.includes('unsplash.com') ? (
         // Use img tag for Unsplash images to avoid optimization issues
         <img
           src={photo.url}
           alt={alt}
           className="object-cover w-full h-full"
+          loading="lazy"
           onError={() => {
             console.error(`Failed to load image for ${serviceType}:`, photo.url);
             setImageError(true);
@@ -98,7 +113,7 @@ export const WeeklyServicePhoto: React.FC<WeeklyServicePhotoProps> = ({
         />
       ) : (
         // Use Next.js Image for other sources
-        <Image 
+        <Image
           src={photo.url}
           alt={alt}
           fill

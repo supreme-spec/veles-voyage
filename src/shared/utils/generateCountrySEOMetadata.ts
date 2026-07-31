@@ -1,9 +1,7 @@
 // src/lib/seo/countrySEO.ts
 import type { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import React, { cache } from 'react';
+import { countries } from '@lib/velite-data';
 import { countryNamesDictionary, COUNTRY_NAMES_ACCUSATIVE, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
 import { generateEnhancedSEOMetadata, SEO_CONFIG } from '@/lib/seo/unifiedSEO';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
@@ -107,53 +105,37 @@ interface MdxData {
 
 export const getCountryMdxData = cache(async (countryId: string): Promise<MdxData | null> => {
   try {
-    // Валидация countryId для безопасности
     if (!/^[a-z0-9-]+$/.test(countryId)) {
       console.error(`Invalid countryId: ${countryId}`);
       return null;
     }
-    
-    const filePath = path.join(process.cwd(), 'src/content/countries', `${countryId}.mdx`);
-    
-    // Проверяем существование файла более безопасным способом
-    try {
-      const stats = await fs.promises.stat(filePath);
-      if (!stats.isFile()) {
-        console.warn(`MDX file not found or not a file: ${countryId}`);
-        return null;
-      }
-    } catch {
-      console.warn(`MDX file not found: ${countryId}`);
+
+    const countryData = countries.find(c => c.slug === countryId);
+    if (!countryData) {
+      console.warn(`No Velite data found for: ${countryId}`);
       return null;
     }
-    
-    const fileContent = await fs.promises.readFile(filePath, 'utf8');
-    const { data: frontmatter, content } = matter(fileContent);
 
-    // Нормализуем FAQ из frontmatter: допускается как массив, так и строка
-    // формата "Вопрос|Ответ;;Вопрос|Ответ" (YAML block scalar `>-`).
-    const normalizedFaqs = normalizeFaqs(frontmatter.faqs);
+    const normalizedFaqs = normalizeFaqs(countryData.faqs);
 
-    // Извлекаем FAQ из контента, если нет в frontmatter
     const extractedFaqs = normalizedFaqs.length
       ? normalizedFaqs
-      : extractFaqsFromContent(content);
-    
-    // Добавляем геоданные из карты координат
-    const geoData = getCountryGeoData(countryId, frontmatter);
-    
+      : extractFaqsFromContent(countryData.body ?? '');
+
+    const geoData = getCountryGeoData(countryId, countryData);
+
     return {
       frontmatter: {
-        ...frontmatter,
+        ...countryData,
         faqs: extractedFaqs,
         latitude: geoData.latitude,
         longitude: geoData.longitude,
         countryCode: geoData.countryCode
       },
-      content
+      content: countryData.body ?? ''
     };
   } catch (error) {
-    console.error(`Error reading MDX file for ${countryId}:`, error);
+    console.error(`Error reading MDX data for ${countryId}:`, error);
     return null;
   }
 });

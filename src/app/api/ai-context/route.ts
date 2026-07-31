@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SITE_URL } from '@/shared/constants/seo';
+import { countries } from '@lib/velite-data';
 
 /**
  * API endpoint for AI agents to retrieve structured context for RAG
@@ -34,30 +35,22 @@ export async function GET(request: Request) {
   // If specific destination is requested
   if (destination) {
     try {
-      // Try to load the country data from MDX files
-      const fs = await import('fs');
-      const path = await import('path');
-      const matter = (await import('gray-matter')).default;
+      const countryData = countries.find(c => c.slug === destination.toLowerCase());
 
-      const filePath = path.join(process.cwd(), 'src', 'content', 'countries', `${destination.toLowerCase()}.mdx`);
-      
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data: frontmatter } = matter(fileContent);
-
+      if (countryData) {
         return NextResponse.json({
-          context: `Направление: ${frontmatter.title}. Описание: ${frontmatter.description}. ${frontmatter.capital ? `Столица: ${frontmatter.capital}.` : ''} ${frontmatter.currency ? `Валюта: ${frontmatter.currency}.` : ''} ${frontmatter.visaRequirements !== undefined ? `Виза: ${frontmatter.visaRequirements ? 'Требуется' : 'Не требуется'}.` : ''} ${frontmatter.bestTimeToVisit ? `Лучшее время: ${frontmatter.bestTimeToVisit}.` : ''}`,
+          context: `Направление: ${countryData.title}. Описание: ${countryData.description}. ${countryData.capital ? `Столица: ${countryData.capital}.` : ''} ${countryData.currency ? `Валюта: ${countryData.currency}.` : ''} ${countryData.visaRequirements !== undefined ? `Виза: ${countryData.visaRequirements ? 'Требуется' : 'Не требуется'}.` : ''} ${countryData.bestTimeToVisit ? `Лучшее время: ${countryData.bestTimeToVisit}.` : ''}`,
           data: {
-            name: frontmatter.title,
-            description: frontmatter.description,
-            capital: frontmatter.capital,
-            currency: frontmatter.currency,
-            visaRequired: frontmatter.visaRequirements,
-            bestTimeToVisit: frontmatter.bestTimeToVisit,
-            estimatedCost: frontmatter.estimatedCost,
-            wikidataId: frontmatter.wikidataId,
-            wikipediaUrl: frontmatter.wikipediaUrl,
-            directAnswer: frontmatter.directAnswer
+            name: countryData.title,
+            description: countryData.description,
+            capital: countryData.capital,
+            currency: countryData.currency,
+            visaRequired: countryData.visaRequirements,
+            bestTimeToVisit: countryData.bestTimeToVisit,
+            estimatedCost: countryData.estimatedCost,
+            wikidataId: countryData.wikidata,
+          wikipediaUrl: (countryData as Record<string, unknown>).wikipediaUrl as string | undefined ?? '',
+          directAnswer: (countryData as Record<string, unknown>).directAnswer as string | undefined ?? '',
           },
           source_url: `${SITE_URL}/wiki/${destination}`,
           license: "Данные предоставлены турагентством Велес Вояж (РТА 0035678)"

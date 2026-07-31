@@ -1,9 +1,7 @@
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata } from '@/lib/seo/universalSEO';
+import { countries } from '@lib/velite-data';
 import type { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
 export async function generateMetadata({
   params,
@@ -11,7 +9,6 @@ export async function generateMetadata({
   params: { country: string };
 }): Promise<Metadata> {
   try {
-    // Сначала пробуем использовать существующую функцию генерации метаданных
     const metadata = await generateCountrySEOMetadata({
       countryId: params.country,
       url: `https://veles-voyage.ru/wiki/${params.country}`,
@@ -21,34 +18,40 @@ export async function generateMetadata({
   } catch (error) {
     console.error(`Error generating SEO metadata for ${params.country}:`, error);
 
-    // Возвращаем базовые метаданные в случае ошибки
-    try {
-      const filePath = path.join(process.cwd(), 'src/content/countries', `${params.country}.mdx`);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      const { data: frontmatter } = matter(fileContent);
-
-      // Используем универсальную функцию генерации метаданных
-      return await generateUniversalMetadata({
-        title: frontmatter.title || `${params.country} - путеводитель | Велес Вояж`,
-        description: frontmatter.description || `Подробный путеводитель по ${params.country}`,
+    const countryData = countries.find(c => c.slug === params.country);
+    if (countryData) {
+      const seoOptions: {
+        title: string;
+        description: string;
+        url: string;
+        type: 'country';
+        geo: { latitude: number; longitude: number };
+        keywords: string[];
+      } = {
+        title: countryData.title || `${params.country} - путеводитель | Велес Вояж`,
+        description: countryData.description || `Подробный путеводитель по ${params.country}`,
         url: `/wiki/${params.country}`,
-        image: frontmatter.image,
-        keywords: Array.isArray(frontmatter.keywords) ? frontmatter.keywords : [],
+        keywords: Array.isArray(countryData.keywords) ? countryData.keywords.filter((k): k is string => typeof k === 'string') : [],
         type: 'country',
         geo: {
-          latitude: frontmatter.latitude || 0,
-          longitude: frontmatter.longitude || 0,
+          latitude: countryData.latitude ?? 0,
+          longitude: countryData.longitude ?? 0,
         },
-        publishedTime: frontmatter.datePublished,
-        modifiedTime: frontmatter.dateModified,
-        author: frontmatter.author,
-      });
-    } catch {
-      return await generateUniversalMetadata({
-        title: `${params.country} - путеводитель | Велес Вояж`,
-        description: `Подробный путеводитель по ${params.country}`,
-        url: `/wiki/${params.country}`,
-      });
+      };
+
+      const result: Record<string, unknown> = { ...seoOptions };
+      if (countryData.image) result.image = countryData.image;
+      if (countryData.datePublished && countryData.datePublished !== 'dynamic') result.publishedTime = countryData.datePublished;
+      if (countryData.dateModified && countryData.dateModified !== 'dynamic') result.modifiedTime = countryData.dateModified;
+      if (countryData.author) result.author = countryData.author;
+
+      return await generateUniversalMetadata(result as unknown as Parameters<typeof generateUniversalMetadata>[0]);
     }
+
+    return await generateUniversalMetadata({
+      title: `${params.country} - путеводитель | Велес Вояж`,
+      description: `Подробный путеводитель по ${params.country}`,
+      url: `/wiki/${params.country}`,
+    });
   }
 }

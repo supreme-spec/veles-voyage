@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
+
+const countries = (() => {
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(process.cwd(), '.velite', 'countries.json'), 'utf8'));
+    return data.filter((c: any) => !['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'].includes(c.slug));
+  } catch {
+    return [];
+  }
+})();
 
 /**
  * 🚀 Professional LLM Knowledge Base Generator
@@ -215,65 +223,41 @@ class LLMKnowledgeGenerator {
   }
 
   private readCountryFiles(): CountryData[] {
-    console.log('📂 Чтение файлов стран...');
+    console.log('📂 Чтение данных стран...');
+    console.log(`📄 Обработано стран: ${countries.length}`);
 
-    if (!fs.existsSync(CONFIG.CONTENT_DIR)) {
-      throw new Error(`Директория контента не найдена: ${CONFIG.CONTENT_DIR}`);
+    const countryList: CountryData[] = countries.map((c: any) => ({
+      id: c.slug,
+      name: c.title || c.slug,
+      title: c.title,
+      description: c.description,
+      capital: c.capital,
+      continent: c.continent,
+      currency: c.currency,
+      language: c.language,
+      bestTimeToVisit: c.bestTimeToVisit,
+      estimatedCost: c.estimatedCost,
+      visaRequirements: c.visaRequirements !== undefined ? c.visaRequirements : undefined,
+      visaRequired: c.visaRequired,
+      keywords: c.keywords,
+      wikidataId: c.wikidata,
+      wikipediaUrl: c.wikipediaUrl,
+      directAnswer: c.directAnswer,
+      latitude: c.latitude,
+      longitude: c.longitude,
+      safetyRating: c.safetyRating
+    }));
+
+    for (const country of countryList) {
+      this.stats.incrementTotal();
+      this.stats.addContinent(country.continent);
+      if (country.visaRequirements !== undefined) this.stats.incrementVisa();
+      if (country.estimatedCost) this.stats.incrementCost();
+      if (country.latitude && country.longitude) this.stats.incrementCoordinates();
     }
 
-    const files = fs.readdirSync(CONFIG.CONTENT_DIR).filter(f => f.endsWith('.mdx'));
-    console.log(`📄 Найдено MDX файлов: ${files.length}`);
-
-    const countries: CountryData[] = [];
-
-    files.forEach((file) => {
-      try {
-        const filePath = path.join(CONFIG.CONTENT_DIR, file);
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data: frontmatter } = matter(fileContent);
-
-        if (!validateCountryData(frontmatter)) {
-          console.warn(`⚠️  Пропущен некорректный файл: ${file}`);
-          return;
-        }
-
-        const country: CountryData = {
-          id: file.replace('.mdx', ''),
-          name: frontmatter.title || frontmatter.name || file.replace('.mdx', ''),
-          title: frontmatter.title,
-          description: frontmatter.description,
-          capital: frontmatter.capital,
-          continent: frontmatter.continent,
-          currency: frontmatter.currency,
-          language: frontmatter.language,
-          bestTimeToVisit: frontmatter.bestTimeToVisit,
-          estimatedCost: frontmatter.estimatedCost,
-          visaRequirements: frontmatter.visaRequired !== undefined ? frontmatter.visaRequired : frontmatter.visaRequirements,
-          visaRequired: frontmatter.visaRequired,
-          keywords: frontmatter.keywords,
-          wikidataId: frontmatter.wikidataId,
-          wikipediaUrl: frontmatter.wikipediaUrl,
-          directAnswer: frontmatter.directAnswer,
-          latitude: frontmatter.latitude,
-          longitude: frontmatter.longitude,
-          safetyRating: frontmatter.safetyRating
-        };
-
-        countries.push(country);
-        this.stats.incrementTotal();
-        this.stats.addContinent(country.continent);
-
-        if (country.visaRequirements !== undefined) this.stats.incrementVisa();
-        if (country.estimatedCost) this.stats.incrementCost();
-        if (country.latitude && country.longitude) this.stats.incrementCoordinates();
-
-      } catch (error) {
-        console.error(`❌ Ошибка чтения файла ${file}:`, error);
-      }
-    });
-
-    this.countries = countries.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
-    return countries;
+    this.countries = countryList.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+    return countryList;
   }
 
   private generateTextContent(): string {

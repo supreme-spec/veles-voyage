@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
+const yaml = require('js-yaml');
 
 const countriesDir = path.join(process.cwd(), 'src', 'content', 'countries');
 
@@ -18,13 +18,22 @@ console.log(`Found ${files.length} MDX files.`);
 let successCount = 0;
 let failCount = 0;
 
+const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|\r|$)/;
+
 files.forEach(file => {
     try {
         const filePath = path.join(countriesDir, file);
         const content = fs.readFileSync(filePath, 'utf8');
-        const { data } = matter(content);
+        const match = content.trim().match(FRONTMATTER_RE);
 
-        // Check required fields if any
+        if (!match) {
+            console.error(`[ERROR] No frontmatter found in ${file}`);
+            failCount++;
+            return;
+        }
+
+        const data = yaml.load(match[1]);
+
         if (!data.title) {
             console.warn(`[WARN] File ${file} is missing title.`);
         }

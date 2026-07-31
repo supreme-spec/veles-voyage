@@ -1,13 +1,11 @@
-import fs from 'fs';
-import path from 'path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import matter from 'gray-matter';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
+import { countries } from '@lib/velite-data';
 import {
   InfoBlock,
   FeatureGrid,
@@ -107,58 +105,50 @@ export async function generateMetadata({
   } catch (error) {
     console.error(`Error generating SEO metadata for ${normalizedCountry}:`, error);
 
-    // Возвращаем базовые метаданные в случае ошибки
-    try {
-      const filePath = path.join(
-        process.cwd(),
-        'src',
-        'content',
-        'countries',
-        `${normalizedCountry}.mdx`
-      );
-      if (!fs.existsSync(filePath)) {
-        throw new Error(`File not found: ${filePath}`);
-      }
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      const { data: frontmatter } = matter(fileContent);
-
-      return await generateUniversalMetadata({
-        title: frontmatter.title || `${normalizedCountry} - путеводитель | Велес Вояж`,
-        description: frontmatter.description || `Подробный путеводитель по ${normalizedCountry}`,
+    const countryData = countries.find(c => c.slug === normalizedCountry);
+    if (countryData) {
+      const seoOptions: {
+        title: string;
+        description: string;
+        url: string;
+        type: 'country';
+        geo: { latitude: number; longitude: number };
+        keywords: string[];
+      } = {
+        title: countryData.title || `${normalizedCountry} - путеводитель | Велес Вояж`,
+        description: countryData.description || `Подробный путеводитель по ${normalizedCountry}`,
         url: `/wiki/${normalizedCountry}`,
-        image: frontmatter.image,
-        keywords: Array.isArray(frontmatter.keywords) ? frontmatter.keywords : [],
+        keywords: Array.isArray(countryData.keywords) ? countryData.keywords.filter((k): k is string => typeof k === 'string') : [],
         type: 'country',
         geo: {
-          latitude: frontmatter.latitude || 0,
-          longitude: frontmatter.longitude || 0,
+          latitude: countryData.latitude ?? 0,
+          longitude: countryData.longitude ?? 0,
         },
-        publishedTime: frontmatter.datePublished,
-        modifiedTime: frontmatter.dateModified,
-        author: frontmatter.author,
-      });
-    } catch (innerError) {
-      console.error(`Fallback metadata failed for ${normalizedCountry}:`, innerError);
-      return await generateUniversalMetadata({
-        title: `${normalizedCountry} - путеводитель | Велес Вояж`,
-        description: `Подробный путеводитель по ${normalizedCountry}`,
-        url: `/wiki/${normalizedCountry}`,
-      });
+      };
+
+      const result: Record<string, unknown> = { ...seoOptions };
+      if (countryData.image) result.image = countryData.image;
+      if (countryData.datePublished && countryData.datePublished !== 'dynamic') result.publishedTime = countryData.datePublished;
+      if (countryData.dateModified && countryData.dateModified !== 'dynamic') result.modifiedTime = countryData.dateModified;
+      if (countryData.author) result.author = countryData.author;
+
+      return await generateUniversalMetadata(result as unknown as Parameters<typeof generateUniversalMetadata>[0]);
     }
+
+    return await generateUniversalMetadata({
+      title: `${normalizedCountry} - путеводитель | Велес Вояж`,
+      description: `Подробный путеводитель по ${normalizedCountry}`,
+      url: `/wiki/${normalizedCountry}`,
+    });
   }
 }
 
 export async function generateStaticParams() {
   try {
-    const countriesDir = path.join(process.cwd(), 'src', 'content', 'countries');
-    if (!fs.existsSync(countriesDir)) return [];
-
-    const files = fs.readdirSync(countriesDir);
-    return files
-      .filter(file => file.endsWith('.mdx'))
-      .map(file => ({
-        country: file.replace('.mdx', ''),
-      }));
+    const excludedRoutes = ['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'];
+    return countries
+      .filter(c => !excludedRoutes.includes(c.slug ?? ''))
+      .map(c => ({ country: c.slug ?? '' }));
   } catch (error) {
     console.error('[Wiki] Error generating static params:', error);
     return [];
@@ -166,7 +156,6 @@ export async function generateStaticParams() {
 }
 
 async function getCountryContent(country: string) {
-  // Исключаем специальные маршруты
   const excludedRoutes = ['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'];
 
   const normalizedCountry = country.toLowerCase();
@@ -176,24 +165,16 @@ async function getCountryContent(country: string) {
   }
 
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'content',
-      'countries',
-      `${normalizedCountry}.mdx`
-    );
-    console.log(`[Wiki] Attempting to load MDX: ${filePath}`);
-
-    if (!fs.existsSync(filePath)) {
-      console.warn(`[Wiki] MDX file not found: ${filePath}`);
+    const countryData = countries.find(c => c.slug === normalizedCountry);
+    if (!countryData) {
+      console.warn(`[Wiki] No Velite data found for: ${normalizedCountry}`);
       return null;
     }
 
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data: frontmatter, content: rawContent } = matter(fileContent);
+    console.log(`[Wiki] Loading content for: ${normalizedCountry}`);
 
-    // Try MDX compilation with components
+    const rawContent = countryData.body ?? '';
+
     try {
       const strippedContent = rawContent.replace(/<div id="faq"[\s\S]*?(?=<hr|$)/, '');
       const { content: compiledContent } = await compileMDX({
@@ -207,12 +188,11 @@ async function getCountryContent(country: string) {
         },
         components: components as any,
       });
-      return { frontmatter, content: compiledContent };
+      return { frontmatter: countryData, content: compiledContent };
     } catch (compilationError) {
       console.error(`[Wiki] MDX compilation failed for ${normalizedCountry}:`, compilationError);
-      // Fallback to raw content wrapped in a div if compilation fails
       return {
-        frontmatter,
+        frontmatter: countryData,
         content: <div dangerouslySetInnerHTML={{ __html: rawContent }} />,
       };
     }
@@ -228,7 +208,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const countryData = await getCountryContent(normalizedCountry);
 
   // Парсинг FAQ из фронтматтера (формат: Вопрос|Ответ;;Вопрос|Ответ)
-  const faqs =
+    const faqs =
     countryData?.frontmatter?.faqs && typeof countryData.frontmatter.faqs === 'string'
       ? countryData.frontmatter.faqs
           .split(';;')
@@ -239,16 +219,14 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               answer: parts[1]?.trim() || '',
             };
           })
-          .filter((f: any) => f.question && f.answer)
+          .filter((f: { question: string; answer: string }) => f.question && f.answer)
       : [];
 
   // Парсинг ключевых слов
-  const keywords =
-    typeof countryData?.frontmatter?.keywords === 'string'
-      ? countryData.frontmatter.keywords.split(',').map((k: string) => k.trim())
-      : Array.isArray(countryData?.frontmatter?.keywords)
-        ? countryData.frontmatter.keywords
-        : [];
+  const rawKeywords = countryData?.frontmatter?.keywords;
+  const keywords = Array.isArray(rawKeywords)
+    ? rawKeywords.filter((k): k is string => typeof k === 'string')
+    : [];
 
   // Определяем, является ли страна спорной/частично признанной территорией.
   // Для таких страниц используем тип 'territory' (в JSON-LD — "@type": "Place", а не "Country"),
@@ -259,12 +237,18 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     (disputed ? getPoliticalStatus(normalizedCountry) : undefined);
 
   // Получаем JSON-LD схемы для SEO с использованием универсальной функции
-  const baseSchemas = await generateUniversalSchemas({
+  const schemaOptions: {
+    title: string;
+    description: string;
+    url: string;
+    type: 'country' | 'territory';
+    geo: { latitude: number; longitude: number };
+    keywords: string[];
+    faqs: Array<{ question: string; answer: string }>;
+  } = {
     title: countryData?.frontmatter?.title || `${normalizedCountry} - путеводитель | Велес Вояж`,
-    description:
-      countryData?.frontmatter?.description || `Подробный путеводитель по ${normalizedCountry}`,
+    description: countryData?.frontmatter?.description || `Подробный путеводитель по ${normalizedCountry}`,
     url: `/wiki/${normalizedCountry}`,
-    image: countryData?.frontmatter?.image,
     keywords,
     faqs,
     type: disputed ? 'territory' : 'country',
@@ -272,11 +256,16 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       latitude: countryData?.frontmatter?.latitude || 0,
       longitude: countryData?.frontmatter?.longitude || 0,
     },
-    publishedTime: countryData?.frontmatter?.datePublished,
-    modifiedTime: countryData?.frontmatter?.dateModified,
-    author: countryData?.frontmatter?.author,
-    politicalStatus,
-  });
+  };
+
+  const baseSchemasResult: Record<string, unknown> = { ...schemaOptions };
+  if (countryData?.frontmatter?.image) baseSchemasResult.image = countryData.frontmatter.image;
+  if (countryData?.frontmatter?.datePublished) baseSchemasResult.publishedTime = countryData.frontmatter.datePublished;
+  if (countryData?.frontmatter?.dateModified) baseSchemasResult.modifiedTime = countryData.frontmatter.dateModified;
+  if (countryData?.frontmatter?.author) baseSchemasResult.author = countryData.frontmatter.author;
+  if (politicalStatus) baseSchemasResult.politicalStatus = politicalStatus;
+
+  const baseSchemas = await generateUniversalSchemas(baseSchemasResult as unknown as Parameters<typeof generateUniversalSchemas>[0]);
 
   const touristTripSchema = {
     '@context': 'https://schema.org',

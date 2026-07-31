@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
+const yaml = require('js-yaml');
+
+const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|\r|$)/;
 
 // Карта стран по континентам
 const countryToContinent = {
@@ -230,7 +232,9 @@ mdxFiles.forEach(filename => {
 
   try {
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContent);
+    const match = fileContent.trim().match(FRONTMATTER_RE);
+    const data = match ? yaml.load(match[1]) : {};
+    const content = match ? fileContent.slice(match[0].length).trim() : fileContent;
 
     // Проверяем, есть ли уже поле continent
     const placeholderContinents = ['Континент', 'Европа', 'Азия', 'Северная Америка', 'Южная Америка', 'Африка', 'Океания'];
@@ -241,7 +245,8 @@ mdxFiles.forEach(filename => {
       data.continent = continent;
 
       // Формируем новый контент с обновленным frontmatter
-      const newData = matter.stringify(content, data);
+      const yamlContent = yaml.stringify(data);
+      const newData = `---\n${yamlContent}---\n${content}`;
 
       // Записываем обновленный файл
       fs.writeFileSync(filePath, newData, 'utf8');

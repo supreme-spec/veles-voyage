@@ -1,36 +1,18 @@
-import matter from 'gray-matter';
+import { countries } from '@lib/velite-data';
 
-// Dynamic imports for server-side only
-let fs: typeof import('fs') | null = null;
-let path: typeof import('path') | null = null;
+const EXCLUDED_ROUTES = ['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'];
 
-// Initialize modules only on server side
-function initModules() {
-  if (typeof window === 'undefined' && !fs) {
-    fs = require('fs');
-    path = require('path');
-  }
-}
-
-// Helper function to ensure modules are loaded
-function ensureModules() {
-  initModules();
-  if (!fs || !path) {
-    throw new Error('Server-side modules not available');
-  }
-  return { fs, path };
-}
-
-// Интерфейсы для типизации данных
 export interface CountryFrontmatter {
+  slug: string;
   title: string;
   description: string;
-  keywords: string | string[];
-  datePublished: string;
-  dateModified: string;
-  author: string;
-  wordCount: number;
-  inLanguage: string;
+  keywords: string[];
+  datePublished: string | undefined;
+  dateModified: string | undefined;
+  author: string | undefined;
+  wordCount: number | undefined;
+  inLanguage: string | undefined;
+  [key: string]: unknown;
 }
 
 export interface MdxCountryData {
@@ -40,116 +22,82 @@ export interface MdxCountryData {
   filePath: string;
 }
 
-// Кэш для оптимизации производительности
-const countryCache = new Map<string, MdxCountryData>();
 const allCountriesCache: MdxCountryData[] = [];
 
-/**
- * Загружает конкретную страну из MDX файла
- */
-export async function loadCountryMdx(slug: string): Promise<MdxCountryData | null> {
-  // Проверяем кэш первым
-  if (countryCache.has(slug)) {
-    return countryCache.get(slug)!;
+function parseKeywords(raw: unknown): string[] {
+  if (Array.isArray(raw)) {
+    return raw.filter((k): k is string => typeof k === 'string');
   }
+  if (typeof raw === 'string') {
+    return raw.split(',').map((k: string) => k.trim()).filter(Boolean);
+  }
+  return [];
+}
 
-  const { fs, path } = ensureModules();
-  const filePath = path.join(process.cwd(), 'src/content/countries', `${slug}.mdx`);
+function buildFrontmatter(c: Record<string, unknown>, slug: string): CountryFrontmatter {
+  const title = (typeof c.title === 'string' ? c.title : '') || slug;
+  const description = typeof c.description === 'string' ? c.description : '';
+  const keywords = parseKeywords(c.keywords);
 
-  try {
-    if (!fs.existsSync(filePath)) {
-      return null;
-    }
+  return {
+    slug,
+    title,
+    description,
+    keywords,
+    datePublished: c.datePublished as string | undefined,
+    dateModified: c.dateModified as string | undefined,
+    author: c.author as string | undefined,
+    wordCount: c.wordCount as number | undefined,
+    inLanguage: c.inLanguage as string | undefined,
+    ...c,
+  };
+}
 
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data: frontmatter, content } = matter(fileContent);
-
-    // Валидация обязательных полей
-    if (!frontmatter.title || !frontmatter.description) {
-      console.warn(`Missing required fields in ${slug}.mdx frontmatter`);
-      return null;
-    }
-
-    const countryData: MdxCountryData = {
-      slug,
-      frontmatter: frontmatter as CountryFrontmatter,
-      content,
-      filePath,
-    };
-
-    // Сохраняем в кэш
-    countryCache.set(slug, countryData);
-    return countryData;
-  } catch (error) {
-    console.error(`Error loading MDX file for ${slug}:`, error);
+export async function loadCountryMdx(slug: string): Promise<MdxCountryData | null> {
+  const countryData = countries.find(c => c.slug === slug);
+  if (!countryData) {
     return null;
   }
+
+  const frontmatter = buildFrontmatter(countryData as unknown as Record<string, unknown>, slug);
+
+  return {
+    slug,
+    frontmatter,
+    content: countryData.body ?? '',
+    filePath: countryData.path ?? '',
+  };
 }
 
-/**
- * Загружает все страны из MDX файлов
- */
 export async function loadAllCountriesMdx(): Promise<MdxCountryData[]> {
-  // Всегда загружаем заново для разработки
-  // if (allCountriesCache.length > 0) {
-  //   return [...allCountriesCache];
-  // }
+  const validCountries = countries
+    .filter(c => !EXCLUDED_ROUTES.includes(c.slug ?? ''))
+    .map(c => {
+      const slug = c.slug ?? '';
+      return {
+        slug,
+        frontmatter: buildFrontmatter(c as unknown as Record<string, unknown>, slug),
+        content: c.body ?? '',
+        filePath: c.path ?? '',
+      };
+    });
 
-  const { fs, path } = ensureModules();
-  const countriesDir = path.join(process.cwd(), 'src/content/countries');
-
-  try {
-    const files = fs.readdirSync(countriesDir);
-    const mdxFiles = files.filter(file => file.endsWith('.mdx'));
-
-    const countries = await Promise.all(
-      mdxFiles.map(async file => {
-        const slug = file.replace('.mdx', '');
-        const countryData = await loadCountryMdx(slug);
-        return countryData;
-      })
-    );
-
-    // Фильтруем null значения и сохраняем в кэш
-    const validCountries = countries.filter(Boolean) as MdxCountryData[];
-    allCountriesCache.length = 0; // Очищаем кэш
-    allCountriesCache.push(...validCountries);
-
-    console.log(`Loaded ${validCountries.length} countries from MDX files`);
-
-    return validCountries;
-  } catch (error) {
-    console.error('Error loading all countries MDX:', error);
-    return [];
-  }
+  allCountriesCache.length = 0;
+  allCountriesCache.push(...validCountries);
+  return validCountries;
 }
 
-/**
- * Получает список всех слагов стран
- */
 export async function getAllCountrySlugs(): Promise<string[]> {
-  const { fs, path } = ensureModules();
-  const countriesDir = path.join(process.cwd(), 'src/content/countries');
-
-  try {
-    const files = fs.readdirSync(countriesDir);
-    return files.filter(file => file.endsWith('.mdx')).map(file => file.replace('.mdx', ''));
-  } catch (error) {
-    console.error('Error reading countries directory:', error);
-    return [];
-  }
+  return countries
+    .filter(c => !EXCLUDED_ROUTES.includes(c.slug ?? ''))
+    .map(c => c.slug ?? '');
 }
 
-/**
- * Извлекает информацию о стране для списка (название, описание)
- */
 export function extractCountryInfo(countryData: MdxCountryData) {
   const { frontmatter } = countryData;
 
-  // Извлекаем название страны из заголовка
   let name = frontmatter.title;
 
-  // Обрабатываем различные форматы заголовков
   if (name.includes(':')) {
     const namePart = name.split(':')[0];
     if (namePart) {
@@ -162,7 +110,6 @@ export function extractCountryInfo(countryData: MdxCountryData) {
     }
   }
 
-  // Убираем эмодзи и специальные символы
   const cleanName = name.replace(/^[\w\s-]+/, '').trim() || name;
 
   return {
@@ -172,39 +119,26 @@ export function extractCountryInfo(countryData: MdxCountryData) {
   };
 }
 
-/**
- * Сортирует страны по названию
- */
-export function sortCountriesByName(countries: ReturnType<typeof extractCountryInfo>[]) {
-  return [...countries].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+export function sortCountriesByName(input: ReturnType<typeof extractCountryInfo>[]) {
+  return [...input].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 }
 
-/**
- * Группирует страны по континентам (на основе существующей логики)
- */
-export function groupCountriesByContinent(countries: MdxCountryData[]) {
-  // TODO: Реализовать логику группировки по континентам
-  // Пока возвращаем все страны в одной группе
+export function groupCountriesByContinent(input: MdxCountryData[]) {
   const grouped = {
-    'Все страны': countries.map(extractCountryInfo),
+    'Все страны': input.map(extractCountryInfo),
   };
 
-  // Сортируем каждую группу
   Object.keys(grouped).forEach(continent => {
     const key = continent as keyof typeof grouped;
-    const countries = grouped[key];
-    if (countries) {
-      grouped[key] = sortCountriesByName(countries);
+    const continentCountries = grouped[key];
+    if (continentCountries) {
+      grouped[key] = sortCountriesByName(continentCountries);
     }
   });
 
   return grouped;
 }
 
-/**
- * Очищает кэш (для разработки)
- */
 export function clearCountryCache() {
-  countryCache.clear();
   allCountriesCache.length = 0;
 }

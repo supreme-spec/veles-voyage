@@ -1,31 +1,19 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
-import matter from 'gray-matter';
+import { countries } from '@lib/velite-data';
 
 export async function GET() {
   try {
-    const countriesDir = path.join(process.cwd(), 'src/content/countries');
-    const files = await fs.readdir(countriesDir);
-    
-    const countries = await Promise.all(
-      files
-        .filter(f => f.endsWith('.mdx'))
-        .map(async (file) => {
-          const content = await fs.readFile(path.join(countriesDir, file), 'utf8');
-          const { data } = matter(content);
-          const id = file.replace('.mdx', '');
-          return {
-            id,
-            title: data.title || id,
-            description: data.description || ''
-          };
-        })
-    );
+const countryList = countries
+  .filter(c => !['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'].includes(c.slug ?? ''))
+  .map(c => ({
+    id: c.slug ?? '',
+    title: c.title ?? '',
+    description: (c.description ?? '').trim(),
+  }));
 
     const content = `# Велес Вояж — Туристическая Энциклопедия
 
-> Путеводители по ${countries.length}+ странам мира с актуальной информацией для путешественников.
+  > Путеводители по ${countryList.length}+ странам мира с актуальной информацией для путешественников.
 
 ## О проекте
 
@@ -45,7 +33,7 @@ export async function GET() {
 
 ### Путеводители по странам
 
-${countries.map(c => `- [${c.title}](https://veles-voyage.ru/wiki/${c.id}): ${c.description.substring(0, 100)}...`).join('\n')}
+  ${countryList.map(c => `- [${c.title}](https://veles-voyage.ru/wiki/${c.id}): ${(c.description || '').substring(0, 100)}...`).join('\n')}
 
 ## Типы контента
 

@@ -10,7 +10,7 @@ import {
   CONTINENT_ORDER,
   normalizeContinentKey,
 } from '@/shared/constants/continents';
-import WorldLandmarksMap from '@/components/WorldLandmarksMap';
+import WorldLandmarksMapWrapper from '@/components/WorldLandmarksMapWrapper';
 
 // Определяем типы для информации о стране и континенте
 type CountryInfo = { id: string; name: string; description: string };
@@ -180,7 +180,7 @@ async function CountriesContent() {
             Интерактивная карта мира
           </h2>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
-            <WorldLandmarksMap />
+            <WorldLandmarksMapWrapper />
           </div>
         </div>
 

@@ -412,7 +412,7 @@ export default function RootLayout({
           <ClientProviders>
             <div className="relative min-h-screen flex flex-col">
               <Navbar />
-              <main className="flex-grow pt-16 md:pt-20 pb-16 md:pb-0">
+              <main className="flex-grow pt-14 sm:pt-16 md:pt-20 pb-16 md:pb-0 px-2 sm:px-3 md:px-4">
                 {children}
               </main>
               <Footer />

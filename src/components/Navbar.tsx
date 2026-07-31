@@ -147,15 +147,15 @@ export function Navbar() {
       >
         {/* Декоративная полоса в цветах флага России */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white via-blue-600 to-red-600"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex justify-between items-center h-20 md:h-24">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
+          <div className="flex justify-between items-center h-16 sm:h-18 md:h-20 lg:h-24">
             {/* Logo */}
             <Link
               href="/"
               className="group transition-all duration-300 flex items-center gap-2 hover:scale-[1.02]"
               onClick={closeMobileMenu}
             >
-              <div className="relative flex items-center justify-center w-10 h-10 md:w-14 md:h-16 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-16 group-hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/images/logo.svg"
                   alt="Логотип Велес Вояж"
@@ -166,12 +166,12 @@ export function Navbar() {
                 />
               </div>
 
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-sm group-hover:from-blue-700 group-hover:via-indigo-700 group-hover:to-purple-700 dark:group-hover:from-blue-300 dark:group-hover:via-indigo-300 dark:group-hover:to-purple-300 transition-all duration-300 hidden min-[450px]:inline text-base md:text-lg font-bold whitespace-nowrap">
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-sm group-hover:from-blue-700 group-hover:via-indigo-700 group-hover:to-purple-700 dark:group-hover:from-blue-300 dark:group-hover:via-indigo-300 dark:group-hover:to-purple-300 transition-all duration-300 hidden sm:inline text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
                 Велес Вояж
               </span>
 
               {/* Миниатюрный 3D-герб в меню */}
-              <div className="nav-eagle-badge scale-[0.55] sm:scale-[0.65] md:scale-90 transition-transform duration-300">
+              <div className="nav-eagle-badge scale-[0.4] sm:scale-[0.55] md:scale-[0.65] lg:scale-90 transition-transform duration-300 hidden sm:block">
                 <div className="nav-flag-base">
                   <div className="flex flex-col h-full">
                     <div className="flex-1 stripe-white"></div>
@@ -192,7 +192,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center space-x-1">
               {mainNavigationItems.map(item => {
                 // Improved active state detection
                 const isActive =
@@ -202,7 +202,7 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     prefetch={true}
-                    className={`relative px-2 py-2 text-xs font-medium transition-all duration-200 rounded-lg ${isActive
+                    className={`relative px-2 py-2 text-xs sm:text-sm font-medium transition-all duration-200 rounded-lg ${isActive
                       ? 'text-white dark:text-white bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-700 dark:to-red-700 shadow-md'
                       : 'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 dark:hover:from-blue-600 dark:hover:to-red-600'
                       }`}
@@ -269,16 +269,16 @@ export function Navbar() {
             </div>
 
             {/* Right side buttons for desktop */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-2">
               {/* Phone Button */}
               <a
                 href="tel:+79850635134"
-                className="flex items-center space-x-1 px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-colors font-medium text-sm"
+                className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-colors font-medium text-xs sm:text-sm"
                 title="Позвонить"
                 aria-label="Позвонить"
               >
                 <PhoneIcon className="h-4 w-4" />
-                <span>+7 985 063-51-34</span>
+                <span className="hidden sm:inline">+7 985 063-51-34</span>
               </a>
 
               {/* Telegram Button */}
@@ -329,29 +329,29 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu Button Section */}
-            <div className="flex md:hidden items-center space-x-2">
+            <div className="flex lg:hidden items-center space-x-1 sm:space-x-2">
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="p-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors"
+                  className="p-1.5 sm:p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors"
                   title={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
                 >
                   {theme === 'dark' ? (
-                    <SunIcon className="w-5 h-5" />
+                    <SunIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   ) : (
-                    <MoonIcon className="w-5 h-5" />
+                    <MoonIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   )}
                 </button>
               )}
               <button
                 onClick={toggleMobileMenu}
-                className="p-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors"
+                className="p-1.5 sm:p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors"
                 aria-label="Открыть меню"
               >
                 {isMobileMenuOpen ? (
-                  <XMarkIcon className="w-6 h-6" />
+                  <XMarkIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <Bars3Icon className="w-6 h-6" />
+                  <Bars3Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </button>
             </div>
@@ -362,7 +362,7 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
           onClick={closeMobileMenu}
         />
       )}
@@ -370,28 +370,28 @@ export function Navbar() {
       {/* Mobile Menu Container */}
       <div
         className={`
-          fixed top-0 right-0 h-full w-80 max-w-[90vw] z-50
+          fixed top-0 right-0 h-full w-72 sm:w-80 max-w-[90vw] z-50
           bg-white dark:bg-gray-900 shadow-2xl
           transform transition-transform duration-300 ease-in-out
           ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-          md:hidden
+          lg:hidden
         `}
       >
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Меню</h2>
+          <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Меню</h2>
             <button
               onClick={closeMobileMenu}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
-              <XMarkIcon className="w-6 h-6 text-gray-500" />
+              <XMarkIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" />
             </button>
           </div>
 
           {/* Mobile Menu Content */}
           <div className="flex-1 overflow-y-auto">
-            <div className="p-4 space-y-2">
+            <div className="p-3 sm:p-4 space-y-2">
               {/* Main navigation items */}
               {mainNavigationItems.map(item => {
                 const isActive =
@@ -403,13 +403,13 @@ export function Navbar() {
                     href={item.href}
                     prefetch={true}
                     onClick={closeMobileMenu}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                    className={`flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-colors ${isActive
                       ? 'text-white dark:text-white bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-700 dark:to-red-700 shadow-md'
                       : 'text-gray-700 dark:text-gray-200 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 dark:hover:from-blue-600 dark:hover:to-red-600'
                       }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="font-medium text-sm sm:text-base">{item.label}</span>
                     {isActive && (
                       <div className="ml-auto w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                     )}
@@ -428,13 +428,13 @@ export function Navbar() {
                     href={item.href}
                     prefetch={true}
                     onClick={closeMobileMenu}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                    className={`flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-colors ${isActive
                       ? 'text-white dark:text-white bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-700 dark:to-red-700 shadow-md'
                       : 'text-gray-700 dark:text-gray-200 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 dark:hover:from-blue-600 dark:hover:to-red-600'
                       }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="font-medium text-sm sm:text-base">{item.label}</span>
                     {isActive && (
                       <div className="ml-auto w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                     )}
@@ -444,13 +444,13 @@ export function Navbar() {
             </div>
 
             {/* Mobile Wallet Section */}
-            <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700">
               <div className="space-y-4"></div>
             </div>
 
             {/* Mobile Menu Footer */}
-            <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-              <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <div className="p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                  ООО «Велес» — № РТА 0035678.{' '}
                 <Link
                   href="/privacy"

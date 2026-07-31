@@ -125,12 +125,12 @@ export function Navbar() {
     { href: '/hotels', label: 'Отели', icon: HomeIcon },
     { href: '/flights', label: 'Авиа', icon: PaperAirplaneIcon },
     { href: '/cruises', label: 'Круизы', icon: MapIcon },
-    { href: '/about', label: 'О компании', icon: InformationCircleIcon },
-    { href: '/contacts', label: 'Контакты', icon: PhoneIcon },
   ];
 
   // Дополнительные навигационные элементы (в dropdown)
   const additionalNavigationItems = [
+    { href: '/about', label: 'О компании', icon: InformationCircleIcon },
+    { href: '/contacts', label: 'Контакты', icon: PhoneIcon },
     { href: '/wiki', label: 'Энциклопедия', icon: MapIcon },
     { href: '/blog', label: 'Блог', icon: MapIcon },
     { href: '/faq', label: 'Частые вопросы', icon: MapIcon },
@@ -166,7 +166,7 @@ export function Navbar() {
                 />
               </div>
 
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-sm group-hover:from-blue-700 group-hover:via-indigo-700 group-hover:to-purple-700 dark:group-hover:from-blue-300 dark:group-hover:via-indigo-300 dark:group-hover:to-purple-300 transition-all duration-300 hidden sm:inline text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-sm group-hover:from-blue-700 group-hover:via-indigo-700 group-hover:to-purple-700 dark:group-hover:from-blue-300 dark:group-hover:via-indigo-300 dark:group-hover:to-purple-300 transition-all duration-300 hidden lg:inline text-sm sm:text-base md:text-lg font-bold whitespace-nowrap flex-shrink-0">
                 Велес Вояж
               </span>
 
@@ -192,7 +192,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center gap-1 flex-nowrap">
               {mainNavigationItems.map(item => {
                 // Improved active state detection
                 const isActive =
@@ -202,14 +202,14 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     prefetch={true}
-                    className={`relative px-2 py-2 text-xs sm:text-sm font-medium transition-all duration-200 rounded-lg ${isActive
+                    className={`relative px-2 py-2 text-xs sm:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap flex-shrink-0 ${isActive
                       ? 'text-white dark:text-white bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-700 dark:to-red-700 shadow-md'
                       : 'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 dark:hover:from-blue-600 dark:hover:to-red-600'
                       }`}
                   >
-                    <span className="flex items-center space-x-1">
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.label}</span>
+                    <span className="flex items-center space-x-1 whitespace-nowrap">
+                      <item.icon className="h-4 w-4 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{item.label}</span>
                     </span>
                     {isActive && (
                       <motion.div
@@ -227,14 +227,14 @@ export function Navbar() {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={handleDropdownToggle}
-                  className={`flex items-center space-x-1 px-2 py-2 text-xs font-medium rounded-lg transition-all duration-200 ${isDropdownOpen
+                  className={`flex items-center space-x-1 px-2 py-2 text-xs font-medium rounded-lg transition-all duration-200 whitespace-nowrap flex-shrink-0 ${isDropdownOpen
                     ? 'text-white dark:text-white bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-700 dark:to-red-700 shadow-md'
                     : 'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 dark:hover:from-blue-600 dark:hover:to-red-600'
                     }`}
                 >
-                  <span>Еще</span>
+                  <span className="whitespace-nowrap">Еще</span>
                   <ChevronDownIcon
-                    className={`h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                    className={`h-4 w-4 transition-transform flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -269,16 +269,16 @@ export function Navbar() {
             </div>
 
             {/* Right side buttons for desktop */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center gap-1 flex-nowrap">
               {/* Phone Button */}
               <a
                 href="tel:+79850635134"
-                className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-colors font-medium text-xs sm:text-sm"
+                className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-colors font-medium text-xs sm:text-sm whitespace-nowrap flex-shrink-0"
                 title="Позвонить"
                 aria-label="Позвонить"
               >
-                <PhoneIcon className="h-4 w-4" />
-                <span className="hidden sm:inline">+7 985 063-51-34</span>
+                <PhoneIcon className="h-4 w-4 flex-shrink-0" />
+                <span className="hidden xl:inline whitespace-nowrap">+7 985 063-51-34</span>
               </a>
 
               {/* Telegram Button */}
@@ -286,7 +286,7 @@ export function Navbar() {
                 href="https://t.me/Anastasiiiiyyaa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition-colors"
+                className="p-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition-colors flex-shrink-0"
                 title="Написать в Telegram"
                 aria-label="Написать в Telegram"
               >
@@ -303,7 +303,7 @@ export function Navbar() {
               {/* AI Assistant Button */}
               <button
                 onClick={toggleAiAssistant}
-                className="p-2 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 text-white hover:scale-110 transition-all shadow-md group"
+                className="p-2 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 text-white hover:scale-110 transition-all shadow-md group flex-shrink-0"
                 title="AI Ассистент"
                 aria-label="Открыть AI Ассистент"
               >
@@ -314,7 +314,7 @@ export function Navbar() {
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors"
+                  className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 transition-colors flex-shrink-0"
                   title={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
                 >
                   {theme === 'dark' ? (

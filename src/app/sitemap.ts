@@ -2,7 +2,6 @@ import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/shared/constants/seo';
 import citiesSitemap from './cities/sitemap';
 import wikiSitemap from './wiki/sitemap';
-import visualSitemap from './visual-sitemap';
 import { blogPosts } from '@/shared/data/blogPosts';
 
 const LASTMOD = {
@@ -167,7 +166,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   let cities: MetadataRoute.Sitemap = [];
   let wiki: MetadataRoute.Sitemap = [];
-  let visual: MetadataRoute.Sitemap = [];
   try {
     cities = citiesSitemap();
   } catch (e) {
@@ -178,22 +176,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   } catch (e) {
     console.error('wikiSitemap error:', e);
   }
-  try {
-    visual = visualSitemap();
-  } catch (e) {
-    console.error('visualSitemap error:', e);
-  }
-
-  const sitemapImages = [
-    `${baseUrl}/images/og-default.jpg`,
-  ];
 
   const filtered = [
-    ...mainUrls.map((url) => ({ ...url, images: sitemapImages })),
+    ...mainUrls,
     ...wiki,
     ...cities,
-    ...visual,
   ].filter((entry) => !noindexPatterns.some((re) => re.test(entry.url)));
 
-  return filtered as MetadataRoute.Sitemap;
+  // Deduplicate URLs
+  const seen = new Set<string>();
+  const deduped = filtered.filter((e) => {
+    if (seen.has(e.url)) return false;
+    seen.add(e.url);
+    return true;
+  });
+
+  return deduped as MetadataRoute.Sitemap;
 }

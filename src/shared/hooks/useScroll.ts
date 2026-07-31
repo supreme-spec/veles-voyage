@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 export const useScroll = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
-  const handlerRef = useRef<() => void>();
+  const handlerRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     handlerRef.current = () => {

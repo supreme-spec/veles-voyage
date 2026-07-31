@@ -29,7 +29,7 @@ export function useThrottle<T extends (...args: any[]) => any>(
   delay: number
 ): T {
   const lastRan = useRef<number>(0);
-  const handler = useRef<NodeJS.Timeout>();
+  const handler = useRef<NodeJS.Timeout | null>(null);
   const funcRef = useRef(func);
 
   // Обновляем ref при изменении функции
@@ -43,7 +43,7 @@ export function useThrottle<T extends (...args: any[]) => any>(
       funcRef.current.apply(this, args);
       lastRan.current = Date.now();
     } else {
-      clearTimeout(handler.current);
+      if (handler.current) clearTimeout(handler.current);
       handler.current = setTimeout(() => {
         funcRef.current.apply(this, args);
         lastRan.current = Date.now();

@@ -66,11 +66,9 @@ export function OptimizedImage({
         priority={priority}
         quality={quality}
         placeholder={placeholder}
-        blurDataURL={
-          placeholder === 'blur' 
-            ? `data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`
-            : undefined
-        }
+        {...(placeholder === 'blur' && {
+          blurDataURL: `data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`,
+        })}
         className={`transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}

@@ -205,7 +205,7 @@ async function getCountryContent(country: string) {
             rehypePlugins: [rehypeRaw, rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
           },
         },
-        components,
+        components: components as any,
       });
       return { frontmatter, content: compiledContent };
     } catch (compilationError) {

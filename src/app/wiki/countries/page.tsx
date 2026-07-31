@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 
 import { getWikiPages } from '@/shared/data/wikiPages-mdx';
 import { countryNamesDictionary, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
@@ -11,15 +10,7 @@ import {
   CONTINENT_ORDER,
   normalizeContinentKey,
 } from '@/shared/constants/continents';
-
-const InteractiveMap = dynamic(() => import('@/components/WorldLandmarksMap'), {
-  ssr: false,
-  loading: () => (
-    <div className="h-[500px] bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl flex items-center justify-center">
-      <span className="text-gray-400 text-sm">Загрузка карты...</span>
-    </div>
-  ),
-});
+import WorldLandmarksMap from '@/components/WorldLandmarksMap';
 
 // Определяем типы для информации о стране и континенте
 type CountryInfo = { id: string; name: string; description: string };
@@ -189,7 +180,7 @@ async function CountriesContent() {
             Интерактивная карта мира
           </h2>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
-            <InteractiveMap />
+            <WorldLandmarksMap />
           </div>
         </div>
 

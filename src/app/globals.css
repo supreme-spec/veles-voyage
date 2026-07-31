@@ -1828,3 +1828,158 @@ img:not([src]) {
     #1f2937 100%
   );
 }
+
+/* ═══════════════════════════════════════
+   АДАПТИВНОСТЬ ДЛЯ ВСЕХ УСТРОЙСТВ
+═══════════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.container-responsive {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    max-width: 1280px;
+  }
+}
+
+img, video, iframe, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose, .prose * {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.prose a {
+  word-break: break-all;
+}
+
+button, a, [role="button"], input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .prose h1 { font-size: 1.5rem; line-height: 1.3; }
+  .prose h2 { font-size: 1.25rem; line-height: 1.4; }
+  .prose h3 { font-size: 1.125rem; line-height: 1.4; }
+  
+  .prose p, .prose ul, .prose ol {
+    margin-bottom: 1rem;
+  }
+  
+  .maplibregl-map {
+    height: 300px !important;
+  }
+  
+  .maplibregl-popup {
+    max-width: 85vw !important;
+  }
+  
+  .maplibregl-ctrl-group {
+    width: 35px;
+  }
+  
+  .maplibregl-ctrl button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .prose h1 { font-size: 1.75rem; }
+  .prose h2 { font-size: 1.5rem; }
+  
+  .maplibregl-map {
+    height: 450px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prose h1 { font-size: 2rem; }
+  .prose h2 { font-size: 1.75rem; }
+  
+  .maplibregl-map {
+    height: 650px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .maplibregl-popup-content {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

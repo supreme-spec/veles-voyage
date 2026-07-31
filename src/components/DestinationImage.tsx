@@ -1,41 +1,38 @@
 'use client';
 
+import Image from 'next/image';
+
 interface DestinationImageProps {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
   className?: string;
+  priority?: boolean;
 }
 
 export function DestinationImage({
   src,
   alt,
-  width = 600,
-  height = 400,
-  className = ''
+  className = '',
+  priority = false,
 }: DestinationImageProps) {
   if (!src) {
     return (
-      <div
-        className={`relative w-full h-full bg-gradient-to-r from-teal-500 to-blue-600 ${className}`}
-        style={{ minHeight: '100%', minWidth: '100%' }}
-      />
+      <div className="relative w-full aspect-[3/2] bg-gradient-to-r from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
+        <span className="text-gray-400 text-sm">Нет изображения</span>
+      </div>
     );
   }
 
   return (
-    <div className={`relative w-full h-full ${className}`}>
-      <div className="relative w-full h-full" style={{ minHeight: '100%', minWidth: '100%' }}>
-        <img
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          className="object-cover w-full h-full"
-          loading="lazy"
-        />
-      </div>
+    <div className="relative w-full aspect-[3/2] overflow-hidden rounded-lg">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className={`object-cover ${className}`}
+        priority={priority}
+      />
     </div>
   );
 }

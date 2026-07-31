@@ -456,9 +456,6 @@ export default async function Home() {
                       <DestinationImage
                         src={dest.image}
                         alt={`Туры в ${dest.name} - популярное направление 2026 от Велес Вояж`}
-                        width={600}
-                        height={400}
-                        className="w-full h-full"
                       />
                     </div>
                     <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow relative z-10">

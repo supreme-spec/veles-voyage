@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
 import { getWikiPages } from '@/shared/data/wikiPages-mdx';
 import { countryNamesDictionary, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
@@ -10,7 +11,15 @@ import {
   CONTINENT_ORDER,
   normalizeContinentKey,
 } from '@/shared/constants/continents';
-import InteractiveMap from '@/components/mdx/InteractiveMap';
+
+const InteractiveMap = dynamic(() => import('@/components/WorldLandmarksMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[500px] bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl flex items-center justify-center">
+      <span className="text-gray-400 text-sm">Загрузка карты...</span>
+    </div>
+  ),
+});
 
 // Определяем типы для информации о стране и континенте
 type CountryInfo = { id: string; name: string; description: string };

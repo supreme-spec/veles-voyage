@@ -107,7 +107,12 @@ export default async function ToursPage() {
       <StructuredData schemas={toursSchemas} />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 py-20 pt-20 md:pt-24">
-        <Breadcrumbs items={[{ label: 'Туры', href: '/tours' }]} />
+        <Breadcrumbs
+          items={[
+            { label: 'Главная', href: '/' },
+            { label: 'Туры и круизы', href: '/tours' },
+          ]}
+        />
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             <span className="mr-2">🌍</span>

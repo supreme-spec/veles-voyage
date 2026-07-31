@@ -608,7 +608,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           <ul className="grid gap-2 sm:grid-cols-2">
             {faqs.map((faq: { question: string; answer: string }, idx: number) => (
               <li key={idx}>
-                <details className="group bg-white dark:bg-gray-800/40 rounded-xl border border-gray-100 dark:border-gray-700 px-4 py-3">
+                <details open={false} className="group bg-white dark:bg-gray-800/40 rounded-xl border border-gray-100 dark:border-gray-700 px-4 py-3">
                   <summary className="flex items-center justify-between cursor-pointer list-none text-gray-900 dark:text-white font-medium">
                     <span>{faq.question}</span>
                     <span className="ml-3 text-blue-600 dark:text-blue-400 transition-transform group-open:rotate-45">

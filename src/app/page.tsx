@@ -12,9 +12,9 @@ import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
 import { DestinationImage } from '@/components/DestinationImage';
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Туры и круизы 2026 — Veles Voyage | Подбор путешествий',
+  title: 'Туры и круизы 2026 — Велес Вояж | Подбор путешествий',
   description:
-    'Турагентство Veles Voyage (РТА 0035678): подбор туров в Турцию, Египет, ОАЭ, морские круизы. Индивидуальные маршруты, поддержка 24/7, лучшие цены 2026.',
+    'Турагентство Велес Вояж (РТА 0035678): подбор туров в Турцию, Египет, ОАЭ, морские круизы. Индивидуальные маршруты, поддержка 24/7, лучшие цены 2026.',
   url: SITE_URL,
   type: 'website',
   keywords: [
@@ -22,12 +22,12 @@ export const metadata: Metadata = generateSEOMetadata({
     'авторские путешествия',
     'морские круизы 2026',
     'путеводители по странам',
-    'турагентство Veles Voyage',
+    'турагентство Велес Вояж',
     'РТА 0035678',
   ],
   faqs: [
     {
-      question: 'Как забронировать тур в Veles Voyage?',
+      question: 'Как забронировать тур в Велес Вояж?',
       answer:
         'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
     },
@@ -52,9 +52,9 @@ const POPULAR_DESTINATION_SLUGS = [
 
 export default async function Home() {
   const schemas = await generateUniversalSchemas({
-    title: 'Туры и круизы 2026 — Veles Voyage',
+    title: 'Туры и круизы 2026 — Велес Вояж',
     description:
-      'Турагентство Veles Voyage (РТА 0035678). Подбор туров в Турцию, Египет, ОАЭ и морских круизов. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
+      'Турагентство Велес Вояж (РТА 0035678). Подбор туров в Турцию, Египет, ОАЭ и морских круизов. Индивидуальные маршруты, поддержка 24/7, лучшие цены.',
     url: SITE_URL,
     type: 'website',
     keywords: [
@@ -62,12 +62,12 @@ export default async function Home() {
       'авторские путешествия',
       'морские круизы 2026',
       'путеводители по странам',
-      'турагентство Veles Voyage',
+      'турагентство Велес Вояж',
       'РТА 0035678',
     ],
     faqs: [
       {
-        question: 'Как забронировать тур в Veles Voyage?',
+        question: 'Как забронировать тур в Велес Вояж?',
         answer:
           'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
       },
@@ -84,7 +84,7 @@ export default async function Home() {
       {
         question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
         answer:
-          'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Veles Voyage.',
+          'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.',
       },
     ],
   });
@@ -122,7 +122,7 @@ export default async function Home() {
             <div className="mt-12 md:mt-20">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight drop-shadow-2xl">
                 <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
-                  Туры и круизы 2026 — Veles Voyage
+                  Туры и круизы 2026 — Велес Вояж
                 </span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 font-medium leading-relaxed drop-shadow-lg">
@@ -469,14 +469,18 @@ export default async function Home() {
                       <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
                         {dest.description}
                       </p>
-                      {dest.estimatedCost && (
-                        <p className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">
-                          от {Number(dest.estimatedCost).toLocaleString('ru-RU')} ₽{' '}
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                            {dest.priceNote}
-                          </span>
-                        </p>
-                      )}
+                      {dest.estimatedCost && (() => {
+                        const price = Number(String(dest.estimatedCost).replace(/[^\d]/g, ''));
+                        if (isNaN(price) || price === 0) return <span className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Цена по запросу</span>;
+                        return (
+                          <p className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">
+                            от {price.toLocaleString('ru-RU')} ₽{' '}
+                            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                              {dest.priceNote}
+                            </span>
+                          </p>
+                        );
+                      })()}
                       <Link
                         href={`/wiki/${dest.slug}`}
                         className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10"

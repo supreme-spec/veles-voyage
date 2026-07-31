@@ -139,7 +139,7 @@ const Egypt2026Page = () => {
         url={`${SITE_URL}/audio/safety-alta-2026.mp3`}
         transcript={[
           {
-            speaker: 'Гид Veles Voyage (Иван)',
+            speaker: 'Гид Велес Вояж (Иван)',
             text: 'Мы используем только сертифицированные спутниковые телефоны Garmin inReach.',
           },
           {
@@ -147,7 +147,7 @@ const Egypt2026Page = () => {
             text: 'А как насчет связи в долине?',
           },
           {
-            speaker: 'Гид Veles Voyage (Иван)',
+            speaker: 'Гид Велес Вояж (Иван)',
             text: 'В долине работает спутниковый интернет Starlink и радиомаяк.',
           },
         ]}

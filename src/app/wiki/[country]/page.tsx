@@ -260,7 +260,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
   // Получаем JSON-LD схемы для SEO с использованием универсальной функции
   const baseSchemas = await generateUniversalSchemas({
-    title: countryData?.frontmatter?.title || `${normalizedCountry} - путеводитель | Veles Voyage`,
+    title: countryData?.frontmatter?.title || `${normalizedCountry} - путеводитель | Велес Вояж`,
     description:
       countryData?.frontmatter?.description || `Подробный путеводитель по ${normalizedCountry}`,
     url: `/wiki/${normalizedCountry}`,

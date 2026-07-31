@@ -50,3 +50,4 @@ Thumbs.db
 
 # Debug/scratch dumps
 wiki_pages.json
+.velite/

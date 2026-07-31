@@ -1,18 +1,11 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import React, { useEffect, useState } from 'react';
+import Map, { Marker, Popup, NavigationControl } from 'react-map-gl/maplibre';
+import * as maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
-// Исправляем проблему с иконками по умолчанию
-// @ts-ignore
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
+const MAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty';
 
 interface MapClientProps {
   coordinates?: [number, number] | undefined;
@@ -24,56 +17,83 @@ interface MapClientProps {
   }>;
 }
 
-// Компонент для автоматического изменения масштаба под маркеры
-const FitBounds: React.FC<{ markers: MapClientProps['markers'] }> = ({ markers }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (markers && markers.length > 0) {
-      const bounds = L.latLngBounds(markers.map(m => m.position));
-      map.fitBounds(bounds, { padding: [50, 50] });
-    }
-  }, [markers, map]);
-
-  return null;
-};
-
 const MapClient: React.FC<MapClientProps> = ({ coordinates, zoom = 6, markers = [] }) => {
-  // Если центр не задан, используем первый маркер или дефолт
+  const [selectedMarker, setSelectedMarker] = useState<{
+    position: [number, number];
+    title: string;
+    description?: string;
+  } | null>(null);
+
+  const [mapRef, setMapRef] = useState<maplibregl.Map | null>(null);
+
   const center: [number, number] = coordinates || (markers?.[0]?.position || [34.555, 69.177]);
 
-  return (
-    <MapContainer
-      center={center}
-      zoom={zoom}
-      style={{ height: '100%', width: '100%' }}
-      className="z-0"
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org/copyright">OSM</a>'
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
-      />
-      {/* Fallback layer if Stadia is unavailable */}
-      <TileLayer
-        attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-      />
+  useEffect(() => {
+    if (mapRef && markers && markers.length > 0) {
+      const first = markers[0]!;
+      const bounds = new maplibregl.LngLatBounds([first.position[0], first.position[1]]);
+      markers.forEach((marker) => {
+        bounds.extend([marker.position[0], marker.position[1]]);
+      });
+      mapRef.fitBounds(bounds, { padding: 50 });
+    }
+  }, [mapRef, markers]);
 
-      {markers.map((marker, index) => (
-        <Marker key={index} position={marker.position}>
-          <Popup>
-            <div className="p-1">
-              <strong className="text-blue-600 block mb-1">{marker.title}</strong>
-              {marker.description && <p className="text-xs text-gray-600 !m-0">{marker.description}</p>}
+  return (
+    <div style={{ height: '100%', width: '100%' }}>
+      <Map
+        initialViewState={{
+          longitude: center[0],
+          latitude: center[1],
+          zoom: zoom,
+        }}
+        style={{ width: '100%', height: '100%' }}
+        mapStyle={MAP_STYLE}
+        mapLib={maplibregl}
+        onLoad={(evt) => setMapRef(evt.target)}
+      >
+        <NavigationControl position="bottom-right" />
+
+        {markers.map((marker, index) => (
+          <Marker
+            key={index}
+            longitude={marker.position[0]}
+            latitude={marker.position[1]}
+            onClick={() => setSelectedMarker(marker)}
+          >
+            <div
+              className="w-6 h-6 flex items-center justify-center rounded-full shadow-lg cursor-pointer transition-transform hover:scale-125 border-2 border-white bg-blue-500"
+              title={marker.title}
+            >
+              <span className="text-white text-xs font-bold">{index + 1}</span>
+            </div>
+          </Marker>
+        ))}
+
+        {selectedMarker && (
+          <Popup
+            longitude={selectedMarker.position[0]}
+            latitude={selectedMarker.position[1]}
+            anchor="bottom"
+            onClose={() => setSelectedMarker(null)}
+            closeOnClick={false}
+            className="rounded-xl"
+          >
+            <div className="p-2 min-w-[150px]">
+              <strong className="text-blue-600 block mb-1 text-sm">{selectedMarker.title}</strong>
+              {selectedMarker.description && (
+                <p className="text-xs text-gray-600 !m-0">{selectedMarker.description}</p>
+              )}
             </div>
           </Popup>
-        </Marker>
-      ))}
+        )}
+      </Map>
 
-      {markers && markers.length > 1 && <FitBounds markers={markers} />}
-    </MapContainer>
+      <div className="absolute bottom-2 left-2 z-10 text-[10px] text-gray-500 bg-white/80 dark:bg-gray-900/80 px-2 py-1 rounded">
+        MapLibre | OpenFreeMap © OpenMapTiles | Data from OpenStreetMap
+      </div>
+    </div>
   );
 };
-
 
 export default MapClient;

@@ -497,7 +497,12 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               ? `Лучший сезон: ${countryData.frontmatter.bestTimeToVisit}. `
               : ''}
             {countryData?.frontmatter?.estimatedCost
-              ? `Средний чек: от ${Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽.`
+              ? (() => {
+                  const price = Number(String(countryData.frontmatter.estimatedCost).replace(/[^\d]/g, ''));
+                  return isNaN(price) || price === 0
+                    ? 'Средний чек: по запросу. '
+                    : `Средний чек: от ${price.toLocaleString('ru-RU')} ₽. `;
+                })()
               : ''}
           </p>
           <div className="overflow-x-auto">
@@ -564,7 +569,12 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                       Средний чек
                     </th>
                     <td className="text-gray-900 dark:text-white py-2">
-                      от {Number(countryData.frontmatter.estimatedCost).toLocaleString('ru-RU')} ₽
+                      {(() => {
+                        const price = Number(String(countryData.frontmatter.estimatedCost).replace(/[^\d]/g, ''));
+                        return isNaN(price) || price === 0
+                          ? 'По запросу'
+                          : `от ${price.toLocaleString('ru-RU')} ₽`;
+                      })()}
                     </td>
                   </tr>
                 )) ||

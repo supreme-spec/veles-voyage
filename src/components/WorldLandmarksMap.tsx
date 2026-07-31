@@ -212,13 +212,13 @@ export default function WorldLandmarksMap() {
   );
 
   return (
-    <div className="relative w-full h-[500px] md:h-[650px] rounded-xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-700">
-      <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2 max-w-[calc(100%-2rem)]">
+    <div className="relative w-full h-[350px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-700">
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex flex-wrap gap-1.5 sm:gap-2 max-w-[calc(100%-1.5rem)] sm:max-w-[calc(100%-2rem)]">
         {Object.entries(TYPE_LABELS).map(([key, label]) => (
           <button
             key={key}
             onClick={() => { setFilter(key); setSelected(null); }}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold shadow-lg transition-all ${
+            className={`px-2.5 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold shadow-lg transition-all ${
               filter === key
                 ? 'bg-blue-600 text-white scale-105'
                 : 'bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700'
@@ -234,7 +234,7 @@ export default function WorldLandmarksMap() {
         ))}
       </div>
 
-      <div className="absolute top-4 right-4 z-10 bg-white/90 dark:bg-gray-800/90 px-3 py-1.5 rounded-full text-xs font-bold text-gray-600 dark:text-gray-300 shadow-lg">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 bg-white/90 dark:bg-gray-800/90 px-2.5 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 dark:text-gray-300 shadow-lg">
         {filtered.length} объектов
       </div>
 
@@ -259,7 +259,7 @@ export default function WorldLandmarksMap() {
             }}
           >
             <div
-              className="w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-white shadow-lg cursor-pointer transition-transform hover:scale-150 active:scale-125"
+              className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full border-2 border-white shadow-lg cursor-pointer transition-transform hover:scale-150 active:scale-125"
               style={{ backgroundColor: TYPE_COLORS[lm.type] }}
               title={lm.name}
             />
@@ -273,28 +273,28 @@ export default function WorldLandmarksMap() {
             anchor="bottom"
             onClose={() => setSelected(null)}
             closeOnClick={false}
-            maxWidth="320px"
-            className="rounded-xl"
+            maxWidth="90vw"
+            className="max-w-[90vw] md:max-w-[320px] rounded-xl"
           >
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span
-                  className="w-3 h-3 rounded-full inline-block flex-shrink-0"
+                  className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full inline-block flex-shrink-0"
                   style={{ backgroundColor: TYPE_COLORS[selected.type] }}
                 />
-                <h3 className="font-bold text-gray-900 text-base leading-tight">
+                <h3 className="font-bold text-gray-900 text-sm sm:text-base leading-tight">
                   {selected.name}
                 </h3>
               </div>
-              <p className="text-xs text-gray-500 mb-2 font-medium">
+              <p className="text-[10px] sm:text-xs text-gray-500 mb-2 font-medium">
                 {selected.country}
               </p>
-              <p className="text-sm text-gray-700 leading-relaxed mb-3">
+              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-3">
                 {selected.description}
               </p>
               <Link
                 href={selected.wikiLink}
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors w-full justify-center"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold rounded-lg transition-colors w-full justify-center"
               >
                 Путеводитель по стране
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

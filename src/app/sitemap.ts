@@ -185,7 +185,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   const sitemapImages = [
-    { loc: `${baseUrl}/images/og-default.jpg` },
+    `${baseUrl}/images/og-default.jpg`,
   ];
 
   const filtered = [

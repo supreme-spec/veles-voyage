@@ -2,7 +2,6 @@ import { SITE_URL } from '@/shared/constants/seo';
 import { generateFAQSchema } from '@/shared/utils/schemaGenerators/faq';
 import { generateBreadcrumbSchema } from '@/shared/utils/schemaGenerators/breadcrumb';
 import { generateSpeakableSchema } from '@/shared/utils/schemaGenerators/speakable';
-import { generateOrganizationSchema } from '@/shared/utils/schemaGenerators/organization';
 
 export interface PageSchemaOptions {
   url: string;
@@ -78,15 +77,20 @@ export function generatePageSchemas(options: PageSchemaOptions) {
     },
   });
 
-  schemas.push(generateOrganizationSchema());
-
   schemas.push({
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
-    '@id': `${SITE_URL}/#travelagency`,
+    '@type': ['Organization', 'TravelAgency', 'LocalBusiness'],
+    '@id': `${SITE_URL}/#organization`,
     name: 'Велес Вояж',
     description,
     url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/images/logo.png`,
+    },
+    foundingDate: '2023',
+    priceRange: '₽₽',
+    license: 'РТА 0035678',
     telephone: '+7-985-063-51-34',
     email: 'hello@veles-voyage.ru',
     address: {
@@ -97,13 +101,6 @@ export function generatePageSchemas(options: PageSchemaOptions) {
       postalCode: '143041',
       addressCountry: 'RU',
     },
-    logo: {
-      '@type': 'ImageObject',
-      url: `${SITE_URL}/images/logo.png`,
-    },
-    foundingDate: '2023',
-    priceRange: '₽₽',
-    license: 'РТА 0035678',
     sameAs: [
       'https://vk.com/veles__voyage',
       'https://t.me/veles_voyage',
@@ -116,6 +113,7 @@ export function generatePageSchemas(options: PageSchemaOptions) {
       email: 'hello@veles-voyage.ru',
       availableLanguage: ['Russian'],
     },
+    areaServed: { '@type': 'Country', name: 'Russia' },
   });
 
   if (breadcrumbs && breadcrumbs.length >= 2) {
@@ -199,7 +197,7 @@ export function generatePageSchemas(options: PageSchemaOptions) {
 
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'TravelAgency',
+      '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
       name: 'Велес Вояж',
       aggregateRating: {

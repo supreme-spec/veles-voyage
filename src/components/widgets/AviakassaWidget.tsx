@@ -88,6 +88,24 @@ export default function AviakassaWidget({
         id: Number(id),
       });
       setStatus('ready');
+
+      // Fix referrerPolicy on widget-loaded images (hotels, maps, etc.)
+      const fixImages = () => {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.querySelectorAll('img').forEach((img) => {
+          if (!img.hasAttribute('referrerpolicy')) {
+            img.setAttribute('referrerpolicy', 'no-referrer');
+          }
+        });
+      };
+      fixImages();
+      const observer = new MutationObserver(fixImages);
+      observer.observe(
+        document.getElementById(containerId) || document.body,
+        { childList: true, subtree: true }
+      );
+      setTimeout(() => observer.disconnect(), 30000);
     } catch (e) {
       console.error('Aviakassa widget init error:', e);
       setStatus('error');

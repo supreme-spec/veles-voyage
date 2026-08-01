@@ -127,6 +127,66 @@ const nextConfig = {
         hostname: 'upload.wikimedia.org',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ostrovok.ru',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.travelpayouts.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'photo.hotellook.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'q-cf.bstatic.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'r-cf.bstatic.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.level.travel',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.travelata.ru',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.maps.yandex.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'yastatic.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.aviakassa.com',
+        port: '',
+        pathname: '/**',
       }
     ],
     formats: ['image/avif', 'image/webp'],
@@ -143,14 +203,42 @@ const nextConfig = {
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-          { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self), interest-cohort=()',
           },
           {
             key: 'Content-Security-Policy',
-             value: "default-src 'self'; img-src 'self' data: https: blob:; media-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline' https://bitrix.infoflot.com https://widgets.aviakassa.com https://tiles.openfreemap.org; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' wss: https://bitrix.infoflot.com https://widgets.aviakassa.com https://images.unsplash.com https://api4.aviakassa.com https://tiles.openfreemap.org https://demotiles.maplibre.org; frame-src 'self' https://bitrix.infoflot.com https://widgets.aviakassa.com https://yandex.ru; worker-src 'self' blob:",
+            value: [
+              "default-src 'self'",
+              "img-src 'self' data: blob: https: " +
+                "https://*.maps.yandex.net https://vec01.maps.yandex.net https://core-nmaps.maps.yandex.net " +
+                "https://yastatic.net " +
+                "https://*.ostrovok.ru https://img.ostrovok.ru https://cdn.ostrovok.ru " +
+                "https://*.travelpayouts.com https://photo.hotellook.com https://cdn.travelpayouts.com " +
+                "https://*.level.travel https://*.travelata.ru https://*.bronevik.com " +
+                "https://q-cf.bstatic.com https://r-cf.bstatic.com " +
+                "https://*.aviakassa.com",
+              "media-src 'self' https:",
+              "font-src 'self' https: data:",
+              "style-src 'self' 'unsafe-inline' https: " +
+                "https://bitrix.infoflot.com https://widgets.aviakassa.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https: " +
+                "https://api-maps.yandex.ru https://yastatic.net " +
+                "https://widgets.aviakassa.com https://api4.aviakassa.com",
+              "connect-src 'self' wss: https: " +
+                "https://bitrix.infoflot.com https://widgets.aviakassa.com https://api4.aviakassa.com " +
+                "https://images.unsplash.com https://tiles.openfreemap.org https://demotiles.maplibre.org " +
+                "https://api-maps.yandex.ru https://geocode-maps.yandex.ru https://*.maps.yandex.net " +
+                "https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.bronevik.com",
+              "frame-src 'self' https: " +
+                "https://bitrix.infoflot.com https://widgets.aviakassa.com https://yandex.ru " +
+                "https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.travelata.ru",
+              "frame-ancestors 'self' https://widgets.aviakassa.com",
+              "worker-src 'self' blob:",
+              "upgrade-insecure-requests"
+            ].join('; ')
           },
         ],
       },

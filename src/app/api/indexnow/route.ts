@@ -1,7 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { submitToIndexNow } from '@/shared/utils/indexing';
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const authHeader = request.headers.get('authorization');
+  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const results = await submitToIndexNow();
     const allOk = results.every(r => r.status === 200);

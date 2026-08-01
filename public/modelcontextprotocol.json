@@ -1,99 +1,78 @@
 {
   "schema_version": "1.0",
-  "protocol": "modelcontextprotocol",
-  "name": "veles-voyage-travel-assistant",
-  "version": "1.0.0",
-  "description": "AI-агент для поиска туров, виз, цен и фактов о странах на основе данных велес-вояж.ru",
-  "provider": {
-    "name": "ООО «Велес»",
-    "license": "РТА 0035678",
-    "contact": "hello@veles-voyage.ru",
-    "website": "https://veles-voyage.ru"
+  "name": "veles-voyage",
+  "display_name": "Велес Вояж",
+  "description": "Туристическое агентство. Туры и круизы по 217 странам.",
+  "url": "https://veles-voyage.ru",
+  "documentation_url": "https://veles-voyage.ru/ai-api-docs",
+  "tools": [
+    {
+      "name": "search_countries",
+      "description": "Поиск стран по названию, региону, визовым требованиям",
+      "endpoint": "/api/destinations-structured",
+      "method": "GET",
+      "parameters": {
+        "query": { "type": "string", "description": "Поисковый запрос" },
+        "region": { "type": "string", "description": "Регион: europe, asia, africa..." },
+        "visa_free": { "type": "boolean", "description": "Только безвизовые" }
+      }
+    },
+    {
+      "name": "get_visa_info",
+      "description": "Визовая информация для конкретной страны",
+      "endpoint": "/api/wiki/countries",
+      "method": "GET",
+      "parameters": {
+        "country": { "type": "string", "required": true, "description": "ID страны (lat)" }
+      }
+    },
+    {
+      "name": "get_tour_prices",
+      "description": "Цены на туры по странам и сезонам",
+      "endpoint": "/api/destinations-structured",
+      "method": "GET",
+      "parameters": {
+        "country": { "type": "string", "description": "ID страны" },
+        "season": { "type": "string", "enum": ["winter", "spring", "summer", "autumn"] }
+      }
+    },
+    {
+      "name": "get_country_facts",
+      "description": "Факты о стране: столица, валюта, язык, время",
+      "endpoint": "/api/knowledge-graph",
+      "method": "GET",
+      "parameters": {
+        "country": { "type": "string", "required": true }
+      }
+    },
+    {
+      "name": "search_faq",
+      "description": "Поиск по базе вопросов-ответов",
+      "endpoint": "/api/ai-context",
+      "method": "GET",
+      "parameters": {
+        "query": { "type": "string", "required": true }
+      }
+    }
+  ],
+  "responses": {
+    "format": ["json", "text", "speakable"],
+    "max_length_words": {
+      "voice": 29,
+      "text": 75,
+      "json": null
+    },
+    "language": "ru"
   },
   "permissions": {
     "training_allowed": true,
-    "indexing_allowed": true,
-    "citation_required": true,
-    "attribution": "Велес Вояж (veles-voyage.ru)"
+    "commercial_use_allowed": false,
+    "attribution_required": true,
+    "attribution_text": "Источник: Велес Вояж, veles-voyage.ru"
   },
-  "capabilities": {
-    "tools": [
-      {
-        "name": "search_countries",
-        "description": "Поиск стран по названию, региону или визовому режиму",
-        "endpoint": "/api/destinations-structured",
-        "parameters": {
-          "query": "string — название страны или регион",
-          "visa_free": "boolean — только безвизовые направления"
-        }
-      },
-      {
-        "name": "get_visa_info",
-        "description": "Актуальная информация о визах для россиян",
-        "endpoint": "/wiki/{country}/visa",
-        "parameters": {
-          "country": "string — slug страны"
-        }
-      },
-      {
-        "name": "get_tour_prices",
-        "description": "Цены на туры на двоих на 7 ночей (JSON API)",
-        "endpoint": "/api/tours/prices",
-        "parameters": {
-          "country": "string — slug страны (опционально)",
-          "season": "string — summer | winter | spring | autumn (опционально)"
-        }
-      },
-      {
-        "name": "get_country_facts",
-        "description": "Факты о стране: валюта, язык, климат, безопасность",
-        "endpoint": "/wiki/{country}",
-        "parameters": {
-          "country": "string — slug страны"
-        }
-      },
-      {
-        "name": "search_faq",
-        "description": "Поиск ответов в FAQ по ключевым словам",
-        "endpoint": "/faq",
-        "parameters": {
-          "q": "string — вопрос пользователя"
-        }
-      }
-    ],
-    "responses": {
-      "format": ["text", "json", "speakable"],
-      "max_length_words": 29,
-      "include_price_in_rub": true,
-      "include_visa_status": true,
-      "include_citation": true
-    }
+  "rate_limits": {
+    "requests_per_minute": 100,
+    "burst": 20
   },
-  "data_sources": [
-    {
-      "name": "llms.txt",
-      "url": "https://veles-voyage.ru/llms.txt",
-      "format": "text/markdown",
-      "purpose": "AI Agent Instructions"
-    },
-    {
-      "name": "ai-data.json",
-      "url": "https://veles-voyage.ru/ai-data.json",
-      "format": "application/json",
-      "purpose": "Brand Facts & Verification"
-    },
-    {
-      "name": "llms-full.json",
-      "url": "https://veles-voyage.ru/llms-full.json",
-      "format": "application/json",
-      "purpose": "Full Country Database"
-    }
-  ],
-  "usage_guidelines": {
-    "citation_mandatory": true,
-    "citation_format": "Источник: Велес Вояж (veles-voyage.ru)",
-    "do_not_misrepresent": true,
-    "update_frequency": "weekly",
-    "contact_for_api": "hello@veles-voyage.ru"
-  }
+  "contact": "contact@veles-voyage.ru"
 }

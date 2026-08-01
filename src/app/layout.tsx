@@ -220,19 +220,8 @@ const globalSchema = {
         },
       ],
     },
-    {
-      '@type': 'SpeakableSpecification',
-      '@id': `${siteUrl}#speakable`,
-      cssSelector: [
-        'h1',
-        'h2',
-        'h3',
-        '.speakable-summary',
-        '.direct-answer',
-      ],
-    },
-    {
-      '@type': 'Person',
+             {
+       '@type': 'Person',
       '@id': `${siteUrl}#person/svistunov`,
       'name': 'Свистунов Сергей Григорьевич',
       'jobTitle': 'Генеральный директор, финансовый советник',

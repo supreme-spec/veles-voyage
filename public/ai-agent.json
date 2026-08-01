@@ -1,37 +1,25 @@
 {
-  "agent_name": "Veles Voyage AI Gateway",
-  "version": "1.0",
-  "description": "API для автономного бронирования туров ИИ-ассистентами.",
-  "capabilities": ["check_availability", "get_pricing", "get_destination_info", "book_tour", "search"],
+  "name": "Veles Voyage Travel Agent",
+  "version": "1.0.0",
+  "description": "API для автономного бронирования туров и поиска информации по 217 странам мира для ИИ-ассистентов.",
+  "url": "https://veles-voyage.ru",
   "api_endpoint": "https://veles-voyage.ru/api/v1/agent",
-  "authentication": "none",
-  "authentication_type": "public",
-  "rate_limits": {
-    "requests_per_minute": 60,
-    "requests_per_hour": 1000
-  },
-  "affiliate_policy": {
-    "commission_for_ai_platform": "5%",
-    "priority_booking": true,
-    "attribution_required": true
-  },
   "documentation_url": "https://veles-voyage.ru/ai-api-docs",
-  "provider": {
-    "name": "ООО «Велес»",
-    "license": "РТА 0035678",
-    "contact": "+7-985-063-51-34",
-    "email": "hello@veles-voyage.ru",
-    "website": "https://veles-voyage.ru"
+  "authentication": {
+    "type": "none",
+    "note": "Публичный доступ. Для коммерческого использования — contact@veles-voyage.ru"
   },
-  "endpoints": {
-    "agent_info": "https://veles-voyage.ru/api/v1/agent",
-    "check_availability": "https://veles-voyage.ru/api/v1/agent?check_availability=true&destination={country}",
-    "get_pricing": "https://veles-voyage.ru/api/v1/agent?get_pricing=true&destination={country}",
-    "destination_info": "https://veles-voyage.ru/api/v1/agent?destination={country}",
-    "search": "https://veles-voyage.ru/api/v1/agent?query={keyword}",
-    "book_tour": "https://veles-voyage.ru/api/v1/agent (POST)",
-    "ai_context": "https://veles-voyage.ru/api/ai-context",
-    "knowledge_base": "https://veles-voyage.ru/api/llms",
-    "wiki_api": "https://veles-voyage.ru/api/wiki/countries"
-  }
+  "capabilities": [
+    "search_countries",
+    "get_visa_info",
+    "get_tour_prices",
+    "get_country_facts",
+    "search_faq"
+  ],
+  "rate_limits": {
+    "requests_per_minute": 100,
+    "burst": 20
+  },
+  "contact": "contact@veles-voyage.ru",
+  "license": "CC-BY-NC-4.0"
 }

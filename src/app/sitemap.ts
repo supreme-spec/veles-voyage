@@ -83,6 +83,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/voice`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/voice/tour-prices`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voice/visa-free`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voice/visa-month`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voice/kids-winter`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voice/safe-kids`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voice/documents`,
+      lastModified: lastmod('support'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/wiki`,
       lastModified: lastmod('wiki'),
       changeFrequency: 'weekly',
@@ -181,7 +223,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...mainUrls,
     ...wiki,
     ...cities,
-  ].filter((entry) => !noindexPatterns.some((re) => re.test(entry.url)));
+  ].filter((entry) => {
+    if (!entry.url || typeof entry.url !== 'string') return false;
+    if (entry.url.includes('[object')) return false;
+    return !noindexPatterns.some((re) => re.test(entry.url));
+  });
 
   // Deduplicate URLs
   const seen = new Set<string>();

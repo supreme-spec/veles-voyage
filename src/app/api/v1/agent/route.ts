@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SITE_URL } from '@/shared/constants/seo';
 import { countries } from '@lib/velite-data';
-import fs from 'fs';
-import path from 'path';
 
 /**
  * 🤖 Veles Voyage AI Agent API
@@ -199,20 +197,20 @@ export async function GET(request: Request) {
     sample_destinations: countries.slice(0, 10).map(c => ({
       slug: c.slug,
       name: c.title,
-      region: c.region
+      region: (c as Record<string, unknown>).region as string | undefined
     }))
   });
 }
 
 // Helper functions
 function generateAvailabilityDates(): string[] {
-  const dates = [];
+  const dates: string[] = [];
   const today = new Date();
   
   for (let i = 0; i < 12; i++) {
     const date = new Date(today);
     date.setMonth(date.getMonth() + i);
-    dates.push(date.toISOString().split('T')[0]);
+    dates.push(date.toISOString().split('T')[0]!);
   }
   
   return dates;

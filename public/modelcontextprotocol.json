@@ -37,11 +37,11 @@
       },
       {
         "name": "get_tour_prices",
-        "description": "Цены на туры на двоих на 7 ночей",
-        "endpoint": "/voice/tour-prices",
+        "description": "Цены на туры на двоих на 7 ночей (JSON API)",
+        "endpoint": "/api/tours/prices",
         "parameters": {
-          "country": "string — slug страны",
-          "season": "string — лето | зима | весна | осень"
+          "country": "string — slug страны (опционально)",
+          "season": "string — summer | winter | spring | autumn (опционально)"
         }
       },
       {

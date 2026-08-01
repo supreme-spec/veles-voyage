@@ -167,6 +167,15 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  // 301-редирект /countries/:path* → /wiki/:path* (сохраняет параметры пути)
+  if (pathname.startsWith('/countries/')) {
+    const pathSuffix = pathname.replace('/countries/', '');
+    if (pathSuffix) {
+      return NextResponse.redirect(new URL(`/wiki/${pathSuffix}`, request.url), 301);
+    }
+    return NextResponse.redirect(new URL('/wiki/countries', request.url), 301);
+  }
+
   return NextResponse.next();
 }
 

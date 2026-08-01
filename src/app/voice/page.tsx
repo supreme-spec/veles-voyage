@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { SchemaScripts } from '@/components/SchemaScripts';
+import { countries } from '@lib/velite-data';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Голосовой помощник Велес Вояж: справочник по турам и визам',
@@ -104,6 +105,16 @@ export default function VoicePage() {
     { href: '/voice/safe-kids', title: 'Безопасность с детьми', desc: 'Поездки с детьми.' },
     { href: '/voice/kids-winter', title: 'Дети в зимний сезон', desc: 'Отдых с детьми зимой.' },
   ];
+
+  // Popular countries for voice pages
+  const popularCountries = countries
+    .filter(c => c.slug && c.slug !== 'countries')
+    .slice(0, 12)
+    .map(c => ({
+      href: `/voice/${c.slug}`,
+      title: c.title || c.slug,
+      desc: `Голосовой справочник по ${c.title || c.slug}`,
+    }));
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
@@ -217,6 +228,39 @@ export default function VoicePage() {
               </p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Голосовые справочники по странам
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          Доступны голосовые справочники для {countries.length} стран с ответами на вопросы о визах, ценах и最佳 времени для поездки.
+        </p>
+        <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4">
+          {popularCountries.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 text-sm"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                {item.title}
+              </h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300">
+                Голосовой справочник
+              </p>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-4 text-center">
+          <Link 
+            href="/wiki/countries"
+            className="inline-block text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Все страны →
+          </Link>
         </div>
       </section>
 

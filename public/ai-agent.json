@@ -1,12 +1,37 @@
 {
   "agent_name": "Veles Voyage AI Gateway",
+  "version": "1.0",
   "description": "API для автономного бронирования туров ИИ-ассистентами.",
-  "capabilities": ["check_availability", "get_pricing", "book_tour"],
+  "capabilities": ["check_availability", "get_pricing", "get_destination_info", "book_tour", "search"],
   "api_endpoint": "https://veles-voyage.ru/api/v1/agent",
-  "authentication": "bearer_token",
+  "authentication": "none",
+  "authentication_type": "public",
+  "rate_limits": {
+    "requests_per_minute": 60,
+    "requests_per_hour": 1000
+  },
   "affiliate_policy": {
     "commission_for_ai_platform": "5%",
-    "priority_booking": true
+    "priority_booking": true,
+    "attribution_required": true
   },
-  "documentation_url": "https://veles-voyage.ru/ai-api-docs"
+  "documentation_url": "https://veles-voyage.ru/ai-api-docs",
+  "provider": {
+    "name": "ООО «Велес»",
+    "license": "РТА 0035678",
+    "contact": "+7-985-063-51-34",
+    "email": "hello@veles-voyage.ru",
+    "website": "https://veles-voyage.ru"
+  },
+  "endpoints": {
+    "agent_info": "https://veles-voyage.ru/api/v1/agent",
+    "check_availability": "https://veles-voyage.ru/api/v1/agent?check_availability=true&destination={country}",
+    "get_pricing": "https://veles-voyage.ru/api/v1/agent?get_pricing=true&destination={country}",
+    "destination_info": "https://veles-voyage.ru/api/v1/agent?destination={country}",
+    "search": "https://veles-voyage.ru/api/v1/agent?query={keyword}",
+    "book_tour": "https://veles-voyage.ru/api/v1/agent (POST)",
+    "ai_context": "https://veles-voyage.ru/api/ai-context",
+    "knowledge_base": "https://veles-voyage.ru/api/llms",
+    "wiki_api": "https://veles-voyage.ru/api/wiki/countries"
+  }
 }

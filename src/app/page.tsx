@@ -118,124 +118,124 @@ export default async function Home() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <WeeklyHeroBackground>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 text-center text-white">
-            <div className="mt-12 md:mt-20">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-2xl">
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 text-center text-white">
+            <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold mb-2 sm:mb-3 md:mb-4 lg:mb-6 leading-tight drop-shadow-2xl">
                 <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
                   Отдых, <span className="text-blue-600">продуманный до мелочей</span>
                 </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-12 font-medium leading-relaxed drop-shadow-lg">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 lg:mb-12 font-medium leading-relaxed drop-shadow-lg">
                 <span className="bg-gradient-to-r from-white/95 via-blue-50/90 to-indigo-100/90 bg-clip-text text-transparent">
                   Подберём тур под ваши пожелания, даты и бюджет — и будем на связи до, во время и после поездки
                 </span>
               </p>
 
-              {/* Info card and buttons - side by side layout */}
-              <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-start mb-6 md:mb-8">
-                {/* Buttons - left side */}
-                <div className="order-1 lg:order-1 flex flex-col gap-4 sm:gap-5 justify-center lg:justify-start">
+              {/* Info card and buttons - responsive layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-start mb-4 sm:mb-6 md:mb-8">
+                {/* Buttons - full width on mobile, left on desktop */}
+                <div className="order-1 lg:order-1 flex flex-col gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start w-full">
                   <Link
                     href="/wiki"
-                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-3.5 sm:py-4 md:py-5 px-5 sm:px-6 md:px-10 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95"
+                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 hover:from-green-700 hover:via-emerald-600 hover:to-green-700 text-white font-bold py-3 sm:py-3.5 md:py-4 lg:py-5 px-4 sm:px-5 md:px-6 lg:px-10 rounded-xl sm:rounded-xl md:rounded-2xl text-sm sm:text-sm md:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95 w-full sm:w-auto"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
-                      <span className="text-2xl">📚</span>
+                      <span className="text-xl sm:text-2xl">📚</span>
                       <span>Исследовать Wiki</span>
                     </span>
                   </Link>
                   <Link
                     href="/wiki/countries"
-                    className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-3.5 sm:py-4 md:py-5 px-5 sm:px-6 md:px-10 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95"
+                    className="group relative inline-flex items-center justify-center bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-bold py-3 sm:py-3.5 md:py-4 lg:py-5 px-4 sm:px-5 md:px-6 lg:px-10 rounded-xl sm:rounded-xl md:rounded-2xl text-sm sm:text-sm md:text-base lg:text-lg transition-all duration-300 border-2 border-white/60 hover:border-white shadow-2xl hover:shadow-white/30 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95 w-full sm:w-auto"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
-                      <span className="text-2xl">🌍</span>
+                      <span className="text-xl sm:text-2xl">🌍</span>
                       <span>Страны мира</span>
                     </span>
                   </Link>
                   <Link
                     href="/wiki/places"
-                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-3.5 sm:py-4 md:py-5 px-5 sm:px-6 md:px-10 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95"
+                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 text-white font-bold py-3 sm:py-3.5 md:py-4 lg:py-5 px-4 sm:px-5 md:px-6 lg:px-10 rounded-xl sm:rounded-xl md:rounded-2xl text-sm sm:text-sm md:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden active:scale-95 w-full sm:w-auto"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center gap-2">
-                      <span className="text-2xl">🗺️</span>
+                      <span className="text-xl sm:text-2xl">🗺️</span>
                       <span>Мировые локации</span>
                     </span>
                   </Link>
                 </div>
 
-                {/* Info card - right side */}
-                <div className="order-2 lg:order-2">
-                  <div className="relative bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 backdrop-blur-md rounded-xl shadow-2xl p-3 sm:p-4 md:p-4 border border-white/30 dark:border-gray-700/50 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden max-w-sm w-full">
+                {/* Info card - full width on mobile, right on desktop */}
+                <div className="order-2 lg:order-2 w-full">
+                  <div className="relative bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 backdrop-blur-md rounded-xl shadow-2xl p-3 sm:p-3.5 md:p-4 lg:p-4 border border-white/30 dark:border-gray-700/50 transform hover:scale-[1.02] transition-all duration-300 overflow-hidden w-full">
                     {/* Subtle decorative elements */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -z-0"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-400/10 to-emerald-400/10 rounded-full blur-2xl -z-0"></div>
+                    <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -z-0"></div>
+                    <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-tr from-green-400/10 to-emerald-400/10 rounded-full blur-2xl -z-0"></div>
 
                     <div className="relative z-10">
-                      <div className="flex items-center mb-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-lg flex items-center justify-center mr-2 shadow-md">
-                          <span className="text-base">✈️</span>
+                      <div className="flex items-center mb-2 sm:mb-3">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-lg flex items-center justify-center mr-2 shadow-md">
+                          <span className="text-sm sm:text-base">✈️</span>
                         </div>
-                        <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                        <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
                           Путешествуйте через наше турагентство
                         </h2>
                       </div>
 
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-start space-x-2 p-2 rounded-md bg-gradient-to-r from-green-50/80 to-emerald-50/80 dark:from-green-900/20 dark:to-emerald-900/20 hover:from-green-100 dark:hover:from-green-900/30 transition-all duration-300 border border-green-100/50 dark:border-green-800/30">
-                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[10px] font-bold">✓</span>
+                      <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                        <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-green-50/80 to-emerald-50/80 dark:from-green-900/20 dark:to-emerald-900/20 hover:from-green-100 dark:hover:from-green-900/30 transition-all duration-300 border border-green-100/50 dark:border-green-800/30">
+                          <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
                           </div>
                           <div className="text-left">
-                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
+                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Внимание к вашим пожеланиям
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
+                            <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
                               Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без навязывания
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex items-start space-x-2 p-2 rounded-md bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-900/20 dark:to-indigo-900/20 hover:from-blue-100 dark:hover:from-blue-900/30 transition-all duration-300 border border-blue-100/50 dark:border-blue-800/30">
-                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[10px] font-bold">✓</span>
+                        <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-900/20 dark:to-indigo-900/20 hover:from-blue-100 dark:hover:from-blue-900/30 transition-all duration-300 border border-blue-100/50 dark:border-blue-800/30">
+                          <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
                           </div>
                           <div className="text-left">
-                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
+                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Официальная лицензия РТА 0035678
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
+                            <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
                               аккредитованное турагентство
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex items-start space-x-2 p-2 rounded-md bg-gradient-to-r from-purple-50/80 to-pink-50/80 dark:from-purple-900/20 dark:to-pink-900/20 hover:from-purple-100 dark:hover:from-purple-900/30 transition-all duration-300 border border-purple-100/50 dark:border-purple-800/30">
-                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[10px] font-bold">✓</span>
+                        <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-purple-50/80 to-pink-50/80 dark:from-purple-900/20 dark:to-pink-900/20 hover:from-purple-100 dark:hover:from-purple-900/30 transition-all duration-300 border border-purple-100/50 dark:border-purple-800/30">
+                          <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
                           </div>
                           <div className="text-left">
-                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
+                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Прозрачные условия
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
+                            <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
                               До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex items-start space-x-2 p-2 rounded-md bg-gradient-to-r from-orange-50/80 to-amber-50/80 dark:from-orange-900/20 dark:to-amber-900/20 hover:from-orange-100 dark:hover:from-orange-900/30 transition-all duration-300 border border-orange-100/50 dark:border-orange-800/30">
-                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-orange-500 to-amber-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[10px] font-bold">✓</span>
+                        <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-orange-50/80 to-amber-50/80 dark:from-orange-900/20 dark:to-amber-900/20 hover:from-orange-100 dark:hover:from-orange-900/30 transition-all duration-300 border border-orange-100/50 dark:border-orange-800/30">
+                          <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-orange-500 to-amber-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
                           </div>
                           <div className="text-left">
-                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
+                            <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Помогаем сделать правильный выбор
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
+                            <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
                               Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
                             </p>
                           </div>
@@ -246,7 +246,7 @@ export default async function Home() {
                         href="https://t.me/Anastasiiiiyyaa"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative block w-full text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-3 sm:py-2.5 md:py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 text-xs sm:text-sm md:text-sm overflow-hidden active:scale-95"
+                        className="group relative block w-full text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-2.5 sm:py-2.5 md:py-2.5 lg:py-3 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 text-xs sm:text-xs md:text-sm lg:text-sm overflow-hidden active:scale-95"
                       >
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                         <span className="relative z-10">Получить подборку путешествий</span>
@@ -262,41 +262,41 @@ export default async function Home() {
         {/* Why Choose Us Section */}
         <section
           aria-label="Почему выбирают Велес Вояж"
-          className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
+          className="py-10 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12 animate-fade-in-up">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
                 <span className="text-gradient-animated drop-shadow-md">
                   Почему выбирают Велес Вояж?
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
                 Мы создаём незабываемые путешествия для наших клиентов
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              <div className="group relative bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              <div className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 animate-float relative z-10">🏆</div>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
+                <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10">🏆</div>
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2 relative z-10">
                   Поддержка на каждом этапе
                 </h3>
-                <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
                   Помогаем с подготовкой поездки и остаёмся на связи во время путешествия — вы не остаётесь один на один с вопросами
                 </p>
               </div>
 
-              <div className="group relative bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+              <div className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
                 <div
-                  className="text-3xl sm:text-4xl mb-3 sm:mb-4 animate-float relative z-10"
+                  className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10"
                   style={{ animationDelay: '0.2s' }}
                 >
                   👥
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2 relative z-10">
                   Внимание к вашим пожеланиям
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
@@ -304,34 +304,34 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="group relative bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+              <div className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
                 <div
-                  className="text-3xl sm:text-4xl mb-3 sm:mb-4 animate-float relative z-10"
+                  className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10"
                   style={{ animationDelay: '0.4s' }}
                 >
                   🎧
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2 relative z-10">
                   Прозрачные условия
                 </h3>
-                <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
                   До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
                 </p>
               </div>
 
-              <div className="group relative bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+              <div className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
                 <div
-                  className="text-3xl sm:text-4xl mb-3 sm:mb-4 animate-float relative z-10"
+                  className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10"
                   style={{ animationDelay: '0.6s' }}
                 >
                   🌍
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2 relative z-10">
                   Помогаем сделать правильный выбор
                 </h3>
-                <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
                   Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
                 </p>
               </div>
@@ -340,42 +340,42 @@ export default async function Home() {
         </section>
 
         {/* Featured Services */}
-        <section aria-label="Наши услуги" className="py-16 bg-white dark:bg-gray-900">
+        <section aria-label="Наши услуги" className="py-10 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
                 <span className="text-gradient-animated drop-shadow-md">Наши услуги</span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
                 Откройте для себя уникальные направления и незабываемые приключения
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:via-indigo-500/10 group-hover:to-purple-500/10 transition-modern pointer-events-none z-0"></div>
-                <div className="h-32 sm:h-40 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center relative z-10">
+                <div className="h-28 sm:h-32 md:h-40 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center relative z-10">
                   <div className="relative w-full h-full">
                     <WeeklyServicePhoto serviceType="tours" alt="Туры" />
                   </div>
                 </div>
-                <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow relative z-10">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Туры</h3>
-                  <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 flex-grow">
+                <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Туры</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                     Маршруты под ваши интересы и бюджет
                   </p>
                   <Link
                     href="/tours"
-                    className="inline-block bg-indigo-600 text-white px-4 py-2.5 sm:py-2 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10 active:scale-95"
+                    className="inline-block bg-indigo-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-xs sm:text-sm mt-auto shadow-modern relative z-10 active:scale-95"
                   >
                     Подробнее
                   </Link>
                 </div>
               </div>
 
-              <div className="group bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
+              <div className="group bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-teal-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 transition-modern pointer-events-none z-0"></div>
-                <div className="h-32 sm:h-40 bg-gradient-to-r from-teal-500 to-blue-600 flex items-center justify-center relative z-10">
+                <div className="h-28 sm:h-32 md:h-40 bg-gradient-to-r from-teal-500 to-blue-600 flex items-center justify-center relative z-10">
                   <div className="relative w-full h-full">
                     <WeeklyServicePhoto
                       serviceType="cruises"
@@ -384,25 +384,25 @@ export default async function Home() {
                     />
                   </div>
                 </div>
-                <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow relative z-10">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">
                     Морские круизы
                   </h3>
-                  <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 flex-grow">
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                     Откройте красоты океанских островов и морских побережий
                   </p>
                   <Link
                     href="/cruises"
-                    className="inline-block bg-indigo-600 text-white px-4 py-2.5 sm:py-2 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10 active:scale-95"
+                    className="inline-block bg-indigo-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-xs sm:text-sm mt-auto shadow-modern relative z-10 active:scale-95"
                   >
                     Подробнее
                   </Link>
                 </div>
               </div>
 
-              <div className="group bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
+              <div className="group bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern-lg overflow-hidden hover-lift transition-modern flex flex-col h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-pink-500/0 to-rose-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-rose-500/10 transition-modern pointer-events-none z-0"></div>
-                <div className="h-32 sm:h-40 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center relative z-10">
+                <div className="h-28 sm:h-32 md:h-40 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center relative z-10">
                   <div className="relative w-full h-full">
                     <WeeklyServicePhoto
                       serviceType="support"
@@ -410,16 +410,16 @@ export default async function Home() {
                     />
                   </div>
                 </div>
-                <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow relative z-10">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">
                     Поддержка 24/7
                   </h3>
-                  <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 flex-grow">
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                     Круглосуточная помощь в планировании и во время путешествий
                   </p>
                   <Link
                     href="/support"
-                    className="inline-block bg-indigo-600 text-white px-4 py-2.5 sm:py-2 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10 active:scale-95"
+                    className="inline-block bg-indigo-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-xs sm:text-sm mt-auto shadow-modern relative z-10 active:scale-95"
                   >
                     Подробнее
                   </Link>
@@ -432,21 +432,21 @@ export default async function Home() {
         {/* Popular Destinations (GEO: "Туры В ...") */}
         <section
           aria-label="Популярные направления 2026"
-          className="py-16 bg-gradient-to-br from-sky-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
+          className="py-10 sm:py-12 lg:py-16 bg-gradient-to-br from-sky-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900"
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12 animate-fade-in-up">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
                 <span className="text-gradient-animated drop-shadow-md">
                   Куда поехать в 2026 году: популярные направления и цены
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
                 Туры в самые востребованные страны: визы, лучшие курорты и цены
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {POPULAR_DESTINATION_SLUGS.map(slug => {
                 const dest = WORLD_DESTINATIONS_DATA[slug];
                 if (!dest) return null;
@@ -458,21 +458,21 @@ export default async function Home() {
                         alt={`Туры в ${dest.name} - популярное направление 2026 от Велес Вояж`}
                       />
                     </div>
-                    <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow relative z-10">
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
+                      <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">
                         Сколько стоит тур {dest.preposition ? dest.preposition + ' ' : 'в '}
                         {dest.nameAccusative || dest.name} и нужна ли виза?
                       </h3>
-                      <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 flex-grow">
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                         {dest.description}
                       </p>
                       {dest.estimatedCost && (() => {
                         const price = Number(String(dest.estimatedCost).replace(/[^\d]/g, ''));
-                        if (isNaN(price) || price === 0) return <span className="text-base sm:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-3 sm:mb-4">Цена по запросу</span>;
+                        if (isNaN(price) || price === 0) return <span className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">Цена по запросу</span>;
                         return (
-                          <p className="text-base sm:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-3 sm:mb-4">
+                          <p className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">
                             от {price.toLocaleString('ru-RU')} ₽{' '}
-                            <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
+                            <span className="text-xs sm:text-sm md:text-sm font-medium text-gray-500 dark:text-gray-400">
                               {dest.priceNote}
                             </span>
                           </p>
@@ -480,7 +480,7 @@ export default async function Home() {
                       })()}
                       <Link
                         href={`/wiki/${dest.slug}`}
-                        className="inline-block bg-indigo-600 text-white px-4 py-2.5 sm:py-2 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-sm mt-auto shadow-modern relative z-10 active:scale-95"
+                        className="inline-block bg-indigo-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-xs sm:text-sm mt-auto shadow-modern relative z-10 active:scale-95"
                       >
                         Подробнее →
                       </Link>
@@ -490,10 +490,10 @@ export default async function Home() {
               })}
             </div>
 
-            <div className="text-center mt-8 sm:mt-10">
+            <div className="text-center mt-6 sm:mt-8 lg:mt-10">
               <Link
                 href="/wiki/countries"
-                className="inline-block bg-indigo-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium active:scale-95"
+                className="inline-block bg-indigo-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium text-sm sm:text-base active:scale-95"
               >
                 Все страны и направления
               </Link>
@@ -663,79 +663,79 @@ export default async function Home() {
         {/* Features Section */}
         <section
           aria-label="Преимущества работы с нами"
-          className="py-16 bg-gray-50 dark:bg-gray-800"
+          className="py-10 sm:py-12 lg:py-16 bg-gray-50 dark:bg-gray-800"
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Преимущества работы с нами
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Полная поддержка на всех этапах путешествия
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500">
-                <div className="text-4xl mb-4 text-blue-600">🗺️</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-blue-600">🗺️</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Полная энциклопедия
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   Подробные путеводители по всем странам мира с актуальной информацией о визах,
                   культуре и достопримечательностях.
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-green-500">
-                <div className="text-4xl mb-4 text-green-600">📱</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-green-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-green-600">📱</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Цифровые решения
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   Современные решения для планирования и организации путешествий.
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500">
-                <div className="text-4xl mb-4 text-purple-600">🌟</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-purple-600">🌟</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Персональный опыт
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   Индивидуальные рекомендации и маршруты, адаптированные под ваши предпочтения и
                   стиль путешествий.
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-yellow-500">
-                <div className="text-4xl mb-4 text-yellow-600">💰</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-yellow-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-yellow-600">💰</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Прозрачные условия
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   Прямые контракты с поставщиками услуг и эксклюзивные предложения позволяют
                   предлагать лучшие цены на рынке.
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-red-500">
-                <div className="text-4xl mb-4 text-red-600">🛡️</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-red-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-red-600">🛡️</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Надежность и безопасность
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Лицензия РТА 0035678, полное страхование и юридическая защита всех туристических
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                  Лицензия РТА 0035678, полное страхивание и юридическая защита всех туристических
                   услуг.
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-indigo-500">
-                <div className="text-4xl mb-4 text-indigo-600">🎧</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-indigo-500">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-indigo-600">🎧</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   Круглосуточная поддержка
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   Наши специалисты всегда на связи для решения любых вопросов во время вашего
                   путешествия.
                 </p>
@@ -751,24 +751,24 @@ export default async function Home() {
         <FAQSection faqs={faqData} schemaId="https://veles-voyage.ru/#faq-home" />
 
         {/* CTA Section */}
-        <section aria-label="Призыв к действию" className="py-16 bg-blue-600">
+        <section aria-label="Призыв к действию" className="py-10 sm:py-12 lg:py-16 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
               Расскажите, каким вы видите своё путешествие
             </h2>
-            <p className="text-xl text-white mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8">
               Подберём варианты отдыха с учётом ваших пожеланий, дат и бюджета
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/wiki"
-                className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200"
+                className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-blue-600 font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-colors duration-200"
               >
                 Получить подборку путешествий
               </Link>
               <Link
                 href="/wiki/countries"
-                className="inline-flex items-center justify-center bg-transparent hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 border-2 border-white"
+                className="inline-flex items-center justify-center bg-transparent hover:bg-blue-700 text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-colors duration-200 border-2 border-white"
               >
                 Посмотреть страны
               </Link>

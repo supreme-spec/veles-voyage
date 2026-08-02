@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withCSRFProtection } from '@/shared/middleware/csrf';
 import { safeLogger } from '@/shared/utils/safeLogger';
+import { sendContactFormEmail } from '@/shared/utils/email';
 
 interface EmailRequest {
   name: string;
@@ -25,54 +26,42 @@ async function handleSendEmail(request: NextRequest) {
 
     // Валидация данных
     if (!body.name || !body.email || !body.message) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     // Валидация email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.email)) {
-      return NextResponse.json(
-        { error: 'Invalid email address' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
     }
 
-    // Здесь будет реальная отправка email через nodemailer или другой сервис
-    // Пока логируем для отладки
-    safeLogger.info('Email request received', {
+    // Отправляем email через SMTP
+    const result = await sendContactFormEmail({
       name: body.name,
       email: body.email,
-      subject: body.subject,
+      subject: body.subject || 'Сообщение с сайта ВЕЛЕС ВОЯЖ',
+      message: body.message,
     });
 
-    // В продакшене здесь будет:
-    // await sendEmail({
-    //   to: process.env.CONTACT_EMAIL,
-    //   from: body.email,
-    //   subject: body.subject,
-    //   text: body.message,
-    //   html: formatEmailHTML(body),
-    // });
+    safeLogger.info('Email sent successfully', {
+      messageId: result.messageId,
+      accepted: result.accepted,
+      envelope: result.envelope,
+    });
 
     return NextResponse.json(
       {
         success: true,
         message: 'Email sent successfully',
+        messageId: result.messageId,
       },
       { status: 200 }
     );
   } catch (error) {
     safeLogger.error('Send email error:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
   }
 }
 
 // Экспортируем handler с CSRF защитой
 export const POST = withCSRFProtection(handleSendEmail);
-

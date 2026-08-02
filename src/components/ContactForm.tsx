@@ -176,24 +176,24 @@ ${formData.message}
             onChange={handleInputChange}
             required
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-            placeholder="Введите ваше имя"
+            placeholder="Как к вам обращаться?"
             disabled={isSubmitting}
           />
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Email *
+            Телефон или Telegram *
           </label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
             required
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-            placeholder="Введите ваш email"
+            placeholder="Телефон или Telegram"
             disabled={isSubmitting}
           />
         </div>
@@ -232,7 +232,7 @@ ${formData.message}
             required
             rows={5}
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-vertical"
-            placeholder="Расскажите, чем мы можем помочь..."
+            placeholder="Куда и когда хотите поехать? (необязательно)"
             disabled={isSubmitting}
           ></textarea>
         </div>
@@ -257,11 +257,15 @@ ${formData.message}
           ) : (
             <span className="flex items-center justify-center">
               <span className="mr-2">📱</span>
-              Отправить в Telegram
+              Получить подборку путешествий
             </span>
           )}
         </button>
       </form>
+
+      <p className="text-sm text-gray-500 mt-4 text-center">
+        Мы используем ваши данные только для связи и подбора путешествия
+      </p>
 
       <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
         <p className="text-sm text-blue-800 dark:text-blue-200">

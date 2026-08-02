@@ -122,12 +122,12 @@ export default async function Home() {
             <div className="mt-12 md:mt-20">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-2xl">
                 <span className="bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
-                  Туры и круизы 2026 — Велес Вояж
+                  Отдых, <span className="text-blue-600">продуманный до мелочей</span>
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-12 font-medium leading-relaxed drop-shadow-lg">
                 <span className="bg-gradient-to-r from-white/95 via-blue-50/90 to-indigo-100/90 bg-clip-text text-transparent">
-                  Путешествуйте с уверенностью, исследуйте с экспертами и откройте новые горизонты
+                  Подберём тур под ваши пожелания, даты и бюджет — и будем на связи до, во время и после поездки
                 </span>
               </p>
 
@@ -191,10 +191,10 @@ export default async function Home() {
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
-                              Предоставляем лучшие цены
+                              Внимание к вашим пожеланиям
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
-                              Прямые контракты с туроператорами
+                              Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без навязывания
                             </p>
                           </div>
                         </div>
@@ -219,10 +219,10 @@ export default async function Home() {
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
-                              Поддержка 24/7
+                              Прозрачные условия
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
-                              Круглосуточная помощь
+                              До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
                             </p>
                           </div>
                         </div>
@@ -233,10 +233,10 @@ export default async function Home() {
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-sm mb-0.5 text-left">
-                              Индивидуальный подход
+                              Помогаем сделать правильный выбор
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[11px] leading-tight text-left">
-                              Маршруты под ваши интересы
+                              Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
                             </p>
                           </div>
                         </div>
@@ -249,7 +249,7 @@ export default async function Home() {
                         className="group relative block w-full text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-3 sm:py-2.5 md:py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 text-xs sm:text-sm md:text-sm overflow-hidden active:scale-95"
                       >
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
-                        <span className="relative z-10">Выбрать тур</span>
+                        <span className="relative z-10">Получить подборку путешествий</span>
                       </a>
                     </div>
                   </div>
@@ -281,10 +281,10 @@ export default async function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
                 <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 animate-float relative z-10">🏆</div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
-                  Официальная лицензия
+                  Поддержка на каждом этапе
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
-                  РТА 0035678 с 2023 года
+                  Помогаем с подготовкой поездки и остаёмся на связи во время путешествия — вы не остаётесь один на один с вопросами
                 </p>
               </div>
 
@@ -297,10 +297,10 @@ export default async function Home() {
                   👥
                 </div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
-                  Индивидуальный подход
+                  Внимание к вашим пожеланиям
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
-                  Маршруты под ваши интересы и бюджет
+                  Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без навязывания
                 </p>
               </div>
 
@@ -313,10 +313,10 @@ export default async function Home() {
                   🎧
                 </div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
-                  Поддержка 24/7
+                  Прозрачные условия
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
-                  Круглосуточная помощь во время путешествий
+                  До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
                 </p>
               </div>
 
@@ -329,10 +329,10 @@ export default async function Home() {
                   🌍
                 </div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 relative z-10">
-                  Экспертное знание
+                  Помогаем сделать правильный выбор
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
-                  Более 200 стран и направлений
+                  Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
                 </p>
               </div>
             </div>
@@ -711,7 +711,7 @@ export default async function Home() {
               <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-yellow-500">
                 <div className="text-4xl mb-4 text-yellow-600">💰</div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  Лучшие цены
+                  Прозрачные условия
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Прямые контракты с поставщиками услуг и эксклюзивные предложения позволяют
@@ -754,17 +754,17 @@ export default async function Home() {
         <section aria-label="Призыв к действию" className="py-16 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Готовы начать путешествие?
+              Расскажите, каким вы видите своё путешествие
             </h2>
             <p className="text-xl text-white mb-8">
-              Присоединяйтесь к сообществу путешественников и откройте мир заново
+              Подберём варианты отдыха с учётом ваших пожеланий, дат и бюджета
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/wiki"
                 className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200"
               >
-                Начать исследование
+                Получить подборку путешествий
               </Link>
               <Link
                 href="/wiki/countries"

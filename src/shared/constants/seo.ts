@@ -20,7 +20,7 @@ export const SITE_NAME = 'Велес Вояж';
 
 // Контакты
 export const CONTACT_PHONE = '+7-985-063-51-34';
-export const CONTACT_EMAIL = 'hello@veles-voyage.ru';
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@veles-voyage.ru';
 
 // Адрес
 export const ADDRESS = {

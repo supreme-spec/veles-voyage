@@ -219,12 +219,11 @@ export default function ContactsPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             <span className="mr-2">📞</span>
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent drop-shadow-md">
-              Контакты и офисы Велес Вояж
+              Получите варианты вашего путешествия
             </span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Телефон, почта, мессенджеры и два офиса в Подмосковье. Отвечаем круглосуточно и подбираем
-            тур за несколько минут.
+            Расскажите о ваших планах — мы поможем подобрать подходящие варианты отдыха
           </p>
         </header>
 

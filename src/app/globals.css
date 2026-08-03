@@ -1677,9 +1677,20 @@ html, body {
 }
 
 /* Изображения */
-img, video, iframe {
+img, video {
   max-width: 100%;
   height: auto;
+}
+
+/* Iframe: сохраняем высоту у карт и медиа */
+iframe {
+  max-width: 100%;
+}
+iframe[src*="yandex"] {
+  height: 300px;
+}
+iframe[src*="google.com/maps"] {
+  height: 300px;
 }
 
 /* Текст */

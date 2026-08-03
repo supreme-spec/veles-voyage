@@ -11,6 +11,7 @@ import { getCityManualContent } from '@/shared/data/cityManualContent';
 import { SITE_URL, CONTACT_PHONE, SOCIAL_LINKS } from '@/shared/constants/seo';
 import { HeroImage } from '@/components/HeroImage';
 import { generateCitySlug } from '@/lib/slugify';
+import { toGenitive } from '@/shared/utils/ruCase';
 
 const siteUrl = SITE_URL;
 
@@ -93,6 +94,7 @@ function generateCityDescription(
   cityCoords: { latitude: number; longitude: number } | null,
   isRegion: boolean
 ): string {
+  const cityGenitive = toGenitive(cityName);
   const manual = getCityManualContent(cityName);
   if (manual?.overview) return manual.overview;
 
@@ -104,19 +106,19 @@ function generateCityDescription(
   const parts: string[] = [];
 
   if (isRegion) {
-    parts.push(`Подбираем выгодные путевки по направлению ${cityName}.`);
+    parts.push(`Подбираем выгодные путевки по направлению ${cityGenitive}.`);
     parts.push(`Вылеты из ближайших аэропортов ${districtName} федерального округа.`);
     parts.push(`Прямые чартерные и регулярные рейсы, проверенные отели, трансфер и страховка.`);
   } else if (hasRealAirport) {
-    parts.push(`Туры из ${cityName} с вылетом из ${airportLabel}.`);
+    parts.push(`Туры из ${cityGenitive} с вылетом из ${airportLabel}.`);
     parts.push(`${cityName} — город в ${region}, ${districtName} федеральный округ.`);
     parts.push(`Подбор путевок в Турцию, Египет, ОАЭ и Таиланд.`);
   } else if (nearestAirport && cityCoords) {
-    parts.push(`Туры из ${cityName}.`);
+    parts.push(`Туры из ${cityGenitive}.`);
     parts.push(`Ближайший аэропорт — ${nearestAirport.name} (${Math.round(nearestAirport.distanceKm)} км).`);
     parts.push(`Вылеты из ${districtName} федерального округа в популярные страны.`);
   } else {
-    parts.push(`Подбор туров из ${cityName}.`);
+    parts.push(`Подбор туров из ${cityGenitive}.`);
     parts.push(`${cityName} расположен в ${region}.`);
     parts.push(`Вылеты из ближайших аэропортов региона.`);
   }
@@ -196,6 +198,7 @@ function generateDepartureFAQs(
   hasRealAirport: boolean,
   cityCoords?: { latitude: number; longitude: number } | null
 ): FAQ[] {
+  const cityGenitive = toGenitive(cityName);
   const manual = getCityManualContent(cityName);
   const unique = getCityUniqueContent(cityName);
   const base: FAQ[] = isRegion
@@ -203,13 +206,13 @@ function generateDepartureFAQs(
         {
           question: `Откуда вылетают туры из ${cityName}?`,
           answer: manual
-            ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${manual.flightContext || unique?.flightContext || ''}`
+            ? `Мы подбираем вылеты из ближайших аэропортов ${cityGenitive}. ${manual.flightContext || unique?.flightContext || ''}`
             : unique
-              ? `Мы подбираем вылеты из ближайших аэропортов ${cityName}. ${unique.flightContext}`
-              : `Мы подбираем вылеты из ближайших аэропортов ${cityName}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём оптимальный вариант.`,
+              ? `Мы подбираем вылеты из ближайших аэропортов ${cityGenitive}. ${unique.flightContext}`
+              : `Мы подбираем вылеты из ближайших аэропортов ${cityGenitive}. Точки вылета и актуальное расписание рейсов уточняйте у менеджера — подберём оптимальный вариант.`,
         },
         {
-          question: `Какие направления доступны из ${cityName}?`,
+          question: `Какие направления доступны из ${cityGenitive}?`,
           answer: manual
             ? `Из региона доступны туры в Турцию, Египет, ОАЭ и Таиланд. ${manual.overview}`
             : unique
@@ -223,13 +226,13 @@ function generateDepartureFAQs(
       ]
     : [
         {
-          question: `Есть ли прямые рейсы из ${cityName}?`,
+          question: `Есть ли прямые рейсы из ${cityGenitive}?`,
           answer: hasRealAirport
             ? `Да, из аэропорта ${airportName} выполняются прямые регулярные и чартерные рейсы в популярные страны. Время перелета зависит от направления.`
-            : `Прямые рейсы из ${cityName} обычно выполняются через ближайшие аэропорты региона. Мы подберём удобную схему вылета.`,
+            : `Прямые рейсы из ${cityGenitive} обычно выполняются через ближайшие аэропорты региона. Мы подберём удобную схему вылета.`,
         },
         {
-          question: `Сколько стоят горящие туры из ${cityName}?`,
+          question: `Сколько стоят горящие туры из ${cityGenitive}?`,
           answer: `Стоимость горящих туров начинается от 35 000 рублей на человека. Цена зависит от сезона, звездности отеля и даты вылета. Подберём вариант под ваш бюджет.`,
         },
         {
@@ -240,7 +243,7 @@ function generateDepartureFAQs(
 
   if (!isRegion && hasRealAirport) {
     base.push({
-      question: `Из какого аэропорта вылетают туры из ${cityName}?`,
+      question: `Из какого аэропорта вылетают туры из ${cityGenitive}?`,
       answer: `Вылеты организуются из аэропорта ${airportName}. Наши менеджеры подскажут, как добраться до терминала, и помогут с трансфером.`,
     });
   }
@@ -249,8 +252,8 @@ function generateDepartureFAQs(
     const nearest = findNearestAirport(cityCoords);
     if (nearest) {
       base.push({
-        question: `Какой аэропорт ближайший к ${cityName}?`,
-        answer: `Ближайший гражданский аэропорт к ${cityName} — ${nearest.name} (${nearest.iata}), примерно в ${Math.round(nearest.distanceKm)} км. Точные рейсы и расписание уточняйте у менеджера.`,
+        question: `Какой аэропорт ближайший к ${cityGenitive}?`,
+        answer: `Ближайший гражданский аэропорт к ${cityGenitive} — ${nearest.name} (${nearest.iata}), примерно в ${Math.round(nearest.distanceKm)} км. Точные рейсы и расписание уточняйте у менеджера.`,
       });
     }
   }
@@ -275,6 +278,7 @@ export async function generateMetadata({
     });
   }
 
+  const cityGenitive = toGenitive(cityName);
   const isRegion = isRegionEntity(cityName);
   const cityData = DEPARTURE_CITIES_DATA[cityName.toLowerCase()];
   const hasRealAirport = !!cityData?.airport;
@@ -288,17 +292,17 @@ export async function generateMetadata({
 
   return generateEnhancedSEOMetadata({
     title: isRegion
-      ? `Туры по направлению ${cityName} — ${districtName || 'Россия'} | Велес Вояж`
-      : `Туры из ${cityName} — ${cityCoords?.region || 'Россия'} | Велес Вояж`,
+      ? `Туры по направлению ${cityGenitive} — ${districtName || 'Россия'} | Велес Вояж`
+      : `Туры из ${cityGenitive} — ${cityCoords?.region || 'Россия'} | Велес Вояж`,
     description,
     url: `${siteUrl}/cities/${generateCitySlug(cityName)}`,
     type: 'website',
     keywords: [
-      `туры из ${cityName}`,
-      `горящие туры ${cityName}`,
+      `туры из ${cityGenitive}`,
+      `горящие туры ${cityGenitive}`,
       `вылеты ${districtName || ''}`,
       `${cityName} ${cityCoords?.region || ''}`,
-      `путевки из ${cityName}`
+      `путевки из ${cityGenitive}`
     ],
     faqs: generateDepartureFAQs(cityName, airportLabel, isRegion, hasRealAirport, cityCoords),
   });
@@ -322,6 +326,7 @@ export default async function CityDeparturePage({
   }
 
   const slug = generateCitySlug(cityName);
+  const cityGenitive = toGenitive(cityName);
   const isRegion = isRegionEntity(cityName);
   const cityData = DEPARTURE_CITIES_DATA[cityName.toLowerCase()];
   const hasRealAirport = !!cityData?.airport;
@@ -345,11 +350,11 @@ export default async function CityDeparturePage({
   const touristDestinationSchema = {
     '@context': 'https://schema.org',
     '@type': 'TouristDestination',
-    name: `Туры из ${cityName}`,
+    name: isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityGenitive}`,
     description: uniqueContent
       ? uniqueContent.overview
       : isRegion
-        ? `Подбор и бронирование туров по направлению ${cityName}.`
+        ? `Подбор и бронирование туров по направлению ${cityGenitive}.`
         : `Подбор и бронирование туров с вылетом из ${airportLabel}.`,
     url: `${siteUrl}/cities/${slug}`,
     geo: cityCoords ? {
@@ -374,10 +379,10 @@ export default async function CityDeparturePage({
     ? {
         '@context': 'https://schema.org',
         '@type': 'OfferCatalog',
-        name: `Туры из ${cityName}`,
+        name: isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityGenitive}`,
         itemListElement: offerItems.map((o) => ({
           '@type': 'Offer',
-          name: `Тур в ${o.country} из ${cityName}`,
+          name: isRegion ? `Тур в ${o.country} по направлению ${cityName}` : `Тур в ${o.country} из ${cityGenitive}`,
           price: String(o.price).replace(/\s/g, ''),
           priceCurrency: 'RUB',
           availability: 'https://schema.org/InStock',
@@ -396,7 +401,7 @@ export default async function CityDeparturePage({
     {
       '@context': 'https://schema.org',
       '@type': 'TravelAgency',
-      name: `Велес Вояж - офис подбора туров${isRegion ? '' : ` из ${cityName}`}`,
+      name: `Велес Вояж - офис подбора туров${isRegion ? ` по направлению ${cityName}` : ` из ${cityGenitive}`}`,
       description: uniqueContent
         ? uniqueContent.overview
         : isRegion
@@ -496,7 +501,7 @@ export default async function CityDeparturePage({
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
                 <h1 className="text-3xl md:text-4xl font-extrabold drop-shadow-lg">
-                  {isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityName}`}
+                  {isRegion ? `Туры по направлению ${cityName}` : `Туры из ${cityGenitive}`}
                 </h1>
                 <p className="text-white/90 mt-2 text-lg">
                   {isRegion
@@ -508,7 +513,7 @@ export default async function CityDeparturePage({
 
           {/* Speakable summary */}
           <div id="speakable-summary" className="bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 rounded-xl p-6 mb-8">
-            <h2 className="text-xl font-bold mb-3 text-blue-900 dark:text-blue-200">Быстрые факты о вылетах из {cityName}</h2>
+            <h2 className="text-xl font-bold mb-3 text-blue-900 dark:text-blue-200">Быстрые факты о вылетах из {cityGenitive}</h2>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li><strong>Аэропорт:</strong> {airportLabel}{nearestAirport ? ` (ближайший: ${nearestAirport.name}, ${Math.round(nearestAirport.distanceKm)} км)` : ''}</li>
               <li><strong>До Антальи:</strong> {flightText(cityData?.flightTimes?.turkey, 'turkey')}</li>
@@ -531,7 +536,7 @@ export default async function CityDeparturePage({
           {/* Flight info */}
           <div className="bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 rounded-xl p-6 mb-10">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-900 dark:text-gray-100">
-              ✈️ Особенности вылетов из {cityName}
+              ✈️ Особенности вылетов из {cityGenitive}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div>
@@ -562,7 +567,7 @@ export default async function CityDeparturePage({
             ].map((dest) => (
                 <div key={dest.country} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-shadow">
                   <div className="text-4xl mb-3">{dest.icon}</div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Туры в {dest.country} из {cityName}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Туры в {dest.country} из {cityGenitive}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
                     {dest.country === 'Турция'
                       ? `Прямые чартерные рейсы из ${airportLabel} в Анталью и другие курорты: ${flightText(cityData?.flightTimes?.turkey, 'turkey')}.`
@@ -583,7 +588,7 @@ export default async function CityDeparturePage({
 
           {/* FAQ */}
           <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Частые вопросы о турах из {cityName}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Частые вопросы о турах из {cityGenitive}</h2>
             <div className="space-y-4">
               {generateDepartureFAQs(cityName, airportLabel, isRegion, hasRealAirport, cityCoords).map((faq, idx) => (
                 <details key={idx} className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 open:ring-2 open:ring-blue-100 transition">
@@ -610,7 +615,7 @@ export default async function CityDeparturePage({
               Путеводитель по России →
             </Link>
             <Link href={`/tours?from=${slug}`} className="flex-1 text-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
-              Подобрать тур из {cityName} →
+              Подобрать тур из {cityGenitive} →
             </Link>
           </div>
 

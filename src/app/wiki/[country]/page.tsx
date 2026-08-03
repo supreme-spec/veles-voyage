@@ -23,7 +23,7 @@ import {
   H2,
   H3,
 } from '@/components/mdx/MdxComponents';
-import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
+import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/universalSEO';
 import {
@@ -270,8 +270,8 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const touristTripSchema = {
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
-    name: `Туры в ${countryNamesDictionary[country] || country} 2026`,
-    description: `Пляжный отдых, ${countryData?.frontmatter?.bestTimeToVisit || 'круглый год'}, лучшие курорты ${countryNamesDictionary[country] || country}.`,
+    name: `Туры в ${getCountryAccusative(country)} 2026`,
+    description: `Пляжный отдых, ${countryData?.frontmatter?.bestTimeToVisit || 'круглый год'}, лучшие курорты ${getCountryAccusative(country)}.`,
     touristType: 'Пляжный отдых',
     offers: {
       '@type': 'Offer',
@@ -689,7 +689,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       {/* CTA: Подобрать тур */}
       <section className="mt-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-center">
         <h3 className="text-xl font-bold text-white mb-3">
-          Подберём тур в {countryNamesDictionary[country] || country} под ваш бюджет
+          Подберём тур в {getCountryAccusative(country)} под ваш бюджет
         </h3>
         <p className="text-blue-100 mb-4">
           Оставьте заявку и наш менеджер свяжется с вами в течение 15 минут

@@ -148,7 +148,7 @@ const globalSchema = {
           '@type': 'OpeningHoursSpecification',
           dayOfWeek: ['Saturday', 'Sunday'],
           opens: '10:00',
-          closes: '18:00',
+          closes: '16:00',
         },
       ],
       hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',

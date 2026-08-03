@@ -134,31 +134,34 @@ export function Footer() {
               Откройте мир с нами! Продуманный выбор путешествий, незабываемые впечатления.
             </p>
 
-            {/* Contact Info - More compact */}
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2">
-                <PhoneIcon className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <a href="tel:+79850635134" className="text-gray-300 text-sm hover:text-indigo-400 transition-colors">
-                  +7 985 063-51-34
-                </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <EnvelopeIcon className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <a href="mailto:hello@veles-voyage.ru" className="text-gray-300 text-sm hover:text-indigo-400 transition-colors">
-                  hello@veles-voyage.ru
-                </a>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapIcon className="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">пр-т Керамиков, д. 103, Голицыно, Московская обл., 143041</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <span className="text-gray-400 text-xs">⏰ Пн–Пт: 09:00–21:00</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <span className="text-gray-400 text-xs">⏰ Сб–Вс: 10:00–16:00</span>
-              </div>
-            </div>
+             {/* Contact Info - More compact */}
+             <div className="space-y-2">
+               <div className="flex items-center space-x-2">
+                 <PhoneIcon className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                 <a href="tel:+79850635134" className="text-gray-300 text-sm hover:text-indigo-400 transition-colors">
+                   +7 985 063-51-34
+                 </a>
+               </div>
+               <div className="flex items-center space-x-2">
+                 <EnvelopeIcon className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                 <a href="mailto:hello@veles-voyage.ru" className="text-gray-300 text-sm hover:text-indigo-400 transition-colors">
+                   hello@veles-voyage.ru
+                 </a>
+               </div>
+               <div className="flex items-start space-x-2">
+                 <MapIcon className="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" />
+                 <div className="text-gray-300 text-sm">
+                   <div>пр-т Керамиков, д. 103, Голицыно, Московская обл., 143041</div>
+                   <div>пр-т Московский, д. 9/2, Пушкино, Московская обл., 141207</div>
+                 </div>
+               </div>
+               <div className="flex items-start space-x-2">
+                 <span className="text-gray-400 text-xs">⏰ Пн–Пт: 09:00–21:00</span>
+               </div>
+               <div className="flex items-start space-x-2">
+                 <span className="text-gray-400 text-xs">⏰ Сб–Вс: 10:00–16:00</span>
+               </div>
+             </div>
           </div>
 
           {/* Footer Links */}

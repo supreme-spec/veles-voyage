@@ -6,7 +6,7 @@ import StructuredData from '@/components/SEO/StructuredData';
 import { FAQSection } from '@/components/FAQSection';
 import { SITE_URL } from '@/shared/constants/seo';
 import { getCountryMdxData } from '@/shared/utils/generateCountrySEOMetadata';
-import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
+import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 
 interface PageProps {
   params: Promise<{ country: string }>;
@@ -17,19 +17,20 @@ export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { country } = await params;
   const name = countryNamesDictionary[country] || country;
-  const title = `Туры в ${name} 2026 из Москвы — цены, виза, «всё включено» | Велес Вояж`;
-  const description = `Туры в ${name} 2026: актуальные цены, нужна ли виза, лучший сезон и курорты. Индивидуальные туры и «всё включено» из Москвы с поддержкой 24/7 от Велес Вояж.`;
+  const accusativeName = getCountryAccusative(country);
+  const title = `Туры в ${accusativeName} 2026 из Москвы — цены, виза, «всё включено» | Велес Вояж`;
+  const description = `Туры в ${accusativeName} 2026: актуальные цены, нужна ли виза, лучший сезон и курорты. Индивидуальные туры и «всё включено» из Москвы с поддержкой 24/7 от Велес Вояж.`;
   return generateSEOMetadata({
     title,
     description,
     url: `${SITE_URL}/tours/${country}`,
     type: 'article',
     keywords: [
-      `туры в ${name}`,
+      `туры в ${accusativeName}`,
       `отдых в ${name} 2026`,
       `${name} всё включено`,
       `цены туры ${name}`,
-      `виза в ${name}`,
+      `виза в ${accusativeName}`,
       `путешествия 2026`,
     ],
   });
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 const TourCountryPage = async ({ params }: PageProps) => {
   const { country } = await params;
   const name = countryNamesDictionary[country] || country;
+  const accusativeName = getCountryAccusative(country);
   const data = await getCountryMdxData(country);
   const fm = data?.frontmatter || {};
 
@@ -55,7 +57,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
   const touristTripSchema = {
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
-    name: `Туры в ${name} 2026`,
+    name: `Туры в ${accusativeName} 2026`,
     description: `Пляжный отдых, ${fm.bestTimeToVisit || 'круглый год'}, лучшие курорты ${name}.`,
     touristType: 'Пляжный отдых',
     offers: {
@@ -148,7 +150,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
           className="mb-10 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-green-100 dark:border-gray-700"
         >
           <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 !mt-0">
-            <span className="text-3xl">💰</span> Цены на туры в {name}
+            <span className="text-3xl">💰</span> Цены на туры в {getCountryAccusative(country)}
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
@@ -254,7 +256,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
         {/* TL;DR + таблица */}
         <section className="mb-10 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-3xl border border-blue-100 dark:border-gray-700">
           <h2 className="text-2xl font-extrabold mb-3 flex items-center gap-2 !mt-0">
-            <span className="text-3xl">⚡</span> Краткий ответ: туры в {name}
+            <span className="text-3xl">⚡</span> Краткий ответ: туры в {getCountryAccusative(country)}
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
             Виза: {visa}. Валюта: {fm.currency || 'уточняйте'}. Лучший сезон:{' '}

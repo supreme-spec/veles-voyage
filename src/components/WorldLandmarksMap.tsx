@@ -2,9 +2,12 @@
 
 import { useState, useMemo } from 'react';
 import Map, { Marker, Popup, NavigationControl, GeolocateControl } from 'react-map-gl/maplibre';
-import maplibregl from 'maplibre-gl';
+import * as maplibregl from 'maplibre-gl';
+import { setWorkerUrl } from 'maplibre-gl';
 import Link from 'next/link';
 import 'maplibre-gl/dist/maplibre-gl.css';
+
+setWorkerUrl(new URL('maplibre-gl/dist/maplibre-gl-csp-worker.js', import.meta.url).toString());
 
 const MAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty';
 

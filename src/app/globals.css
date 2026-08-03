@@ -1892,7 +1892,7 @@ body {
   }
 }
 
-img, video, iframe, canvas {
+img, video, canvas {
   max-width: 100%;
   height: auto;
 }

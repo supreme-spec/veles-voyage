@@ -19,7 +19,11 @@ export const metadata: Metadata = {
     'чартерные рейсы'
   ],
   alternates: {
-    canonical: 'https://veles-voyage.ru/flights'
+    canonical: 'https://veles-voyage.ru/flights',
+    languages: {
+      ru: 'https://veles-voyage.ru/flights',
+      'x-default': 'https://veles-voyage.ru/flights',
+    },
   },
   openGraph: {
     title: 'Авиабилеты по всему миру | Велес Вояж',

@@ -48,7 +48,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${meta.title} | Велес Вояж`,
     description: `Выбор города вылета в ${meta.name} федеральном округе: ${cities.length}+ городов, прямые и стыковочные рейсы в Турцию, Египет, ОАЭ, Таиланд.`,
-    alternates: { canonical: `${siteUrl}/cities/district/${district}` },
+    alternates: {
+      canonical: `${siteUrl}/cities/district/${district}`,
+      languages: {
+        ru: `${siteUrl}/cities/district/${district}`,
+        'x-default': `${siteUrl}/cities/district/${district}`,
+      },
+    },
     robots: { index: true, follow: true },
   };
 }

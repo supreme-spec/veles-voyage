@@ -5,7 +5,13 @@ import { SITE_URL } from '@/shared/constants/seo';
 export const metadata: Metadata = {
   title: 'Карта сайта — Велес Вояж',
   description: 'Полная карта сайта Велес Вояж: все разделы, страницы и сервисы турагентства.',
-  alternates: { canonical: `${SITE_URL}/sitemap` },
+  alternates: {
+    canonical: `${SITE_URL}/sitemap`,
+    languages: {
+      ru: `${SITE_URL}/sitemap`,
+      'x-default': `${SITE_URL}/sitemap`,
+    },
+  },
 };
 
 export default function SitemapPage() {

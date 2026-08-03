@@ -96,6 +96,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://veles-voyage.ru/privacy',
+    languages: {
+      ru: 'https://veles-voyage.ru/privacy',
+      'x-default': 'https://veles-voyage.ru/privacy',
+    },
   },
 };
 

@@ -6,7 +6,13 @@ import { SITE_URL } from '@/shared/constants/seo';
 export const metadata: Metadata = {
   title: 'Новости туризма 2026: акции и направления',
   description: 'Новости туризма 2026 от Велес Вояж: новые направления, акции, изменения в правилах въезда и эксклюзивные предложения для путешественников.',
-  alternates: { canonical: `${SITE_URL}/news` },
+  alternates: {
+    canonical: `${SITE_URL}/news`,
+    languages: {
+      ru: `${SITE_URL}/news`,
+      'x-default': `${SITE_URL}/news`,
+    },
+  },
   robots: {
     index: false,
     follow: true,

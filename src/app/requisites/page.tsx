@@ -16,7 +16,11 @@ export const metadata: Metadata = {
     'РТА 0035678'
   ],
   alternates: {
-    canonical: `${SITE_URL}/requisites`
+    canonical: `${SITE_URL}/requisites`,
+    languages: {
+      ru: `${SITE_URL}/requisites`,
+      'x-default': `${SITE_URL}/requisites`,
+    },
   },
   openGraph: {
     title: 'Реквизиты компании | Велес Вояж',

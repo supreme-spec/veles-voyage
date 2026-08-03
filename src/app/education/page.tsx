@@ -6,7 +6,13 @@ import { SITE_URL } from '@/shared/constants/seo';
 export const metadata: Metadata = {
   title: 'Обучение туризму: гайды и советы Велес Вояж',
   description: 'Образовательные материалы по туризму от Велес Вояж: путеводители, советы путешественникам, информация о визах, странах и культуре.',
-  alternates: { canonical: `${SITE_URL}/education` },
+  alternates: {
+    canonical: `${SITE_URL}/education`,
+    languages: {
+      ru: `${SITE_URL}/education`,
+      'x-default': `${SITE_URL}/education`,
+    },
+  },
 };
 
 export default function EducationPage() {

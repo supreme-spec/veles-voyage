@@ -47,7 +47,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             {title}
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
               <details
                 key={index}

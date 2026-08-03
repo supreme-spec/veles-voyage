@@ -22,8 +22,9 @@ export default function ContactsPage() {
     'description': 'Туристическое агентство Велес Вояж — эксперты в организации путешествий по России и за рубежом',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': 'пр-т. Керамиков, 103',
+      'streetAddress': 'пр-т Керамиков, д. 103',
       'addressLocality': 'Голицыно',
+      'addressRegion': 'Московская область',
       'postalCode': '143041',
       'addressCountry': 'RU'
     },
@@ -58,7 +59,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
       'opens': '10:00',
-      'closes': '16:00'
+      'closes': '18:00'
     }],
     'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'areaServed': [
@@ -110,8 +111,9 @@ export default function ContactsPage() {
     'description': 'Офис турагентства Велес Вояж в Голицыно. Подбор туров, круизов и индивидуальных путешествий.',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': 'пр-т. Керамиков, 103',
+      'streetAddress': 'пр-т Керамиков, д. 103',
       'addressLocality': 'Голицыно',
+      'addressRegion': 'Московская область',
       'postalCode': '143041',
       'addressCountry': 'RU'
     },
@@ -132,7 +134,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
       'opens': '10:00',
-      'closes': '16:00'
+      'closes': '18:00'
     }],
     'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'parentOrganization': {
@@ -149,8 +151,9 @@ export default function ContactsPage() {
     'description': 'Офис турагентства Велес Вояж в Пушкино. Подбор туров, круизов и индивидуальных путешествий.',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': 'пр-т. Московский, 9/2',
+      'streetAddress': 'пр-т Московский, д. 9/2',
       'addressLocality': 'Пушкино',
+      'addressRegion': 'Московская область',
       'postalCode': '141200',
       'addressCountry': 'RU'
     },
@@ -171,7 +174,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
       'opens': '10:00',
-      'closes': '16:00'
+      'closes': '18:00'
     }],
     'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'parentOrganization': {
@@ -195,7 +198,7 @@ export default function ContactsPage() {
     answer: 'У нас есть офисы в Голицыно по адресу пр-т. Керамиков, 103 и в Пушкино по адресу пр-т. Московский, 9/2. Также работаем дистанционно по всей России.'
   }, {
     question: 'Какие часы работы у Велес Вояж?',
-    answer: 'Мы работаем с 9:00 до 21:00 по будням и с 10:00 до 16:00 по выходным (время московское, UTC+3).'
+    answer: 'Мы работаем с 9:00 до 21:00 по будням и с 10:00 до 18:00 по выходным (время московское, UTC+3).'
   }, {
     question: 'Как заказать консультацию?',
     answer: 'Вы можете заказать консультацию через форму на сайте, в Telegram или по телефону. Менеджер подберёт тур под ваши пожелания и бюджет.'
@@ -250,16 +253,16 @@ export default function ContactsPage() {
                       <div className="mb-6">
                         <p className="font-medium text-gray-900 dark:text-white">Голицыно</p>
                         <p className="text-gray-600 dark:text-gray-300">
-                          пр-т. Керамиков, 103<br />
-                          Голицыно, 143041<br />
+                          пр-т Керамиков, д. 103<br />
+                          Голицыно, Московская обл., 143041<br />
                           Россия
                         </p>
                       </div>
                       <div>
                         <p className="font-medium text-gray-900 dark:text-white">Пушкино</p>
                         <p className="text-gray-600 dark:text-gray-300">
-                          пр-т. Московский, 9/2<br />
-                          Пушкино, 141207<br />
+                          пр-т Московский, д. 9/2<br />
+                          Пушкино, Московская обл., 141207<br />
                           Россия
                         </p>
                       </div>

@@ -347,7 +347,7 @@ export default async function Home() {
                 <span className="text-gradient-animated drop-shadow-md">Наши услуги</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
-                Откройте для себя уникальные направления и незабываемые приключения
+                Полный спектр туристических услуг: от консультации до организации путешествия
               </p>
             </div>
 
@@ -455,7 +455,7 @@ export default async function Home() {
                     <div className="country-image">
                       <DestinationImage
                         src={dest.image}
-                        alt={`Туры в ${dest.name} - популярное направление 2026 от Велес Вояж`}
+                        alt={`Туры в ${dest.nameAccusative || dest.name} - популярное направление 2026 от Велес Вояж`}
                       />
                     </div>
                     <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
@@ -725,7 +725,7 @@ export default async function Home() {
                   Надежность и безопасность
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                  Лицензия РТА 0035678, полное страхивание и юридическая защита всех туристических
+                  Лицензия РТА 0035678, полное страхование и юридическая защита всех туристических
                   услуг.
                 </p>
               </div>

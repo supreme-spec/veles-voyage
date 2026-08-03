@@ -169,7 +169,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'morskie-ruizy-2026-gid-dlya-nachinayuschih',
+    slug: 'morskie-kruizy-2026-gid-dlya-nachinayuschih',
     title: 'Морские круизы 2026: гид для начинающих',
     description:
       'Всё о морских круизах в 2026 году: как выбрать круиз, какие компании, цены, что включено и советы для первого круиза.',

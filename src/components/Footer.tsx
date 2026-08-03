@@ -150,17 +150,13 @@ export function Footer() {
               </div>
               <div className="flex items-start space-x-2">
                 <MapIcon className="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">пр-т. Керамиков, 103, Голицыно</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapIcon className="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">пр-т. Московский, 9/2, Пушкино</span>
+                <span className="text-gray-300 text-sm">пр-т Керамиков, д. 103, Голицыно, Московская обл., 143041</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-gray-400 text-xs">⏰ Пн–Пт: 09:00–21:00</span>
               </div>
               <div className="flex items-start space-x-2">
-                <span className="text-gray-400 text-xs">⏰ Сб–Вс: 10:00–18:00</span>
+                <span className="text-gray-400 text-xs">⏰ Сб–Вс: 10:00–16:00</span>
               </div>
             </div>
           </div>

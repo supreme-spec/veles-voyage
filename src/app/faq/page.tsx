@@ -55,7 +55,7 @@ const FaqPage = () => {
       <SchemaScripts schemas={[faqSchema, speakableSchema]} />
 
       <div className="container mx-auto px-4 py-8 pt-20 md:pt-24">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">
             Частые вопросы
           </h1>

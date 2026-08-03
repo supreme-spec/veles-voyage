@@ -43,7 +43,7 @@ const SLUG_TO_RUSSIAN_NAME: Record<string, string> = {
   'skolko-stoit-tur-v-turciyu-na-dvoih': 'Сколько стоит тур в Турцию на двоих',
   'vizy-v-evropu-dlya-rossiyan-2026': 'Визы в Европу для россиян 2026',
   'kak-vybrat-otel-v-turcii-2026': 'Как выбрать отель в Турции 2026',
-  'morskie-ruizy-2026-gid-dlya-nachinayuschih': 'Морские круизы 2026 гид для начинающих',
+  'morskie-kruizy-2026-gid-dlya-nachinayuschih': 'Морские круизы 2026 гид для начинающих',
   'strahovanie-dlya-puteshestviy-2026': 'Страхование для путешествий 2026',
   'kak-sokratit-rashody-na-puteshestvie-2026': 'Как сократить расходы на путешествие 2026',
 

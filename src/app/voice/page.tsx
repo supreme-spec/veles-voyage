@@ -236,7 +236,7 @@ export default function VoicePage() {
           Голосовые справочники по странам
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Доступны голосовые справочники для {countries.length} стран с ответами на вопросы о визах, ценах и最佳 времени для поездки.
+          Доступны голосовые справочники для {countries.length} стран с ответами на вопросы о визах, ценах и лучшем времени для поездки.
         </p>
         <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4">
           {popularCountries.map((item) => (

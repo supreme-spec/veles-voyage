@@ -106,7 +106,7 @@ const globalSchema = {
       address: [
         {
           '@type': 'PostalAddress',
-          streetAddress: 'Керамиков пр-т, д. 103',
+          streetAddress: 'пр-т Керамиков, д. 103',
           addressLocality: 'Голицыно',
           addressRegion: 'Московская область',
           postalCode: '143041',
@@ -114,7 +114,7 @@ const globalSchema = {
         },
         {
           '@type': 'PostalAddress',
-          streetAddress: 'пр-кт Московский, д. 9/2',
+          streetAddress: 'пр-т Московский, д. 9/2',
           addressLocality: 'Пушкино',
           addressRegion: 'Московская область',
           postalCode: '141207',
@@ -142,13 +142,13 @@ const globalSchema = {
           '@type': 'OpeningHoursSpecification',
           dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
           opens: '09:00',
-          closes: '19:00',
+          closes: '21:00',
         },
         {
           '@type': 'OpeningHoursSpecification',
           dayOfWeek: ['Saturday', 'Sunday'],
           opens: '10:00',
-          closes: '16:00',
+          closes: '18:00',
         },
       ],
       hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',

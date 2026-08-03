@@ -59,6 +59,11 @@ const nextConfig = {
         destination: '/wiki/czechia',
         permanent: true,
       },
+      {
+        source: '/blog/morskie-ruizy-2026-gid-dlya-nachinayuschih',
+        destination: '/blog/morskie-kruizy-2026-gid-dlya-nachinayuschih',
+        permanent: true,
+      },
     ];
   },
   onDemandEntries: {

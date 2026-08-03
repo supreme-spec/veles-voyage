@@ -39,8 +39,8 @@ export default function ContactsPage() {
     ],
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 55.738745,
-      'longitude': 36.982842
+      'latitude': 55.609955,
+      'longitude': 36.965818
     },
     'contactPoint': {
       '@type': 'ContactPoint',
@@ -120,8 +120,8 @@ export default function ContactsPage() {
     'url': `${SITE_URL}/contacts`,
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 55.738745,
-      'longitude': 36.982842
+      'latitude': 55.609955,
+      'longitude': 36.965818
     },
     'openingHoursSpecification': [{
       '@type': 'OpeningHoursSpecification',
@@ -159,8 +159,8 @@ export default function ContactsPage() {
     'url': `${SITE_URL}/contacts`,
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 56.014488,
-      'longitude': 37.846285
+      'latitude': 56.010503,
+      'longitude': 37.847823
     },
     'openingHoursSpecification': [{
       '@type': 'OpeningHoursSpecification',
@@ -387,26 +387,26 @@ export default function ContactsPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Офис в Голицыно</h3>
                    <iframe
-                     src="https://yandex.ru/map-widget/v1/?um=constructor%3A129552746144&amp;source=constructor&amp;scroll=true&amp;utm_source=constructor"
-                     width="100%"
-                     height="300"
-                     frameBorder="0"
-                     className="rounded-lg border border-gray-200 dark:border-gray-700"
-                     style={{ height: '300px' }}
-                     title="Карта офиса Велес Вояж в Голицыно"
-                   />
+                      src="https://yandex.ru/map-widget/v1/?ll=36.965818%2C55.609955&z=16&pt=36.965818,55.609955,pm2rdm"
+                      width="100%"
+                      height="300"
+                      frameBorder="0"
+                      className="rounded-lg border border-gray-200 dark:border-gray-700"
+                      style={{ height: '300px' }}
+                      title="Карта офиса Велес Вояж в Голицыно"
+                    />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Офис в Пушкино</h3>
                    <iframe
-                     src="https://yandex.ru/map-widget/v1/?ll=37.846285%2C56.014488&amp;z=15&amp;pt=37.846285,56.014488,pm2rdm"
-                     width="100%"
-                     height="300"
-                     frameBorder="0"
-                     className="rounded-lg border border-gray-200 dark:border-gray-700"
-                     style={{ height: '300px' }}
-                     title="Карта офиса Велес Вояж в Пушкино"
-                   />
+                      src="https://yandex.ru/map-widget/v1/?ll=37.847823%2C56.010503&z=16&pt=37.847823,56.010503,pm2rdm"
+                      width="100%"
+                      height="300"
+                      frameBorder="0"
+                      className="rounded-lg border border-gray-200 dark:border-gray-700"
+                      style={{ height: '300px' }}
+                      title="Карта офиса Велес Вояж в Пушкино"
+                    />
                 </div>
               </div>
 

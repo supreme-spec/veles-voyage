@@ -66,11 +66,13 @@ function generateUniqueCityText(
   const districtName = district ? FEDERAL_DISTRICTS[district].name : 'Российской Федерации';
 
   const latBand = cityCoords
-    ? cityCoords.latitude > 60
-      ? 'северных широтах'
-      : cityCoords.latitude < 50
-        ? 'юге России'
-        : 'центральной полосе'
+    ? cityCoords.longitude > 140 && cityCoords.latitude > 42 && cityCoords.latitude < 65
+      ? 'Дальнем Востоке'
+      : cityCoords.latitude > 60
+        ? 'северных широтах'
+        : cityCoords.latitude < 50
+          ? 'юге России'
+          : 'центральной полосе'
     : 'территории России';
 
   const accessText = hasRealAirport
@@ -163,9 +165,8 @@ function estimateFlightHours(
 function findNearestAirport(coords: { latitude: number; longitude: number }) {
   if (!coords) return null;
   const { RUSSIAN_AIRPORTS } = require('@/shared/data/russianAirports');
-  const excluded = new Set(['москва', 'жуковский']);
   const majorAirports = (RUSSIAN_AIRPORTS as Array<{ name: string; iata?: string; latitude: number; longitude: number; citySlug: string }>)
-    .filter(a => !excluded.has(a.citySlug) && !a.iata?.startsWith('RU-') && a.iata !== '')
+    .filter(a => !a.iata?.startsWith('RU-') && a.iata !== '')
     .map((a) => ({
       ...a,
       distanceKm: haversineKm(coords.latitude, coords.longitude, a.latitude, a.longitude)

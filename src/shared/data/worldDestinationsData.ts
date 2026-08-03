@@ -184,8 +184,11 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     name: 'Индонезия',
     nameAccusative: 'Индонезию',
     preposition: 'в',
+    slug: 'indonesia',
     type: 'Country',
     description: 'Островная мечта: Бали, Комодо, джунгли и храмы древних королевств.',
+    estimatedCost: '110 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop&auto=format',
     alt: 'Индонезия - Рисовые террасы Бали',
     capital: 'Джакарта',
@@ -200,14 +203,18 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза в Индонезию?', a: 'Для граждан РФ безвизовый въезд до 30 дней.' },
       { q: 'Что посмотреть на Бали кроме пляжей?', a: 'Убуд, Тангалланг, водопад Тумбак-Бату и храмы Улун-Дану.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Индонезия'
   },
   'малайзия': {
     name: 'Малайзия',
     nameAccusative: 'Малайзию',
     preposition: 'в',
+    slug: 'malaysia',
     type: 'Country',
     description: 'Культурный микс: небоскребы Куала-Лумпура, джунгли Борнео и остров Лангкави.',
+    estimatedCost: '95 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=400&fit=crop&auto=format',
     alt: 'Малайзия - Башни Петронас Куала-Лумпур',
     capital: 'Куала-Лумпур',
@@ -222,14 +229,18 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза в Малайзию?', a: 'Для граждан РФ безвизовый въезд до 30 дней, требуется MDAC.' },
       { q: 'Где лучше отдыхать в Малайзии?', a: 'Для пляжей — Лангкави, для города — Куала-Лумпур, для джунглей — Борнео.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Малайзия'
   },
   'сейшелы': {
     name: 'Сейшелы',
     nameAccusative: 'Сейшелы',
     preposition: 'на',
+    slug: 'seychelles',
     type: 'Country',
     description: 'Райские острова: черепахи, кокосы и первозданные пляжи.',
+    estimatedCost: '130 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop&auto=format',
     alt: 'Сейшелы - Пляж Анс Сур д Аржан',
     capital: 'Виктория',
@@ -244,14 +255,18 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза на Сейшелы?', a: 'Для граждан РФ безвизовый въезд до 30 дней.' },
       { q: 'Что уникального на Сейшелах?', a: 'Кокос коко-де-мер, гигантские черепахи и песчаные пляжи Праслина.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Сейшелы'
   },
   'доминикана': {
     name: 'Доминикана',
     nameAccusative: 'Доминикану',
     preposition: 'на',
+    slug: 'dominican-republic',
     type: 'Country',
     description: 'Карибский рай: белые пляжи, лагуны и все включено.',
+    estimatedCost: '115 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?w=600&h=400&fit=crop&auto=format',
     alt: 'Доминикана - Пляж Пунта-Кана',
     capital: 'Санто-Доминго',
@@ -266,14 +281,18 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза в Доминикану?', a: 'Для граждан РФ виза оформляется по прилете или через консульство.' },
       { q: 'Что взять с собой в Доминикану?', a: 'Солнцезащитный крем, репеллент, легкую одежду и документы на возврат.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Доминикана'
   },
   'куба': {
     name: 'Куба',
     nameAccusative: 'Кубу',
     preposition: 'на',
+    slug: 'cuba',
     type: 'Country',
     description: 'Остров свободы: старые автомобили, сигары и карибский ритм.',
+    estimatedCost: '105 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1500759285222-a95626b934cb?w=600&h=400&fit=crop&auto=format',
     alt: 'Куба - Старые автомобили Гаваны',
     capital: 'Гавана',
@@ -288,7 +307,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза на Кубу?', a: 'Для граждан РФ виза оформляется в консульстве, карта туриста обязательна.' },
       { q: 'Что взять с собой на Кубу?', a: 'Лекарства, солнцезащитный крем, легкую одежду и немного долларов.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Куба'
   },
   'греция': {
     name: 'Греция',
@@ -320,8 +340,11 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     name: 'Италия',
     nameAccusative: 'Италию',
     preposition: 'в',
+    slug: 'italy',
     type: 'Country',
     description: 'Искусство, еда и романтика: от Рима до Венеции.',
+    estimatedCost: '95 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&h=400&fit=crop&auto=format',
     alt: 'Италия - Колизей в Риме',
     capital: 'Рим',
@@ -334,14 +357,16 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     popularResorts: ['Рим', 'Венеция', 'Флоренция', 'Амальфи'],
     keywords: ['туры в Италию', 'экскурсии Рим', 'отдых в Венеции'],
     faq: [
-      { q: 'Нужна ли виза в Италию?', a: 'Для граждан РФ безвизовый въезд на срок до 90 дней.' },
+      { q: 'Нужна ли виза в Италию?', a: 'Да, Италия входит в зону Шенгена — гражданам РФ необходима шенгенская виза.' },
       { q: 'Что обязательно попробовать в Италии?', a: 'Настоящую пиццу в Неаполе, пасту в Болонье и мороженое в Сицилии.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Италия'
   },
   'испания': {
     name: 'Испания',
     nameAccusative: 'Испанию',
     preposition: 'в',
+    slug: 'spain',
     type: 'Country',
     description: 'Страна страстей: фламенко, архитектура Гауди и пляжи Коста-Бравы.',
     image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=400&fit=crop&auto=format',
@@ -356,14 +381,16 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     popularResorts: ['Барселона', 'Валенсия', 'Севилья', 'Коста-Брава'],
     keywords: ['туры в Испанию', 'Барселона отдых', 'Саграда-Фамилия'],
     faq: [
-      { q: 'Нужна ли виза в Испанию?', a: 'Для граждан РФ безвизовый въезд на срок до 90 дней.' },
+      { q: 'Нужна ли виза в Испанию?', a: 'Да, Испания входит в зону Шенгена — гражданам РФ необходима шенгенская виза.' },
       { q: 'Что посмотреть в Барселоне за 3 дня?', a: 'Саграда-Фамилия, Парк Гюэль, Готический квартал (Барри-Готик) и пляж Барселонета.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Испания'
   },
   'кипр': {
     name: 'Кипр',
     nameAccusative: 'Кипр',
     preposition: 'на',
+    slug: 'cyprus',
     type: 'Country',
     description: 'Остров Афродиты: история, виноделие и чистые пляжи.',
     image: 'https://images.unsplash.com/photo-1601581875039-e899893d520c?w=600&h=400&fit=crop&auto=format',
@@ -378,16 +405,20 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     popularResorts: ['Айя-Напа', 'Лимассол', 'Пафос', 'Протарас'],
     keywords: ['туры на Кипр', 'Айя-Напа отдых', 'пляжи Кипра'],
     faq: [
-      { q: 'Нужна ли виза на Кипр?', a: 'Для граждан РФ безвизовый въезд на срок до 90 дней.' },
+      { q: 'Нужна ли виза на Кипр?', a: 'Да, для граждан РФ требуется национальная виза Кипра или шенгенская виза.' },
       { q: 'Что уникального на Кипре?', a: 'Виноделие, античные театры и голубые пещеры Айя-Напы.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Кипр'
   },
   'кантарские-острова': {
     name: 'Канарские острова',
     nameAccusative: 'Канарские острова',
     preposition: 'на',
+    slug: 'canary-islands',
     type: 'Country',
     description: 'Вечная весна в Атлантике: Тенерифе, Гран-Канария и вулканы.',
+    estimatedCost: '110 000',
+    priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&h=400&fit=crop&auto=format',
     alt: 'Канарские острова - Вулкан Тейде Тенерифе',
     capital: 'Лас-Пальмас-де-Гран-Канария',
@@ -395,21 +426,25 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     language: 'Испанский',
     bestSeason: 'Круглый год',
     flightTimeFromMoscow: '6 часов',
-    visaRequired: false,
+    visaRequired: true,
     topAttractions: ['Тейде', 'Маска-Лос-Каньонес', 'Лас-Пальмас', 'Ла-Гомера'],
     popularResorts: ['Тенерифе', 'Гран-Канария', 'Лансароте', 'Фуэртевентура'],
     keywords: ['туры на Канары', 'Тенерифе отдых', 'Канарские острова'],
     faq: [
-      { q: 'Нужна ли виза на Канарские острова?', a: 'Для граждан РФ безвизовый въезд на срок до 90 дней.' },
+      { q: 'Нужна ли виза на Канарские острова?', a: 'Да, Канарские острова являются частью Испании и входят в зону Шенгена — гражданам РФ необходима шенгенская виза.' },
       { q: 'Когда лучше ехать на Канары?', a: 'Лучшее время — март-май и сентябрь-ноябрь, когда жара минимальна.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Канарские_острова'
   },
   'сингапур': {
     name: 'Сингапур',
     nameAccusative: 'Сингапур',
     preposition: 'в',
+    slug: 'singapore',
     type: 'Country',
     description: 'Город-государство будущего: футуристические парки, шопинг и еда.',
+    estimatedCost: '125 000',
+    priceNote: 'на двоих за 5-7 ночей',
     image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&h=400&fit=crop&auto=format',
     alt: 'Сингапур - Marina Bay Sands',
     capital: 'Сингапур',
@@ -424,7 +459,8 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     faq: [
       { q: 'Нужна ли виза в Сингапур?', a: 'Для граждан РФ требуется виза, но возможен безвизовый транзит на 96 часов.' },
       { q: 'Что посмотреть в Сингапуре за 2 дня?', a: 'Marina Bay Sands, Gardens by the Bay, Сентоза и Чайнатаун.' }
-    ]
+    ],
+    wikipediaUrl: 'https://ru.wikipedia.org/wiki/Сингапур'
   },
   'другое': {
     name: 'Другое направление',

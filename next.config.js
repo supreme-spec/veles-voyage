@@ -3,8 +3,8 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  typedRoutes: true,
   experimental: {
-    typedRoutes: true,
     optimizePackageImports: ['framer-motion', 'lucide-react', 'maplibre-gl', 'react-map-gl'],
   },
   async redirects() {

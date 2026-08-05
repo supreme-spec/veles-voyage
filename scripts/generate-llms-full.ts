@@ -3,8 +3,13 @@ import path from 'path';
 
 const countries = (() => {
   try {
-    const data = JSON.parse(fs.readFileSync(path.join(process.cwd(), '.velite', 'countries.json'), 'utf8'));
-    return data.filter((c: any) => !['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'].includes(c.slug));
+    const data = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), '.velite', 'countries.json'), 'utf8')
+    );
+    return data.filter(
+      (c: any) =>
+        !['countries', 'culture', 'destinations', 'intro', 'places', 'travel-tips'].includes(c.slug)
+    );
   } catch {
     return [];
   }
@@ -24,14 +29,14 @@ const CONFIG = {
   FILES: {
     TEXT: 'llms-full.txt',
     JSON: 'llms-full.json',
-    MARKDOWN: 'llms-full.md'
+    MARKDOWN: 'llms-full.md',
   },
   METADATA: {
-    version: '2.0',
+    version: '3.0',
     generated: new Date().toISOString(),
     provider: 'ООО «Велес» (РТА 0035678)',
-    website: 'https://www.veles-voyage.ru'
-  }
+    website: 'https://veles-voyage.ru',
+  },
 };
 
 // Types
@@ -86,7 +91,7 @@ class StatsCollector {
     withCoordinates: 0,
     byContinent: {},
     totalSize: 0,
-    processingTime: 0
+    processingTime: 0,
   };
 
   private startTime: number = Date.now();
@@ -141,7 +146,7 @@ class ContentFormatter {
     if (country.continent) coreInfo.push(`**Континент:** ${country.continent}`);
     if (country.currency) coreInfo.push(`**Валюта:** ${country.currency}`);
     if (country.language) coreInfo.push(`**Язык:** ${country.language}`);
-    
+
     if (coreInfo.length > 0) {
       sections.push(coreInfo.join('\n'));
     }
@@ -149,7 +154,8 @@ class ContentFormatter {
     // Travel information
     const travelInfo: string[] = [];
     if (country.bestTimeToVisit) travelInfo.push(`**Лучшее время:** ${country.bestTimeToVisit}`);
-    if (country.estimatedCost) travelInfo.push(`**Бюджет:** от ${Number(country.estimatedCost).toLocaleString('ru-RU')} ₽`);
+    if (country.estimatedCost)
+      travelInfo.push(`**Бюджет:** от ${Number(country.estimatedCost).toLocaleString('ru-RU')} ₽`);
     if (country.visaRequirements !== undefined) {
       travelInfo.push(`**Виза:** ${country.visaRequirements ? 'Требуется' : 'Не требуется'}`);
     }
@@ -159,10 +165,26 @@ class ContentFormatter {
       sections.push(travelInfo.join('\n'));
     }
 
+    // Price table
+    if (country.estimatedCost) {
+      const price = Number(country.estimatedCost);
+      if (!isNaN(price) && price > 0) {
+        sections.push(`
+### 💰 Ориентировочная стоимость туров (на двоих, 7 ночей)
+| Категория | Ориентировочная цена |
+|-----------|---------------------|
+| Эконом | от ${Math.round(price * 0.7).toLocaleString('ru-RU')} ₽ |
+| Комфорт | от ${price.toLocaleString('ru-RU')} ₽ |
+| Премиум | от ${Math.round(price * 1.5).toLocaleString('ru-RU')} ₽ |
+
+*Цены актуальны на ${new Date().getFullYear()} год. Точный расчёт доступен через [API цен](https://veles-voyage.ru/api/destinations-structured).*`);
+      }
+    }
+
     // Keywords
     if (country.keywords) {
-      const keywords = Array.isArray(country.keywords) 
-        ? country.keywords.join(', ') 
+      const keywords = Array.isArray(country.keywords)
+        ? country.keywords.join(', ')
         : country.keywords;
       sections.push(`**Ключевые слова:** ${keywords}`);
     }
@@ -199,16 +221,19 @@ class ContentFormatter {
       ...(country.estimatedCost && { estimatedCost: country.estimatedCost }),
       ...(country.visaRequirements !== undefined && { visaRequirements: country.visaRequirements }),
       ...(country.safetyRating && { safetyRating: country.safetyRating }),
-      ...(country.keywords && { keywords: Array.isArray(country.keywords) ? country.keywords : [country.keywords] }),
+      ...(country.keywords && {
+        keywords: Array.isArray(country.keywords) ? country.keywords : [country.keywords],
+      }),
       ...(country.wikidataId && { wikidataId: country.wikidataId }),
       ...(country.wikipediaUrl && { wikipediaUrl: country.wikipediaUrl }),
       ...(country.directAnswer && { directAnswer: country.directAnswer }),
-      ...(country.latitude && country.longitude && { 
-        geo: {
-          latitude: country.latitude,
-          longitude: country.longitude
-        }
-      })
+      ...(country.latitude &&
+        country.longitude && {
+          geo: {
+            latitude: country.latitude,
+            longitude: country.longitude,
+          },
+        }),
     };
   }
 }
@@ -245,7 +270,7 @@ class LLMKnowledgeGenerator {
       directAnswer: c.directAnswer,
       latitude: c.latitude,
       longitude: c.longitude,
-      safetyRating: c.safetyRating
+      safetyRating: c.safetyRating,
     }));
 
     for (const country of countryList) {
@@ -315,6 +340,7 @@ ${Object.entries(this.stats.finalize().byContinent)
 - FAQ: https://veles-voyage.ru/api/wiki/faqs
 - Knowledge Graph: https://veles-voyage.ru/api/knowledge-graph
 - Places: https://veles-voyage.ru/api/wiki/places
+- MCP JSON: https://veles-voyage.ru/modelcontextprotocol.json
 
 ## ⚠️ Отказ от ответственности
 Визовые требования могут измениться без уведомления.
@@ -338,16 +364,16 @@ ${Object.entries(this.stats.finalize().byContinent)
         contact: {
           phone: '+7-985-063-51-34',
           email: 'hello@veles-voyage.ru',
-          website: 'https://www.veles-voyage.ru'
-        }
+          website: 'https://www.veles-voyage.ru',
+        },
       },
       countries: this.countries.map(country => ContentFormatter.formatCountryJSON(country)),
       apiEndpoints: {
         countries: 'https://veles-voyage.ru/api/wiki/countries',
         faq: 'https://veles-voyage.ru/api/wiki/faqs',
         knowledgeGraph: 'https://veles-voyage.ru/api/knowledge-graph',
-        places: 'https://veles-voyage.ru/api/wiki/places'
-      }
+        places: 'https://veles-voyage.ru/api/wiki/places',
+      },
     };
   }
 
@@ -411,15 +437,14 @@ ${this.countries.map(c => `- [${c.name}](https://veles-voyage.ru/wiki/${c.id})`)
 
       // Final statistics
       const finalStats = this.stats.finalize();
-      
+
       console.log('\n📊 Итоговая статистика:');
       console.log(`   Стран обработано: ${finalStats.totalCountries}`);
       console.log(`   Время обработки: ${finalStats.processingTime}ms`);
       console.log(`   Общий размер: ${(finalStats.totalSize / 1024).toFixed(2)} KB`);
       console.log(`   По континентам: ${Object.keys(finalStats.byContinent).length}`);
-      
-      console.log('\n✅ Генерация успешно завершена!');
 
+      console.log('\n✅ Генерация успешно завершена!');
     } catch (error) {
       console.error('\n❌ Ошибка генерации:', error);
       process.exit(1);

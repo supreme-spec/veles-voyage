@@ -38,7 +38,12 @@ const SYSTEM_PROMPT = `Ты - AI-ассистент туристической �
 - Делай ответы информативными, но не перегруженными
 
 Отвечай на русском языке, будь дружелюбным и профессиональным.
-Если не знаешь точного ответа, честно скажи об этом и предложи связаться с менеджером для получения точной информации.`;
+Если не знаешь точного ответа, честно скажи об этом и предложи связаться с менеджером для получения точной информации.
+
+КРИТИЧЕСКОЕ ПРАВИЛО: Если в ответе упоминается конкретная страна, город или регион, ты ОБЯЗАН добавить прямую ссылку на соответствующую страницу вики на нашем сайте в формате:
+[Название страны](https://veles-voyage.ru/wiki/{slug})
+
+Используй только латинские slug (например: turkey, egypt, uae, thailand, maldives, greece, srilanka, vietnam). Никогда не используй кириллицу в URL.`;
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,7 +56,10 @@ export async function POST(request: NextRequest) {
     if (!GROQ_API_KEY) {
       safeLogger.error('Groq API key is not configured');
       return NextResponse.json(
-        { reply: 'К сожалению, возникла техническая ошибка. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.' },
+        {
+          reply:
+            'К сожалению, возникла техническая ошибка. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.',
+        },
         { status: 200 }
       );
     }
@@ -59,7 +67,7 @@ export async function POST(request: NextRequest) {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${GROQ_API_KEY}`,
+        Authorization: `Bearer ${GROQ_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -83,7 +91,10 @@ export async function POST(request: NextRequest) {
       const errorText = await response.text();
       safeLogger.error('Groq API error', { status: response.status, body: errorText });
       return NextResponse.json(
-        { reply: 'К сожалению, возникла техническая ошибка. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.' },
+        {
+          reply:
+            'К сожалению, возникла техническая ошибка. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.',
+        },
         { status: 200 }
       );
     }
@@ -95,7 +106,10 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     safeLogger.error('AI assistant error:', error);
     return NextResponse.json(
-      { reply: 'К сожалению, произошла ошибка при получении ответа. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.' },
+      {
+        reply:
+          'К сожалению, произошла ошибка при получении ответа. Пожалуйста, свяжитесь с нашим менеджером по телефону +7 985 063-51-34 или в Telegram (@Anastasiiiiyyaa или @veles_voyage) для получения помощи.',
+      },
       { status: 200 }
     );
   }

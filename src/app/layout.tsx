@@ -68,7 +68,8 @@ const globalSchema = {
           url: `${siteUrl}/images/svistunov.webp`,
           width: 128,
           height: 128,
-          caption: 'Свистунов Сергей Григорьевич - Генеральный директор ООО Велес, турагентство Велес Вояж',
+          caption:
+            'Свистунов Сергей Григорьевич - Генеральный директор ООО Велес, турагентство Велес Вояж',
         },
         {
           '@type': 'ImageObject',
@@ -78,7 +79,8 @@ const globalSchema = {
           caption: 'Колесникова Анастасия Юрьевна - Директор ООО Велес, турагентство Велес Вояж',
         },
       ],
-      description: 'Туристическое агентство Велес Вояж — эксперты в организации индивидуальных туров, морских круизов и путешествий по России и миру.',
+      description:
+        'Туристическое агентство Велес Вояж — эксперты в организации индивидуальных туров, морских круизов и путешествий по России и миру.',
       foundingDate: '2023',
       priceRange: '₽₽',
       legalName: 'ООО «Велес»',
@@ -135,7 +137,7 @@ const globalSchema = {
         { '@type': 'Country', name: 'Georgia' },
         { '@type': 'Country', name: 'Turkey' },
         { '@type': 'Country', name: 'Abkhazia' },
-        { '@type': 'Country', name: 'Worldwide' }
+        { '@type': 'Country', name: 'Worldwide' },
       ],
       openingHoursSpecification: [
         {
@@ -220,45 +222,45 @@ const globalSchema = {
         },
       ],
     },
-             {
-       '@type': 'Person',
+    {
+      '@type': 'Person',
       '@id': `${siteUrl}#person/svistunov`,
-      'name': 'Свистунов Сергей Григорьевич',
-      'jobTitle': 'Генеральный директор, финансовый советник',
-      'image': `${siteUrl}/images/svistunov.webp`,
-      'sameAs': [
+      name: 'Свистунов Сергей Григорьевич',
+      jobTitle: 'Генеральный директор, финансовый советник',
+      image: `${siteUrl}/images/svistunov.webp`,
+      sameAs: [
         'https://finradun.ru',
         SOCIAL_LINKS.vk,
         SOCIAL_LINKS.telegram,
-        `${siteUrl}/about#team`
+        `${siteUrl}/about#team`,
       ],
-      'worksFor': { '@id': `${siteUrl}#organization` },
-      'knowsAbout': [
+      worksFor: { '@id': `${siteUrl}#organization` },
+      knowsAbout: [
         'Финансовое консультирование',
         'Инвестиции',
         'Международный туризм',
-        'Управление капиталом'
-      ]
+        'Управление капиталом',
+      ],
     },
     {
       '@type': 'Person',
       '@id': `${siteUrl}#person/kolesnikova`,
-      'name': 'Колесникова Анастасия Юрьевна',
-      'jobTitle': 'Директор, эксперт по туризму',
-      'image': `${siteUrl}/images/kolesnikova.webp`,
-      'sameAs': [
+      name: 'Колесникова Анастасия Юрьевна',
+      jobTitle: 'Директор, эксперт по туризму',
+      image: `${siteUrl}/images/kolesnikova.webp`,
+      sameAs: [
         'https://franglish-original.ru',
         SOCIAL_LINKS.vk,
         SOCIAL_LINKS.telegram,
-        `${siteUrl}/about#team`
+        `${siteUrl}/about#team`,
       ],
-      'worksFor': { '@id': `${siteUrl}#organization` },
-      'knowsAbout': [
+      worksFor: { '@id': `${siteUrl}#organization` },
+      knowsAbout: [
         'Международный туризм',
         'Организация туров',
         'Визовая поддержка',
-        'Круизные путешествия'
-      ]
+        'Круизные путешествия',
+      ],
     },
   ],
 };
@@ -268,7 +270,8 @@ export const metadata: Metadata = {
     default: 'Велес Вояж — туры и путешествия 2026',
     template: '%s | Велес Вояж',
   },
-  description: 'Турагентство Велес Вояж: индивидуальные туры, круизы, путеводители по 200+ странам. Поддержка 24/7, лицензия РТА 0035678. Забронируйте тур онлайн!',
+  description:
+    'Турагентство Велес Вояж: индивидуальные туры, круизы, путеводители по 200+ странам. Поддержка 24/7, лицензия РТА 0035678. Забронируйте тур онлайн!',
   // Авторство
   authors: [{ name: 'Велес Вояж' }],
   creator: 'Велес Вояж',
@@ -301,7 +304,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
     languages: {
-      'ru': siteUrl,
+      ru: siteUrl,
       'x-default': siteUrl,
     },
   },
@@ -309,7 +312,8 @@ export const metadata: Metadata = {
   // Open Graph
   openGraph: {
     title: 'Велес Вояж — Официальное турагентство',
-    description: 'Профессиональная организация путешествий по России и миру. Полностью дистанционные услуги.',
+    description:
+      'Профессиональная организация путешествий по России и миру. Полностью дистанционные услуги.',
     url: siteUrl,
     siteName: 'Велес Вояж',
     locale: 'ru_RU',
@@ -354,22 +358,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/images/logo.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/favicon.ico', sizes: 'any' },
     ],
-    apple: [
-      { url: '/images/logo.svg', type: 'image/svg+xml' }
-    ],
+    apple: [{ url: '/images/logo.svg', type: 'image/svg+xml' }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={mainFont.variable} suppressHydrationWarning>
       <head>
+        {/* ИИ-Handshakes: Сообщаем агентам о наличии программных интерфейсов */}
+        <link rel="model-context-protocol" href="/modelcontextprotocol.json" />
+        <link rel="ai-agent" type="application/json" href="/ai-agent.json" />
         {/* Все верификации теперь в metadata объекте */}
         <script
           dangerouslySetInnerHTML={{

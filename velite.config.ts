@@ -49,7 +49,14 @@ export default defineConfig({
         schengenArea: s.boolean().optional(),
         vaccinations: s.string().optional(),
         bestTimeToVisit: s.string().optional(),
-        estimatedCost: s.string().optional(),
+        estimatedCost: s
+          .string()
+          .optional()
+          .transform((val) => {
+            if (!val) return undefined;
+            const num = Number(val.replace(/[^\d]/g, ''));
+            return Number.isNaN(num) ? undefined : num;
+          }),
         seasons: s.string().optional(),
         politicalStatus: s.string().optional(),
         faqs: s.string().optional(),

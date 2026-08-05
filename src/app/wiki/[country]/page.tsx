@@ -276,7 +276,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     offers: {
       '@type': 'Offer',
       price: countryData?.frontmatter?.estimatedCost
-        ? String(countryData.frontmatter.estimatedCost).replace(/\s/g, '')
+        ? String(countryData.frontmatter.estimatedCost)
         : '70000',
       priceCurrency: 'RUB',
       availability: 'https://schema.org/InStock',
@@ -487,8 +487,8 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               : ''}
             {countryData?.frontmatter?.estimatedCost
               ? (() => {
-                  const price = Number(String(countryData.frontmatter.estimatedCost).replace(/[^\d]/g, ''));
-                  return isNaN(price) || price === 0
+                  const price = countryData.frontmatter.estimatedCost;
+                  return !price
                     ? 'Средний чек: по запросу. '
                     : `Средний чек: от ${price.toLocaleString('ru-RU')} ₽. `;
                 })()
@@ -559,8 +559,8 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                     </th>
                     <td className="text-gray-900 dark:text-white py-2">
                       {(() => {
-                        const price = Number(String(countryData.frontmatter.estimatedCost).replace(/[^\d]/g, ''));
-                        return isNaN(price) || price === 0
+                        const price = countryData.frontmatter.estimatedCost;
+                        return !price
                           ? 'По запросу'
                           : `от ${price.toLocaleString('ru-RU')} ₽`;
                       })()}

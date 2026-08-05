@@ -203,7 +203,7 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
     
     const visaInfo = destData?.visaRequired !== false ? 'виза требуется' : 'безвизовый въезд';
     const bestSeason = destData?.bestSeason || frontmatter?.bestSeason || 'круглый год';
-    const priceRange = destData?.estimatedCost || frontmatter?.estimatedCost || '50 000';
+    const priceRange = destData?.estimatedCost || frontmatter?.estimatedCost || 50000;
     
     return `${country} ${year}: ${visaInfo}, цены от ${priceRange}₽, лучший сезон: ${bestSeason}. Полный путеводитель, советы и рекомендации. Подбор туров от Велес Вояж.`;
   };
@@ -430,7 +430,7 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
     "estimatedCost": {
       "@type": "MonetaryAmount",
       "currency": "RUB",
-      "value": mdxData?.frontmatter.estimatedCost || "100000"
+      "value": mdxData?.frontmatter.estimatedCost || 100000
     },
     "step": [
       {

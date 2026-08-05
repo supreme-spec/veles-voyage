@@ -60,7 +60,7 @@ export async function GET(request: Request) {
         destination: countryData.title,
         available: true,
         availability_dates: generateAvailabilityDates(),
-        estimated_cost: countryData.estimatedCost || 'по запросу',
+        estimated_cost: countryData.estimatedCost ?? 'по запросу',
         currency: countryData.currency || 'RUB',
         booking_requirements: {
           visa_required: countryData.visaRequirements || false,
@@ -97,7 +97,7 @@ export async function GET(request: Request) {
     if (countryData) {
       const pricing = {
         destination: countryData.title,
-        base_price: countryData.estimatedCost || 'по запросу',
+        base_price: countryData.estimatedCost ?? 'по запросу',
         currency: countryData.currency || 'RUB',
         price_ranges: {
           budget: estimatePrice(countryData, 'budget'),
@@ -217,8 +217,8 @@ function generateAvailabilityDates(): string[] {
 }
 
 function estimatePrice(countryData: any, tier: 'budget' | 'standard' | 'luxury'): string {
-  const baseCost = countryData.estimatedCost || '50000';
-  const baseNum = parseInt(baseCost.replace(/\D/g, '')) || 50000;
+  const baseCost = countryData.estimatedCost || 50000;
+  const baseNum = typeof baseCost === 'number' ? baseCost : parseInt(String(baseCost).replace(/\D/g, '')) || 50000;
   
   const multipliers = {
     budget: 0.7,

@@ -462,8 +462,8 @@ export default async function Home() {
                       </p>
                       {dest.estimatedCost &&
                         (() => {
-                          const price = Number(String(dest.estimatedCost).replace(/[^\d]/g, ''));
-                          if (isNaN(price) || price === 0)
+                          const price = dest.estimatedCost;
+                          if (!price)
                             return (
                               <span className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">
                                 Цена по запросу

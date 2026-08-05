@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: VoiceCountryPageProps): Promi
 function generateVoiceContent(country: any) {
   const name = country.title || country.slug;
   const visaRequired = country.visaRequirements ? 'Требуется' : 'Не требуется';
-  const cost = country.estimatedCost || 'по запросу';
+  const cost = country.estimatedCost ? `${country.estimatedCost.toLocaleString('ru-RU')} ₽` : 'по запросу';
   const bestTime = country.bestTimeToVisit || 'круглый год';
   const capital = country.capital || 'Столица не указана';
   const currency = country.currency || 'местная валюта';

@@ -50,7 +50,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
         : 'Не требуется'
       : 'Уточняйте в консульстве';
   const price = fm.estimatedCost
-    ? `${Number(fm.estimatedCost).toLocaleString('ru-RU')} ₽`
+    ? `${fm.estimatedCost.toLocaleString('ru-RU')} ₽`
     : 'по запросу';
   const updateDate = '30.07.2026';
 
@@ -62,7 +62,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
     touristType: 'Пляжный отдых',
     offers: {
       '@type': 'Offer',
-      price: fm.estimatedCost ? String(fm.estimatedCost).replace(/\s/g, '') : '70000',
+      price: fm.estimatedCost ? String(fm.estimatedCost) : '70000',
       priceCurrency: 'RUB',
       availability: 'https://schema.org/InStock',
       url: `${SITE_URL}/tours/${country}`,
@@ -162,14 +162,14 @@ const TourCountryPage = async ({ params }: PageProps) => {
             <li className="flex items-start gap-3">
               <span className="text-blue-600 dark:text-blue-400 font-bold">🔹</span>
               <span>
-                <strong>Комфорт:</strong> от {Number(fm.estimatedCost || 90000) + 20000} ₽ за 7
+                <strong>Комфорт:</strong> от {(fm.estimatedCost || 90000) + 20000} ₽ за 7
                 ночей.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-purple-600 dark:text-purple-400 font-bold">🔹</span>
               <span>
-                <strong>Премиум:</strong> от {Number(fm.estimatedCost || 90000) + 60000} ₽ за 7
+                <strong>Премиум:</strong> от {(fm.estimatedCost || 90000) + 60000} ₽ за 7
                 ночей.
               </span>
             </li>

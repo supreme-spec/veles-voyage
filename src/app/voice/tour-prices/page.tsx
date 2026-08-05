@@ -39,9 +39,9 @@ export default function TourPricesPage() {
     .filter(([_, data]) => data.estimatedCost)
     .map(([_, data]) => ({
       ...data,
-      price: data.estimatedCost || '100 000'
+      price: data.estimatedCost
     }))
-    .sort((a, b) => parseInt(a.price.replace(/\D/g, '')) - parseInt(b.price.replace(/\D/g, '')));
+    .sort((a, b) => a.price - b.price);
 
   const speakableSchema = {
     '@context': 'https://schema.org',

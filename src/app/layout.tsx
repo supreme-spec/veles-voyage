@@ -12,6 +12,7 @@ import { PWABackButton } from '@/components/PWABackButton';
 import { PWANetworkStatus } from '@/components/PWANetworkStatus';
 import { WebVitals } from '@/components/analytics/WebVitals';
 import { AiSearchAssistant } from '@/shared/components/ui/AiSearchAssistant';
+import { ChunkLoadErrorBoundary } from '@/components/ChunkLoadErrorBoundary';
 import { SITE_URL } from '@/shared/constants/seo';
 import { SOCIAL_LINKS } from '@/shared/constants/seo';
 
@@ -374,18 +375,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <AuthProvider>
           <ClientProviders>
-            <div className="relative min-h-screen flex flex-col">
-              <Navbar />
-              <main className="flex-grow pt-14 sm:pt-16 md:pt-20 pb-16 md:pb-0 px-2 sm:px-3 md:px-4">
-                {children}
-              </main>
-              <Footer />
-              <StickyMobileBar />
-              <TabletContactBar />
-              <PWABackButton />
-              <PWANetworkStatus />
-              <AiSearchAssistant />
-            </div>
+            <ChunkLoadErrorBoundary>
+              <div className="relative min-h-screen flex flex-col">
+                <Navbar />
+                <main className="flex-grow pt-14 sm:pt-16 md:pt-20 pb-16 md:pb-0 px-2 sm:px-3 md:px-4">
+                  {children}
+                </main>
+                <Footer />
+                <StickyMobileBar />
+                <TabletContactBar />
+                <PWABackButton />
+                <PWANetworkStatus />
+                <AiSearchAssistant />
+              </div>
+            </ChunkLoadErrorBoundary>
           </ClientProviders>
         </AuthProvider>
 

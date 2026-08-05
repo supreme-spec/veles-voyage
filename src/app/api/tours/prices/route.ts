@@ -60,9 +60,7 @@ export async function GET(request: Request) {
 
   // If specific country requested
   if (country && countryData) {
-    const basePrice = basePrices[country] || (countryData.estimatedCost 
-      ? parseInt(countryData.estimatedCost.replace(/\D/g, '')) || 80000 
-      : 80000);
+    const basePrice = basePrices[country] || (countryData.estimatedCost || 80000);
 
     const multiplier = season && seasonMultipliers[season] 
       ? seasonMultipliers[season] 

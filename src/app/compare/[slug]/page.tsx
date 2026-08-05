@@ -77,7 +77,7 @@ const ComparePage = async ({ params }: { params: Promise<{ slug: string }> }) =>
     { label: 'Валюта', a: fmA.currency || '—', b: fmB.currency || '—' },
     { label: 'Язык', a: fmA.language || '—', b: fmB.language || '—' },
     { label: 'Лучший сезон', a: fmA.bestTimeToVisit || '—', b: fmB.bestTimeToVisit || '—' },
-    { label: 'Средний чек', a: fmA.estimatedCost ? `${Number(fmA.estimatedCost).toLocaleString('ru-RU')} ₽` : 'по запросу', b: fmB.estimatedCost ? `${Number(fmB.estimatedCost).toLocaleString('ru-RU')} ₽` : 'по запросу' },
+    { label: 'Средний чек', a: fmA.estimatedCost ? `${fmA.estimatedCost.toLocaleString('ru-RU')} ₽` : 'по запросу', b: fmB.estimatedCost ? `${fmB.estimatedCost.toLocaleString('ru-RU')} ₽` : 'по запросу' },
   ];
 
   const schemas = [

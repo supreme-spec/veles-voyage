@@ -10,7 +10,6 @@ import { StickyMobileBar } from '@/components/StickyMobileBar';
 import { TabletContactBar } from '@/components/TabletContactBar';
 import { PWABackButton } from '@/components/PWABackButton';
 import { PWANetworkStatus } from '@/components/PWANetworkStatus';
-import { PWAUpdateNotification } from '@/components/PWAUpdateNotification';
 import { WebVitals } from '@/components/analytics/WebVitals';
 import { AiSearchAssistant } from '@/shared/components/ui/AiSearchAssistant';
 import { SITE_URL } from '@/shared/constants/seo';
@@ -371,35 +370,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ИИ-Handshakes: Сообщаем агентам о наличии программных интерфейсов */}
         <link rel="model-context-protocol" href="/modelcontextprotocol.json" />
         <link rel="ai-agent" type="application/json" href="/ai-agent.json" />
-        {/* Все верификации теперь в metadata объекте */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var reloaded = false;
-                window.addEventListener('error', function(e) {
-                  if (reloaded) return;
-                  var target = e.target || {};
-                  if ((e.message && e.message.includes('ChunkLoadError')) || (target.tagName && target.tagName.toLowerCase() === 'script' && target.src && target.src.indexOf('/_next/static/') !== -1)) {
-                    reloaded = true;
-                    console.warn('ChunkLoadError detected, reloading page...');
-                    setTimeout(function() { window.location.reload(); }, 100);
-                  }
-                });
-                window.addEventListener('unhandledrejection', function(e) {
-                  if (reloaded) return;
-                  var reason = e && e.reason;
-                  var msg = (reason && (reason.message || String(reason))) || '';
-                  if (msg.indexOf('ChunkLoadError') !== -1 || msg.indexOf('Loading chunk') !== -1) {
-                    reloaded = true;
-                    console.warn('ChunkLoadError detected in promise, reloading page...');
-                    setTimeout(function() { window.location.reload(); }, 100);
-                  }
-                });
-              })();
-            `,
-          }}
-        />
       </head>
       <body className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <AuthProvider>
@@ -414,7 +384,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <TabletContactBar />
               <PWABackButton />
               <PWANetworkStatus />
-              <PWAUpdateNotification />
               <AiSearchAssistant />
             </div>
           </ClientProviders>

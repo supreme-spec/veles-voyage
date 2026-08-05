@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { OptimizedImage } from './OptimizedImage';
 
@@ -25,21 +25,23 @@ interface CountryCardsProps {
 }
 
 export function CountryCards({ 
-  countries, 
-  title = "Популярные направления",
-  showPopularFirst = true,
-  gridCols = 3,
-  className = ""
-}: CountryCardsProps) {
-  const sortedCountries = showPopularFirst 
-    ? [...countries].sort((a, b) => (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0))
-    : countries;
+   countries, 
+   title = "Популярные направления",
+   showPopularFirst = true,
+   gridCols = 3,
+   className = ""
+ }: CountryCardsProps) {
+   const sortedCountries = showPopularFirst 
+     ? [...countries].sort((a, b) => (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0))
+     : countries;
+ 
+   const gridClass = {
+     2: "grid-cols-1 sm:grid-cols-2",
+     3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3", 
+     4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    }[gridCols];
 
-  const gridClass = {
-    2: "grid-cols-1 sm:grid-cols-2",
-    3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3", 
-    4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-  }[gridCols];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className={`py-8 ${className}`}>
@@ -54,17 +56,25 @@ export function CountryCards({
         {sortedCountries.map((country, index) => (
           <motion.div
             key={country.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.5, 
-              delay: index * 0.1,
-              ease: "easeOut" 
-            }}
-            whileHover={{ 
-              y: -8,
-              transition: { duration: 0.2 }
-            }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : {
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: 'easeOut',
+                  }
+            }
+            whileHover={
+              shouldReduceMotion
+                ? {}
+                : {
+                    y: -8,
+                    transition: { duration: 0.2 },
+                  }
+            }
             className="group relative"
           >
             <Link href={`/wiki/${country.id}`}>

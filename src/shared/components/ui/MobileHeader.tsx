@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 interface MobileHeaderProps {
   title?: string;
@@ -11,14 +11,15 @@ interface MobileHeaderProps {
 }
 
 export function MobileHeader({ 
-  title = 'Велес Вояж', 
-  showSearch = true, 
-  onSearchChange 
-}: MobileHeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const searchInputRef = useRef<HTMLInputElement>(null);
+   title = 'Велес Вояж', 
+   showSearch = true, 
+   onSearchChange 
+ }: MobileHeaderProps) {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [isSearchOpen, setIsSearchOpen] = useState(false);
+   const [searchQuery, setSearchQuery] = useState('');
+    const searchInputRef = useRef<HTMLInputElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -86,10 +87,10 @@ export function MobileHeader({
                 <AnimatePresence>
                   {isSearchOpen && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                      transition={{ duration: 0.2 }}
+                      initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95, y: -10 }}
+                      animate={shouldReduceMotion ? { opacity: 1, scale: 1, y: 0 } : { opacity: 1, scale: 1, y: 0 }}
+                      exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95, y: -10 }}
+                      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }}
                       className="absolute right-0 top-full mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 p-3"
                     >
                       <form onSubmit={handleSearchSubmit}>
@@ -124,15 +125,26 @@ export function MobileHeader({
             >
               <div className="w-6 h-6 flex flex-col justify-center space-y-1">
                 <motion.div
-                  animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }}
+                  animate={
+                    shouldReduceMotion
+                      ? { rotate: 0, y: 0 }
+                      : { rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }
+                  }
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
                   className="w-full h-0.5 bg-current"
                 />
                 <motion.div
                   animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
                   className="w-full h-0.5 bg-current"
                 />
                 <motion.div
-                  animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }}
+                  animate={
+                    shouldReduceMotion
+                      ? { rotate: 0, y: 0 }
+                      : { rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }
+                  }
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
                   className="w-full h-0.5 bg-current"
                 />
               </div>
@@ -145,10 +157,10 @@ export function MobileHeader({
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, height: 0 }}
+            animate={shouldReduceMotion ? { opacity: 1, height: 'auto' } : { opacity: 1, height: 'auto' }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
             className="md:hidden bg-white border-t border-gray-200"
           >
             <div className="px-4 py-3 space-y-3">

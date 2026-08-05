@@ -1,3 +1,7 @@
+// Хуки
+export { useScroll } from './hooks/useScroll';
+export { useReducedMotion } from './hooks/useReducedMotion';
+
 // Хуки производительности
 export { useDebounce, useThrottle } from './hooks/usePerformance';
 

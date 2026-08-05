@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 
 // Lazy load icons to reduce bundle size
@@ -31,6 +31,8 @@ export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setMounted(true);
@@ -216,7 +218,11 @@ export function Navbar() {
                         className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-white to-red-600"
                         layoutId="navbar-active-indicator"
                         initial={false}
-                        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                        transition={
+                          shouldReduceMotion
+                            ? { duration: 0 }
+                            : { type: 'spring', stiffness: 500, damping: 30 }
+                        }
                       />
                     )}
                   </Link>

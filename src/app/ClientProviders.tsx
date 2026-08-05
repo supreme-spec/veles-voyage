@@ -2,9 +2,6 @@
 import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
 
-const ServiceWorkerRegistration = dynamic(() => import('@/components/ServiceWorkerRegistration'), {
-  ssr: false,
-});
 const TelegramChatWidget = dynamic(
   () => import('@/components/TelegramChatWidget').then(mod => mod.TelegramChatWidget),
   { ssr: false }
@@ -13,14 +10,11 @@ const CookieConsentBanner = dynamic(
   () => import('@/shared/components/ui/CookieConsentBanner').then(mod => mod.CookieConsentBanner),
   { ssr: false }
 );
-const ChunkLoadRecovery = dynamic(() => import('@/components/ChunkLoadRecovery'), { ssr: false });
 
 function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       {children}
-      <ChunkLoadRecovery />
-      <ServiceWorkerRegistration />
       <TelegramChatWidget />
       <CookieConsentBanner />
     </ThemeProvider>

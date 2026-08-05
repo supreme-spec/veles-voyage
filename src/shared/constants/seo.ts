@@ -11,7 +11,8 @@ export const SEO_DESCRIPTION_MIN_LENGTH = 150;
 export const SEO_TITLE_MAX_LENGTH = 60;
 
 // Базовые URL
-export const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://veles-voyage.ru';
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://veles-voyage.ru';
 export const LOGO_URL = `${SITE_URL}/images/logo.png`;
 
 // Организация
@@ -56,7 +57,7 @@ export const VERIFICATIONS = {
 
 // Локализация
 export const DEFAULT_LOCALE = 'ru_RU';
-export const SUPPORTED_LOCALES = ['ru', 'en', 'zh', 'de'] as const;
+export const SUPPORTED_LOCALES = ['ru'] as const;
 
 // Ценовой диапазон
 export const PRICE_RANGE = '₽₽';
@@ -75,12 +76,7 @@ export const EXPERT_AUTHOR = {
   name: 'Сергей Свистунов',
   role: 'Главный редактор, эксперт по международному туризму',
   url: `${SITE_URL}/team/sergey-svistunov`,
-  sameAs: [
-    'https://finradun.ru',
-    SOCIAL_LINKS.vk,
-    SOCIAL_LINKS.telegram,
-    SOCIAL_LINKS.instagram
-  ]
+  sameAs: ['https://finradun.ru', SOCIAL_LINKS.vk, SOCIAL_LINKS.telegram, SOCIAL_LINKS.instagram],
 } as const;
 
 // Типы для повторного использования
@@ -117,4 +113,3 @@ export const DEFAULT_RATING = {
   bestRating: '5',
   worstRating: '1',
 } as const;
-

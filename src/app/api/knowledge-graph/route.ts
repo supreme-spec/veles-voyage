@@ -13,10 +13,11 @@ export async function GET(request: Request) {
   try {
     // Get all countries data
     const countries = Object.entries(WORLD_DESTINATIONS_DATA);
-    
+
     // Transform to CountryEntity format
     const countryEntities = countries.map(([id, data]) => ({
       id,
+      slug: data.slug || id,
       name: data.name,
       capital: data.capital,
       continent: data.continent,
@@ -29,17 +30,14 @@ export async function GET(request: Request) {
       wikidataId: data.wikidataId,
       wikipediaUrl: data.wikipediaUrl,
       latitude: data.latitude,
-      longitude: data.longitude
+      longitude: data.longitude,
     }));
 
     // If specific country requested
     if (country) {
       const countryEntity = countryEntities.find(c => c.id === country);
       if (!countryEntity) {
-        return NextResponse.json(
-          { error: 'Country not found' },
-          { status: 404 }
-        );
+        return NextResponse.json({ error: 'Country not found' }, { status: 404 });
       }
 
       // Return single country entity graph
@@ -49,7 +47,7 @@ export async function GET(request: Request) {
       return NextResponse.json({
         type: 'CountryEntityGraph',
         country: country,
-        graph: entityGraph
+        graph: entityGraph,
       });
     }
 
@@ -62,14 +60,10 @@ export async function GET(request: Request) {
       version: '1.0',
       generated: new Date().toISOString(),
       totalCountries: countryEntities.length,
-      graph: knowledgeGraph
+      graph: knowledgeGraph,
     });
-
   } catch (error) {
     console.error('Error generating knowledge graph:', error);
-    return NextResponse.json(
-      { error: 'Failed to generate knowledge graph' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to generate knowledge graph' }, { status: 500 });
   }
 }

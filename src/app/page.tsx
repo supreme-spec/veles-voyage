@@ -11,6 +11,30 @@ import { WeeklyHeroBackground } from '@/shared/components/ui/WeeklyHeroBackgroun
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
 import { DestinationImage } from '@/components/DestinationImage';
+
+const HOME_FAQ = [
+  {
+    question: 'Как забронировать тур в Велес Вояж?',
+    answer:
+      'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
+  },
+  {
+    question: 'Работаете ли вы с турами по России?',
+    answer:
+      'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
+  },
+  {
+    question: 'Нужна ли виза в Египет в 2026 году?',
+    answer:
+      'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.',
+  },
+  {
+    question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
+    answer:
+      'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.',
+  },
+];
+
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Туры и круизы 2026 — Велес Вояж | Подбор путешествий',
   description:
@@ -25,18 +49,7 @@ export const metadata: Metadata = generateSEOMetadata({
     'турагентство Велес Вояж',
     'РТА 0035678',
   ],
-  faqs: [
-    {
-      question: 'Как забронировать тур в Велес Вояж?',
-      answer:
-        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
-    },
-    {
-      question: 'Работаете ли вы с турами по России?',
-      answer:
-        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
-    },
-  ],
+  faqs: HOME_FAQ.slice(0, 2),
 });
 
 const POPULAR_DESTINATION_SLUGS = [
@@ -65,52 +78,10 @@ export default async function Home() {
       'турагентство Велес Вояж',
       'РТА 0035678',
     ],
-    faqs: [
-      {
-        question: 'Как забронировать тур в Велес Вояж?',
-        answer:
-          'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
-      },
-      {
-        question: 'Работаете ли вы с турами по России?',
-        answer:
-          'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
-      },
-      {
-        question: 'Нужна ли виза в Египет в 2026 году?',
-        answer:
-          'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.',
-      },
-      {
-        question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
-        answer:
-          'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.',
-      },
-    ],
+    faqs: HOME_FAQ,
   });
 
-  const faqData = [
-    {
-      question: 'Как забронировать тур в Велес Вояж?',
-      answer:
-        'Забронируйте тур онлайн на сайте или позвоните +7 985 063-51-34. Менеджер подберет маршрут и свяжется с вами в течение 15 минут.',
-    },
-    {
-      question: 'Работаете ли вы с турами по России?',
-      answer:
-        'Да, мы организуем индивидуальные путешествия по всем регионам России, а также международные туры и морские круизы с полной поддержкой 24/7.',
-    },
-    {
-      question: 'Нужна ли виза в Египет в 2026 году?',
-      answer:
-        'Для граждан России виза в Египет оформляется по прибытии в аэропорт (стоимость около 25 USD) либо заранее через электронную визу. Загранпаспорт должен быть действителен минимум 6 месяцев.',
-    },
-    {
-      question: 'Сколько стоит тур в Турцию «всё включено» из Москвы?',
-      answer:
-        'Тур в Турцию «всё включено» из Москвы на двоих обычно стоит от 90 000 до 160 000 рублей за 7 ночей в зависимости от отеля и сезона. Точную цену подберёт менеджер Велес Вояж.',
-    },
-  ];
+  const faqData = HOME_FAQ;
 
   return (
     <>
@@ -127,7 +98,8 @@ export default async function Home() {
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 lg:mb-12 font-medium leading-relaxed drop-shadow-lg">
                 <span className="bg-gradient-to-r from-white/95 via-blue-50/90 to-indigo-100/90 bg-clip-text text-transparent">
-                  Подберём тур под ваши пожелания, даты и бюджет — и будем на связи до, во время и после поездки
+                  Подберём тур под ваши пожелания, даты и бюджет — и будем на связи до, во время и
+                  после поездки
                 </span>
               </p>
 
@@ -187,21 +159,26 @@ export default async function Home() {
                       <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                         <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-green-50/80 to-emerald-50/80 dark:from-green-900/20 dark:to-emerald-900/20 hover:from-green-100 dark:hover:from-green-900/30 transition-all duration-300 border border-green-100/50 dark:border-green-800/30">
                           <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">
+                              ✓
+                            </span>
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Внимание к вашим пожеланиям
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
-                              Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без навязывания
+                              Сначала выясняем, каким вы видите отдых, и только потом предлагаем
+                              варианты — без навязывания
                             </p>
                           </div>
                         </div>
 
                         <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-900/20 dark:to-indigo-900/20 hover:from-blue-100 dark:hover:from-blue-900/30 transition-all duration-300 border border-blue-100/50 dark:border-blue-800/30">
                           <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">
+                              ✓
+                            </span>
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
@@ -215,28 +192,34 @@ export default async function Home() {
 
                         <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-purple-50/80 to-pink-50/80 dark:from-purple-900/20 dark:to-pink-900/20 hover:from-purple-100 dark:hover:from-purple-900/30 transition-all duration-300 border border-purple-100/50 dark:border-purple-800/30">
                           <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">
+                              ✓
+                            </span>
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Прозрачные условия
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
-                              До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
+                              До бронирования вы знаете полную стоимость, условия и детали — чтобы
+                              на месте не было сюрпризов
                             </p>
                           </div>
                         </div>
 
                         <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-md bg-gradient-to-r from-orange-50/80 to-amber-50/80 dark:from-orange-900/20 dark:to-amber-900/20 hover:from-orange-100 dark:hover:from-orange-900/30 transition-all duration-300 border border-orange-100/50 dark:border-orange-800/30">
                           <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-orange-500 to-amber-600 rounded-md flex items-center justify-center mt-0.5 shadow-sm">
-                            <span className="text-white text-[9px] sm:text-[10px] font-bold">✓</span>
+                            <span className="text-white text-[9px] sm:text-[10px] font-bold">
+                              ✓
+                            </span>
                           </div>
                           <div className="text-left">
                             <p className="text-gray-900 dark:text-gray-100 font-semibold text-xs sm:text-sm mb-0.5 text-left">
                               Помогаем сделать правильный выбор
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight text-left">
-                              Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
+                              Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и
+                              показываем то, что подходит именно вам
                             </p>
                           </div>
                         </div>
@@ -279,12 +262,15 @@ export default async function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               <div className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern"></div>
-                <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10">🏆</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float relative z-10">
+                  🏆
+                </div>
                 <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2 relative z-10">
                   Поддержка на каждом этапе
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
-                  Помогаем с подготовкой поездки и остаёмся на связи во время путешествия — вы не остаётесь один на один с вопросами
+                  Помогаем с подготовкой поездки и остаёмся на связи во время путешествия — вы не
+                  остаётесь один на один с вопросами
                 </p>
               </div>
 
@@ -300,7 +286,8 @@ export default async function Home() {
                   Внимание к вашим пожеланиям
                 </h3>
                 <p className="text-sm sm:text-base md:text-gray-600 dark:text-gray-300 relative z-10">
-                  Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без навязывания
+                  Сначала выясняем, каким вы видите отдых, и только потом предлагаем варианты — без
+                  навязывания
                 </p>
               </div>
 
@@ -316,7 +303,8 @@ export default async function Home() {
                   Прозрачные условия
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
-                  До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не было сюрпризов
+                  До бронирования вы знаете полную стоимость, условия и детали — чтобы на месте не
+                  было сюрпризов
                 </p>
               </div>
 
@@ -332,7 +320,8 @@ export default async function Home() {
                   Помогаем сделать правильный выбор
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 relative z-10">
-                  Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем то, что подходит именно вам
+                  Вам не нужно сравнивать сотни вариантов самим — мы отсеиваем лишнее и показываем
+                  то, что подходит именно вам
                 </p>
               </div>
             </div>
@@ -340,7 +329,10 @@ export default async function Home() {
         </section>
 
         {/* Featured Services */}
-        <section aria-label="Наши услуги" className="py-10 sm:py-12 lg:py-16 bg-white dark:bg-gray-900">
+        <section
+          aria-label="Наши услуги"
+          className="py-10 sm:py-12 lg:py-16 bg-white dark:bg-gray-900"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
@@ -360,7 +352,9 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative z-10">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Туры</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">
+                    Туры
+                  </h3>
                   <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                     Маршруты под ваши интересы и бюджет
                   </p>
@@ -466,18 +460,24 @@ export default async function Home() {
                       <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 flex-grow">
                         {dest.description}
                       </p>
-                      {dest.estimatedCost && (() => {
-                        const price = Number(String(dest.estimatedCost).replace(/[^\d]/g, ''));
-                        if (isNaN(price) || price === 0) return <span className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">Цена по запросу</span>;
-                        return (
-                          <p className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">
-                            от {price.toLocaleString('ru-RU')} ₽{' '}
-                            <span className="text-xs sm:text-sm md:text-sm font-medium text-gray-500 dark:text-gray-400">
-                              {dest.priceNote}
-                            </span>
-                          </p>
-                        );
-                      })()}
+                      {dest.estimatedCost &&
+                        (() => {
+                          const price = Number(String(dest.estimatedCost).replace(/[^\d]/g, ''));
+                          if (isNaN(price) || price === 0)
+                            return (
+                              <span className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">
+                                Цена по запросу
+                              </span>
+                            );
+                          return (
+                            <p className="text-sm sm:text-base md:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 sm:mb-3 md:mb-4">
+                              от {price.toLocaleString('ru-RU')} ₽{' '}
+                              <span className="text-xs sm:text-sm md:text-sm font-medium text-gray-500 dark:text-gray-400">
+                                {dest.priceNote}
+                              </span>
+                            </p>
+                          );
+                        })()}
                       <Link
                         href={`/wiki/${dest.slug}`}
                         className="inline-block bg-indigo-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 md:py-2 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-bounce text-xs sm:text-sm mt-auto shadow-modern relative z-10 active:scale-95"

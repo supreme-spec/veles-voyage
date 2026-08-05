@@ -1,10 +1,10 @@
-// @ts-nocheck
+// @ts-check
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  typedRoutes: true,
   experimental: {
+    typedRoutes: true,
     optimizePackageImports: ['framer-motion', 'lucide-react', 'maplibre-gl', 'react-map-gl'],
   },
   async redirects() {
@@ -66,10 +66,6 @@ const nextConfig = {
       },
     ];
   },
-  onDemandEntries: {
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
-  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.output.crossOriginLoading = 'anonymous';
@@ -100,30 +96,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'platform-lookaside.fbsbx.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'scontent.xx.fbcdn.net',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
         port: '',
         pathname: '/**',
       },
@@ -192,12 +164,13 @@ const nextConfig = {
         hostname: '*.aviakassa.com',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; child-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;",
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; child-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';",
   },
   async headers() {
     return [
@@ -205,7 +178,10 @@ const nextConfig = {
         source: '/:path*',
         headers: [
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
-          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
@@ -218,32 +194,32 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "img-src 'self' data: blob: https: " +
-                "https://*.maps.yandex.net https://vec01.maps.yandex.net https://core-nmaps.maps.yandex.net " +
-                "https://yastatic.net " +
-                "https://*.ostrovok.ru https://img.ostrovok.ru https://cdn.ostrovok.ru " +
-                "https://*.travelpayouts.com https://photo.hotellook.com https://cdn.travelpayouts.com " +
-                "https://*.level.travel https://*.travelata.ru https://*.bronevik.com " +
-                "https://q-cf.bstatic.com https://r-cf.bstatic.com " +
-                "https://*.aviakassa.com",
+                'https://*.maps.yandex.net https://vec01.maps.yandex.net https://core-nmaps.maps.yandex.net ' +
+                'https://yastatic.net ' +
+                'https://*.ostrovok.ru https://img.ostrovok.ru https://cdn.ostrovok.ru ' +
+                'https://*.travelpayouts.com https://photo.hotellook.com https://cdn.travelpayouts.com ' +
+                'https://*.level.travel https://*.travelata.ru https://*.bronevik.com ' +
+                'https://q-cf.bstatic.com https://r-cf.bstatic.com ' +
+                'https://*.aviakassa.com',
               "media-src 'self' https:",
               "font-src 'self' https: data:",
               "style-src 'self' 'unsafe-inline' https: " +
-                "https://bitrix.infoflot.com https://widgets.aviakassa.com",
+                'https://bitrix.infoflot.com https://widgets.aviakassa.com',
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https: " +
-                "https://api-maps.yandex.ru https://yastatic.net " +
-                "https://widgets.aviakassa.com https://api4.aviakassa.com",
+                'https://api-maps.yandex.ru https://yastatic.net ' +
+                'https://widgets.aviakassa.com https://api4.aviakassa.com',
               "connect-src 'self' wss: https: " +
-                "https://bitrix.infoflot.com https://widgets.aviakassa.com https://api4.aviakassa.com " +
-                "https://images.unsplash.com https://tiles.openfreemap.org https://demotiles.maplibre.org " +
-                "https://api-maps.yandex.ru https://geocode-maps.yandex.ru https://*.maps.yandex.net " +
-                "https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.bronevik.com",
+                'https://bitrix.infoflot.com https://widgets.aviakassa.com https://api4.aviakassa.com ' +
+                'https://images.unsplash.com https://tiles.openfreemap.org https://demotiles.maplibre.org ' +
+                'https://api-maps.yandex.ru https://geocode-maps.yandex.ru https://*.maps.yandex.net ' +
+                'https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.bronevik.com',
               "frame-src 'self' https: " +
-                "https://bitrix.infoflot.com https://widgets.aviakassa.com https://yandex.ru " +
-                "https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.travelata.ru",
+                'https://bitrix.infoflot.com https://widgets.aviakassa.com https://yandex.ru ' +
+                'https://*.ostrovok.ru https://*.travelpayouts.com https://*.level.travel https://*.travelata.ru',
               "frame-ancestors 'self' https://widgets.aviakassa.com",
               "worker-src 'self' blob:",
-              "upgrade-insecure-requests"
-            ].join('; ')
+              'upgrade-insecure-requests',
+            ].join('; '),
           },
         ],
       },
@@ -253,7 +229,7 @@ const nextConfig = {
 
 class VeliteWebpackPlugin {
   static started = false;
-  apply(compiler) {
+  apply(/** @type {any} */ compiler) {
     compiler.hooks.beforeCompile.tapPromise('VeliteWebpackPlugin', async () => {
       if (VeliteWebpackPlugin.started) return;
       VeliteWebpackPlugin.started = true;

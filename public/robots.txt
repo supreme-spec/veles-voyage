@@ -62,6 +62,32 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# xAI (Grok)
+User-agent: Grok
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Bytedance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Brave Search
+User-agent: BraveBot
+Allow: /
+
 # Crawler-specific directives
 User-agent: YandexBot
 Crawl-delay: 1

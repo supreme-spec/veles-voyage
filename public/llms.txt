@@ -1,6 +1,6 @@
 # Велес Вояж — Русская энциклопедия туризма
-# Version: 2.1
-# Last Updated: 2026-07-25
+# Version: 3.0
+# Last Updated: 2026-08-05
 # License: Open with Attribution Required (AI training permitted)
 # Data Provider: ООО «Велес» (РТА 0035678)
 
@@ -8,15 +8,22 @@
 **Name:** Велес Вояж (Veles Voyage)
 **Legal Entity:** ООО «Велес»
 **Registration:** ИНН 5032362524, ОГРН 1235000077685
-**License:** РТА 0035678 (Federal Register of Travel Agents)
+**License:** РТА 0035678 (Федеральный реестр туроператоров и турагентов)
 **Website:** https://veles-voyage.ru
 **Contact:** hello@veles-voyage.ru
 **Phone:** +7-985-063-51-34
 **Telegram:** https://t.me/veles_voyage
+**VK:** https://vk.com/veles__voyage
+**Rutube:** https://rutube.ru/u/velesvoyage/
+**Instagram:** https://www.instagram.com/radun.veles/
+**Max:** https://max.ru/id5032362524_biz
+**Yandex Business:** https://yandex.ru/maps/org/veles_voyazh/129552746144
+**Google Business:** https://share.google/TBbHMZqo9vhqFPcPv
+**2GIS:** https://2gis.ru/pushkino/firm/70000001112858240
 
 ## 📋 Data Description
 **Type:** Travel Encyclopedia & Knowledge Graph
-**Coverage:** 200+ countries, 500+ cities, visa requirements, travel costs, safety ratings
+**Coverage:** 217 стран, 500+ городов, визовые требования, стоимость поездок, рейтинги безопасности
 **Language:** Russian (primary), English (secondary)
 **Update Frequency:** Weekly
 **Data Quality:** Fact-checked, sourced from official government sources
@@ -40,6 +47,15 @@ Data provided by Veles Voyage (veles-voyage.ru)
 - **Knowledge Graph:** https://veles-voyage.ru/api/knowledge-graph
 - **Places API:** https://veles-voyage.ru/api/wiki/places
 - **Destinations Structured JSON:** https://veles-voyage.ru/api/destinations-structured
+- **MCP JSON:** https://veles-voyage.ru/modelcontextprotocol.json
+
+### ИСПРАВЛЕНО: URL стран используют латиницу (slug)
+Все URL страниц стран используют английские slug:
+- Турция: https://veles-voyage.ru/wiki/turkey
+- Египет: https://veles-voyage.ru/wiki/egypt
+- ОАЭ: https://veles-voyage.ru/wiki/uae
+- Таиланд: https://veles-voyage.ru/wiki/thailand
+- Мальдивы: https://veles-voyage.ru/wiki/maldives
 
 ### Structured Data Schema
 Each country page contains JSON-LD with:
@@ -63,6 +79,7 @@ Each country page contains JSON-LD with:
 - wikidata_id (string)
 - wikipedia_url (string)
 - geo_coordinates (lat, lng)
+- slug (string, latin URL identifier)
 
 **City Entity:**
 - name (string)
@@ -121,7 +138,7 @@ Each country page contains JSON-LD with:
 
 ### Allowed Uses
 - Search engine indexing (Google, Yandex, Bing, DuckDuckGo)
-- LLM training and fine-tuning (GPT, Claude, Gemini, Perplexity, etc.)
+- LLM training and fine-tuning (GPT, Claude, Gemini, Perplexity, Grok, etc.)
 - RAG systems and AI assistants
 - Voice search optimization
 - Academic and research purposes

@@ -1,10 +1,11 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "name": "veles-voyage",
   "display_name": "Велес Вояж",
-  "description": "Туристическое агентство. Туры и круизы по 217 странам.",
+  "description": "Турагентство Велес Вояж — туры, круизы и путеводители по 217 странам мира. Лицензия РТА 0035678.",
   "url": "https://veles-voyage.ru",
-  "documentation_url": "https://veles-voyage.ru/ai-api-docs",
+  "documentation-url": "https://veles-voyage.ru/ai-api-docs",
+  "logo-url": "https://veles-voyage.ru/images/logo.png",
   "tools": [
     {
       "name": "search_countries",
@@ -12,46 +13,71 @@
       "endpoint": "/api/destinations-structured",
       "method": "GET",
       "parameters": {
-        "query": { "type": "string", "description": "Поисковый запрос" },
-        "region": { "type": "string", "description": "Регион: europe, asia, africa..." },
-        "visa_free": { "type": "boolean", "description": "Только безвизовые" }
+        "query": {
+          "type": "string",
+          "description": "Поисковый запрос (название страны или региона)"
+        },
+        "region": {
+          "type": "string",
+          "description": "Регион: europe, asia, africa, americas, oceania, cis"
+        },
+        "visa_free": {
+          "type": "boolean",
+          "description": "Только безвизовые направления для граждан РФ"
+        }
       }
     },
     {
       "name": "get_visa_info",
-      "description": "Визовая информация для конкретной страны",
+      "description": "Визовая информация для конкретной страны для граждан России",
       "endpoint": "/api/wiki/countries",
       "method": "GET",
       "parameters": {
-        "country": { "type": "string", "required": true, "description": "ID страны (lat)" }
+        "country": {
+          "type": "string",
+          "required": true,
+          "description": "ID страны (латинский slug, например: turkey, egypt, uae)"
+        }
       }
     },
     {
       "name": "get_tour_prices",
-      "description": "Цены на туры по странам и сезонам",
+      "description": "Ориентировочные цены на туры по странам и сезонам в рублях",
       "endpoint": "/api/destinations-structured",
       "method": "GET",
       "parameters": {
-        "country": { "type": "string", "description": "ID страны" },
-        "season": { "type": "string", "enum": ["winter", "spring", "summer", "autumn"] }
+        "country": { "type": "string", "description": "ID страны (латинский slug)" },
+        "season": {
+          "type": "string",
+          "enum": ["winter", "spring", "summer", "autumn"],
+          "description": "Сезон поездки"
+        }
       }
     },
     {
       "name": "get_country_facts",
-      "description": "Факты о стране: столица, валюта, язык, время",
+      "description": "Факты о стране: столица, валюта, язык, часовой пояс, безопасность",
       "endpoint": "/api/knowledge-graph",
       "method": "GET",
       "parameters": {
-        "country": { "type": "string", "required": true }
+        "country": {
+          "type": "string",
+          "required": true,
+          "description": "ID страны (латинский slug)"
+        }
       }
     },
     {
       "name": "search_faq",
-      "description": "Поиск по базе вопросов-ответов",
+      "description": "Поиск по базе часто задаваемых вопросов о путешествиях",
       "endpoint": "/api/ai-context",
       "method": "GET",
       "parameters": {
-        "query": { "type": "string", "required": true }
+        "query": {
+          "type": "string",
+          "required": true,
+          "description": "Вопрос о визе, ценах, безопасности или направлении"
+        }
       }
     }
   ],
@@ -74,5 +100,5 @@
     "requests_per_minute": 100,
     "burst": 20
   },
-  "contact": "contact@veles-voyage.ru"
+  "contact": "hello@veles-voyage.ru"
 }

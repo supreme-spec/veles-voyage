@@ -26,6 +26,7 @@ import {
 import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/universalSEO';
+import { generateFAQSchema, generateSpeakableSchema } from '@/lib/seo/unifiedSEO';
 import {
   isDisputedTerritory,
   getPoliticalStatus,
@@ -287,7 +288,11 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     },
   };
 
-  const schemas = [...baseSchemas, touristTripSchema];
+  const schemas = [
+    ...baseSchemas,
+    touristTripSchema,
+    ...(faqs.length > 0 ? [generateFAQSchema(faqs), generateSpeakableSchema(['.faq-answer', '.paa summary', '.article-summary'])] : []),
+  ];
 
   if (!countryData) {
     return (
@@ -618,7 +623,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                       +
                     </span>
                   </summary>
-                  <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">{faq.answer}</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm faq-answer" data-speakable="true">{faq.answer}</p>
                 </details>
               </li>
             ))}

@@ -31,7 +31,7 @@ export const WORLD_DESTINATIONS_DATA: Record<string, any> = {
     slug: 'egypt',
     type: 'Country',
     description: 'Страна фараонов: пирамиды, Красное море и круглогодичное солнце.',
-    estimatedCost: 85000,
+    estimatedCost: 90000,
     priceNote: 'на двоих за 7 ночей',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop&auto=format',
     alt: 'Египет - Пирамиды Гизы',

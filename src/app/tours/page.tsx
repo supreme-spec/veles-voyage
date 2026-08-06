@@ -162,7 +162,7 @@ export default async function ToursPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: 'Турция «всё включено»', price: 'от 90 000 ₽', days: '7 ночей', slug: 'turkey-all-inclusive', tag: 'Хит продаж' },
-              { title: 'Египет: Хургада / Шарм', price: 'от 85 000 ₽', days: '7 ночей', slug: 'egypt-2026', tag: 'Безвиз' },
+              { title: 'Египет: Хургада / Шарм', price: 'от 90 000 ₽', days: '7 ночей', slug: 'egypt-2026', tag: 'Безвиз' },
               { title: 'ОАЭ: Дубай', price: 'от 120 000 ₽', days: '5-7 ночей', slug: 'uae-2026', tag: 'Премиум' },
               { title: 'Европа: Шенген', price: 'от 95 000 ₽', days: '7-10 ночей', slug: 'europe', tag: 'Групповые' },
             ].map((offer) => (

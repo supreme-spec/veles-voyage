@@ -21,6 +21,12 @@
 **Google Business:** https://share.google/TBbHMZqo9vhqFPcPv
 **2GIS:** https://2gis.ru/pushkino/firm/70000001112858240
 
+## 🏪 Offices
+**Голицыно:** пр-т Керамиков, д. 103, Московская обл., 143041
+**Пушкино:** пр-т Московский, д. 9/2, Московская обл., 141207
+**Hours:** Пн-Пт 09:00-21:00, Сб-Вс 10:00-16:00
+**GeoJSON:** https://veles-voyage.ru/offices.geojson
+
 ## 📋 Data Description
 **Type:** Travel Encyclopedia & Knowledge Graph
 **Coverage:** 217 стран, 500+ городов, визовые требования, стоимость поездок, рейтинги безопасности

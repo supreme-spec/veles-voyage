@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.0",
-    "generated": "2026-08-05T17:23:01.221Z",
+    "generated": "2026-08-06T10:53:46.027Z",
     "provider": "ООО «Велес» (РТА 0035678)",
     "website": "https://veles-voyage.ru"
   },
@@ -18,8 +18,8 @@
       "south-america": 12,
       "oceania": 16
     },
-    "totalSize": 241608,
-    "processingTime": 47
+    "totalSize": 241606,
+    "processingTime": 51
   },
   "organization": {
     "name": "Велес Вояж",
@@ -41,7 +41,7 @@
       "currency": "RUB (Российский рубль)",
       "language": "абхазский, русский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "80000",
+      "estimatedCost": 80000,
       "visaRequirements": false,
       "keywords": [
         "Абхазия 2026",
@@ -74,7 +74,7 @@
       "currency": "AUD",
       "language": "английский",
       "bestTimeToVisit": "сентябрь, октябрь, ноябрь, март, апрель",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Австралия 2026",
@@ -110,7 +110,7 @@
       "currency": "EUR",
       "language": "немецкий",
       "bestTimeToVisit": "декабрь, январь (лыжи), май, июнь, сентябрь (города)",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Австрия 2026",
@@ -147,7 +147,7 @@
       "currency": "AZN",
       "language": "азербайджанский",
       "bestTimeToVisit": "апрель, май, июнь, сентябрь, октябрь",
-      "estimatedCost": "70000",
+      "estimatedCost": 70000,
       "visaRequirements": false,
       "keywords": [
         "Азербайджан 2026",
@@ -186,7 +186,7 @@
       "currency": "ALL",
       "language": "албанский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "80000",
+      "estimatedCost": 80000,
       "visaRequirements": false,
       "keywords": [
         "Албания 2026",
@@ -220,7 +220,7 @@
       "currency": "DZD",
       "language": "арабский, французский",
       "bestTimeToVisit": "март, апрель, сентябрь, октябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Алжир 2026",
@@ -265,7 +265,7 @@
       "currency": "AOA",
       "language": "португальский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Ангола 2026",
@@ -297,7 +297,7 @@
       "currency": "EUR",
       "language": "каталанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, июль, август",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": true,
       "keywords": [
         "Андорра 2026",
@@ -338,7 +338,7 @@
       "currency": "XCD",
       "language": "английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Антигуа и Барбуда 2026",
@@ -369,7 +369,7 @@
       "currency": "ARS",
       "language": "испанский",
       "bestTimeToVisit": "октябрь, ноябрь, март, апрель",
-      "estimatedCost": "200000",
+      "estimatedCost": 200000,
       "visaRequirements": false,
       "keywords": [
         "Аргентина 2026",
@@ -399,7 +399,7 @@
       "currency": "AMD",
       "language": "армянский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "60000",
+      "estimatedCost": 60000,
       "visaRequirements": false,
       "keywords": [
         "Армения 2026",
@@ -429,7 +429,7 @@
       "currency": "AFN",
       "language": "дари, пушту",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "100000",
+      "estimatedCost": 100000,
       "visaRequirements": true,
       "keywords": [
         "Афганистан 2026",
@@ -460,7 +460,7 @@
       "currency": "BSD / USD",
       "language": "английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Багамы 2026",
@@ -496,7 +496,7 @@
       "currency": "BDT",
       "language": "бенгальский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "95000",
+      "estimatedCost": 95000,
       "visaRequirements": true,
       "keywords": [
         "Бангладеш 2026",
@@ -528,7 +528,7 @@
       "currency": "BBD / USD",
       "language": "английский, бэйджан",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "280000",
+      "estimatedCost": 280000,
       "visaRequirements": false,
       "keywords": [
         "Барбадос 2026",
@@ -563,7 +563,7 @@
       "currency": "BHD",
       "language": "арабский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Бахрейн 2026",
@@ -599,7 +599,7 @@
       "currency": "BYN (белорусский рубль)",
       "language": "белорусский, русский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, январь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Беларусь 2026",
@@ -635,7 +635,7 @@
       "currency": "BZD (белизский доллар) / USD",
       "language": "английский, испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель, май",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": true,
       "keywords": [
         "Белиз 2026",
@@ -669,7 +669,7 @@
       "currency": "EUR (евро)",
       "language": "нидерландский, французский, немецкий",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Бельгия 2026",
@@ -703,7 +703,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "французский (офиц.), фон, йоруба",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Бенин 2026",
@@ -737,7 +737,7 @@
       "currency": "BGN (Болгарский лев)",
       "language": "болгарский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь (море); январь, февраль (лыжи)",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Болгария 2026",
@@ -772,7 +772,7 @@
       "currency": "BOB (Боливиано)",
       "language": "испанский, кечуа, аймара",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Боливия 2026",
@@ -809,7 +809,7 @@
       "currency": "BAM (Конвертируемая марка)",
       "language": "боснийский, сербский, хорватский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Босния и Герцеговина 2026",
@@ -842,7 +842,7 @@
       "currency": "BWP (Пула)",
       "language": "английский, сетсвана",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Ботсвана 2026",
@@ -873,7 +873,7 @@
       "currency": "BRL (Бразильский реал)",
       "language": "португальский",
       "bestTimeToVisit": "март, апрель, май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Бразилия 2026",
@@ -904,7 +904,7 @@
       "currency": "BND (Брунейский доллар)",
       "language": "малайский, английский",
       "bestTimeToVisit": "январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Бруней 2026",
@@ -934,7 +934,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "французский, мооре, диула",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "380000",
+      "estimatedCost": 380000,
       "visaRequirements": true,
       "keywords": [
         "Буркина-Фасо 2026",
@@ -969,7 +969,7 @@
       "currency": "BIF (Бурундийский франк)",
       "language": "кирунди, французский, английский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, декабрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Бурунди 2026",
@@ -1004,7 +1004,7 @@
       "currency": "BTN (Нгултрум) / INR (Индийская рупия)",
       "language": "дзонг-кэ (офиц.)",
       "bestTimeToVisit": "март, апрель, май, сентябрь, октябрь, ноябрь",
-      "estimatedCost": "500000",
+      "estimatedCost": 500000,
       "visaRequirements": true,
       "keywords": [
         "Бутан 2026",
@@ -1041,7 +1041,7 @@
       "currency": "VUV (Вату)",
       "language": "бислама, английский, французский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Вануату 2026",
@@ -1070,7 +1070,7 @@
       "currency": "EUR (Евро)",
       "language": "итальянский, латынь",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": true,
       "keywords": [
         "Ватикан 2026",
@@ -1099,7 +1099,7 @@
       "currency": "GBP (Фунт стерлингов)",
       "language": "английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Великобритания 2026",
@@ -1129,7 +1129,7 @@
       "currency": "HUF (Венгерский форинт)",
       "language": "венгерский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Венгрия 2026",
@@ -1157,7 +1157,7 @@
       "currency": "VES (Боливар), USD (фактическая в туризме)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": false,
       "keywords": [
         "Венесуэла 2026",
@@ -1187,7 +1187,7 @@
       "currency": "VND",
       "language": "вьетнамский",
       "bestTimeToVisit": "январь, февраль, март, апрель, ноябрь, декабрь",
-      "estimatedCost": "50000",
+      "estimatedCost": 50000,
       "visaRequirements": false,
       "keywords": [
         "Вьетнам 2026",
@@ -1217,7 +1217,7 @@
       "currency": "XAF (Франк КФА)",
       "language": "французский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Габон 2026",
@@ -1248,7 +1248,7 @@
       "currency": "HTG (Гаитянский гурд)",
       "language": "гаитянский креольский, французский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Гаити 2026",
@@ -1277,7 +1277,7 @@
       "currency": "GYD (Гайанский доллар)",
       "language": "английский (официальный), гайанский креольский",
       "bestTimeToVisit": "февраль, март, август, сентябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Гайана 2026",
@@ -1306,7 +1306,7 @@
       "currency": "GMD (Даласи)",
       "language": "английский, мандинка, волоф",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Гамбия 2026",
@@ -1338,7 +1338,7 @@
       "currency": "GHS",
       "language": "английский, чви, эве",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Гана 2026",
@@ -1369,7 +1369,7 @@
       "currency": "GTQ",
       "language": "испанский, 21 майяский язык",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Гватемала 2026",
@@ -1400,7 +1400,7 @@
       "currency": "GNF (Гвинейский франк)",
       "language": "французский, фула, малинке",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "190000",
+      "estimatedCost": 190000,
       "visaRequirements": true,
       "keywords": [
         "Гвинея 2026",
@@ -1430,7 +1430,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "португальский, креольский (криол)",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "320000",
+      "estimatedCost": 320000,
       "visaRequirements": false,
       "keywords": [
         "Гвинея-Бисау 2026",
@@ -1460,7 +1460,7 @@
       "currency": "EUR (Евро)",
       "language": "немецкий",
       "bestTimeToVisit": "май, июнь, июль, сентябрь, ноябрь, декабрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": true,
       "keywords": [
         "Германия 2026",
@@ -1492,7 +1492,7 @@
       "currency": "HNL (Гондурасская лемпира)",
       "language": "испанский (официальный), английский (на островах)",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Гондурас 2026",
@@ -1520,7 +1520,7 @@
       "currency": "HKD (Гонконгский доллар)",
       "language": "китайский (кантонский), английский",
       "bestTimeToVisit": "октябрь, ноябрь, декабрь",
-      "estimatedCost": "650000",
+      "estimatedCost": 650000,
       "visaRequirements": false,
       "keywords": [
         "Гонконг 2026",
@@ -1548,7 +1548,7 @@
       "currency": "XCD",
       "language": "английский, гренадский креольский",
       "bestTimeToVisit": "январь, февраль, март, апрель, май",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Гренада 2026",
@@ -1579,7 +1579,7 @@
       "currency": "EUR (Евро)",
       "language": "греческий",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "160000",
+      "estimatedCost": 160000,
       "visaRequirements": true,
       "keywords": [
         "Греция 2026",
@@ -1610,7 +1610,7 @@
       "currency": "GEL (Лари)",
       "language": "грузинский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Грузия 2026",
@@ -1642,7 +1642,7 @@
       "currency": "DKK (Датская крона)",
       "language": "датский",
       "bestTimeToVisit": "май, июнь, июль, август, декабрь",
-      "estimatedCost": "190000",
+      "estimatedCost": 190000,
       "visaRequirements": true,
       "keywords": [
         "Дания 2026",
@@ -1669,7 +1669,7 @@
       "currency": "DJF (Джибутийский франк)",
       "language": "французский, арабский",
       "bestTimeToVisit": "ноябрь, декабрь, январь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Джибути 2026",
@@ -1696,7 +1696,7 @@
       "currency": "XCD (Восточнокарибский доллар)",
       "language": "английский, креольский",
       "bestTimeToVisit": "январь, февраль, март, апрель",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": false,
       "keywords": [
         "Доминика 2026",
@@ -1722,7 +1722,7 @@
       "currency": "DOP (Доминиканское песо)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Доминикана 2026",
@@ -1752,7 +1752,7 @@
       "currency": "RUB",
       "language": "русский",
       "bestTimeToVisit": "май, июнь, сентябрь",
-      "estimatedCost": "60000",
+      "estimatedCost": 60000,
       "visaRequirements": false,
       "keywords": [
         "ДНР 2026",
@@ -1781,7 +1781,7 @@
       "currency": "EGP (Египетский фунт)",
       "language": "арабский",
       "bestTimeToVisit": "октябрь, ноябрь, март, апрель",
-      "estimatedCost": "110000",
+      "estimatedCost": 90000,
       "visaRequirements": true,
       "keywords": [
         "Египет 2026",
@@ -1812,7 +1812,7 @@
       "currency": "ZMW (Замбийская квача)",
       "language": "английский (официальный)",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Замбия 2026",
@@ -1841,7 +1841,7 @@
       "currency": "MAD (Марокканский дирхам)",
       "language": "арабский (диалект хассания), испанский, французский",
       "bestTimeToVisit": "октябрь, ноябрь, март, апрель, май",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": false,
       "keywords": [
         "Западная Сахара 2026",
@@ -1869,7 +1869,7 @@
       "currency": "ZWL (Зимбабвийский доллар)",
       "language": "английский, шона, ндебеле",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": true,
       "keywords": [
         "Зимбабве 2026",
@@ -1900,7 +1900,7 @@
       "currency": "ILS (Новый израильский шекель)",
       "language": "иврит, арабский",
       "bestTimeToVisit": "март — май, сентябрь — ноябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": false,
       "keywords": [
         "Израиль 2026",
@@ -1929,7 +1929,7 @@
       "currency": "INR (Индийская рупия)",
       "language": "хинди, английский",
       "bestTimeToVisit": "октябрь — март (большая часть страны), июнь — сентябрь (Ладакх)",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Индия 2026",
@@ -1959,7 +1959,7 @@
       "currency": "IDR (Индонезийская рупия)",
       "language": "индонезийский (бахаса)",
       "bestTimeToVisit": "май — сентябрь",
-      "estimatedCost": "160000",
+      "estimatedCost": 160000,
       "visaRequirements": true,
       "keywords": [
         "Индонезия 2026",
@@ -1990,7 +1990,7 @@
       "currency": "JOD (Иорданский динар)",
       "language": "арабский, английский",
       "bestTimeToVisit": "март — май, сентябрь — ноябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": true,
       "keywords": [
         "Иордания 2026",
@@ -2018,7 +2018,7 @@
       "currency": "IQD (Иракский динар)",
       "language": "арабский, курдский",
       "bestTimeToVisit": "октябрь — апрель",
-      "estimatedCost": "195000",
+      "estimatedCost": 195000,
       "visaRequirements": true,
       "keywords": [
         "Ирак 2026",
@@ -2047,7 +2047,7 @@
       "currency": "IRR (Иранский риал) / Томан",
       "language": "персидский (фарси)",
       "bestTimeToVisit": "март — май, сентябрь — ноябрь",
-      "estimatedCost": "140000",
+      "estimatedCost": 140000,
       "visaRequirements": false,
       "keywords": [
         "Иран 2026",
@@ -2078,7 +2078,7 @@
       "currency": "EUR (Евро)",
       "language": "английский, ирландский (гэльский)",
       "bestTimeToVisit": "май — сентябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Ирландия 2026",
@@ -2107,7 +2107,7 @@
       "currency": "ISK (Исландская крона)",
       "language": "исландский",
       "bestTimeToVisit": "июнь, июль, август (природа), сентябрь - март (сияние)",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Исландия 2026",
@@ -2135,7 +2135,7 @@
       "currency": "EUR (Евро)",
       "language": "испанский (кастильский), региональные: каталанский, галисийский, баскский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Испания 2026",
@@ -2165,7 +2165,7 @@
       "currency": "EUR (Евро)",
       "language": "итальянский",
       "bestTimeToVisit": "май — июнь, сентябрь — октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Италия 2026",
@@ -2194,7 +2194,7 @@
       "currency": "YER (Йеменский риал), USD (в ходу на Сокотре)",
       "language": "арабский, сокотрийский",
       "bestTimeToVisit": "октябрь, ноябрь, декабрь, январь, февраль, март",
-      "estimatedCost": "400000",
+      "estimatedCost": 400000,
       "visaRequirements": true,
       "keywords": [
         "Йемен 2026",
@@ -2224,7 +2224,7 @@
       "currency": "CVE (Эскудо Кабо-Верде)",
       "language": "португальский, кабувердьяну",
       "bestTimeToVisit": "январь, февраль, март, апрель, май, июнь, октябрь, ноябрь, декабрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Кабо-Верде 2026",
@@ -2253,7 +2253,7 @@
       "currency": "KZT (Тенге)",
       "language": "казахский, русский",
       "bestTimeToVisit": "май — июнь, сентябрь — октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Казахстан 2026",
@@ -2281,7 +2281,7 @@
       "currency": "KHR (Камбоджийский риель) / USD (Доллар США)",
       "language": "кхмерский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Камбоджа 2026",
@@ -2310,7 +2310,7 @@
       "currency": "XAF (Франк КФА BEAC)",
       "language": "французский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "280000",
+      "estimatedCost": 280000,
       "visaRequirements": true,
       "keywords": [
         "Камерун 2026",
@@ -2339,7 +2339,7 @@
       "currency": "CAD (Канадский доллар)",
       "language": "английский, французский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, декабрь, январь, февраль",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": true,
       "keywords": [
         "Канада 2026",
@@ -2368,7 +2368,7 @@
       "currency": "QAR (Катарский риал)",
       "language": "арабский, английский",
       "bestTimeToVisit": "октябрь, ноябрь, декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": false,
       "keywords": [
         "Катар 2026",
@@ -2397,7 +2397,7 @@
       "currency": "KES (Кенийский шиллинг)",
       "language": "суахили, английский",
       "bestTimeToVisit": "январь — март, июль — октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Кения 2026",
@@ -2425,7 +2425,7 @@
       "currency": "EUR (Евро)",
       "language": "греческий, турецкий, английский (распространён)",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Кипр 2026",
@@ -2453,7 +2453,7 @@
       "currency": "AUD (Австралийский доллар)",
       "language": "кирибати, английский",
       "bestTimeToVisit": "май — октябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Кирибати 2026",
@@ -2480,7 +2480,7 @@
       "currency": "CNY (Китайский юань)",
       "language": "китайский (путунхуа)",
       "bestTimeToVisit": "апрель — май, сентябрь — октябрь",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Китай 2026",
@@ -2509,7 +2509,7 @@
       "currency": "COP (Колумбийское песо)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Колумбия 2026",
@@ -2538,7 +2538,7 @@
       "currency": "KMF (Коморский франк)",
       "language": "коморский, французский, арабский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Коморы 2026",
@@ -2567,7 +2567,7 @@
       "currency": "EUR (Евро)",
       "language": "албанский, сербский",
       "bestTimeToVisit": "май — июнь, сентябрь — октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Косово 2026",
@@ -2595,7 +2595,7 @@
       "currency": "CRC (Костариканский колон)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Коста-Рика 2026",
@@ -2623,7 +2623,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "французский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Кот-д'Ивуар 2026",
@@ -2651,7 +2651,7 @@
       "currency": "CUP (Кубинское песо)",
       "language": "испанский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Куба 2026",
@@ -2679,7 +2679,7 @@
       "currency": "KWD (Кувейтский динар)",
       "language": "арабский, английский",
       "bestTimeToVisit": "ноябрь — март",
-      "estimatedCost": "190000",
+      "estimatedCost": 190000,
       "visaRequirements": true,
       "keywords": [
         "Кувейт 2026",
@@ -2707,7 +2707,7 @@
       "currency": "KGS (Кыргызский сом)",
       "language": "кыргызский, русский",
       "bestTimeToVisit": "июнь — сентябрь, январь — февраль",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Кыргызстан 2026",
@@ -2735,7 +2735,7 @@
       "currency": "LAK (Лаосский кип)",
       "language": "лаосский, английский, французский",
       "bestTimeToVisit": "ноябрь — март",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": false,
       "keywords": [
         "Лаос 2026",
@@ -2763,7 +2763,7 @@
       "currency": "EUR (Евро)",
       "language": "латышский, английский, русский",
       "bestTimeToVisit": "май — сентябрь, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Латвия 2026",
@@ -2792,7 +2792,7 @@
       "currency": "LSL / ZAR",
       "language": "сесото, английский",
       "bestTimeToVisit": "октябрь — ноябрь (весна), апрель — май (осень)",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Лесото 2026",
@@ -2821,7 +2821,7 @@
       "currency": "LRD / USD",
       "language": "английский",
       "bestTimeToVisit": "декабрь — март (сухой сезон)",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Либерия 2026",
@@ -2849,7 +2849,7 @@
       "currency": "USD / LBP",
       "language": "арабский, французский, английский",
       "bestTimeToVisit": "апрель — июнь, сентябрь — ноябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": true,
       "keywords": [
         "Ливан 2026",
@@ -2878,7 +2878,7 @@
       "currency": "LYD",
       "language": "арабский",
       "bestTimeToVisit": "октябрь — ноябрь (осень), март — апрель (весна)",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Ливия 2026",
@@ -2907,7 +2907,7 @@
       "currency": "EUR",
       "language": "литовский",
       "bestTimeToVisit": "июнь — август (лето), сентябрь (золотая осень)",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Литва 2026",
@@ -2935,7 +2935,7 @@
       "currency": "CHF",
       "language": "немецкий",
       "bestTimeToVisit": "июнь — август (лето), декабрь — февраль (зима)",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Лихтенштейн 2026",
@@ -2963,7 +2963,7 @@
       "currency": "RUB",
       "language": "русский",
       "bestTimeToVisit": "май — июнь (цветение ковыля), сентябрь (золотая осень)",
-      "estimatedCost": "125000",
+      "estimatedCost": 125000,
       "visaRequirements": false,
       "keywords": [
         "Луганск 2026",
@@ -2991,7 +2991,7 @@
       "currency": "EUR",
       "language": "люксембургский, французский, немецкий",
       "bestTimeToVisit": "май — июнь, сентябрь — октябрь (фестивали вина)",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Люксембург 2026",
@@ -3019,7 +3019,7 @@
       "currency": "MUR (Маврикийская рупия)",
       "language": "английский, французский, креольский",
       "bestTimeToVisit": "май, июнь, июль, октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Маврикий 2026",
@@ -3048,7 +3048,7 @@
       "currency": "MRU (Мавританская угия)",
       "language": "арабский (хасания), французский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "210000",
+      "estimatedCost": 210000,
       "visaRequirements": true,
       "keywords": [
         "Мавритания 2026",
@@ -3077,7 +3077,7 @@
       "currency": "MGA (Малагасийский ариари)",
       "language": "малагасийский, французский",
       "bestTimeToVisit": "апрель — ноябрь (сухой сезон)",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Мадагаскар 2026",
@@ -3106,7 +3106,7 @@
       "currency": "MOP (Маканская патака), HKD (Гонконгский доллар)",
       "language": "китайский (кантонский), португальский",
       "bestTimeToVisit": "октябрь — декабрь (солнечно и нежарко)",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Макао 2026",
@@ -3133,7 +3133,7 @@
       "currency": "MWK (Малавийская квача)",
       "language": "английский, чичева",
       "bestTimeToVisit": "май — октябрь (прохладно и сухо)",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Малави 2026",
@@ -3162,7 +3162,7 @@
       "currency": "MYR (Малайзийский ринггит)",
       "language": "малайский, английский",
       "bestTimeToVisit": "круглый год (зависит от региона)",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Малайзия 2026",
@@ -3192,7 +3192,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "французский (официальный), бамбара",
       "bestTimeToVisit": "ноябрь — февраль (прохладный сухой сезон)",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": true,
       "keywords": [
         "Мали 2026",
@@ -3223,7 +3223,7 @@
       "currency": "MVR / USD (Доллар США — основная валюта в отелях)",
       "language": "дивехи, английский",
       "bestTimeToVisit": "декабрь — апрель (солнечный сезон)",
-      "estimatedCost": "500000",
+      "estimatedCost": 500000,
       "visaRequirements": false,
       "keywords": [
         "Мальдивы 2026",
@@ -3251,7 +3251,7 @@
       "currency": "EUR (Евро)",
       "language": "мальтийский, английский",
       "bestTimeToVisit": "июнь, сентябрь, октябрь",
-      "estimatedCost": "160000",
+      "estimatedCost": 160000,
       "visaRequirements": true,
       "keywords": [
         "Мальта 2026",
@@ -3282,7 +3282,7 @@
       "currency": "MAD (Марокканский дирхам)",
       "language": "арабский, берберский (официальные), французский",
       "bestTimeToVisit": "март, апрель, май, сентябрь, октябрь, ноябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": false,
       "keywords": [
         "Марокко 2026",
@@ -3314,7 +3314,7 @@
       "currency": "USD (Доллар США)",
       "language": "маршалльский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "400000",
+      "estimatedCost": 400000,
       "visaRequirements": true,
       "keywords": [
         "Маршалловы Острова 2026",
@@ -3342,7 +3342,7 @@
       "currency": "MXN (Мексиканское песо)",
       "language": "испанский (английский в турзонах)",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Мексика 2026",
@@ -3371,7 +3371,7 @@
       "currency": "USD (Доллар США)",
       "language": "английский, местные языки (япский, понпейский и др.)",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Микронезия 2026",
@@ -3399,7 +3399,7 @@
       "currency": "MZN (Мозамбикский метикал)",
       "language": "португальский (официальный)",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Мозамбик 2026",
@@ -3430,7 +3430,7 @@
       "currency": "MDL (Молдавский лей)",
       "language": "румынский (русский широко распространен)",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "110000",
+      "estimatedCost": 110000,
       "visaRequirements": false,
       "keywords": [
         "Молдова 2026",
@@ -3459,7 +3459,7 @@
       "currency": "EUR (Евро)",
       "language": "французский (английский широко распространен)",
       "bestTimeToVisit": "май, июнь, сентябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Монако 2026",
@@ -3487,7 +3487,7 @@
       "currency": "MNT (Монгольский тугрик)",
       "language": "монгольский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Монголия 2026",
@@ -3517,7 +3517,7 @@
       "currency": "MMK (Мьянманский кьят)",
       "language": "мьянманский (бирманский)",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Мьянма 2026",
@@ -3548,7 +3548,7 @@
       "currency": "AZN",
       "language": "азербайджанский, русский",
       "bestTimeToVisit": "май, июнь, сентябрь",
-      "estimatedCost": "80000",
+      "estimatedCost": 80000,
       "visaRequirements": true,
       "keywords": [
         "Нагорный Карабах 2026",
@@ -3575,7 +3575,7 @@
       "currency": "NAD / ZAR (Намибийский доллар / Южноафриканский рэнд)",
       "language": "английский (официальный), африкаанс, немецкий",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Намибия 2026",
@@ -3606,7 +3606,7 @@
       "currency": "AUD (Австралийский доллар)",
       "language": "науруанский, английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "400000",
+      "estimatedCost": 400000,
       "visaRequirements": true,
       "keywords": [
         "Науру 2026",
@@ -3634,7 +3634,7 @@
       "currency": "NPR (Непальская рупия)",
       "language": "непальский, английский (широко распространен)",
       "bestTimeToVisit": "март, апрель, октябрь, ноябрь",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": true,
       "keywords": [
         "Непал 2026",
@@ -3665,7 +3665,7 @@
       "currency": "XOF (Франк КФА)",
       "language": "французский (официальный), хауса, зарма",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Нигер 2026",
@@ -3696,7 +3696,7 @@
       "currency": "NGN (Нигерийская найра)",
       "language": "английский (официальный), хауса, йоруба, игбо",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Нигерия 2026",
@@ -3727,7 +3727,7 @@
       "currency": "EUR (Евро)",
       "language": "нидерландский (высокий уровень английского)",
       "bestTimeToVisit": "апрель, май, июнь, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Нидерланды 2026",
@@ -3758,7 +3758,7 @@
       "currency": "Никарагуанская кордоба (NIO)",
       "language": "испанский (официальный)",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": false,
       "keywords": [
         "Никарагуа 2026",
@@ -3790,7 +3790,7 @@
       "currency": "NZD (Новозеландский доллар)",
       "language": "ниуэанский, английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Ниуэ 2026",
@@ -3820,7 +3820,7 @@
       "currency": "NZD (Новозеландский доллар)",
       "language": "английский, маори",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Новая Зеландия 2026",
@@ -3851,7 +3851,7 @@
       "currency": "Норвежская крона (NOK)",
       "language": "норвежский",
       "bestTimeToVisit": "май-сентябрь (фьорды), декабрь-март (сияние)",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Норвегия 2026",
@@ -3877,7 +3877,7 @@
       "currency": "AED (Дирхам ОАЭ)",
       "language": "арабский, английский",
       "bestTimeToVisit": "октябрь, ноябрь, декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "ОАЭ 2026",
@@ -3908,7 +3908,7 @@
       "currency": "Оманский риал (OMR)",
       "language": "арабский",
       "bestTimeToVisit": "октябрь-апрель (зима), июль-сентябрь (в Салале — Хариф)",
-      "estimatedCost": "200000",
+      "estimatedCost": 200000,
       "visaRequirements": true,
       "keywords": [
         "Оман 2026",
@@ -3934,7 +3934,7 @@
       "currency": "SHP/GBP",
       "language": "английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Остров Святой Елены 2026",
@@ -3962,7 +3962,7 @@
       "currency": "Пакистанская рупия (PKR)",
       "language": "урду, английский",
       "bestTimeToVisit": "апрель-май (горы), октябрь-ноябрь (вся страна)",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": true,
       "keywords": [
         "Пакистан 2026",
@@ -3988,7 +3988,7 @@
       "currency": "Доллар США (USD)",
       "language": "палауский, английский",
       "bestTimeToVisit": "ноябрь-май (сухой сезон)",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Палау 2026",
@@ -4013,7 +4013,7 @@
       "currency": "Новый израильский шекель (ILS)",
       "language": "арабский",
       "bestTimeToVisit": "март-май, сентябрь-ноябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Палестина 2026",
@@ -4037,7 +4037,7 @@
       "currency": "USD",
       "language": "испанский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Панама 2026",
@@ -4068,7 +4068,7 @@
       "currency": "PGK",
       "language": "английский, ток-писин, хири-моту",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Папуа — Новая Гвинея 2026",
@@ -4098,7 +4098,7 @@
       "currency": "PYG",
       "language": "испанский, гуарани",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": false,
       "keywords": [
         "Парагвай 2026",
@@ -4128,7 +4128,7 @@
       "currency": "PEN",
       "language": "испанский, кечуа, аймара",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": false,
       "keywords": [
         "Перу 2026",
@@ -4159,7 +4159,7 @@
       "currency": "PLN",
       "language": "польский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Польша 2026",
@@ -4187,7 +4187,7 @@
       "currency": "EUR",
       "language": "португальский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "190000",
+      "estimatedCost": 190000,
       "visaRequirements": true,
       "keywords": [
         "Португалия 2026",
@@ -4218,7 +4218,7 @@
       "currency": "PRB",
       "language": "русский, молдавский, украинский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "50000",
+      "estimatedCost": 50000,
       "visaRequirements": false,
       "keywords": [
         "Приднестровье 2026",
@@ -4249,7 +4249,7 @@
       "currency": "USD",
       "language": "испанский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "280000",
+      "estimatedCost": 280000,
       "visaRequirements": true,
       "keywords": [
         "Пуэрто-Рико 2026",
@@ -4278,7 +4278,7 @@
       "currency": "XAF (Франк КФА)",
       "language": "французский, лингала, китуба",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "850000",
+      "estimatedCost": 850000,
       "visaRequirements": true,
       "keywords": [
         "Республика Конго 2026",
@@ -4306,7 +4306,7 @@
       "currency": "EUR (Евро)",
       "language": "французский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Реюньон 2026",
@@ -4334,7 +4334,7 @@
       "currency": "RUB",
       "language": "русский",
       "bestTimeToVisit": "май, июнь, август, сентябрь",
-      "estimatedCost": "150000",
+      "estimatedCost": 150000,
       "visaRequirements": false,
       "keywords": [
         "Россия 2026",
@@ -4365,7 +4365,7 @@
       "currency": "RWF",
       "language": "киньяруанда, английский, французский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, декабрь, январь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Руанда 2026",
@@ -4396,7 +4396,7 @@
       "currency": "RON",
       "language": "румынский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Румыния 2026",
@@ -4427,7 +4427,7 @@
       "currency": "MAD",
       "language": "арабский (диалект хассания), испанский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "190000",
+      "estimatedCost": 190000,
       "visaRequirements": true,
       "keywords": [
         "САДР 2026",
@@ -4461,7 +4461,7 @@
       "currency": "USD, BTC",
       "language": "испанский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "140000",
+      "estimatedCost": 140000,
       "visaRequirements": false,
       "keywords": [
         "Сальвадор 2026",
@@ -4492,7 +4492,7 @@
       "currency": "Самоанская тала (WST)",
       "language": "самоанский, английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": false,
       "keywords": [
         "Самоа 2026",
@@ -4522,7 +4522,7 @@
       "currency": "EUR",
       "language": "итальянский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Сан-Марино 2026",
@@ -4551,7 +4551,7 @@
       "currency": "STN",
       "language": "португальский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Сан-Томе и Принсипи 2026",
@@ -4579,7 +4579,7 @@
       "currency": "SAR",
       "language": "арабский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Саудовская Аравия 2026",
@@ -4607,7 +4607,7 @@
       "currency": "Северокорейская вона (KPW), но туристам нужны (EUR, CNY, RUB)",
       "language": "корейский",
       "bestTimeToVisit": "апрель, май, июнь, сентябрь, октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Северная Корея 2026",
@@ -4636,7 +4636,7 @@
       "currency": "Македонский денар (MKD)",
       "language": "македонский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "80000",
+      "estimatedCost": 80000,
       "visaRequirements": true,
       "keywords": [
         "Северная Македония 2026",
@@ -4664,7 +4664,7 @@
       "currency": "Доллар США (USD)",
       "language": "английский, чаморро",
       "bestTimeToVisit": "декабрь-июнь (сухой сезон)",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Северные Марианские Острова 2026",
@@ -4691,7 +4691,7 @@
       "currency": "Турецкая лира (TRY)",
       "language": "турецкий",
       "bestTimeToVisit": "апрель-июнь, сентябрь-ноябрь",
-      "estimatedCost": "95000",
+      "estimatedCost": 95000,
       "visaRequirements": false,
       "keywords": [
         "Северный Кипр 2026",
@@ -4718,7 +4718,7 @@
       "currency": "SCR",
       "language": "сейшельский креольский, английский, французский",
       "bestTimeToVisit": "апрель, май, октябрь, ноябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": false,
       "keywords": [
         "Сейшелы 2026",
@@ -4746,7 +4746,7 @@
       "currency": "EUR",
       "language": "французский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "550000",
+      "estimatedCost": 550000,
       "visaRequirements": true,
       "keywords": [
         "Сен-Барт 2026",
@@ -4775,7 +4775,7 @@
       "currency": "EUR / USD / ANG",
       "language": "французский, нидерландский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "380000",
+      "estimatedCost": 380000,
       "visaRequirements": true,
       "keywords": [
         "Сен-Мартен 2026",
@@ -4803,7 +4803,7 @@
       "currency": "EUR (Евро)",
       "language": "французский",
       "bestTimeToVisit": "июль, август, сентябрь",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "Сен-Пьер и Микелон 2026",
@@ -4830,7 +4830,7 @@
       "currency": "XOF",
       "language": "французский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март, апрель, май",
-      "estimatedCost": "320000",
+      "estimatedCost": 320000,
       "visaRequirements": true,
       "keywords": [
         "Сенегал 2026",
@@ -4858,7 +4858,7 @@
       "currency": "Восточнокарибский доллар (XCD)",
       "language": "английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "850000",
+      "estimatedCost": 850000,
       "visaRequirements": false,
       "keywords": [
         "Сент-Винсент и Гренадины 2026",
@@ -4886,7 +4886,7 @@
       "currency": "XCD (Восточнокарибский доллар)",
       "language": "английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Сент-Китс и Невис 2026",
@@ -4915,7 +4915,7 @@
       "currency": "XCD (Восточнокарибский доллар)",
       "language": "английский, креольский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "320000",
+      "estimatedCost": 320000,
       "visaRequirements": false,
       "keywords": [
         "Сент-Люсия 2026",
@@ -4944,7 +4944,7 @@
       "currency": "RSD",
       "language": "сербский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Сербия 2026",
@@ -4972,7 +4972,7 @@
       "currency": "SGD (Сингапурский доллар)",
       "language": "английский (официальный), малайский, китайский, тамильский",
       "bestTimeToVisit": "июнь, июль, август, ноябрь, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Сингапур 2026",
@@ -5001,7 +5001,7 @@
       "currency": "SYP",
       "language": "арабский",
       "bestTimeToVisit": "март, апрель, май, сентябрь, октябрь, ноябрь",
-      "estimatedCost": "140000",
+      "estimatedCost": 140000,
       "visaRequirements": true,
       "keywords": [
         "Сирия 2026",
@@ -5032,7 +5032,7 @@
       "currency": "EUR (Евро)",
       "language": "словацкий",
       "bestTimeToVisit": "май, июнь, сентябрь, декабрь, январь",
-      "estimatedCost": "140000",
+      "estimatedCost": 140000,
       "visaRequirements": true,
       "keywords": [
         "Словакия 2026",
@@ -5061,7 +5061,7 @@
       "currency": "EUR (Евро)",
       "language": "словенский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь, декабрь",
-      "estimatedCost": "160000",
+      "estimatedCost": 160000,
       "visaRequirements": true,
       "keywords": [
         "Словения 2026",
@@ -5091,7 +5091,7 @@
       "currency": "SBD",
       "language": "английский, пиджин",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Соломоновы Острова 2026",
@@ -5122,7 +5122,7 @@
       "currency": "SOS",
       "language": "сомалийский, арабский",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Сомали 2026",
@@ -5153,7 +5153,7 @@
       "currency": "SLSH / USD",
       "language": "сомалийский, арабский, английский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Сомалиленд 2026",
@@ -5183,7 +5183,7 @@
       "currency": "SDG (Суданский фунт)",
       "language": "арабский, английский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Судан 2026",
@@ -5212,7 +5212,7 @@
       "currency": "SRD (Суринамский доллар)",
       "language": "нидерландский (официальный), сранан-тонго, английский",
       "bestTimeToVisit": "февраль, март, август, сентябрь, октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Суринам 2026",
@@ -5241,7 +5241,7 @@
       "currency": "USD (Доллар США)",
       "language": "английский (де-факто)",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "500000",
+      "estimatedCost": 500000,
       "visaRequirements": true,
       "keywords": [
         "США 2026",
@@ -5270,7 +5270,7 @@
       "currency": "SLE (Леоне)",
       "language": "английский (официальный), крио",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Сьерра-Леоне 2026",
@@ -5298,7 +5298,7 @@
       "currency": "TJS",
       "language": "таджикский, русский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Таджикистан 2026",
@@ -5329,7 +5329,7 @@
       "currency": "THB",
       "language": "тайский (официальный), английский (в турзонах)",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль, март",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Таиланд 2026",
@@ -5360,7 +5360,7 @@
       "currency": "TWD",
       "language": "китайский (путунхуа)",
       "bestTimeToVisit": "март, апрель, май, октябрь, ноябрь, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Тайвань 2026",
@@ -5391,7 +5391,7 @@
       "currency": "TZS",
       "language": "суахили, английский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, декабрь, январь, февраль",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Танзания 2026",
@@ -5422,7 +5422,7 @@
       "currency": "CNY",
       "language": "тибетский, китайский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Тибет 2026",
@@ -5453,7 +5453,7 @@
       "currency": "USD",
       "language": "тетум, португальский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": true,
       "keywords": [
         "Тимор-Лешти 2026",
@@ -5484,7 +5484,7 @@
       "currency": "XOF",
       "language": "французский, эве, кабье",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Того 2026",
@@ -5515,7 +5515,7 @@
       "currency": "TOP",
       "language": "тонганский, английский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Тонга 2026",
@@ -5546,7 +5546,7 @@
       "currency": "TTD",
       "language": "английский, хинди, испанский",
       "bestTimeToVisit": "январь, февраль, март, апрель, май",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Тринидад и Тобаго 2026",
@@ -5578,7 +5578,7 @@
       "currency": "AUD (Австралийский доллар), TVD (Доллар Тувалу)",
       "language": "тувалу, английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "420000",
+      "estimatedCost": 420000,
       "visaRequirements": false,
       "keywords": [
         "Тувалу 2026",
@@ -5608,7 +5608,7 @@
       "currency": "TND (Тунисский динар)",
       "language": "арабский (официальный), французский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Тунис 2026",
@@ -5638,7 +5638,7 @@
       "currency": "TMT (Туркменский манат)",
       "language": "туркменский, русский",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "110000",
+      "estimatedCost": 110000,
       "visaRequirements": true,
       "keywords": [
         "Туркменистан 2026",
@@ -5669,7 +5669,7 @@
       "currency": "TRY (Турецкая лира)",
       "language": "турецкий",
       "bestTimeToVisit": "апрель, май, июнь, сентябрь, октябрь",
-      "estimatedCost": "100000",
+      "estimatedCost": 100000,
       "visaRequirements": false,
       "keywords": [
         "Турция 2026",
@@ -5699,7 +5699,7 @@
       "currency": "UGX (Угандийский шиллинг)",
       "language": "английский, суахили, луганда",
       "bestTimeToVisit": "июнь, июль, август, декабрь, январь, февраль",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Уганда 2026",
@@ -5729,7 +5729,7 @@
       "currency": "UZS (Узбекский сум)",
       "language": "узбекский (государственный), русский (язык межнационального общения)",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "80000",
+      "estimatedCost": 80000,
       "visaRequirements": false,
       "keywords": [
         "Узбекистан 2026",
@@ -5759,7 +5759,7 @@
       "currency": "UAH (Украинская гривна)",
       "language": "украинский",
       "bestTimeToVisit": "май, июнь, сентябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Украина 2026",
@@ -5790,7 +5790,7 @@
       "currency": "UYU (Уругвайское песо)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Уругвай 2026",
@@ -5821,7 +5821,7 @@
       "currency": "FJD (Фиджийский доллар)",
       "language": "английский, фиджийский, хинди",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": false,
       "keywords": [
         "Фиджи 2026",
@@ -5852,7 +5852,7 @@
       "currency": "PHP",
       "language": "филиппинский (тагальский), английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, апрель",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": false,
       "keywords": [
         "Филиппины 2026",
@@ -5881,7 +5881,7 @@
       "currency": "EUR (Евро)",
       "language": "финский, шведский",
       "bestTimeToVisit": "декабрь, январь, февраль, март, июнь, июль, август",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Финляндия 2026",
@@ -5912,7 +5912,7 @@
       "currency": "EUR",
       "language": "французский",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "250000",
+      "estimatedCost": 250000,
       "visaRequirements": true,
       "keywords": [
         "Франция 2026",
@@ -5943,7 +5943,7 @@
       "currency": "EUR (Евро)",
       "language": "хорватский",
       "bestTimeToVisit": "май, июнь, сентябрь, октябрь",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Хорватия 2026",
@@ -5971,7 +5971,7 @@
       "currency": "XAF (Франк КФА BEAC)",
       "language": "французский, санго",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "450000",
+      "estimatedCost": 450000,
       "visaRequirements": true,
       "keywords": [
         "ЦАР 2026",
@@ -5999,7 +5999,7 @@
       "currency": "XAF (Франк КФА BEAC)",
       "language": "французский, арабский",
       "bestTimeToVisit": "ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "520000",
+      "estimatedCost": 520000,
       "visaRequirements": true,
       "keywords": [
         "Чад 2026",
@@ -6027,7 +6027,7 @@
       "currency": "EUR (Евро)",
       "language": "черногорский (официальный), сербский",
       "bestTimeToVisit": "июнь, июль, август, сентябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Черногория 2026",
@@ -6059,7 +6059,7 @@
       "currency": "CZK (Чешская крона)",
       "language": "чешский",
       "bestTimeToVisit": "май, июнь, сентябрь, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Чехия 2026",
@@ -6086,7 +6086,7 @@
       "currency": "CLP (Чилийское песо)",
       "language": "испанский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "650000",
+      "estimatedCost": 650000,
       "visaRequirements": false,
       "keywords": [
         "Чили 2026",
@@ -6115,7 +6115,7 @@
       "currency": "CHF",
       "language": "немецкий, французский, итальянский, ретороманский",
       "bestTimeToVisit": "январь, февраль, март, июнь, июль, август, сентябрь",
-      "estimatedCost": "300000",
+      "estimatedCost": 300000,
       "visaRequirements": true,
       "keywords": [
         "Швейцария 2026",
@@ -6146,7 +6146,7 @@
       "currency": "SEK (Шведская крона)",
       "language": "шведский",
       "bestTimeToVisit": "июнь, июль, август, декабрь, январь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Швеция 2026",
@@ -6175,7 +6175,7 @@
       "currency": "LKR (Шри-ланкийская рупия)",
       "language": "сингальский, тамильский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": true,
       "keywords": [
         "Шри-Ланка 2026",
@@ -6205,7 +6205,7 @@
       "currency": "USD (Доллар США)",
       "language": "испанский, кечуа",
       "bestTimeToVisit": "июнь, июль, август, сентябрь, декабрь",
-      "estimatedCost": "210000",
+      "estimatedCost": 210000,
       "visaRequirements": false,
       "keywords": [
         "Эквадор 2026",
@@ -6241,7 +6241,7 @@
       "currency": "XAF (Франк КФА)",
       "language": "испанский, французский, португальский",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Экваториальная Гвинея 2026",
@@ -6272,7 +6272,7 @@
       "currency": "Накфа (ERN)",
       "language": "тигринья, арабский, английский",
       "bestTimeToVisit": "декабрь, январь, февраль, март",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Эритрея 2026",
@@ -6302,7 +6302,7 @@
       "currency": "SZL (Лилангени) / ZAR (Южноафриканский рэнд)",
       "language": "свати, английский",
       "bestTimeToVisit": "май, июнь, июль, август, сентябрь",
-      "estimatedCost": "120000",
+      "estimatedCost": 120000,
       "visaRequirements": false,
       "keywords": [
         "Эсватини 2026",
@@ -6333,7 +6333,7 @@
       "currency": "EUR (Евро)",
       "language": "эстонский",
       "bestTimeToVisit": "май, июнь, июль, август, декабрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": true,
       "keywords": [
         "Эстония 2026",
@@ -6364,7 +6364,7 @@
       "currency": "ETB (Эфиопский быр)",
       "language": "амхарский, оромо, тигринья",
       "bestTimeToVisit": "октябрь, ноябрь, декабрь, январь, февраль",
-      "estimatedCost": "170000",
+      "estimatedCost": 170000,
       "visaRequirements": true,
       "keywords": [
         "Эфиопия 2026",
@@ -6395,7 +6395,7 @@
       "currency": "ZAR (Южноафриканский рэнд)",
       "language": "11 официальных языков, включая английский, африкаанс, зулу",
       "bestTimeToVisit": "март, апрель, май, сентябрь, октябрь, ноябрь",
-      "estimatedCost": "220000",
+      "estimatedCost": 220000,
       "visaRequirements": false,
       "keywords": [
         "ЮАР 2026",
@@ -6427,7 +6427,7 @@
       "currency": "KRW",
       "language": "корейский",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь, ноябрь",
-      "estimatedCost": "180000",
+      "estimatedCost": 180000,
       "visaRequirements": false,
       "keywords": [
         "Южная Корея 2026",
@@ -6458,7 +6458,7 @@
       "currency": "RUB",
       "language": "осетинский, русский",
       "bestTimeToVisit": "апрель, май, сентябрь, октябрь",
-      "estimatedCost": "50000",
+      "estimatedCost": 50000,
       "visaRequirements": false,
       "keywords": [
         "Южная Осетия 2026",
@@ -6487,7 +6487,7 @@
       "currency": "SSP (Южносуданский фунт)",
       "language": "английский (официальный), арабский джуба, нуэр, динка",
       "bestTimeToVisit": "декабрь, январь, февраль",
-      "estimatedCost": "350000",
+      "estimatedCost": 350000,
       "visaRequirements": true,
       "keywords": [
         "Южный Судан 2026",
@@ -6516,7 +6516,7 @@
       "currency": "JMD (Ямайский доллар)",
       "language": "английский, патуа",
       "bestTimeToVisit": "декабрь — апрель, июль — август",
-      "estimatedCost": "320000",
+      "estimatedCost": 320000,
       "visaRequirements": false,
       "keywords": [
         "Ямайка 2026",
@@ -6545,7 +6545,7 @@
       "currency": "JPY (Японская иена)",
       "language": "японский",
       "bestTimeToVisit": "март — май, октябрь — ноябрь",
-      "estimatedCost": "380000",
+      "estimatedCost": 380000,
       "visaRequirements": true,
       "keywords": [
         "Япония 2026",

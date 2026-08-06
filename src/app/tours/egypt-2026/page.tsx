@@ -9,7 +9,7 @@ import { SITE_URL } from '@/shared/constants/seo';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Туры в Египет 2026 из Москвы — цены, виза $25, Хургада, Шарм-эль-Шейх | Велес Вояж',
-  description: 'Туры в Египет 2026 из Москвы: виза по прибытии $25, цены от 85 000 ₽, лучшие отели Хургады и Шарм-эль-Шейха. Горящие туры в Египет август 2026. Забронируйте с поддержкой 24/7.',
+  description: 'Туры в Египет 2026 из Москвы: виза по прибытии $25, цены от 90 000 ₽, лучшие отели Хургады и Шарм-эль-Шейха. Горящие туры в Египет август 2026. Забронируйте с поддержкой 24/7.',
   url: `${SITE_URL}/tours/egypt-2026`,
   type: 'article',
   keywords: [
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'Сколько стоит тур в Египет из Москвы на двоих?',
-    answer: 'Тур в Египет из Москвы на двоих стоит от 85 000 до 140 000 рублей за 7 ночей. Хургада дешевле, Шарм-эль-Шейх дороже.',
+    answer: 'Тур в Египет из Москвы на двоих стоит от 90 000 до 140 000 рублей за 7 ночей. Хургада дешевле, Шарм-эль-Шейх дороже.',
   },
   {
     question: 'Где лучше отдохнуть в Египте: Хургада или Шарм-эль-Шейх?',
@@ -100,7 +100,7 @@ const Egypt2026Page = () => {
                   touristType: 'Couples',
                   offers: {
                     '@type': 'Offer',
-                    price: '85000',
+                    price: '90000',
                     priceCurrency: 'RUB',
                     availability: 'https://schema.org/InStock',
                     validFrom: '2026-06-01',
@@ -175,7 +175,7 @@ const Egypt2026Page = () => {
             Туры в Египет 2026 из Москвы
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Виза по прибытии $25. Цены от 85 000 ₽ на двоих. Хургада, Шарм-эль-Шейх, Марса-Алам.
+            Виза по прибытии $25. Цены от 90 000 ₽ на двоих. Хургада, Шарм-эль-Шейх, Марса-Алам.
             Горящие туры август 2026. Поддержка 24/7 от Велес Вояж.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
@@ -202,7 +202,7 @@ const Egypt2026Page = () => {
             <span className="text-3xl">⚡</span> Краткий ответ: туры в Египет 2026
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
-            <strong>Цена:</strong> от 85 000 ₽ на двоих за 7 ночей. <strong>Виза:</strong> по прибытии $25 (до 30 дней).{' '}
+            <strong>Цена:</strong> от 90 000 ₽ на двоих за 7 ночей. <strong>Виза:</strong> по прибытии $25 (до 30 дней).{' '}
             <strong>Лучший сезон:</strong> октябрь-апрель. <strong>Популярные курорты:</strong> Хургада, Шарм-эль-Шейх, Марса-Алам.
           </p>
           <div className="overflow-x-auto">
@@ -226,7 +226,7 @@ const Egypt2026Page = () => {
                 </tr>
                 <tr>
                   <th className="text-left font-semibold text-gray-600 dark:text-gray-400 py-2 pr-4 whitespace-nowrap">Средний чек</th>
-                  <td className="text-gray-900 dark:text-white py-2">от 85 000 ₽ на двоих / 7 ночей</td>
+                  <td className="text-gray-900 dark:text-white py-2">от 90 000 ₽ на двоих / 7 ночей</td>
                 </tr>
               </tbody>
             </table>

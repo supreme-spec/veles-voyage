@@ -52,12 +52,14 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
   });
 }
 
-const getCurrencyFaqs = (countryName: string) => {
+const getCurrencyFaqs = (countryName: string, currencyCode?: string) => {
   const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
+  const isRubleCurrency = currencyCode?.toLowerCase().includes('rub') || currencyCode?.toLowerCase().includes('рубл');
+  
   return [
     {
       question: `Какая валюта используется в ${countryName}?`,
-      answer: `Официальная валюта ${cleanCountryName}. Рекомендуем обменять рубли на местную валюту в банках или официальных обменниках для получения выгодного курса.`
+      answer: `Официальная валюта ${cleanCountryName}: ${currencyCode || 'местная валюта'}.${isRubleCurrency ? '' : ' Рекомендуем обменять рубли на местную валюту в банках или официальных обменниках для получения выгодного курса.'}`
     },
   {
     question: 'Где лучше обменять валюту?',
@@ -65,7 +67,9 @@ const getCurrencyFaqs = (countryName: string) => {
   },
   {
     question: 'Принимают ли банковские карты?',
-    answer: 'Visa и Mastercard принимаются в большинстве мест, но всегда имейте наличные для мелких расходов. Уведомите банк о поездке заранее и проверьте комиссии за международные операции.'
+    answer: isRubleCurrency
+      ? 'В России карты иностранных банков (Visa, Mastercard, American Express) не работают. Используйте карты системы «Мир» или наличные рубли. Карты UnionPay работают ограниченно. Уведомите свой банк о поездке заранее.'
+      : 'Visa и Mastercard принимаются в большинстве мест, но всегда имейте наличные для мелких расходов. Уведомите банк о поездке заранее и проверьте комиссии за международные операции.'
   },
   {
     question: 'Нужно ли оставлять чаевые?',
@@ -89,7 +93,8 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
   const mdxData = await getCountryMdxData(country);
   const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
   const currency = mdxData?.frontmatter?.currency || 'местная валюта';
-  const faqs = getCurrencyFaqs(countryName);
+  const isRubleCurrency = currency.toLowerCase().includes('rub') || currency.toLowerCase().includes('рубл');
+  const faqs = getCurrencyFaqs(countryName, currency);
   const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: '' };
 
   const schemas = [
@@ -166,22 +171,46 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
               Обмен валюты
             </h2>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-8">
-              <li>• Обменяйте рубли на местную валюту в банках или официальных обменниках</li>
-              <li>• Избегайте обмена в аэропортах и отелях (неблагоприятный курс)</li>
-              <li>• Проверяйте актуальный курс перед обменом</li>
-              <li>• Сохраняйте чеки об обмене валюты</li>
-              <li>• Используйте карты для крупных покупок</li>
+              {isRubleCurrency ? (
+                <>
+                  <li>• На территории страны используется российский рубль (RUB) — это местная валюта</li>
+                  <li>• Для иностранных туристов: обмен иностранной валюты на рубли в банках или официальных обменниках</li>
+                  <li>• Избегайте обмена в аэропортах и отелях (неблагоприятный курс)</li>
+                  <li>• Проверяйте актуальный курс перед обменом</li>
+                  <li>• Сохраняйте чеки об обмене валюты</li>
+                </>
+              ) : (
+                <>
+                  <li>• Обменяйте вашу валюту на местную в банках или официальных обменниках по прибытии</li>
+                  <li>• Избегайте обмена в аэропортах и отелях (неблагоприятный курс)</li>
+                  <li>• Проверяйте актуальный курс перед обменом</li>
+                  <li>• Сохраняйте чеки об обмене валюты</li>
+                  <li>• Используйте карты для крупных покупок</li>
+                </>
+              )}
             </ul>
 
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
               Использование банковских карт
             </h2>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-8">
-              <li>• Visa и Mastercard принимаются в большинстве мест</li>
-              <li>• Уведомите банк о поездке заранее</li>
-              <li>• Имейте наличные для мелких расходов</li>
-              <li>• Проверьте комиссии за международные операции</li>
-              <li>• Используйте карты с бесконтактной оплатой</li>
+              {isRubleCurrency ? (
+                <>
+                  <li>• Карты иностранных банков (Visa, Mastercard, American Express) в России не работают</li>
+                  <li>• Используйте карты системы «Мир» или наличные рубли</li>
+                  <li>• Карты UnionPay работают ограниченно</li>
+                  <li>• Уведомите свой банк о поездке заранее</li>
+                  <li>• Имейте наличные для мелких расходов</li>
+                </>
+              ) : (
+                <>
+                  <li>• Visa и Mastercard принимаются в большинстве мест</li>
+                  <li>• Уведомите банк о поездке заранее</li>
+                  <li>• Имейте наличные для мелких расходов</li>
+                  <li>• Проверьте комиссии за международные операции</li>
+                  <li>• Используйте карты с бесконтактной оплатой</li>
+                </>
+              )}
             </ul>
 
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
@@ -253,7 +282,7 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
                   <span className="w-6 h-6 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-full text-xs">Q</span>
                   {faq.question}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 pl-8 text-sm">{faq.answer}</div>
+                <div className="text-gray-600 dark:text-gray-400 pl-8 text-sm faq-answer" data-speakable="true">{faq.answer}</div>
               </div>
             ))}
           </div>

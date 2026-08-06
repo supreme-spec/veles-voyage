@@ -37,7 +37,7 @@ const VISA_FAQS_NOT_REQUIRED = [
   },
   {
     question: 'Сколько можно находиться в стране без визы?',
-    answer: 'Срок пребывания без визы зависит от страны и обычно составляет от 30 до 90 дней. Точный лимит уточняйте при планировании поездки.'
+    answer: 'Срок безвизового пребывания обычно составляет от 30 до 90 дней. Точный лимит и условия уточняйте при планировании поездки.'
   },
   {
     question: 'Какие документы нужны при безвизовом въезде?',
@@ -289,7 +289,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
                   <span className="w-6 h-6 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-full text-xs">Q</span>
                   {faq.question}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 pl-8 text-sm">{faq.answer}</div>
+                <div className="text-gray-600 dark:text-gray-400 pl-8 text-sm faq-answer" data-speakable="true">{faq.answer}</div>
               </div>
             ))}
           </div>

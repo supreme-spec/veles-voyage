@@ -155,6 +155,42 @@ const globalSchema = {
           closes: '16:00',
         },
       ],
+      containsPlace: [
+        {
+          '@type': 'TravelAgency',
+          name: 'Велес Вояж Голицыно',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'пр-т Керамиков, д. 103',
+            addressLocality: 'Голицыно',
+            addressRegion: 'Московская обл.',
+            postalCode: '143041',
+            addressCountry: 'RU',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 55.6186,
+            longitude: 36.9686,
+          },
+        },
+        {
+          '@type': 'TravelAgency',
+          name: 'Велес Вояж Пушкино',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'пр-т Московский, д. 9/2',
+            addressLocality: 'Пушкино',
+            addressRegion: 'Московская обл.',
+            postalCode: '141207',
+            addressCountry: 'RU',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 56.0111,
+            longitude: 37.8558,
+          },
+        },
+      ],
       hasMap: 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',

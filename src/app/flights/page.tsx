@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AviakassaWidget from '@/components/widgets/AviakassaWidget';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Авиабилеты: поиск и бронирование по миру 2026',
@@ -179,12 +179,29 @@ export default function FlightsPage() {
           </h2>
 
           {/* Aviakassa.Partner */}
-          <AviakassaWidget
-            id="9870"
-            channelToken="3332f56e290f67d4f939f48ed8d2d1a578817244"
-            showAvia
-            showRail={false}
-            showHotel={false}
+          <div id="ak-app-9870" style={{ minHeight: '500px' }}></div>
+          <Script
+            src="https://widgets.aviakassa.com/partner.js"
+            strategy="lazyOnload"
+            onLoad={() => {
+              if (typeof window !== 'undefined' && (window as any).Aviakassa?.Partner) {
+                new (window as any).Aviakassa.Partner('ak-app-9870', {
+                  showAvia: true,
+                  showRail: false,
+                  showHotel: false,
+                  showAviaTitle: false,
+                  showRailTitle: false,
+                  showHotelTitle: false,
+                  aviaTitle: 'Поиск дешевых авиабилетов',
+                  showAviakassaLogo: false,
+                  showLocaleSelect: true,
+                  aviaShowComplexRoute: true,
+                  showAviaAirlinesPrefilter: true,
+                  channelToken: '3332f56e290f67d4f939f48ed8d2d1a578817244',
+                  id: 9870,
+                });
+              }
+            }}
           />
           {/* Aviakassa.Partner */}
         </div>

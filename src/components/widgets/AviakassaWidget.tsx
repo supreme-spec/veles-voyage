@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import Script from 'next/script';
 
 interface AviakassaWidgetProps {
   id?: string;
@@ -24,71 +25,7 @@ export default function AviakassaWidget({
   showHotel = true,
 }: AviakassaWidgetProps) {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
-  const initialized = useRef(false);
   const containerId = `ak-app-${id}`;
-
-  useEffect(() => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    const existingScript = document.getElementById(`ak-app-script-${id}`) as HTMLScriptElement | null;
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const script = document.createElement('script');
-    script.id = `ak-app-script-${id}`;
-    script.charset = 'utf-8';
-    script.src = 'https://widgets.aviakassa.com/partner.js';
-    script.async = true;
-    script.defer = true;
-
-    script.addEventListener('load', () => {
-      if (initialized.current) return;
-      try {
-        const Partner = window.Aviakassa?.Partner;
-        if (typeof Partner !== 'function') {
-          setStatus('error');
-          return;
-        }
-        new Partner(containerId, {
-          showAvia,
-          showRail,
-          showHotel,
-          showAviaTitle: false,
-          showRailTitle: false,
-          showHotelTitle: false,
-          aviaTitle: 'Поиск дешевых авиабилетов',
-          railTitle: '',
-          hotelTitle: '',
-          showAviakassaLogo: false,
-          showLocaleSelect: true,
-          aviaShowComplexRoute: true,
-          showAviaAirlinesPrefilter: true,
-          channelToken,
-          id: Number(id),
-        });
-        initialized.current = true;
-        setStatus('ready');
-      } catch (e) {
-        console.error('Aviakassa widget init error:', e);
-        setStatus('error');
-      }
-    });
-
-    script.addEventListener('error', () => {
-      setStatus('error');
-    });
-
-    document.body.appendChild(script);
-
-    return () => {
-      script.removeEventListener('load', () => {});
-      script.removeEventListener('error', () => {});
-      const el = document.getElementById(`ak-app-script-${id}`);
-      if (el) el.remove();
-    };
-  }, [id, channelToken, showAvia, showRail, showHotel]);
 
   return (
     <div style={{ minHeight: 500, position: 'relative' }}>
@@ -115,6 +52,38 @@ export default function AviakassaWidget({
         </div>
       )}
       <div id={containerId} style={{ minHeight: status === 'ready' ? 500 : 0 }} />
+
+      <Script
+        src="https://widgets.aviakassa.com/partner.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          if (typeof window !== 'undefined' && (window as any).Aviakassa?.Partner) {
+            try {
+              new (window as any).Aviakassa.Partner(containerId, {
+                showAvia,
+                showRail,
+                showHotel,
+                showAviaTitle: false,
+                showRailTitle: false,
+                showHotelTitle: false,
+                aviaTitle: 'Поиск дешевых авиабилетов',
+                showAviakassaLogo: false,
+                showLocaleSelect: true,
+                aviaShowComplexRoute: true,
+                showAviaAirlinesPrefilter: true,
+                channelToken,
+                id: Number(id),
+              });
+              setStatus('ready');
+            } catch (e) {
+              console.error('Aviakassa widget init error:', e);
+              setStatus('error');
+            }
+          } else {
+            setStatus('error');
+          }
+        }}
+      />
     </div>
   );
 }

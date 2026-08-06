@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import Script from 'next/script';
 
 const WIDGET_SCRIPT_SRC = 'https://bitrix.infoflot.com/local/templates/infoflot/frontend/js/infoflotIframe.js';
 const WIDGET_API_URL = 'https://bitrix.infoflot.com/rest/api/search.filter/';
@@ -8,80 +9,9 @@ const WIDGET_KEY = 'YTo0OntzOjI6IklEIjtzOjQ6IjMxODUiO3M6NDoiVVNFUiI7czozMjoiY3k1
 
 export default function ClientInfoflotWidget() {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
-  const widgetRef = useRef<HTMLDivElement>(null);
-  const initialized = useRef(false);
-
-  useEffect(() => {
-    if (initialized.current) return;
-
-    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${WIDGET_SCRIPT_SRC}"]`);
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const script = document.createElement('script');
-    script.src = WIDGET_SCRIPT_SRC;
-    script.async = true;
-
-    function initWidget() {
-      if (initialized.current) return;
-      if (typeof window.createInfoflotWidget !== 'function') return;
-      if (!widgetRef.current) return;
-
-      try {
-        window.createInfoflotWidget(WIDGET_API_URL, {
-          key: WIDGET_KEY,
-          referer: encodeURIComponent(location.href),
-        });
-        initialized.current = true;
-        setStatus('ready');
-      } catch (e) {
-        console.error('Infoflot widget init error:', e);
-        setStatus('error');
-      }
-    }
-
-    script.onload = () => {
-      if (typeof window.createInfoflotWidget === 'function') {
-        initWidget();
-      } else {
-        let attempts = 0;
-        const maxAttempts = 50;
-        const poll = setInterval(() => {
-          attempts++;
-          if (typeof window.createInfoflotWidget === 'function') {
-            clearInterval(poll);
-            initWidget();
-          } else if (attempts >= maxAttempts) {
-            clearInterval(poll);
-            setStatus('error');
-          }
-        }, 100);
-      }
-    };
-
-    script.onerror = () => {
-      console.error('Failed to load Infoflot widget script');
-      setStatus('error');
-    };
-
-    const firstScript = document.querySelector('script');
-    if (firstScript && firstScript.parentNode) {
-      firstScript.parentNode.insertBefore(script, firstScript);
-    } else {
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
 
   return (
     <div
-      ref={widgetRef}
       className="infoflotWidget"
       data-id={WIDGET_KEY}
       data-index="1"
@@ -109,6 +39,27 @@ export default function ClientInfoflotWidget() {
           </div>
         </div>
       )}
+
+      <Script
+        src={WIDGET_SCRIPT_SRC}
+        strategy="lazyOnload"
+        onLoad={() => {
+          if (typeof window !== 'undefined' && (window as any).createInfoflotWidget) {
+            try {
+              (window as any).createInfoflotWidget(WIDGET_API_URL, {
+                key: WIDGET_KEY,
+                referer: encodeURIComponent(window.location.href),
+              });
+              setStatus('ready');
+            } catch (e) {
+              console.error('Infoflot widget init error:', e);
+              setStatus('error');
+            }
+          } else {
+            setStatus('error');
+          }
+        }}
+      />
     </div>
   );
 }

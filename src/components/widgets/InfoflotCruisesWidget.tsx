@@ -38,7 +38,6 @@ export default function InfoflotCruisesWidget() {
       <Script
         src={WIDGET_SCRIPT_SRC}
         strategy="lazyOnload"
-        crossOrigin="anonymous"
         onLoad={() => {
           if (typeof window !== 'undefined' && (window as any).createInfoflotWidget) {
             try {

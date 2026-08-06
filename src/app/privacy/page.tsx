@@ -529,30 +529,6 @@ export default function PrivacyPage() {
           })
         }}
       />
-      
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Главная",
-                "item": "https://veles-voyage.ru"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Политика конфиденциальности",
-                "item": "https://veles-voyage.ru/privacy"
-              }
-            ]
-          })
-        }}
-      />
     </div>
   );
 }

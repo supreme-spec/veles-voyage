@@ -12,6 +12,16 @@ export default function GlobalError({
 }) {
   useEffect(() => {
     console.error('Application error:', error);
+
+    const message = error?.message || '';
+    if (
+      message.includes('ChunkLoadError') ||
+      message.includes('Loading chunk') ||
+      message.includes('Failed to fetch dynamically imported module')
+    ) {
+      console.warn('[GlobalError] Reloading after chunk load failure');
+      window.location.reload();
+    }
   }, [error]);
 
   return (

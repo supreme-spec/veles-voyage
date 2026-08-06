@@ -4,15 +4,6 @@ import { countries } from '@lib/velite-data';
 import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 
 const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
-const COUNTRY_MAP = new Map(
-  countries
-    .filter((c: any) => c.slug)
-    .map((c: any) => [c.slug as string, c.body ?? ''])
-);
-
-function hasSection(id: string, body: string): boolean {
-  return new RegExp(`id=["']${id}["']`).test(body);
-}
 
 export default function wikiSitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
@@ -25,9 +16,16 @@ export default function wikiSitemap(): MetadataRoute.Sitemap {
   }));
 
   const matrixPages: MetadataRoute.Sitemap = allCountryIds.flatMap((id) => {
-    const body = COUNTRY_MAP.get(id) ?? '';
+    const countryData = countries.find(c => c.slug === id);
+    const body = countryData?.body ?? '';
+    
+    const hasVisaSection = /##?\s*(виз|visa|визовый|виза)/i.test(body);
+    const hasWeatherSection = /##?\s*(погод|weather|климат|season|сезон)/i.test(body);
+    const hasCurrencySection = /##?\s*(валют|currency|деньг|финанс)/i.test(body);
+
     const pages: MetadataRoute.Sitemap = [];
-    if (hasSection('visa', body)) {
+    
+    if (hasVisaSection) {
       pages.push({
         url: `${baseUrl}/wiki/${id}/visa`,
         lastModified: STATIC_DATE,
@@ -35,7 +33,8 @@ export default function wikiSitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       });
     }
-    if (hasSection('seasons', body)) {
+    
+    if (hasWeatherSection) {
       pages.push({
         url: `${baseUrl}/wiki/${id}/weather`,
         lastModified: STATIC_DATE,
@@ -43,7 +42,8 @@ export default function wikiSitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
-    if (hasSection('budget', body) || hasSection('currency', body)) {
+    
+    if (hasCurrencySection) {
       pages.push({
         url: `${baseUrl}/wiki/${id}/currency`,
         lastModified: STATIC_DATE,
@@ -51,6 +51,7 @@ export default function wikiSitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
+    
     return pages;
   });
 

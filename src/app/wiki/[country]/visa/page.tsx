@@ -112,7 +112,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
   const visaOnArrival = visaPriceData ? (visaPriceData as { visaOnArrival?: string }).visaOnArrival : undefined;
   const visaFeeText = visaOnArrival
     ? `Виза по прилёту: ${visaOnArrival}. Срок действия — 30 дней. Дети до 6 лет освобождены.`
-    : 'Консульский сбор составляет примерно 80 € для взрослых, 40 € для детей 6-12 лет. Дети до 6 лет освобождены от оплаты.';
+    : 'Стоимость консульского сбора зависит от страны и типа визы. Уточняйте актуальные тарифы у менеджера Велес Вояж.';
 
   const schemas = [
     ...(await generateUniversalSchemas({

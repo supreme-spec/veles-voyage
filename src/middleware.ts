@@ -93,10 +93,10 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get('user-agent') || '';
 
-  // 301 редирект с www на не-www
+  // 301 редирект с apex-домена на www (www работает, apex — 502)
   const host = request.headers.get('host') || '';
-  if (host.startsWith('www.')) {
-    const newUrl = new URL(pathname, `https://${host.replace(/^www\./, '')}${request.nextUrl.search}`);
+  if (!host.startsWith('www.') && host !== 'localhost') {
+    const newUrl = new URL(pathname, `https://www.${host}${request.nextUrl.search}`);
     return NextResponse.redirect(newUrl, 301);
   }
 

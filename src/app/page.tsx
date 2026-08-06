@@ -615,6 +615,7 @@ export default async function Home() {
                     width={128}
                     height={128}
                     className="w-full h-full object-cover"
+                    unoptimized
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -637,6 +638,7 @@ export default async function Home() {
                     width={128}
                     height={128}
                     className="w-full h-full object-cover"
+                    unoptimized
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">

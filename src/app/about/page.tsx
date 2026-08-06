@@ -208,13 +208,14 @@ export default function AboutPage() {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6">
-                  <Image 
-                    src="/images/svistunov.webp" 
-                    alt="Свистунов Сергей Григорьевич - Генеральный директор ООО Велес, турагентство Велес Вояж" 
-                    width={128} 
-                    height={128} 
-                    className="w-full h-full object-cover"
-                  />
+                   <Image 
+                     src="/images/svistunov.webp" 
+                     alt="Свистунов Сергей Григорьевич - Генеральный директор ООО Велес, турагентство Велес Вояж" 
+                     width={128} 
+                     height={128} 
+                     className="w-full h-full object-cover"
+                     unoptimized
+                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   Свистунов Сергей Григорьевич
@@ -240,13 +241,14 @@ export default function AboutPage() {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6">
-                  <Image 
-                    src="/images/kolesnikova.webp" 
-                    alt="Колесникова Анастасия Юрьевна - Директор ООО Велес, турагентство Велес Вояж" 
-                    width={128} 
-                    height={128} 
-                    className="w-full h-full object-cover"
-                  />
+                   <Image 
+                     src="/images/kolesnikova.webp" 
+                     alt="Колесникова Анастасия Юрьевна - Директор ООО Велес, турагентство Велес Вояж" 
+                     width={128} 
+                     height={128} 
+                     className="w-full h-full object-cover"
+                     unoptimized
+                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   Колесникова Анастасия Юрьевна

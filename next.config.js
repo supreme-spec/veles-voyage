@@ -83,6 +83,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'www.veles-voyage.ru',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',

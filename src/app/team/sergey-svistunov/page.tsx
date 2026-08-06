@@ -63,6 +63,7 @@ export default function SergeySvistunovPage() {
                   height={192}
                   className="w-full h-full object-cover"
                   priority
+                  unoptimized
                 />
               </div>
               <div>

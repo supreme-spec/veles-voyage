@@ -11,8 +11,6 @@ import { TabletContactBar } from '@/components/TabletContactBar';
 import { PWABackButton } from '@/components/PWABackButton';
 import { PWANetworkStatus } from '@/components/PWANetworkStatus';
 import { WebVitals } from '@/components/analytics/WebVitals';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import { AiSearchAssistant } from '@/shared/components/ui/AiSearchAssistant';
 import { ChunkLoadErrorBoundary } from '@/components/ChunkLoadErrorBoundary';
 import { SITE_URL } from '@/shared/constants/seo';
@@ -463,8 +461,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Web Vitals */}
         <WebVitals />
-        <Analytics />
-        <SpeedInsights />
         {/* JSON-LD */}
         <script
           type="application/ld+json"

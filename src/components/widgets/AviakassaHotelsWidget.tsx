@@ -42,6 +42,7 @@ export default function AviakassaHotelsWidget() {
       <Script
         src="https://widgets.aviakassa.com/partner.js"
         strategy="lazyOnload"
+        crossOrigin="anonymous"
         onLoad={() => {
           if (typeof window !== 'undefined' && (window as any).Aviakassa?.Partner) {
             try {

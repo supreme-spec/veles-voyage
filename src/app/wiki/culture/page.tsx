@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ReadableContent } from '@/shared/components/ui/ReadableContentEnhanced';
+import dynamic from 'next/dynamic';
+
+const ReadableContent = dynamic(
+  () => import('@/shared/components/ui/ReadableContentEnhanced').then((m) => m.ReadableContent)
+);
 
 export const metadata: Metadata = {
   title: 'Культура народов мира | Традиции и обычаи | Велес Вояж',

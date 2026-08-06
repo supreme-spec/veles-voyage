@@ -1,3 +1,4 @@
+import nextDynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { compileMDX } from 'next-mdx-remote/rsc';
@@ -35,7 +36,9 @@ import {
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { ZkpBadge } from '@/components/ZkpTrustBadge';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { MdxTableOfContents } from '@/components/MdxTableOfContents';
+const MdxTableOfContents = nextDynamic(
+  () => import('@/components/MdxTableOfContents').then((m) => m.MdxTableOfContents)
+);
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';

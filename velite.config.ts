@@ -67,6 +67,37 @@ export default defineConfig({
         videoUrl: s.string().optional(),
         videoEmbed: s.string().optional(),
         countryCode: s.string().optional(),
+        socialTags: s
+          .union([
+            s.object({
+              ogImage: s.string().url().optional(),
+              description: s.string().max(160),
+            }),
+            s.string(),
+          ])
+          .optional()
+          .transform((val) => {
+            if (!val) return undefined;
+            if (typeof val === 'string') {
+              const tags = val
+                .split(',')
+                .map((t) => t.trim())
+                .filter(Boolean);
+              return {
+                ogImage: undefined,
+                description: tags.join(' '),
+                tags,
+              };
+            }
+            return val;
+          }),
+        infoBlock: s
+          .object({
+            visa: s.string(),
+            currency: s.string(),
+            safetyLevel: s.enum(['low', 'medium', 'high']),
+          })
+          .optional(),
       }),
     }),
   },

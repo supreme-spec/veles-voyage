@@ -1,6 +1,5 @@
 'use client';
 
-import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 
 interface AviakassaWidgetProps {
@@ -29,25 +28,29 @@ export default function AviakassaWidget({
   const containerId = `ak-app-${id}`;
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    let attempts = 0;
-    const maxAttempts = 80;
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-    function tryInit() {
+    const existingScript = document.getElementById(`ak-app-script-${id}`) as HTMLScriptElement | null;
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = document.createElement('script');
+    script.id = `ak-app-script-${id}`;
+    script.charset = 'utf-8';
+    script.src = 'https://widgets.aviakassa.com/partner.js';
+    script.async = true;
+    script.defer = true;
+
+    script.addEventListener('load', () => {
       if (initialized.current) return;
-      attempts++;
-
       try {
-        const Partner = (window as any).Aviakassa?.Partner;
+        const Partner = window.Aviakassa?.Partner;
         if (typeof Partner !== 'function') {
-          if (attempts >= maxAttempts) {
-            setStatus('error');
-            return;
-          }
-          timeout = setTimeout(tryInit, 100);
+          setStatus('error');
           return;
         }
-
         new Partner(containerId, {
           showAvia,
           showRail,
@@ -71,12 +74,19 @@ export default function AviakassaWidget({
         console.error('Aviakassa widget init error:', e);
         setStatus('error');
       }
-    }
+    });
 
-    tryInit();
+    script.addEventListener('error', () => {
+      setStatus('error');
+    });
+
+    document.body.appendChild(script);
 
     return () => {
-      if (timeout) clearTimeout(timeout);
+      script.removeEventListener('load', () => {});
+      script.removeEventListener('error', () => {});
+      const el = document.getElementById(`ak-app-script-${id}`);
+      if (el) el.remove();
     };
   }, [id, channelToken, showAvia, showRail, showHotel]);
 
@@ -105,12 +115,6 @@ export default function AviakassaWidget({
         </div>
       )}
       <div id={containerId} style={{ minHeight: status === 'ready' ? 500 : 0 }} />
-
-      <Script
-        id={`ak-app-script-${id}`}
-        src="https://widgets.aviakassa.com/partner.js"
-        strategy="afterInteractive"
-      />
     </div>
   );
 }

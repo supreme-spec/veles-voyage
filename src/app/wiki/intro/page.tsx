@@ -1,5 +1,9 @@
 import Link from 'next/link';
-import { ReadableContent } from '@/shared/components/ui/ReadableContentEnhanced';
+import dynamic from 'next/dynamic';
+
+const ReadableContent = dynamic(
+  () => import('@/shared/components/ui/ReadableContentEnhanced').then((m) => m.ReadableContent)
+);
 
 import { WikiStatsDisplay } from '@/components/WikiStatsDisplay';
 

@@ -173,7 +173,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
                 🛂 Виза требуется
               </h2>
               <p className="text-red-800 dark:text-red-200">
-                Для въезда в {countryName} гражданам РФ требуется виза.
+                Для въезда в {getCountryAccusative(country)} гражданам РФ требуется виза.
               </p>
             </div>
           ) : (
@@ -182,7 +182,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
                 ✅ Безвизовый въезд
               </h2>
               <p className="text-green-800 dark:text-green-200">
-                Граждане РФ могут посещать {countryName} без визы.
+                Граждане РФ могут посещать {getCountryAccusative(country)} без визы.
               </p>
             </div>
           )}
@@ -221,7 +221,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
             </h2>
             {visaRequired ? (
               <p className="text-gray-700 dark:text-gray-300">
-                Виза в {countryName} оформляется в среднем 10-15 рабочих дней. Рекомендуется подавать документы за 1-2 месяца до поездки.
+                Виза в {getCountryAccusative(country)} оформляется в среднем 10-15 рабочих дней. Рекомендуется подавать документы за 1-2 месяца до поездки.
               </p>
             ) : (
               <p className="text-gray-700 dark:text-gray-300">
@@ -248,7 +248,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
               Нужна помощь с оформлением визы?
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Турагентство Велес Вояж поможет с оформлением визы и подбором тура в {countryName}.
+              Турагентство Велес Вояж поможет с оформлением визы и подбором тура в {getCountryAccusative(country)}.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -273,7 +273,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
               href={`/wiki/${country}`}
               className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              ← Вернуться к путеводителю по {countryName}
+               ← Вернуться к путеводителю по {getCountryAccusative(country)}
             </Link>
           </div>
         </article>

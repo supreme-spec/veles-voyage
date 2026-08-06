@@ -56,4 +56,20 @@ test.describe('Главная страница', () => {
     const count = await navLinks.count();
     expect(count).toBeGreaterThan(0);
   });
+
+  test('должна отображать цены без NaN', async ({ page }) => {
+    await page.goto('/');
+    
+    // Проверяем, что на странице есть цены и они не содержат NaN
+    const priceElements = page.locator('.text-indigo-600, .font-extrabold');
+    const count = await priceElements.count();
+    
+    for (let i = 0; i < Math.min(count, 10); i++) {
+      const text = await priceElements.nth(i).textContent();
+      if (text && text.includes('₽')) {
+        expect(text).not.toContain('NaN');
+        expect(text).toMatch(/\d/);
+      }
+    }
+  });
 });

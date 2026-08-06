@@ -1,10 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const AviakassaFlights = dynamic(
-  () => import('@/components/widgets/AviakassaFlights'),
-  { ssr: false, loading: () => <p style={{ padding: '40px', textAlign: 'center' }}>Загрузка виджета поиска билетов...</p> }
-);
+import AviakassaFlights from '@/components/widgets/AviakassaFlights';
 
 export const metadata: Metadata = {
   title: 'Авиабилеты: поиск и бронирование по миру 2026',

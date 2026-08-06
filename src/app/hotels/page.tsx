@@ -8,13 +8,9 @@ import {
 } from '@heroicons/react/24/outline';
 import { hotelsSchema, faqSchema, howToSchema } from './metadata';
 import StructuredData from '@/components/SEO/StructuredData';
+import AviakassaHotels from '@/components/widgets/AviakassaHotels';
 import { SITE_URL } from '@/shared/constants/seo';
 import Image from 'next/image';
-
-const AviakassaHotels = dynamic(
-  () => import('@/components/widgets/AviakassaHotels'),
-  { ssr: false, loading: () => <p style={{ padding: '40px', textAlign: 'center' }}>Загрузка виджета поиска отелей...</p> }
-);
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1763094006165-7db02c4abb61?w=1200&h=630&fit=crop&auto=format';
 

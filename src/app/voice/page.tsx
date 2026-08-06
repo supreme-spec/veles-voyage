@@ -92,7 +92,7 @@ const speakableSchema = {
   name: 'Голосовой помощник Велес Вояж',
   speakable: {
     '@type': 'SpeakableSpecification',
-    cssSelector: ['.voice-snippet', '.faq-answer'],
+    cssSelector: ['#voice-content', '.faq-answer'],
   },
 };
 
@@ -117,7 +117,7 @@ export default function VoicePage() {
     }));
 
   return (
-    <div className="container mx-auto px-4 max-w-4xl py-12">
+    <div id="voice-content" className="container mx-auto px-4 max-w-4xl py-12">
       <SchemaScripts schemas={[voiceFaqSchema, speakableSchema]} />
 
       <header className="mb-10">

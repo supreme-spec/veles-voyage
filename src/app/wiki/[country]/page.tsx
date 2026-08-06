@@ -38,6 +38,9 @@ import { MdxTableOfContents } from '@/components/MdxTableOfContents';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
+
+export const revalidate = 3600;
+
 // CountryMap component using InteractiveMap
 const CountryMap = ({ countryName }: any) => (
   <div className="my-6">

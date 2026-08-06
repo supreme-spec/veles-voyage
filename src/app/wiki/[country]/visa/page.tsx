@@ -9,6 +9,8 @@ import { getCountryMdxData } from '@/shared/utils/generateCountrySEOMetadata';
 import { countryNamesDictionary } from '@/shared/data/country-names-dictionary';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 
+export const revalidate = 3600;
+
 const VISA_FAQS_REQUIRED = [
   {
     question: 'Нужна ли виза для россиян в 2026 году?',

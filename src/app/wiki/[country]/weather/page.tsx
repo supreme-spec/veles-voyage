@@ -7,6 +7,8 @@ import { generateFAQSchema } from '@/lib/seo/unifiedSEO';
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const wikiPages = await getWikiPages();
   if (!wikiPages) return [];

@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { hotelsSchema, faqSchema, howToSchema } from './metadata';
 import StructuredData from '@/components/SEO/StructuredData';
-import Script from 'next/script';
+import AviakassaHotelsWidget from '@/components/widgets/AviakassaHotelsWidget';
 import { SITE_URL } from '@/shared/constants/seo';
 import Image from 'next/image';
 
@@ -64,30 +64,7 @@ export default function HotelsPage() {
           </div>
 
           {/* Aviakassa.Partner */}
-          <div id="ak-app-9878" style={{ minHeight: '500px' }}></div>
-          <Script
-            src="https://widgets.aviakassa.com/partner.js"
-            strategy="lazyOnload"
-            onLoad={() => {
-              if (typeof window !== 'undefined' && (window as any).Aviakassa?.Partner) {
-                new (window as any).Aviakassa.Partner('ak-app-9878', {
-                  showAvia: false,
-                  showRail: false,
-                  showHotel: true,
-                  showAviaTitle: false,
-                  showRailTitle: false,
-                  showHotelTitle: false,
-                  aviaTitle: 'Поиск дешевых авиабилетов',
-                  showAviakassaLogo: false,
-                  showLocaleSelect: true,
-                  aviaShowComplexRoute: true,
-                  showAviaAirlinesPrefilter: true,
-                  channelToken: '4da1c0bd1b87e6a72d79478ca5686792ff58108b',
-                  id: 9878,
-                });
-              }
-            }}
-          />
+          <AviakassaHotelsWidget />
           {/* Aviakassa.Partner */}
         </section>
 

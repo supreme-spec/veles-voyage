@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import React, { cache } from 'react';
 import { countries } from '@lib/velite-data';
 import { countryNamesDictionary, COUNTRY_NAMES_ACCUSATIVE, COUNTRY_NAMES_PREPOSITIONAL } from '@/shared/data/country-names-dictionary';
-import { generateEnhancedSEOMetadata, SEO_CONFIG } from '@/lib/seo/unifiedSEO';
+import { generateEnhancedSEOMetadata, SEO_CONFIG, generateDescription } from '@/lib/seo/unifiedSEO';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
-import { SITE_URL } from '@/shared/constants/seo';
+import { SITE_URL, SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 
 interface CountrySEOMetadataOptions {
@@ -210,16 +210,22 @@ export async function generateCountrySEOMetadata(options: CountrySEOMetadataOpti
 
   // Генерируем полные SEO данные через unifiedSEO
   const canonicalUrl = url || `${SITE_URL}/wiki/${countryId}`;
+
+  const editorialDescription = generateDescription(
+    mdxData?.frontmatter?.description ||
+      options.description ||
+      generateFallbackDescription(countryName, countryId, mdxData?.frontmatter)
+  );
+
   const seoMetadata = generateEnhancedSEOMetadata({
     title: chosenTitle,
-    // Всегда используем формулу для уникальных описаний, игнорируя MDX description
-    description: generateFallbackDescription(countryName, countryId, mdxData?.frontmatter),
+    description: editorialDescription,
     url: canonicalUrl,
     image: mdxImage,
     type: 'article',
     keywords: mdxKeywords,
-    publishedTime: mdxData?.frontmatter.datePublished !== 'dynamic' ? mdxData?.frontmatter.datePublished : new Date().toISOString(),
-    modifiedTime: mdxData?.frontmatter.dateModified !== 'dynamic' ? mdxData?.frontmatter.dateModified : new Date().toISOString(),
+    publishedTime: mdxData?.frontmatter.datePublished && mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO,
+    modifiedTime: mdxData?.frontmatter.dateModified && mdxData.frontmatter.dateModified !== 'dynamic' ? mdxData.frontmatter.dateModified : SITE_LAST_UPDATED_ISO,
     author: mdxData?.frontmatter.author || SEO_CONFIG.organization,
     faqs: extractedFaqs
   });
@@ -253,8 +259,8 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
       "url": mdxData.frontmatter.image || `${baseUrl}/images/logo.png`,
       "caption": `${countryName} - Путеводитель Велес Вояж`
     },
-    "datePublished": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : new Date().toISOString().split('T')[0],
-    "dateModified": mdxData.frontmatter.dateModified !== 'dynamic' ? mdxData.frontmatter.dateModified : new Date().toISOString().split('T')[0],
+    "datePublished": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO,
+    "dateModified": mdxData.frontmatter.dateModified !== 'dynamic' ? mdxData.frontmatter.dateModified : SITE_LAST_UPDATED_ISO,
     "author": {
       "@type": "Organization",
       "@id": `${baseUrl}#organization`,
@@ -287,7 +293,7 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
     "wordCount": mdxData.frontmatter.wordCount || 8000,
     "inLanguage": mdxData.frontmatter.inLanguage || "ru-RU",
     "temporalCoverage": new Date().getFullYear().toString(),
-    "contentReferenceTime": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : new Date().toISOString().split('T')[0]
+    "contentReferenceTime": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO
   };
 
   const organizationSchema = {
@@ -485,7 +491,7 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
     "name": `${countryName} - Видеогид | Велес Вояж`,
     "description": mdxData.frontmatter.description || `Видеообзор ${countryName}`,
     "thumbnailUrl": mdxData.frontmatter.image || `${baseUrl}/images/logo.png`,
-    "uploadDate": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : new Date().toISOString().split('T')[0],
+    "uploadDate": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO,
     "duration": mdxData.frontmatter.videoDuration || "PT10M",
     "contentUrl": mdxData.frontmatter.videoUrl || `https://rutube.ru/u/velesvoyage/`,
     "embedUrl": mdxData.frontmatter.videoEmbed,
@@ -508,8 +514,8 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
       "@type": "Organization",
       "@id": `${baseUrl}#organization`
     },
-    "dateCreated": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : new Date().toISOString().split('T')[0],
-    "dateModified": mdxData.frontmatter.dateModified !== 'dynamic' ? mdxData.frontmatter.dateModified : new Date().toISOString().split('T')[0],
+    "dateCreated": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO,
+    "dateModified": mdxData.frontmatter.dateModified !== 'dynamic' ? mdxData.frontmatter.dateModified : SITE_LAST_UPDATED_ISO,
     "inLanguage": "ru",
     "keywords": Array.isArray(mdxData.frontmatter.keywords) 
       ? mdxData.frontmatter.keywords 

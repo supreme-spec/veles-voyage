@@ -8,6 +8,8 @@ import { SchemaScripts } from '@/components/SchemaScripts';
 import { getCountryMdxData } from '@/shared/utils/generateCountrySEOMetadata';
 import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
+import { TOUR_PRICES_2026 } from '@/constants/pricing';
+import type { CountryCode } from '@/constants/pricing';
 
 export const revalidate = 3600;
 
@@ -106,6 +108,11 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
   const visaRequired = mdxData?.frontmatter?.visaRequirements ?? true;
   const faqs = visaRequired ? VISA_FAQS_REQUIRED : VISA_FAQS_NOT_REQUIRED;
   const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: '' };
+  const visaPriceData = TOUR_PRICES_2026[country as CountryCode];
+  const visaOnArrival = visaPriceData ? (visaPriceData as { visaOnArrival?: string }).visaOnArrival : undefined;
+  const visaFeeText = visaOnArrival
+    ? `Виза по прилёту: ${visaOnArrival}. Срок действия — 30 дней. Дети до 6 лет освобождены.`
+    : 'Консульский сбор составляет примерно 80 € для взрослых, 40 € для детей 6-12 лет. Дети до 6 лет освобождены от оплаты.';
 
   const schemas = [
     ...(await generateUniversalSchemas({
@@ -234,7 +241,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
             </h2>
             {visaRequired ? (
               <p className="text-gray-700 dark:text-gray-300">
-                Консульский сбор составляет примерно 80 € для взрослых, 40 € для детей 6-12 лет. Дети до 6 лет освобождены от оплаты.
+                {visaFeeText}
               </p>
             ) : (
               <p className="text-gray-700 dark:text-gray-300">

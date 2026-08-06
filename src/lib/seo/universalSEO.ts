@@ -337,8 +337,8 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         "headline": countryName,
         "description": options.description,
         "url": fullUrl,
-        "datePublished": options.publishedTime || new Date().toISOString(),
-        "dateModified": options.modifiedTime || new Date().toISOString(),
+        "datePublished": options.publishedTime || SITE_LAST_UPDATED_ISO,
+        "dateModified": options.modifiedTime || SITE_LAST_UPDATED_ISO,
         "author": {
           "@type": "Person",
           "name": "Сергей Свистунов",
@@ -483,8 +483,8 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         "headline": territoryName,
         "description": options.description,
         "url": options.url,
-        "datePublished": options.publishedTime || new Date().toISOString(),
-        "dateModified": options.modifiedTime || new Date().toISOString(),
+        "datePublished": options.publishedTime || SITE_LAST_UPDATED_ISO,
+        "dateModified": options.modifiedTime || SITE_LAST_UPDATED_ISO,
         "author": {
           "@type": "Organization",
           "name": options.author || UNIVERSAL_SEO_CONFIG.organization
@@ -684,8 +684,8 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         "headline": title,
         "description": options.description,
         "image": options.image || UNIVERSAL_SEO_CONFIG.logoUrl,
-        "datePublished": options.publishedTime || new Date().toISOString(),
-        "dateModified": options.modifiedTime || new Date().toISOString(),
+        "datePublished": options.publishedTime || SITE_LAST_UPDATED_ISO,
+        "dateModified": options.modifiedTime || SITE_LAST_UPDATED_ISO,
         "author": {
           "@type": "Organization",
           "name": options.author || UNIVERSAL_SEO_CONFIG.organization
@@ -836,8 +836,8 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         "headline": title,
         "description": options.description,
         "image": options.image || UNIVERSAL_SEO_CONFIG.logoUrl,
-        "datePublished": options.publishedTime || new Date().toISOString(),
-        "dateModified": options.modifiedTime || new Date().toISOString(),
+        "datePublished": options.publishedTime || SITE_LAST_UPDATED_ISO,
+        "dateModified": options.modifiedTime || SITE_LAST_UPDATED_ISO,
         "author": {
           "@type": "Organization",
           "name": options.author || UNIVERSAL_SEO_CONFIG.organization

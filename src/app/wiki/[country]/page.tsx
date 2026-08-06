@@ -27,7 +27,6 @@ import {
 import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/universalSEO';
-import { generateSpeakableSchema } from '@/lib/seo/unifiedSEO';
 import {
   isDisputedTerritory,
   getPoliticalStatus,
@@ -268,8 +267,8 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
   const baseSchemasResult: Record<string, unknown> = { ...schemaOptions };
   if (countryData?.frontmatter?.image) baseSchemasResult.image = countryData.frontmatter.image;
-  if (countryData?.frontmatter?.datePublished) baseSchemasResult.publishedTime = countryData.frontmatter.datePublished;
-  if (countryData?.frontmatter?.dateModified) baseSchemasResult.modifiedTime = countryData.frontmatter.dateModified;
+  if (countryData?.frontmatter?.datePublished && countryData.frontmatter.datePublished !== 'dynamic') baseSchemasResult.publishedTime = countryData.frontmatter.datePublished;
+  if (countryData?.frontmatter?.dateModified && countryData.frontmatter.dateModified !== 'dynamic') baseSchemasResult.modifiedTime = countryData.frontmatter.dateModified;
   if (countryData?.frontmatter?.author) baseSchemasResult.author = countryData.frontmatter.author;
   if (politicalStatus) baseSchemasResult.politicalStatus = politicalStatus;
 
@@ -293,7 +292,6 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const schemas = [
     ...baseSchemas,
     touristTripSchema,
-    ...(faqs.length > 0 ? [generateSpeakableSchema(['.faq-answer', '.paa summary', '.article-summary'])] : []),
   ];
 
   if (!countryData) {

@@ -137,8 +137,8 @@ const globalSchema = {
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 55.6167,
-            longitude: 36.9833,
+            latitude: 55.609955,
+            longitude: 36.965818,
           }
         },
         {
@@ -154,8 +154,8 @@ const globalSchema = {
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 56.0167,
-            longitude: 37.8500,
+            latitude: 56.010503,
+            longitude: 37.847823,
           }
         }
       ],
@@ -198,8 +198,8 @@ const globalSchema = {
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 55.6186,
-            longitude: 36.9686,
+            latitude: 55.609955,
+            longitude: 36.965818,
           },
         },
         {
@@ -215,8 +215,8 @@ const globalSchema = {
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 56.0111,
-            longitude: 37.8558,
+            latitude: 56.010503,
+            longitude: 37.847823,
           },
         },
       ],

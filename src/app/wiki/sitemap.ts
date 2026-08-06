@@ -35,7 +35,7 @@ export default function wikiSitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       });
     }
-    if (hasSection('weather', body)) {
+    if (hasSection('seasons', body)) {
       pages.push({
         url: `${baseUrl}/wiki/${id}/weather`,
         lastModified: STATIC_DATE,

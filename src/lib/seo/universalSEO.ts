@@ -394,44 +394,6 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         })
       });
 
-      // Добавляем TravelAgency схему
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "@id": `${UNIVERSAL_SEO_CONFIG.siteUrl}/#travelagency`,
-        "name": UNIVERSAL_SEO_CONFIG.organization,
-        "description": "Лицензированное турагентство (РТА 0035678). Подбор туров, круизов, индивидуальные маршруты по 190+ странам.",
-        "url": UNIVERSAL_SEO_CONFIG.siteUrl,
-        "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-        "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": UNIVERSAL_SEO_CONFIG.address.streetAddress,
-          "addressLocality": UNIVERSAL_SEO_CONFIG.address.addressLocality,
-          "postalCode": UNIVERSAL_SEO_CONFIG.address.postalCode,
-          "addressCountry": UNIVERSAL_SEO_CONFIG.address.addressCountry
-        },
-        "logo": {
-          "@type": "ImageObject",
-          "url": UNIVERSAL_SEO_CONFIG.logoUrl
-        },
-        "foundingDate": UNIVERSAL_SEO_CONFIG.foundingYear.toString(),
-        "priceRange": UNIVERSAL_SEO_CONFIG.priceRange,
-        "license": "РТА 0035678",
-        "sameAs": [
-          UNIVERSAL_SEO_CONFIG.social.vk,
-          UNIVERSAL_SEO_CONFIG.social.telegram,
-          UNIVERSAL_SEO_CONFIG.social.rutube
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-          "contactType": "customer service",
-          "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-          "availableLanguage": ["Russian"]
-        }
-      });
-
       // Добавляем хлебные крошки (Home > Wiki > Country)
       const countryBreadcrumb = generateBreadcrumbSchema([
         { name: 'Главная', item: '/' },
@@ -724,43 +686,6 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
 
       schemas.push({
         "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "@id": `${UNIVERSAL_SEO_CONFIG.siteUrl}/#travelagency`,
-        "name": UNIVERSAL_SEO_CONFIG.organization,
-        "description": "Лицензированное турагентство (РТА 0035678). Подбор туров, круизов, индивидуальные маршруты по 190+ странам.",
-        "url": UNIVERSAL_SEO_CONFIG.siteUrl,
-        "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-        "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": UNIVERSAL_SEO_CONFIG.address.streetAddress,
-          "addressLocality": UNIVERSAL_SEO_CONFIG.address.addressLocality,
-          "postalCode": UNIVERSAL_SEO_CONFIG.address.postalCode,
-          "addressCountry": UNIVERSAL_SEO_CONFIG.address.addressCountry
-        },
-        "logo": {
-          "@type": "ImageObject",
-          "url": UNIVERSAL_SEO_CONFIG.logoUrl
-        },
-        "foundingDate": UNIVERSAL_SEO_CONFIG.foundingYear.toString(),
-        "priceRange": UNIVERSAL_SEO_CONFIG.priceRange,
-        "license": "РТА 0035678",
-        "sameAs": [
-          UNIVERSAL_SEO_CONFIG.social.vk,
-          UNIVERSAL_SEO_CONFIG.social.telegram,
-          UNIVERSAL_SEO_CONFIG.social.rutube
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-          "contactType": "customer service",
-          "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-          "availableLanguage": ["Russian"]
-        }
-      });
-
-      schemas.push({
-        "@context": "https://schema.org",
         "@type": "TouristAttraction",
         "name": UNIVERSAL_SEO_CONFIG.organization,
         "url": options.url,
@@ -859,42 +784,6 @@ export async function generateUniversalSchemas(options: UniversalSEOOptions): Pr
         "description": options.description,
         "url": fullUrl,
         "touristType": "Tourism"
-      });
-
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "@id": `${UNIVERSAL_SEO_CONFIG.siteUrl}/#travelagency`,
-        "name": UNIVERSAL_SEO_CONFIG.organization,
-        "url": UNIVERSAL_SEO_CONFIG.siteUrl,
-        "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-        "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": UNIVERSAL_SEO_CONFIG.address.streetAddress,
-          "addressLocality": UNIVERSAL_SEO_CONFIG.address.addressLocality,
-          "postalCode": UNIVERSAL_SEO_CONFIG.address.postalCode,
-          "addressCountry": UNIVERSAL_SEO_CONFIG.address.addressCountry
-        },
-        "logo": {
-          "@type": "ImageObject",
-          "url": UNIVERSAL_SEO_CONFIG.logoUrl
-        },
-        "foundingDate": UNIVERSAL_SEO_CONFIG.foundingYear.toString(),
-        "priceRange": UNIVERSAL_SEO_CONFIG.priceRange,
-        "license": "РТА 0035678",
-        "sameAs": [
-          UNIVERSAL_SEO_CONFIG.social.vk,
-          UNIVERSAL_SEO_CONFIG.social.telegram,
-          UNIVERSAL_SEO_CONFIG.social.rutube
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": UNIVERSAL_SEO_CONFIG.contactPhone,
-          "contactType": "customer service",
-          "email": UNIVERSAL_SEO_CONFIG.contactEmail,
-          "availableLanguage": ["Russian"]
-        }
       });
 
       if (options.faqs && options.faqs.length > 0) {

@@ -5,6 +5,7 @@ import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generate
 import StructuredData from '@/components/SEO/StructuredData';
 import { FAQSection } from '@/components/FAQSection';
 import { AudioTranscriptSchema } from '@/components/AudioTranscriptSchema';
+import { TOUR_PRICES_2026 } from '@/constants/pricing';
 import { SITE_URL } from '@/shared/constants/seo';
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -240,12 +241,12 @@ const Egypt2026Page = () => {
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">🏖️ Хургада</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-3">Бюджетный отдых, дайвинг, отели «всё включено». Идеально для семей и молодёжи.</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Цены: от 85 000 ₽/7 ночей</p>
+               <p className="text-sm text-gray-500 dark:text-gray-400">Цены: от {TOUR_PRICES_2026.egypt.minPrice.toLocaleString('ru-RU')} ₽/7 ночей</p>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">🌊 Шарм-эль-Шейх</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-3">Элитный отдых, красивая природа, рифы, люкс-отели. Дороже, но качественнее.</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Цены: от 110 000 ₽/7 ночей</p>
+               <p className="text-sm text-gray-500 dark:text-gray-400">Цены: от {TOUR_PRICES_2026.egypt.minPrice.toLocaleString('ru-RU')} ₽/7 ночей</p>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">🐠 Марса-Алам</h3>
@@ -267,15 +268,15 @@ const Egypt2026Page = () => {
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li className="flex items-start">
               <span className="text-red-500 mr-2">✓</span>
-              <span>Хургада: от 75 000 ₽ на двоих (обычно 110 000 ₽)</span>
+               <span>Хургада: от 75 000 ₽ на двоих (обычно от {TOUR_PRICES_2026.egypt.minPrice.toLocaleString('ru-RU')} ₽)</span>
             </li>
             <li className="flex items-start">
               <span className="text-red-500 mr-2">✓</span>
-              <span>Шарм-эль-Шейх: от 95 000 ₽ на двоих (обычно 140 000 ₽)</span>
+               <span>Шарм-эль-Шейх: от 95 000 ₽ на двоих (обычно от {(TOUR_PRICES_2026.egypt.minPrice + 20000).toLocaleString('ru-RU')} ₽)</span>
             </li>
             <li className="flex items-start">
               <span className="text-red-500 mr-2">✓</span>
-              <span>Марса-Алам: от 105 000 ₽ на двоих (обычно 150 000 ₽)</span>
+               <span>Марса-Алам: от 105 000 ₽ на двоих (обычно от {(TOUR_PRICES_2026.egypt.minPrice + 60000).toLocaleString('ru-RU')} ₽)</span>
             </li>
           </ul>
         </section>

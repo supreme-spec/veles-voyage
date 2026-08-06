@@ -296,40 +296,6 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
     "contentReferenceTime": mdxData.frontmatter.datePublished !== 'dynamic' ? mdxData.frontmatter.datePublished : SITE_LAST_UPDATED_ISO
   };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${baseUrl}#organization`,
-    "name": "Велес Вояж | Экспертная редакция",
-    "alternateName": "Veles Voyage",
-    "url": baseUrl,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${baseUrl}/images/logo.png`
-    },
-    "foundingDate": "2023",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+7-985-063-51-34",
-      "contactType": "customer service",
-      "email": "hello@veles-voyage.ru",
-      "availableLanguage": ["Russian"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Керамиков пр-т, д. 103",
-      "addressLocality": "Голицыно",
-      "addressRegion": "Московская область",
-      "postalCode": "143041",
-      "addressCountry": "RU"
-    },
-    "sameAs": [
-      "https://vk.com/veles__voyage",
-      "https://t.me/veles_voyage",
-      "https://rutube.ru/u/velesvoyage/"
-    ]
-  };
-
   const breadcrumbsSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -574,29 +540,11 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
       })) : []
   } : null;
 
-  // Experimental schemas
-  const webSiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${baseUrl}#website`,
-    "name": `${countryName} | Велес Вояж`,
-    "url": baseUrl,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${baseUrl}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
-
   // Define schema groups
   const coreSchemas = [
     articleSchema,
     faqSchema,
     breadcrumbsSchema,
-    organizationSchema,
     touristDestinationSchema,
     videoSchema,
     travelActionSchema
@@ -613,7 +561,6 @@ export async function generateCountrySchemas(countryId: string, mode: 'google' |
   ].filter(Boolean);
 
   const experimentalSchemas = [
-    webSiteSchema,
     attractionsListSchema
   ].filter(Boolean);
 

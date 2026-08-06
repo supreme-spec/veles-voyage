@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_LAST_UPDATED_ISO } from '@/shared/constants/seo';
 
 export const metadata: Metadata = {
   title: 'Политика конфиденциальности Велес Вояж 2026 | Защита данных',
@@ -502,61 +503,11 @@ export default function PrivacyPage() {
               }
             },
             "datePublished": "2023-06-21",
-            "dateModified": new Date().toISOString(),
+            "dateModified": SITE_LAST_UPDATED_ISO,
             "inLanguage": "ru",
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://veles-voyage.ru/privacy"
-            }
-          })
-        }}
-      />
-      
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "ООО Велес",
-            "url": "https://veles-voyage.ru",
-            "logo": "https://veles-voyage.ru/logo.png",
-            "sameAs": [
-              "https://vk.com/veles__voyage",
-              "https://t.me/veles_voyage",
-              "https://rutube.ru/u/velesvoyage/"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+7-985-063-51-34",
-              "contactType": "customer service",
-              "email": "hello@veles-voyage.ru",
-              "availableLanguage": "Russian"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "пр-т. Керамиков, 103",
-              "addressLocality": "Голицыно",
-              "postalCode": "143041",
-              "addressRegion": "Московская область",
-              "addressCountry": "RU"
-            }
-          })
-        }}
-      />
-      
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Велес Вояж",
-            "url": "https://veles-voyage.ru",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://veles-voyage.ru/wiki/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
             }
           })
         }}
@@ -574,7 +525,7 @@ export default function PrivacyPage() {
             "description": "Политика конфиденциальности ООО Велес. Защита персональных данных клиентов.",
             "relatedLink": "https://veles-voyage.ru",
             "datePublished": "2023-06-21",
-            "dateModified": new Date().toISOString()
+            "dateModified": SITE_LAST_UPDATED_ISO
           })
         }}
       />

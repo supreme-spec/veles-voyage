@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CruiseCard from '@/components/CruiseCard';
-import InfoflotCruisesWidget from '@/components/widgets/InfoflotCruisesWidget';
+import dynamic from 'next/dynamic';
 import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generateMetadata';
 import StructuredData from '@/components/SEO/StructuredData';
 import { 
@@ -10,6 +10,10 @@ import {
   cruisesDateModified,
   setCruisesDates
 } from '@/shared/data/pages/cruises';
+const InfoflotCruises = dynamic(
+  () => import('@/components/widgets/InfoflotCruises'),
+  { ssr: false, loading: () => <p style={{ padding: '40px', textAlign: 'center' }}>Загрузка виджета поиска круизов...</p> }
+);
 
 // Обновляем даты при каждом рендере
 const today = new Date().toISOString().split('T')[0] || new Date().toISOString();
@@ -116,7 +120,7 @@ export default async function CruisesPage() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">
               Поиск круизов
             </h2>
-            <InfoflotCruisesWidget />
+            <InfoflotCruises />
           </div>
         </div>
 

@@ -33,11 +33,12 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
   const countryName = countryData?.title?.split('—')[0]?.trim() || country;
   const mdxData = await getCountryMdxData(country);
   const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
+  const simpleCountryName = cleanCountryName.includes(':') ? (cleanCountryName.split(':')[0] || cleanCountryName).trim() : cleanCountryName;
   const currency = mdxData?.frontmatter?.currency || 'местная валюта';
 
   return generateUniversalMetadata({
-    title: `Валюта ${cleanCountryName} 2026 | Велес Вояж`,
-    description: `Национальная валюта ${cleanCountryName} - ${currency}. Курс к рублю, где обменять, использование карт, чаевые и финансовые советы.`,
+    title: `Валюта ${simpleCountryName}: курс и обмен | Велес Вояж 2026`,
+    description: `Национальная валюта ${simpleCountryName} - ${currency}. Курс к рублю, где обменять, использование карт, чаевые и финансовые советы.`,
     url: `/wiki/${country}/currency`,
     type: 'article',
     keywords: [
@@ -92,6 +93,7 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
   const countryName = countryData?.title?.split('—')[0]?.trim() || country;
   const mdxData = await getCountryMdxData(country);
   const cleanCountryName = countryName.replace(/\s*\d{4}\s*/g, '').trim();
+  const simpleCountryName = cleanCountryName.includes(':') ? (cleanCountryName.split(':')[0] || cleanCountryName).trim() : cleanCountryName;
   const currency = mdxData?.frontmatter?.currency || 'местная валюта';
   const isRubleCurrency = currency.toLowerCase().includes('rub') || currency.toLowerCase().includes('рубл');
   const faqs = getCurrencyFaqs(countryName, currency);
@@ -153,7 +155,7 @@ export default async function CurrencyPage({ params }: { params: Promise<{ count
         <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
-              Валюта {countryName} и курс к рублю 2026
+              Валюта {simpleCountryName}: курс и обмен 2026
             </span>
           </h1>
 

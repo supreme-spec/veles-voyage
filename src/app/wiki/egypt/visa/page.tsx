@@ -1,12 +1,9 @@
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getWikiPages } from '@/shared/data/wikiPages-mdx';
 import { generateUniversalMetadata, generateUniversalSchemas, generateBreadcrumbSchema } from '@/lib/seo/universalSEO';
 import { generateFAQSchema } from '@/lib/seo/unifiedSEO';
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { getCountryMdxData } from '@/shared/utils/generateCountrySEOMetadata';
-import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 
 export const revalidate = 3600;
@@ -14,7 +11,7 @@ export const revalidate = 3600;
 const VISA_FAQS_REQUIRED = [
   {
     question: 'Нужна ли виза для россиян в 2026 году?',
-    answer: 'Для въезда в эту страну гражданам РФ требуется виза. Оформление возможно через консульство или визовый центр. Точные требования и сроки уточняйте у менеджера Велес Вояж.'
+    answer: 'Для въезда в Египет гражданам РФ требуется виза. Оформление возможно через консульство или визовый центр. Точные требования и сроки уточняйте у менеджера Велес Вояж.'
   },
   {
     question: 'Какие документы нужны для оформления визы?',
@@ -33,7 +30,7 @@ const VISA_FAQS_REQUIRED = [
 const VISA_FAQS_NOT_REQUIRED = [
   {
     question: 'Нужна ли виза для россиян в 2026 году?',
-    answer: 'Для въезда в эту страну гражданам РФ виза не требуется. Достаточно действующего загранпаспорта и обратных билетов. При въезде могут спросить подтверждение достаточного количества средств и бронь отеля.'
+    answer: 'Для въезда в Египет гражданам РФ виза не требуется. Достаточно действующего загранпаспорта и обратных билетов. При въезде могут спросить подтверждение достаточного количества средств и бронь отеля.'
   },
   {
     question: 'Сколько можно находиться в стране без визы?',
@@ -49,74 +46,39 @@ const VISA_FAQS_NOT_REQUIRED = [
   }
 ];
 
-export async function generateStaticParams() {
-  const wikiPages = await getWikiPages();
-  if (!wikiPages) return [];
-  return Object.values(wikiPages).map((page: any) => ({
-    country: page.id,
-  }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ country: string }> }): Promise<Metadata> {
-  const { country } = await params;
-  const wikiPages = await getWikiPages();
-  if (!wikiPages) return { title: 'Страница не найдена' };
-
-  const countryData = Object.values(wikiPages).find((p: any) => p.id === country);
-
-  if (!countryData) {
-    return {
-      title: 'Страница не найдена',
-    };
-  }
-
-  const cleanCountryName = (countryData?.title?.split('—')[0]?.trim() || country).replace(/\s*\d{4}\s*/g, '').trim();
-  const countryName = countryNamesDictionary[country] || cleanCountryName;
-
+export async function generateMetadata(): Promise<Metadata> {
   return generateUniversalMetadata({
-    title: `Виза в ${getCountryAccusative(country)} для россиян 2026 | Велес Вояж`,
-    description: `Нужна ли виза в ${getCountryAccusative(country)} для россиян? Требования, документы, сроки оформления, стоимость.`,
-    url: `/wiki/${country}/visa`,
+    title: `Виза в Египет для россиян 2026 | Велес Вояж`,
+    description: `Нужна ли виза в Египет для россиян? Требования, документы, сроки оформления, стоимость.`,
+    url: `/wiki/egypt/visa`,
     type: 'article',
     keywords: [
-      `виза в ${countryName}`,
-      `виза ${countryName} для россиян`,
-      `безвиз ${countryName}`,
-      `документы для визы ${countryName}`,
-      `оформить визу ${countryName}`,
-      `стоимость визы ${countryName}`,
+      `виза в Египет`,
+      `виза Египет для россиян`,
+      `безвиз Египет`,
+      `документы для визы Египет`,
+      `оформить визу Египет`,
+      `стоимость визы Египет`,
     ],
   });
 }
 
-export default async function VisaPage({ params }: { params: Promise<{ country: string }> }) {
-  const { country } = await params;
-  const wikiPages = await getWikiPages();
-  if (!wikiPages) return notFound();
-
-  const countryData = Object.values(wikiPages).find((p: any) => p.id === country);
-
-  if (!countryData) {
-    notFound();
-  }
-
-  const cleanCountryName = (countryData?.title?.split('—')[0]?.trim() || country).replace(/\s*\d{4}\s*/g, '').trim();
-  const countryName = countryNamesDictionary[country] || cleanCountryName;
-  const mdxData = await getCountryMdxData(country);
+export default async function EgyptVisaPage() {
+  const mdxData = await getCountryMdxData('egypt');
   const visaRequired = mdxData?.frontmatter?.visaRequirements ?? true;
   const faqs = visaRequired ? VISA_FAQS_REQUIRED : VISA_FAQS_NOT_REQUIRED;
-  const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: '' };
+  const coords = COUNTRY_COORDINATES['egypt'] || { latitude: 0, longitude: 0, countryCode: '' };
 
   const schemas = [
     ...(await generateUniversalSchemas({
-      title: `Виза в ${getCountryAccusative(country)} для россиян 2026 | Велес Вояж`,
-      description: `Нужна ли виза в ${getCountryAccusative(country)} для россиян? Требования, документы, сроки оформления, стоимость.`,
-      url: `/wiki/${country}/visa`,
+      title: `Виза в Египет для россиян 2026 | Велес Вояж`,
+      description: `Нужна ли виза в Египет для россиян? Требования, документы, сроки оформления, стоимость.`,
+      url: `/wiki/egypt/visa`,
       type: 'article',
       keywords: [
-        `виза в ${countryName}`,
-        `виза ${countryName} для россиян`,
-        `безвиз ${countryName}`,
+        `виза в Египет`,
+        `виза Египет для россиян`,
+        `безвиз Египет`,
       ],
       geo: {
         latitude: coords.latitude,
@@ -127,13 +89,13 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
     ...(generateBreadcrumbSchema([
       { name: 'Главная', item: '/' },
       { name: 'Энциклопедия', item: '/wiki' },
-      { name: countryName, item: `/wiki/${country}` },
-      { name: 'Виза', item: `/wiki/${country}/visa` },
+      { name: 'Египет', item: '/wiki/egypt' },
+      { name: 'Виза', item: '/wiki/egypt/visa' },
     ]) ? [generateBreadcrumbSchema([
       { name: 'Главная', item: '/' },
       { name: 'Энциклопедия', item: '/wiki' },
-      { name: countryName, item: `/wiki/${country}` },
-      { name: 'Виза', item: `/wiki/${country}/visa` },
+      { name: 'Египет', item: '/wiki/egypt' },
+      { name: 'Виза', item: '/wiki/egypt/visa' },
     ])] : []),
     generateFAQSchema(faqs),
   ].filter((schema): schema is object => schema !== null);
@@ -150,7 +112,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
           </li>
           <li className="flex items-center">
             <span className="mx-1 md:mx-2 text-gray-400">/</span>
-            <Link href={`/wiki/${country}`} className="hover:text-blue-600">{countryName}</Link>
+            <Link href="/wiki/egypt" className="hover:text-blue-600">Египет</Link>
           </li>
           <li className="flex items-center">
             <span className="mx-1 md:mx-2 text-gray-400">/</span>
@@ -163,7 +125,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
         <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
-              Виза в {getCountryAccusative(country)} для россиян 2026
+              Виза в Египет для россиян 2026
             </span>
           </h1>
 
@@ -173,7 +135,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
                 🛂 Виза требуется
               </h2>
               <p className="text-red-800 dark:text-red-200">
-                Для въезда в {countryName} гражданам РФ требуется виза.
+                Для въезда в Египет гражданам РФ требуется виза.
               </p>
             </div>
           ) : (
@@ -182,7 +144,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
                 ✅ Безвизовый въезд
               </h2>
               <p className="text-green-800 dark:text-green-200">
-                Граждане РФ могут посещать {countryName} без визы.
+                Граждане РФ могут посещать Египет без визы.
               </p>
             </div>
           )}
@@ -221,7 +183,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
             </h2>
             {visaRequired ? (
               <p className="text-gray-700 dark:text-gray-300">
-                Виза в {countryName} оформляется в среднем 10-15 рабочих дней. Рекомендуется подавать документы за 1-2 месяца до поездки.
+                Виза в Египет оформляется в среднем 10-15 рабочих дней. Рекомендуется подавать документы за 1-2 месяца до поездки.
               </p>
             ) : (
               <p className="text-gray-700 dark:text-gray-300">
@@ -234,7 +196,9 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
             </h2>
             {visaRequired ? (
               <p className="text-gray-700 dark:text-gray-300">
-                Консульский сбор составляет примерно 80 € для взрослых, 40 € для детей 6-12 лет. Дети до 6 лет освобождены от оплаты.
+                Для граждан РФ доступна виза по прибытии в аэропорт Египта (стоимость около 25 USD).
+                Также доступна возможность оформления электронной визы (e-Visa) заранее онлайн.
+                Консульская виза требуется только в нестандартных случаях (длительная учеба или работа).
               </p>
             ) : (
               <p className="text-gray-700 dark:text-gray-300">
@@ -248,7 +212,7 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
               Нужна помощь с оформлением визы?
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Турагентство Велес Вояж поможет с оформлением визы и подбором тура в {countryName}.
+              Турагентство Велес Вояж поможет с оформлением визы и подбором тура в Египет.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -270,10 +234,10 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
 
           <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
             <Link
-              href={`/wiki/${country}`}
+              href="/wiki/egypt"
               className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              ← Вернуться к путеводителю по {countryName}
+              ← Вернуться к путеводителю по Египту
             </Link>
           </div>
         </article>
@@ -299,18 +263,18 @@ export default async function VisaPage({ params }: { params: Promise<{ country: 
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">🔗 Полезные ссылки</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href={`https://ru.wikipedia.org/wiki/${encodeURIComponent(countryName)}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                Wikipedia: {countryName}
+              <a href="https://ru.wikipedia.org/wiki/Египет" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Wikipedia: Египет
               </a>
             </li>
             <li>
-              <a href={`https://www.google.com/maps/search/${encodeURIComponent(countryName)}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                Google Maps: {countryName}
+              <a href="https://www.google.com/maps/search/Египет" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Google Maps: Египет
               </a>
             </li>
             <li>
-              <a href={`https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/${encodeURIComponent(countryName)}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                Государственный департамент США: {countryName}
+              <a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Египет" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Государственный департамент США: Египет
               </a>
             </li>
           </ul>

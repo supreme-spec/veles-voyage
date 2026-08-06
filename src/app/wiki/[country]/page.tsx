@@ -26,7 +26,7 @@ import {
 import { countryNamesDictionary, getCountryAccusative } from '@/shared/data/country-names-dictionary';
 import { generateCountrySEOMetadata } from '@/shared/utils/generateCountrySEOMetadata';
 import { generateUniversalMetadata, generateUniversalSchemas } from '@/lib/seo/universalSEO';
-import { generateFAQSchema, generateSpeakableSchema } from '@/lib/seo/unifiedSEO';
+import { generateSpeakableSchema } from '@/lib/seo/unifiedSEO';
 import {
   isDisputedTerritory,
   getPoliticalStatus,
@@ -39,6 +39,7 @@ import { MdxTableOfContents } from '@/components/MdxTableOfContents';
 import InteractiveMap from '@/components/mdx/InteractiveMap';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
 import { SITE_URL } from '@/shared/constants/seo';
+import { TOUR_PRICES_2026 } from '@/constants/pricing';
 
 export const revalidate = 3600;
 
@@ -279,9 +280,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     touristType: 'Пляжный отдых',
     offers: {
       '@type': 'Offer',
-      price: countryData?.frontmatter?.estimatedCost
-        ? String(countryData.frontmatter.estimatedCost)
-        : '70000',
+      price: String(TOUR_PRICES_2026[normalizedCountry as keyof typeof TOUR_PRICES_2026]?.minPrice ?? countryData?.frontmatter?.estimatedCost ?? 70000),
       priceCurrency: 'RUB',
       availability: 'https://schema.org/InStock',
       url: `${SITE_URL}/wiki/${normalizedCountry}`,
@@ -291,7 +290,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const schemas = [
     ...baseSchemas,
     touristTripSchema,
-    ...(faqs.length > 0 ? [generateFAQSchema(faqs), generateSpeakableSchema(['.faq-answer', '.paa summary', '.article-summary'])] : []),
+    ...(faqs.length > 0 ? [generateSpeakableSchema(['.faq-answer', '.paa summary', '.article-summary'])] : []),
   ];
 
   if (!countryData) {

@@ -125,11 +125,42 @@ const globalSchema = {
           addressCountry: 'RU',
         },
       ],
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 55.738745,
-        longitude: 36.982842,
-      },
+      location: [
+        {
+          '@type': 'Place',
+          name: 'Офис в Голицыно',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'пр-т Керамиков, д. 103',
+            addressLocality: 'Голицыно',
+            addressRegion: 'Московская область',
+            postalCode: '143041',
+            addressCountry: 'RU',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 55.6167,
+            longitude: 36.9833,
+          }
+        },
+        {
+          '@type': 'Place',
+          name: 'Офис в Пушкино',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'пр-т Московский, д. 9/2',
+            addressLocality: 'Пушкино',
+            addressRegion: 'Московская область',
+            postalCode: '141207',
+            addressCountry: 'RU',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 56.0167,
+            longitude: 37.8500,
+          }
+        }
+      ],
       areaServed: [
         { '@type': 'Country', name: 'Russia' },
         { '@type': 'Country', name: 'Kazakhstan' },

@@ -165,6 +165,7 @@ export function Navbar() {
                   height={64}
                   priority
                   className="w-full h-full object-contain drop-shadow-md"
+                  unoptimized
                 />
               </div>
 

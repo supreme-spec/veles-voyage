@@ -141,6 +141,7 @@ export function TelegramChatWidget() {
                   height={40}
                   priority
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <div>

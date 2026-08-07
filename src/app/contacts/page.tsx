@@ -355,6 +355,7 @@ export default function ContactsPage() {
                       width={32}
                       height={32}
                       className="object-contain"
+                      unoptimized
                     />
                   </div>
                   <span className="font-medium text-gray-900 dark:text-white text-lg">ВКонтакте</span>
@@ -373,6 +374,7 @@ export default function ContactsPage() {
                       width={32}
                       height={32}
                       className="object-contain"
+                      unoptimized
                     />
                   </div>
                   <span className="font-medium text-gray-900 dark:text-white text-lg">Telegram</span>

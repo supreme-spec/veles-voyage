@@ -74,6 +74,7 @@ export function Footer() {
             width={32}
             height={32}
             className="object-contain"
+            unoptimized
           />
         </div>
       )
@@ -89,6 +90,7 @@ export function Footer() {
             width={32}
             height={32}
             className="object-contain"
+            unoptimized
           />
         </div>
       )
@@ -104,6 +106,7 @@ export function Footer() {
             width={32}
             height={32}
             className="object-contain"
+            unoptimized
           />
         </div>
       )

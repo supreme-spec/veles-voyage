@@ -12,6 +12,7 @@ import { SITE_URL, CONTACT_PHONE, SOCIAL_LINKS } from '@/shared/constants/seo';
 import { HeroImage } from '@/components/HeroImage';
 import { generateCitySlug } from '@/lib/slugify';
 import { toGenitive } from '@/shared/utils/ruCase';
+import { HIGH_PRIORITY_CITIES } from '../sitemap';
 
 const siteUrl = SITE_URL;
 
@@ -290,6 +291,8 @@ export async function generateMetadata({
   const uniqueContent = getCityUniqueContent(cityName);
   const description = uniqueContent ? uniqueContent.overview : generateCityDescription(cityName, cityCoords?.region || '', hasRealAirport, airportLabel, nearestAirport, cityCoords, isRegion);
 
+  const isHighPriority = HIGH_PRIORITY_CITIES.has(generateCitySlug(cityName));
+
   return generateEnhancedSEOMetadata({
     title: isRegion
       ? `Туры по направлению ${cityGenitive} — ${districtName || 'Россия'} | Велес Вояж`
@@ -305,6 +308,7 @@ export async function generateMetadata({
       `путевки из ${cityGenitive}`
     ],
     faqs: generateDepartureFAQs(cityName, airportLabel, isRegion, hasRealAirport, cityCoords),
+    noIndex: !isHighPriority,
   });
 }
 

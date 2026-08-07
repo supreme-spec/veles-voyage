@@ -93,13 +93,6 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get('user-agent') || '';
 
-  // 301 редирект с apex-домена на www (www работает, apex — 502)
-  const host = request.headers.get('host') || '';
-  if (!host.startsWith('www.') && host !== 'localhost') {
-    const newUrl = new URL(pathname, `https://www.${host}${request.nextUrl.search}`);
-    return NextResponse.redirect(newUrl, 301);
-  }
-
   // Whitelist для ИИ-ботов - разрешаем доступ без rate limiting
   const isAIBot = AI_BOT_WHITELIST.some((bot: string) => userAgent.includes(bot));
   if (isAIBot) {

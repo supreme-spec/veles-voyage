@@ -9,25 +9,25 @@ const STATIC_DATE = new Date(SITE_LAST_UPDATED_ISO);
 
 const uniqueCities = Array.from(new Set(allCities.map(generateCitySlug))).sort();
 
-const HIGH_PRIORITY_CITIES = new Set([
-  'moskva',
+export const HIGH_PRIORITY_CITIES = new Set([
+  'moscow',
   'sankt-peterburg',
   'novosibirsk',
   'ekaterinburg',
   'kazan',
-  'nizhnii-novgorod',
+  'nizhny-novgorod',
   'krasnoyarsk',
   'chelyabinsk',
   'samara',
   'ufa',
-  'rostov-na-donu',
+  'rostov-on-don',
   'krasnodar',
   'omsk',
   'voronezh',
   'perm',
   'volgograd',
   'saratov',
-  'tumen',
+  'tyumen',
   'irkutsk',
   'barnaul',
   'ulyanovsk',
@@ -67,15 +67,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const cityEntries: MetadataRoute.Sitemap = uniqueCities.map((slug) => {
-    const isHighPriority = HIGH_PRIORITY_CITIES.has(slug);
-    return {
+  const cityEntries: MetadataRoute.Sitemap = uniqueCities
+    .filter((slug) => HIGH_PRIORITY_CITIES.has(slug))
+    .map((slug) => ({
       url: `${siteUrl}/cities/${slug}`,
       lastModified: STATIC_DATE,
-      changeFrequency: isHighPriority ? 'weekly' : 'monthly',
-      priority: isHighPriority ? 0.7 : 0.5,
-    };
-  });
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
 
   return [...districts, ...cityEntries];
 }

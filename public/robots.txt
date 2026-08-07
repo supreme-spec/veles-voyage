@@ -106,4 +106,4 @@ User-agent: Mail.Ru_bot
 Allow: /
 
 # Sitemap
-Sitemap: https://veles-voyage.ru/sitemap.xml
+Sitemap: https://www.veles-voyage.ru/sitemap.xml

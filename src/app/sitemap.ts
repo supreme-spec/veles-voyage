@@ -198,6 +198,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/news`,
+      lastModified: lastmod('blog'),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/partners`,
       lastModified: lastmod('partners'),
       changeFrequency: 'weekly',

@@ -67,14 +67,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const cityEntries: MetadataRoute.Sitemap = uniqueCities
-    .filter((slug) => HIGH_PRIORITY_CITIES.has(slug))
-    .map((slug) => ({
-      url: `${siteUrl}/cities/${slug}`,
-      lastModified: STATIC_DATE,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    }));
+  const cityEntries: MetadataRoute.Sitemap = uniqueCities.map((slug) => ({
+    url: `${siteUrl}/cities/${slug}`,
+    lastModified: STATIC_DATE,
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }));
 
   return [...districts, ...cityEntries];
 }

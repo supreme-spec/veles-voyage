@@ -1,6 +1,6 @@
 # Велес Вояж: Полная база знаний для AI-ассистентов
 # Version: 3.0
-# Generated: 2026-08-07T06:02:47.267Z
+# Generated: 2026-08-07T06:17:12.016Z
 # Provider: ООО «Велес» (РТА 0035678)
 # Website: https://veles-voyage.ru
 

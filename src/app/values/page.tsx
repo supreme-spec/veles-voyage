@@ -24,7 +24,7 @@ const faqSchema = valuesSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Наши ценности 2026 | Велес Вояж',
   description: articleSchema?.description || 'Ценности турагентства Велес Вояж. Аутентичные впечатления, устойчивый туризм, современные технологии, персональный подход, безопасность путешественников, этичный туризм, качество туристических услуг, путешествия с заботой, туризм 2026.',
-  url: 'https://veles-voyage.ru/values',
+  url: 'https://www.veles-voyage.ru/values',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: valuesDatePublished,

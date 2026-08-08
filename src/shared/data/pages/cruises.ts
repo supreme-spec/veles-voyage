@@ -30,7 +30,7 @@ export const cruisesArticleSchema = {
   "description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности. Бронирование онлайн, поддержка 24/7.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Морские круизы - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const cruisesArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/cruises"
+    "@id": "https://www.veles-voyage.ru/cruises"
   },
   "articleSection": "Морские круизы",
   "keywords": ["морские круизы", "круизы", "круизы 2026", "бронирование круизов", "средиземноморские круизы", "карибские круизы", "скандинавские круизы", "азиатские круизы", "круизы в Аляску", "кругосветные круизы", "круизные лайнеры", "порты", "экскурсии в портах", "лучшие маршруты круизов", "туризм 2026"],
@@ -64,7 +64,7 @@ export const cruisesArticleSchema = {
 export const cruisesSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/cruises",
+  "url": "https://www.veles-voyage.ru/cruises",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -125,8 +125,8 @@ export const cruisesOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -151,9 +151,9 @@ export const cruisesVideoSchema = {
   "@type": "VideoObject",
   "name": "Морские круизы - Видеогид",
   "description": "Видеообзоры морских круизов на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Морские круизы - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Морские круизы - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": cruisesDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -162,8 +162,8 @@ export const cruisesBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" }
   ]
 };
 
@@ -174,7 +174,7 @@ export const cruisesWeb3Schema = {
   "description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -186,7 +186,7 @@ export const cruisesDarkWebSchema = {
   "description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по круизам", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/cruises" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/cruises" }
 };
 
 export const cruisesAltSearchSchema = {
@@ -196,7 +196,7 @@ export const cruisesAltSearchSchema = {
   "description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -233,10 +233,10 @@ export const cruisesSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Морские круизы 2026 | Велес Вояж",
   "text": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности. Бронирование онлайн, поддержка 24/7. #Круизы2026 #МорскиеПутешествия",
-  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Морские круизы - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Морские круизы - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": cruisesDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/cruises" }
+  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/cruises" }
 };
 
 export const cruisesAccessibilitySchema = {
@@ -256,8 +256,8 @@ export const cruisesAISchema = {
   "datePublished": cruisesDatePublished,
   "dateModified": cruisesDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/cruises" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/cruises" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -275,7 +275,7 @@ export const cruisesAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты круизов", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://veles-voyage.ru/privacy"
+  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
 };
 
 export const cruisesGEOEnhancedSchema = {
@@ -337,16 +337,16 @@ export const cruisesMetaTags = {
   keywords: "морские круизы, круизы, круизы 2026, бронирование круизов, средиземноморские круизы, карибские круизы, скандинавские круизы, азиатские круизы, круизы в Аляску, кругосветные круизы, круизные лайнеры, порты, экскурсии в портах, лучшие маршруты круизов, поддержка 24/7",
   "og:title": "Морские круизы 2026 | Велес Вояж",
   "og:description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности.",
-  "og:image": "https://veles-voyage.ru/images/logo.png",
+  "og:image": "https://www.veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Морские круизы",
-  "og:url": "https://veles-voyage.ru/cruises",
+  "og:url": "https://www.veles-voyage.ru/cruises",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Морские круизы 2026 | Велес Вояж",
   "twitter:description": "Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности.",
-  "twitter:image": "https://veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Морские круизы - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -374,7 +374,7 @@ export const cruisesMetaTags = {
 };
 
 export const cruisesHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises" }
 ];
 

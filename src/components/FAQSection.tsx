@@ -59,7 +59,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                     +
                   </span>
                 </summary>
-                <div className="px-5 pb-5 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <div className="px-5 pb-5 text-gray-600 dark:text-gray-300 leading-relaxed faq-answer">
                   {faq.answer}
                 </div>
               </details>

@@ -23,7 +23,7 @@ const faqSchema = toursOceaniaSchemas.find(s => s['@type'] === 'FAQPage') as any
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Туры в Океанию 2026 | Велес Вояж',
   description: articleSchema?.description || 'Туры в Океанию: Австралия, Новая Зеландия, Фиджи, Французская Полинезия, Самоа, Вануату. Индивидуальные маршруты под запрос, комфортное проживание, профессиональные гиды, бронирование онлайн.',
-  url: 'https://veles-voyage.ru/tours/oceania',
+  url: 'https://www.veles-voyage.ru/tours/oceania',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursOceaniaDatePublished,

@@ -1,3 +1,5 @@
+import { SITE_URL, LOGO_URL } from '@/shared/constants/seo';
+
 export interface VideoSchemaConfig {
   title: string;
   description: string;
@@ -12,18 +14,18 @@ export function generateVideoSchema(config: VideoSchemaConfig): Record<string, u
     '@type': 'VideoObject',
     name: config.title,
     description: config.description,
-    thumbnailUrl: config.thumbnailUrl || 'https://veles-voyage.ru/images/logo.png',
+    thumbnailUrl: config.thumbnailUrl || LOGO_URL,
     uploadDate: new Date().toISOString(),
     publisher: {
       '@type': 'Organization',
       name: 'Велес Вояж | Экспертная редакция',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://veles-voyage.ru/images/logo.png',
+        url: LOGO_URL,
       },
     },
-    contentUrl: config.contentUrl || 'https://rutube.ru/u/velesvoyage/',
-    embedUrl: config.embedUrl || 'https://rutube.ru/u/velesvoyage/',
+    contentUrl: config.contentUrl || `${SITE_URL}/videos/`,
+    embedUrl: config.embedUrl || `${SITE_URL}/videos/`,
   };
 }
 

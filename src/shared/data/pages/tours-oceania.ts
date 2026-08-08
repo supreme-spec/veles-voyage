@@ -31,7 +31,7 @@ export const toursOceaniaArticleSchema = {
   "description": "Туры в Океанию: Австралия, Новая Зеландия, Фиджи, Французская Полинезия, Самоа, Вануату. Сидней, Окленд, остров Бора-Бора, пляжи Тихого океана. Индивидуальные маршруты под запрос, комфортное проживание, профессиональные гиды, бронирование онлайн.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Туры в Океанию - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -46,13 +46,13 @@ export const toursOceaniaArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/tours/oceania"
+    "@id": "https://www.veles-voyage.ru/tours/oceania"
   },
   "articleSection": "Туры в Океанию",
   "keywords": ["туры в Океанию", "отдых в Океании", "Австралия туры", "Новая Зеландия туры", "Фиджи туры", "Полинезия туры", "Бора-Бора", "Сидней", "Окленд", "острова Тихого океана", "индивидуальные маршруты", "туризм 2026"],
@@ -65,7 +65,7 @@ export const toursOceaniaArticleSchema = {
 export const toursOceaniaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/tours/oceania",
+  "url": "https://www.veles-voyage.ru/tours/oceania",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -116,8 +116,8 @@ export const toursOceaniaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -142,9 +142,9 @@ export const toursOceaniaVideoSchema = {
   "@type": "VideoObject",
   "name": "Туры в Океанию - Видеогид",
   "description": "Видеообзоры туров в Океанию на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Туры в Океанию - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Туры в Океанию - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursOceaniaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -153,9 +153,9 @@ export const toursOceaniaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Туры в Океанию", "item": "https://veles-voyage.ru/tours/oceania" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Туры в Океанию", "item": "https://www.veles-voyage.ru/tours/oceania" }
   ]
 };
 
@@ -167,8 +167,8 @@ export const toursOceaniaAISchema = {
   "datePublished": toursOceaniaDatePublished,
   "dateModified": toursOceaniaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/oceania" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/oceania" },
   "wordCount": 6000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -208,16 +208,16 @@ export const toursOceaniaMetaTags = {
   keywords: "туры в Океанию, отдых в Океании, Австралия туры, Новая Зеландия туры, Фиджи туры, Полинезия туры, Бора-Бора, Сидней, Окленд, острова Тихого океана, индивидуальные маршруты, туризм 2026",
   "og:title": "Туры в Океанию 2026 | Велес Вояж",
   "og:description": "Туры в Океанию: Австралия, Новая Зеландия, Фиджи, Французская Полинезия. Индивидуальные маршруты под запрос.",
-  "og:image": "https://veles-voyage.ru/images/logo.png",
+  "og:image": "https://www.veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Туры в Океанию",
-  "og:url": "https://veles-voyage.ru/tours/oceania",
+  "og:url": "https://www.veles-voyage.ru/tours/oceania",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Туры в Океанию 2026 | Велес Вояж",
   "twitter:description": "Туры в Океанию: Австралия, Новая Зеландия, Фиджи, Французская Полинезия. Индивидуальные маршруты под запрос.",
-  "twitter:image": "https://veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Туры в Океанию - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -237,6 +237,6 @@ export const toursOceaniaMetaTags = {
 };
 
 export const toursOceaniaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/oceania" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/oceania" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/oceania" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/oceania" }
 ];

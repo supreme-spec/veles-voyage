@@ -1,22 +1,23 @@
 import type { OrganizationSchema } from '@/shared/types/schema';
-import { SOCIAL_LINKS } from '@/shared/constants/seo';
+import { SITE_URL, LOGO_URL, SOCIAL_LINKS } from '@/shared/constants/seo';
 
 export function generateOrganizationSchema(): OrganizationSchema {
   return {
     '@context': 'https://schema.org' as const,
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'Велес Вояж | Экспертная редакция',
-    url: 'https://veles-voyage.ru/',
+    url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: 'https://veles-voyage.ru/images/logo.png',
+      url: LOGO_URL,
     },
     foundingDate: '2023',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '89850635134',
+      telephone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+7-985-063-51-34',
       contactType: 'customer service',
-      email: 'hello@veles-voyage.ru',
+      email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@veles-voyage.ru',
     },
     address: {
       '@type': 'PostalAddress',
@@ -30,6 +31,9 @@ export function generateOrganizationSchema(): OrganizationSchema {
       SOCIAL_LINKS.telegram,
       SOCIAL_LINKS.rutube,
       SOCIAL_LINKS.max,
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.googleBusiness,
+      SOCIAL_LINKS.gis2,
     ],
     priceRange: '₽₽',
     areaServed: { '@type': 'Country', name: 'Russia' },

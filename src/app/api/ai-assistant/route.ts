@@ -4,7 +4,7 @@ import { safeLogger } from '@/shared/utils/safeLogger';
 const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
 const GROQ_MODEL = process.env.NEXT_PUBLIC_GROQ_MODEL || 'llama-3.3-70b-versatile';
 
-const SYSTEM_PROMPT = `Ты - AI-ассистент туристической компании "Велес Вояж" (https://veles-voyage.ru/ ).
+const SYSTEM_PROMPT = `Ты - AI-ассистент туристической компании "Велес Вояж" (https://www.veles-voyage.ru/ ).
 Твоя основная задача - помочь пользователю с первичной квалификацией запроса на путешествие и предоставить общую информацию.
 
 ВАЖНО: Мы общаемся исключительно в рамках путешествий и туризма.
@@ -41,7 +41,7 @@ const SYSTEM_PROMPT = `Ты - AI-ассистент туристической �
 Если не знаешь точного ответа, честно скажи об этом и предложи связаться с менеджером для получения точной информации.
 
 КРИТИЧЕСКОЕ ПРАВИЛО: Если в ответе упоминается конкретная страна, город или регион, ты ОБЯЗАН добавить прямую ссылку на соответствующую страницу вики на нашем сайте в формате:
-[Название страны](https://veles-voyage.ru/wiki/{slug})
+[Название страны](https://www.veles-voyage.ru/wiki/{slug})
 
 Используй только латинские slug (например: turkey, egypt, uae, thailand, maldives, greece, srilanka, vietnam). Никогда не используй кириллицу в URL.`;
 

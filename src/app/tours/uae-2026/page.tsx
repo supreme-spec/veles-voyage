@@ -253,7 +253,7 @@ const UAE2026Page = () => {
           </div>
         </section>
 
-        <FAQSection faqs={faqs} title="Вопросы о турах в ОАЭ" schemaId="https://veles-voyage.ru/tours/uae-2026/#faq" />
+        <FAQSection faqs={faqs} title="Вопросы о турах в ОАЭ" schemaId="https://www.veles-voyage.ru/tours/uae-2026/#faq" />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-purple-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Полезные ссылки</h3>

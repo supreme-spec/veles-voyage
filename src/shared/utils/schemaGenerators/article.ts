@@ -1,4 +1,5 @@
 import type { ArticleSchema } from '@/shared/types/schema';
+import { LOGO_URL } from '@/shared/constants/seo';
 
 export interface ArticleSchemaConfig {
   title: string;
@@ -16,7 +17,7 @@ export function generateArticleSchema(config: ArticleSchemaConfig): ArticleSchem
     '@type': 'Article',
     headline: config.title,
     description: config.description,
-    image: config.image || 'https://veles-voyage.ru/images/logo.png',
+    image: config.image || LOGO_URL,
     datePublished: config.datePublished || new Date().toISOString(),
     dateModified: config.dateModified || new Date().toISOString(),
     author: {
@@ -28,7 +29,7 @@ export function generateArticleSchema(config: ArticleSchemaConfig): ArticleSchem
       name: 'Велес Вояж | Экспертная редакция',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://veles-voyage.ru/images/logo.png',
+        url: LOGO_URL,
       },
     },
     mainEntityOfPage: {

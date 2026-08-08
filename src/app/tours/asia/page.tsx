@@ -23,7 +23,7 @@ const faqSchema = toursAsiaSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Азиатские туры 2026 | Велес Вояж',
   description: articleSchema?.description || 'Азиатские туры: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины, Япония, Китай, Индия, Шри-Ланка. Экзотические острова, буддийские храмы, тропические пейзажи, комфортное проживание, профессиональные гиды, бронирование онлайн, туризм 2026.',
-  url: 'https://veles-voyage.ru/tours/asia',
+  url: 'https://www.veles-voyage.ru/tours/asia',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursAsiaDatePublished,

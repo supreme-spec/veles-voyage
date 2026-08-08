@@ -24,7 +24,7 @@ const faqSchema = missionSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Наша миссия: философия Велес Вояж 2026 | Путешествия',
   description: 'Философия турагентства Велес Вояж. Открываем мир через призму личного опыта. Индивидуальный подход, качество услуг, устойчивый туризм, культурный обмен.',
-  url: 'https://veles-voyage.ru/mission',
+  url: 'https://www.veles-voyage.ru/mission',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: missionDatePublished || currentDate,

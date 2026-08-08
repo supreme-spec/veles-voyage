@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     'чартерные рейсы'
   ],
   alternates: {
-    canonical: 'https://veles-voyage.ru/flights',
+    canonical: 'https://www.veles-voyage.ru/flights',
     languages: {
-      ru: 'https://veles-voyage.ru/flights',
-      'x-default': 'https://veles-voyage.ru/flights',
+      ru: 'https://www.veles-voyage.ru/flights',
+      'x-default': 'https://www.veles-voyage.ru/flights',
     },
   },
   openGraph: {
     title: 'Авиабилеты по всему миру | Велес Вояж',
     description: 'Поиск и бронирование авиабилетов у официальных перевозчиков по лучшим ценам',
-    url: 'https://veles-voyage.ru/flights',
+    url: 'https://www.veles-voyage.ru/flights',
     siteName: 'Велес Вояж',
     locale: 'ru_RU',
     type: 'website',
@@ -43,11 +43,11 @@ const flightsSchema = {
   "name": "Авиабилеты по всему миру",
   "description": "Поиск и бронирование авиабилетов у официальных перевозчиков без скрытых комиссий. Сравнение сотен вариантов, удобные стыковки и честные цены на даты поездки от Велес Вояж.",
   "actionStatus": "PotentialActionStatus",
-  "target": "https://veles-voyage.ru/flights",
+  "target": "https://www.veles-voyage.ru/flights",
   "provider": {
     "@type": "Organization",
     "name": "Велес Вояж",
-    "url": "https://veles-voyage.ru"
+    "url": "https://www.veles-voyage.ru"
   }
 };
 
@@ -59,13 +59,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Главная",
-      "item": "https://veles-voyage.ru"
+      "item": "https://www.veles-voyage.ru"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Авиа/Отели",
-      "item": "https://veles-voyage.ru/flights"
+      "item": "https://www.veles-voyage.ru/flights"
     }
   ]
 };
@@ -106,10 +106,10 @@ const web3Schema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Велес Вояж",
-  "url": "https://veles-voyage.ru",
+  "url": "https://www.veles-voyage.ru",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://veles-voyage.ru/flights{?q}",
+    "target": "https://www.veles-voyage.ru/flights{?q}",
     "query-input": "required name=q"
   },
   "about": {
@@ -136,12 +136,12 @@ const articleSchema = {
     "name": "Велес Вояж",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png"
+      "url": "https://www.veles-voyage.ru/images/logo.png"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/flights"
+    "@id": "https://www.veles-voyage.ru/flights"
   },
   "articleSection": "Авиабилеты",
   "keywords": "авиабилеты, поиск авиабилетов, бронирование, перелеты, авиакомпании",

@@ -96,10 +96,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://veles-voyage.ru/privacy',
+    canonical: 'https://www.veles-voyage.ru/privacy',
     languages: {
-      ru: 'https://veles-voyage.ru/privacy',
-      'x-default': 'https://veles-voyage.ru/privacy',
+      ru: 'https://www.veles-voyage.ru/privacy',
+      'x-default': 'https://www.veles-voyage.ru/privacy',
     },
   },
 };
@@ -449,12 +449,12 @@ export default function PrivacyPage() {
             <p>
               9.4. Действующая Политика конфиденциальности размещена на странице по адресу{' '}
               <a 
-                href="https://veles-voyage.ru/privacy" 
+                href="https://www.veles-voyage.ru/privacy" 
                 className="text-indigo-600 dark:text-indigo-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://veles-voyage.ru/privacy
+                https://www.veles-voyage.ru/privacy
               </a>
             </p>
           </div>
@@ -499,7 +499,7 @@ export default function PrivacyPage() {
               "name": "Велес Вояж",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://veles-voyage.ru/logo.png"
+                "url": "https://www.veles-voyage.ru/logo.png"
               }
             },
             "datePublished": "2023-06-21",
@@ -507,7 +507,7 @@ export default function PrivacyPage() {
             "inLanguage": "ru",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://veles-voyage.ru/privacy"
+              "@id": "https://www.veles-voyage.ru/privacy"
             }
           })
         }}
@@ -521,9 +521,9 @@ export default function PrivacyPage() {
             "@context": "https://schema.org",
             "@type": "PrivacyPolicy",
             "name": "Политика конфиденциальности",
-            "url": "https://veles-voyage.ru/privacy",
+            "url": "https://www.veles-voyage.ru/privacy",
             "description": "Политика конфиденциальности ООО Велес. Защита персональных данных клиентов.",
-            "relatedLink": "https://veles-voyage.ru",
+            "relatedLink": "https://www.veles-voyage.ru",
             "datePublished": "2023-06-21",
             "dateModified": SITE_LAST_UPDATED_ISO
           })

@@ -110,7 +110,7 @@ const BlogPostPage = async ({ params }: PageProps) => {
           ))}
         </div>
 
-        <FAQSection faqs={post.faqs} title="Полезные вопросы" schemaId={`https://veles-voyage.ru/blog/${post.slug}/#faq`} />
+        <FAQSection faqs={post.faqs} title="Полезные вопросы" schemaId={`https://www.veles-voyage.ru/blog/${post.slug}/#faq`} />
 
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <a

@@ -14,7 +14,7 @@ const scandinavianArticleSchema = {
   "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, бронирование от 120 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Скандинавские фьорды - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -29,13 +29,13 @@ const scandinavianArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/cruises/scandinavian"
+    "@id": "https://www.veles-voyage.ru/cruises/scandinavian"
   },
   "articleSection": "Круизы по Скандинавии",
   "keywords": ["скандинавские фьорды круиз", "круизы по Норвегии", "скандинавские круизы 2026"],
@@ -89,8 +89,8 @@ const scandinavianOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -114,9 +114,9 @@ const scandinavianBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Скандинавские фьорды", "item": "https://veles-voyage.ru/cruises/scandinavian" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Скандинавские фьорды", "item": "https://www.veles-voyage.ru/cruises/scandinavian" }
   ]
 };
 

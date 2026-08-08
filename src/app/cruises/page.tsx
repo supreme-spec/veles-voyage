@@ -25,7 +25,7 @@ const faqSchema = cruisesSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Морские круизы: маршруты и цены 2026',
   description: articleSchema?.description || 'Морские круизы: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Лучшие маршруты, порты, достопримечательности. Бронирование онлайн, поддержка 24/7.',
-  url: 'https://veles-voyage.ru/cruises',
+  url: 'https://www.veles-voyage.ru/cruises',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: cruisesDatePublished || today,

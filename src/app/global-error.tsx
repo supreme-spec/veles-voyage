@@ -12,7 +12,7 @@ export default function GlobalError({
       <head>
         <meta charSet="utf-8" />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://veles-voyage.ru/" />
+        <link rel="canonical" href="https://www.veles-voyage.ru/" />
         <title>Временная ошибка | Велес Вояж</title>
       </head>
       <body>

@@ -14,7 +14,7 @@ const mediterraneanArticleSchema = {
   "description": "Средиземноморские круизы: Греция, Италия, Испания, Франция, Хорватия. Афины, Рим, Барселона, Ницца, Дубровник. Древние цивилизации, солнечные побережья, архитектура, кухня, бронирование от 90 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Средиземноморские круизы - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -29,13 +29,13 @@ const mediterraneanArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/cruises/mediterranean"
+    "@id": "https://www.veles-voyage.ru/cruises/mediterranean"
   },
   "articleSection": "Средиземноморские круизы",
   "keywords": ["средиземноморские круизы", "круизы по Средиземному морю", "греческие острова", "итальянские порты"],
@@ -89,8 +89,8 @@ const mediterraneanOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -114,9 +114,9 @@ const mediterraneanBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Средиземноморские круизы", "item": "https://veles-voyage.ru/cruises/mediterranean" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Средиземноморские круизы", "item": "https://www.veles-voyage.ru/cruises/mediterranean" }
   ]
 };
 

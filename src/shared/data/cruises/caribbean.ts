@@ -25,7 +25,7 @@ export const caribbeanArticleSchema = {
   "description": "Карибские круизы: Ямайка, Багамы, Куба, Доминикана, Пунта-Кана, Аруба, Кюрасао, Сент-Мартен, Гренада. Монтего-Бей, Нассау, Варадеро, Виллемстад. Тропические острова, белоснежные пляжи, коралловые рифы, дайвинг, сноркелинг, карибская кухня, бронирование от 95 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Карибские круизы - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -40,13 +40,13 @@ export const caribbeanArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/cruises/caribbean"
+    "@id": "https://www.veles-voyage.ru/cruises/caribbean"
   },
   "articleSection": "Карибские круизы",
   "keywords": ["карибские круизы", "круизы по карибам", "карибские круизы 2026", "круизы по Карибскому морю", "круизы по карибским островам", "тропические круизы", "круизы Ямайка", "круизы Багамы", "круизы Куба", "круизы Доминикана", "круизы Пунта-Кана", "круизы Аруба", "круизы Кюрасао", "круизы Сент-Мартен", "круизы Гренада", "Монтего-Бей круиз", "Нассау круиз", "Варадеро круиз", "Виллемстад круиз", "Филипсибург круиз", "карибские острова", "тропический отдых", "белоснежные пляжи", "коралловые рифы", "дайвинг в Карибах", "сноркелинг в Карибах", "карибская кухня", "круизные лайнеры", "морские путешествия", "круизные туры", "карибские порты", "экскурсии на островах", "что посмотреть в Карибах", "лучшие маршруты круизов", "сколько стоит круиз по Карибам", "когда лучше ехать в круиз", "продолжительность круиза", "какие острова посещает круиз", "активности на островах", "водные виды спорта", "виндсерфинг", "водные лыжи", "пешие экскурсии", "национальные парки", "культурные туры", "релаксация на пляже", "круизы для семей", "романтические круизы", "круизы для пожилых", "круизы для молодых", "бронирование круизов", "цены на круизы", "скидки на круизы", "раннее бронирование", "последняя минута круизы", "морские круизы 2026"],
@@ -59,7 +59,7 @@ export const caribbeanArticleSchema = {
 export const caribbeanSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/cruises/caribbean",
+  "url": "https://www.veles-voyage.ru/cruises/caribbean",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -120,8 +120,8 @@ export const caribbeanOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -146,9 +146,9 @@ export const caribbeanVideoSchema = {
   "@type": "VideoObject",
   "name": "Карибские круизы - Видеогид",
   "description": "Видеообзоры карибских круизов, островов и достопримечательностей на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Карибские круизы - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Карибские круизы - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": caribbeanDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -157,9 +157,9 @@ export const caribbeanBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Карибские круизы", "item": "https://veles-voyage.ru/cruises/caribbean" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Карибские круизы", "item": "https://www.veles-voyage.ru/cruises/caribbean" }
   ]
 };
 
@@ -170,7 +170,7 @@ export const caribbeanWeb3Schema = {
   "description": "Карибские круизы: Ямайка, Багамы, Куба, Доминикана, Пунта-Кана, Аруба, Кюрасао, Сент-Мартен, Гренада. Монтего-Бей, Нассау, Варадеро, Виллемстад, Филипсибург. Тропические острова, белоснежные пляжи, коралловые рифы, дайвинг, сноркелинг, карибская кухня.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/caribbean", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/caribbean", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -182,7 +182,7 @@ export const caribbeanDarkWebSchema = {
   "description": "Карибские круизы: Ямайка, Багамы, Куба, Доминикана, Пунта-Кана, Аруба, Кюрасао, Сент-Мартен, Гренада. Монтего-Бей, Нассау, Варадеро, Виллемстад, Филипсибург. Тропические острова, белоснежные пляжи, коралловые рифы, дайвинг, сноркелинг, карибская кухня.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Карибам", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/cruises/caribbean" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/cruises/caribbean" }
 };
 
 export const caribbeanAltSearchSchema = {
@@ -192,7 +192,7 @@ export const caribbeanAltSearchSchema = {
   "description": "Карибские круизы: Ямайка, Багамы, Куба, Доминикана, Пунта-Кана, Аруба, Кюрасао, Сент-Мартен, Гренада. Монтего-Бей, Нассау, Варадеро, Виллемстад, Филипсибург. Тропические острова, белоснежные пляжи, коралловые рифы, дайвинг, сноркелинг, карибская кухня.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/caribbean.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/caribbean.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -229,10 +229,10 @@ export const caribbeanSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Карибские круизы 2026 | Велес Вояж",
   "text": "Карибские круизы: Ямайка, Багамы, Куба, Доминикана, Пунта-Кана. Тропические острова, белоснежные пляжи, дайвинг. Бронирование от 95 000₽. #КарибскиеКруизы #Круизы2026",
-  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Карибские круизы - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Карибские круизы - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": caribbeanDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/cruises/caribbean" }
+  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/cruises/caribbean" }
 };
 
 export const caribbeanAccessibilitySchema = {
@@ -252,8 +252,8 @@ export const caribbeanAISchema = {
   "datePublished": caribbeanDatePublished,
   "dateModified": caribbeanDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/cruises/caribbean" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/cruises/caribbean" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -271,7 +271,7 @@ export const caribbeanAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты круизов", "Порты и достопримечательности", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1242" },
-  "privacyPolicy": "https://veles-voyage.ru/privacy"
+  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
 };
 
 export const caribbeanGEOEnhancedSchema = {
@@ -329,7 +329,7 @@ export const caribbeanSchemas = [
 ];
 
 export const caribbeanHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/caribbean" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/caribbean" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises/caribbean" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises/caribbean" }
 ];
 

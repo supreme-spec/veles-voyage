@@ -1,4 +1,5 @@
 import React from 'react';
+import { SITE_URL, CONTACT_PHONE, CONTACT_EMAIL, ADDRESS } from '@/shared/constants/seo';
 
 interface LocalBusinessSchemaProps {
   includeBusiness?: boolean;
@@ -12,30 +13,46 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "@id": "https://veles-voyage.ru/#business",
+    "@id": `${SITE_URL}/#business`,
     "name": "Велес Вояж",
-    "url": "https://veles-voyage.ru",
+    "url": SITE_URL,
     "description": "Туристическое агентство и энциклопедия путешествий с поддержкой Web3 технологий",
-    "telephone": "+7-985-063-51-34",
-    "email": "hello@veles-voyage.ru",
+    "telephone": CONTACT_PHONE,
+    "email": CONTACT_EMAIL,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Керамиков пр-т, д. 103",
-      "addressLocality": "Голицыно",
+      "streetAddress": ADDRESS.streetAddress,
+      "addressLocality": ADDRESS.addressLocality,
       "addressRegion": "Московская область",
-      "postalCode": "143041",
-      "addressCountry": "RU"
+      "postalCode": ADDRESS.postalCode,
+      "addressCountry": ADDRESS.addressCountry
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 55.5833,
-      "longitude": 36.9833
+      "latitude": 55.609955,
+      "longitude": 36.965818
     },
-    "openingHours": "Mo-Fr 09:00-18:00",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    ],
     "sameAs": [
       "https://vk.com/veles__voyage",
       "https://t.me/veles_voyage",
-      "https://rutube.ru/u/velesvoyage/"
+      "https://rutube.ru/u/velesvoyage/",
+      "https://www.instagram.com/radun.veles/",
+      "https://share.google/TBbHMZqo9vhqFPcPv",
+      "https://2gis.ru/pushkino/firm/70000001112858240"
     ],
     "serviceArea": {
       "@type": "GeoCircle",

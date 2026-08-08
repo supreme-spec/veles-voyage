@@ -1,4 +1,5 @@
 import type { BreadcrumbListSchema } from '@/shared/types/schema';
+import { SITE_URL } from '@/shared/constants/seo';
 
 export interface BreadcrumbItem {
   name: string;
@@ -7,7 +8,7 @@ export interface BreadcrumbItem {
 
 export function generateBreadcrumbSchema(currentUrl: string, items?: BreadcrumbItem[]): BreadcrumbListSchema {
   const defaultItems: BreadcrumbItem[] = items || [
-    { name: 'Главная', url: 'https://veles-voyage.ru/' },
+    { name: 'Главная', url: `${SITE_URL}/` },
   ];
 
   // Добавляем текущую страницу, если её нет в списке

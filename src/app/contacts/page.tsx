@@ -59,7 +59,7 @@ export default function ContactsPage() {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Saturday', 'Sunday'],
       'opens': '10:00',
-      'closes': '18:00'
+      'closes': '16:00'
     }],
     'hasMap': 'https://yandex.ru/maps/org/veles_voyazh/129552746144',
     'areaServed': [
@@ -80,6 +80,11 @@ export default function ContactsPage() {
     '@type': 'HowTo',
     'name': 'Как связаться с Велес Вояж',
     'description': 'Пошаговая инструкция по связи с турагентством для подбора тура.',
+    'estimatedCost': {
+      '@type': 'MonetaryAmount',
+      'currency': 'RUB',
+      'value': '0'
+    },
     'step': [
       {
         '@type': 'HowToStep',

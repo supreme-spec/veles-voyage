@@ -30,7 +30,7 @@ export const toursAmericaArticleSchema = {
   "description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Нью-Йорк, Лос-Анджелес, Торонто, Мехико, Рио-де-Жанейро, Буэнос-Айрес, Сантьяго, Лима, Сан-Хосе. Небоскребы, национальные парки, пляжи, горы, комфортное проживание, профессиональные гиды.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Американские туры - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const toursAmericaArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/tours/america"
+    "@id": "https://www.veles-voyage.ru/tours/america"
   },
   "articleSection": "Американские туры",
   "keywords": ["американские туры", "туры по Америке", "американские туры 2026", "путешествия по Америке", "США туры", "Канада туры", "Мексика туры", "Бразилия туры", "Аргентина туры", "Нью-Йорк", "Лос-Анджелес", "Торонто", "Рио-де-Жанейро", "небоскребы", "национальные парки", "профессиональные гиды", "туризм 2026"],
@@ -64,7 +64,7 @@ export const toursAmericaArticleSchema = {
 export const toursAmericaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/tours/america",
+  "url": "https://www.veles-voyage.ru/tours/america",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -133,8 +133,8 @@ export const toursAmericaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -159,9 +159,9 @@ export const toursAmericaVideoSchema = {
   "@type": "VideoObject",
   "name": "Американские туры - Видеогид",
   "description": "Видеообзоры американских туров на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Американские туры - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Американские туры - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursAmericaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -170,9 +170,9 @@ export const toursAmericaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Американские туры", "item": "https://veles-voyage.ru/tours/america" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Американские туры", "item": "https://www.veles-voyage.ru/tours/america" }
   ]
 };
 
@@ -183,7 +183,7 @@ export const toursAmericaWeb3Schema = {
   "description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Небоскребы, национальные парки, пляжи, горы.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/america", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/america", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -195,7 +195,7 @@ export const toursAmericaDarkWebSchema = {
   "description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Небоскребы, национальные парки, пляжи, горы.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Америке", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours/america" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours/america" }
 };
 
 export const toursAmericaAltSearchSchema = {
@@ -205,7 +205,7 @@ export const toursAmericaAltSearchSchema = {
   "description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Небоскребы, национальные парки, пляжи, горы.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/america.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/america.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -242,10 +242,10 @@ export const toursAmericaSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Американские туры 2026 | Велес Вояж",
   "text": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Небоскребы, национальные парки, пляжи, горы, комфортное проживание. #АмериканскиеТуры2026 #Путешествия",
-  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Американские туры - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Американские туры - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursAmericaDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours/america" }
+  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours/america" }
 };
 
 export const toursAmericaAccessibilitySchema = {
@@ -265,8 +265,8 @@ export const toursAmericaAISchema = {
   "datePublished": toursAmericaDatePublished,
   "dateModified": toursAmericaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/america" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/america" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -284,7 +284,7 @@ export const toursAmericaAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://veles-voyage.ru/privacy"
+  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
 };
 
 export const toursAmericaGEOEnhancedSchema = {
@@ -346,16 +346,16 @@ export const toursAmericaMetaTags = {
   keywords: "американские туры, туры по Америке, США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Нью-Йорк, Лос-Анджелес, Торонто, Рио-де-Жанейро, небоскребы, национальные парки, пляжи, горы, профессиональные гиды, туризм 2026",
   "og:title": "Американские туры 2026 | Велес Вояж",
   "og:description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Нью-Йорк, Лос-Анджелес, Торонто, Мехико, Рио-де-Жанейро, Буэнос-Айрес, Сантьяго, Лима, Сан-Хосе.",
-  "og:image": "https://veles-voyage.ru/images/logo.png",
+  "og:image": "https://www.veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Американские туры",
-  "og:url": "https://veles-voyage.ru/tours/america",
+  "og:url": "https://www.veles-voyage.ru/tours/america",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Американские туры 2026 | Велес Вояж",
   "twitter:description": "Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Нью-Йорк, Лос-Анджелес, Торонто, Мехико, Рио-де-Жанейро, Буэнос-Айрес, Сантьяго, Лима, Сан-Хосе.",
-  "twitter:image": "https://veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Американские туры - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -383,6 +383,6 @@ export const toursAmericaMetaTags = {
 };
 
 export const toursAmericaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/america" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/america" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/america" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/america" }
 ];

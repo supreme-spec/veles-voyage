@@ -223,7 +223,7 @@ const PushkinoPage = () => {
           </p>
         </section>
 
-        <FAQSection faqs={faqs} title="Вопросы жителям Пушкино" schemaId="https://veles-voyage.ru/tours/pushkino/#faq" />
+        <FAQSection faqs={faqs} title="Вопросы жителям Пушкино" schemaId="https://www.veles-voyage.ru/tours/pushkino/#faq" />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-green-100 dark:border-gray-700">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Популярные направления</h3>

@@ -308,7 +308,7 @@ export default async function AskPage() {
   const speakableSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/ask#speakable",
+    "@id": "https://www.veles-voyage.ru/ask#speakable",
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": ["h1", "article > h2", ".faq-item"]

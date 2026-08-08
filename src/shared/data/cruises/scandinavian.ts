@@ -25,7 +25,7 @@ export const scandinavianArticleSchema = {
   "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, бронирование от 120 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Скандинавские фьорды - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -40,13 +40,13 @@ export const scandinavianArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/cruises/scandinavian"
+    "@id": "https://www.veles-voyage.ru/cruises/scandinavian"
   },
   "articleSection": "Круизы по Скандинавии",
   "keywords": ["скандинавские фьорды круиз", "круизы по Норвегии", "скандинавские круизы 2026", "круизы по Скандинавии", "норвежские фьорды круиз", "круизы Гейрангер", "круизы Норвежские фьорды", "круизы Ставангер", "круизы Берген", "круизы Осло", "круизы Хельсинки", "круизы Стокгольм", "круизы Копенгаген", "северное сияние круиз", "норвежские круизы", "шведские круизы", "датские круизы", "финские круизы", "круизы по фьордам", "величественные фьорды", "дикая природа", "северное сияние", "скандинавская кухня", "национальные парки", "круизные лайнеры", "морские путешествия", "круизные туры", "скандинавские порты", "экскурсии в портах", "что посмотреть в Скандинавии", "лучшие маршруты круизов", "сколько стоит круиз по Скандинавии", "когда лучше ехать в круиз", "продолжительность круиза", "какие страны посещает круиз", "когда увидеть северное сияние", "период северного сияния", "северные путешествия", "круизы для семей", "романтические круизы", "круизы для пожилых", "круизы для молодых", "бронирование круизов", "цены на круизы", "скидки на круизы", "раннее бронирование", "последняя минута круизы", "морские круизы 2026"],
@@ -59,7 +59,7 @@ export const scandinavianArticleSchema = {
 export const scandinavianSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/cruises/scandinavian",
+  "url": "https://www.veles-voyage.ru/cruises/scandinavian",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -120,8 +120,8 @@ export const scandinavianOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -146,9 +146,9 @@ export const scandinavianVideoSchema = {
   "@type": "VideoObject",
   "name": "Скандинавские фьорды - Видеогид",
   "description": "Видеообзоры круизов по скандинавским фьордам и достопримечательностей на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Скандинавские фьорды - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Скандинавские фьорды - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": scandinavianDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -157,9 +157,9 @@ export const scandinavianBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Скандинавские фьорды", "item": "https://veles-voyage.ru/cruises/scandinavian" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Скандинавские фьорды", "item": "https://www.veles-voyage.ru/cruises/scandinavian" }
   ]
 };
 
@@ -170,7 +170,7 @@ export const scandinavianWeb3Schema = {
   "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, национальные парки.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/scandinavian", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/scandinavian", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -182,7 +182,7 @@ export const scandinavianDarkWebSchema = {
   "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, национальные парки.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Скандинавии", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/cruises/scandinavian" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/cruises/scandinavian" }
 };
 
 export const scandinavianAltSearchSchema = {
@@ -192,7 +192,7 @@ export const scandinavianAltSearchSchema = {
   "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, национальные парки.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/scandinavian.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/scandinavian.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -229,10 +229,10 @@ export const scandinavianSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Скандинавские фьорды 2026 | Велес Вояж",
   "text": "Скандинавские фьорды: Норвегия, Швеция, Дания. Величественные фьорды, дикая природа, северное сияние. Круизы от 120 000₽. #СкандинавскиеФьорды #Круизы2026",
-  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Скандинавские фьорды - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Скандинавские фьорды - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": scandinavianDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/cruises/scandinavian" }
+  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/cruises/scandinavian" }
 };
 
 export const scandinavianAccessibilitySchema = {
@@ -252,8 +252,8 @@ export const scandinavianAISchema = {
   "datePublished": scandinavianDatePublished,
   "dateModified": scandinavianDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/cruises/scandinavian" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/cruises/scandinavian" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -271,7 +271,7 @@ export const scandinavianAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты круизов", "Порты и достопримечательности", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://veles-voyage.ru/privacy"
+  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
 };
 
 export const scandinavianGEOEnhancedSchema = {
@@ -329,7 +329,7 @@ export const scandinavianSchemas = [
 ];
 
 export const scandinavianHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/scandinavian" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/scandinavian" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises/scandinavian" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises/scandinavian" }
 ];
 

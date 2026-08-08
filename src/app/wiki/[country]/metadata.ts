@@ -11,7 +11,7 @@ export async function generateMetadata({
   try {
     const metadata = await generateCountrySEOMetadata({
       countryId: params.country,
-      url: `https://veles-voyage.ru/wiki/${params.country}`,
+      url: `https://www.veles-voyage.ru/wiki/${params.country}`,
     });
 
     return metadata;

@@ -3,7 +3,7 @@ import { countries } from '@lib/velite-data';
 import { COUNTRY_COORDINATES } from '@/shared/data/countryCoordinates';
 import { redirect } from 'next/navigation';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: { country: string } }): Promise<Metadata> {
   const { country } = await params;
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: { country: string }
 
   const countryTitle = countryData.title || `${country} - Путеводитель`;
   const description = countryData.description || `Гид по стране ${country}`;
-  const url = `https://veles-voyage.ru/wiki/${country}/mdx`;
-  const image = countryData.image || 'https://veles-voyage.ru/images/logo.png';
+  const url = `https://www.veles-voyage.ru/wiki/${country}/mdx`;
+  const image = countryData.image || 'https://www.veles-voyage.ru/images/logo.png';
 
   const coords = COUNTRY_COORDINATES[country] || { latitude: 0, longitude: 0, countryCode: 'XX' };
 

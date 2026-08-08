@@ -12,7 +12,7 @@ interface PageProps {
   params: Promise<{ country: string }>;
 }
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { country } = await params;
@@ -317,7 +317,7 @@ const TourCountryPage = async ({ params }: PageProps) => {
         <FAQSection
           faqs={faqs}
           title={`Вопросы о турах в ${name}`}
-          schemaId={`https://veles-voyage.ru/tours/${country}/#faq`}
+          schemaId={`https://www.veles-voyage.ru/tours/${country}/#faq`}
         />
 
         <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl border border-blue-100 dark:border-gray-700">

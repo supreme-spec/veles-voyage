@@ -23,7 +23,7 @@ const faqSchema = supportSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Поддержка клиентов 2026 | Велес Вояж',
   description: articleSchema?.description || 'Поддержка клиентов турагентства Велес Вояж. Консультации, помощь в выборе туров, сопровождение во время путешествий, визы, страховка, трансфер, экскурсии, бронирование, круглосуточная поддержка, туризм 2026.',
-  url: 'https://veles-voyage.ru/support',
+  url: 'https://www.veles-voyage.ru/support',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: supportDatePublished,

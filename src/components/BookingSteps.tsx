@@ -40,6 +40,13 @@ export const BookingSteps: React.FC = () => {
     description:
       'Пошаговая инструкция бронирования индивидуального тура или морского круиза с Велес Вояж: от заявки до поддержки 24/7.',
     totalTime: 'PT30M',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'RUB',
+      value: '50000',
+      minValue: '30000',
+      maxValue: '500000'
+    },
     step: STEPS.map((step, i) => ({
       '@type': 'HowToStep',
       position: i + 1,

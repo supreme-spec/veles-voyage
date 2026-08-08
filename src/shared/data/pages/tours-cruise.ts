@@ -30,7 +30,7 @@ export const toursCruiseArticleSchema = {
   "description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Барселона, Дубай, Сингапур, Сидней, Осло, Берген, Ставангер. Океанские острова, побережья, круизные лайнеры, порты, комфортное проживание, профессиональные гиды.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://veles-voyage.ru/images/logo.png",
+    "url": "https://www.veles-voyage.ru/images/logo.png",
     "caption": "Круизные туры - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const toursCruiseArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veles-voyage.ru/images/logo.png",
+      "url": "https://www.veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://veles-voyage.ru/tours/cruise"
+    "@id": "https://www.veles-voyage.ru/tours/cruise"
   },
   "articleSection": "Круизные туры",
   "keywords": ["круизные туры", "морские путешествия", "круизы", "круизные туры 2026", "Средиземное море круизы", "Карибы круизы", "Скандинавия круизы", "Азия круизы", "Аляска круизы", "кругосветные круизы", "Барселона", "Дубай", "Сингапур", "круизные лайнеры", "порты", "профессиональные гиды", "туризм 2026"],
@@ -64,7 +64,7 @@ export const toursCruiseArticleSchema = {
 export const toursCruiseSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://veles-voyage.ru/tours/cruise",
+  "url": "https://www.veles-voyage.ru/tours/cruise",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -125,8 +125,8 @@ export const toursCruiseOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
+  "url": "https://www.veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -151,9 +151,9 @@ export const toursCruiseVideoSchema = {
   "@type": "VideoObject",
   "name": "Круизные туры - Видеогид",
   "description": "Видеообзоры круизных туров на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Круизные туры - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Круизные туры - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursCruiseDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -162,9 +162,9 @@ export const toursCruiseBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Круизные туры", "item": "https://veles-voyage.ru/tours/cruise" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Круизные туры", "item": "https://www.veles-voyage.ru/tours/cruise" }
   ]
 };
 
@@ -175,7 +175,7 @@ export const toursCruiseWeb3Schema = {
   "description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Океанские острова, побережья, круизные лайнеры.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/cruise", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/cruise", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -187,7 +187,7 @@ export const toursCruiseDarkWebSchema = {
   "description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Океанские острова, побережья, круизные лайнеры.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по круизам", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours/cruise" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours/cruise" }
 };
 
 export const toursCruiseAltSearchSchema = {
@@ -197,7 +197,7 @@ export const toursCruiseAltSearchSchema = {
   "description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Океанские острова, побережья, круизные лайнеры.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/cruise.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/cruise.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -234,10 +234,10 @@ export const toursCruiseSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Круизные туры 2026 | Велес Вояж",
   "text": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Океанские острова, побережья, круизные лайнеры, комфортное проживание. #КруизныеТуры2026 #МорскиеПутешествия",
-  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Круизные туры - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Круизные туры - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursCruiseDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours/cruise" }
+  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours/cruise" }
 };
 
 export const toursCruiseAccessibilitySchema = {
@@ -257,8 +257,8 @@ export const toursCruiseAISchema = {
   "datePublished": toursCruiseDatePublished,
   "dateModified": toursCruiseDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/cruise" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/cruise" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -276,7 +276,7 @@ export const toursCruiseAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://veles-voyage.ru/privacy"
+  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
 };
 
 export const toursCruiseGEOEnhancedSchema = {
@@ -338,16 +338,16 @@ export const toursCruiseMetaTags = {
   keywords: "круизные туры, морские путешествия, Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия, Барселона, Дубай, Сингапур, Сидней, круизные лайнеры, порты, профессиональные гиды, туризм 2026",
   "og:title": "Круизные туры 2026 | Велес Вояж",
   "og:description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Барселона, Дубай, Сингапур, Сидней, Осло, Берген, Ставангер.",
-  "og:image": "https://veles-voyage.ru/images/logo.png",
+  "og:image": "https://www.veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Круизные туры",
-  "og:url": "https://veles-voyage.ru/tours/cruise",
+  "og:url": "https://www.veles-voyage.ru/tours/cruise",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Круизные туры 2026 | Велес Вояж",
   "twitter:description": "Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Барселона, Дубай, Сингапур, Сидней, Осло, Берген, Ставангер.",
-  "twitter:image": "https://veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Круизные туры - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -375,6 +375,6 @@ export const toursCruiseMetaTags = {
 };
 
 export const toursCruiseHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/cruise" },
-  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/cruise" }
+  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/cruise" },
+  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/cruise" }
 ];

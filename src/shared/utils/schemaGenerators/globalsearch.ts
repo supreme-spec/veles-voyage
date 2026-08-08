@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/shared/constants/seo';
+
 export function generateGlobalSearchSchema(name: string): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
@@ -9,7 +11,7 @@ export function generateGlobalSearchSchema(name: string): Record<string, unknown
       { '@value': name, '@language': 'de' },
     ],
     description: `Информация о ${name} для глобального поиска на разных языках.`,
-    url: `https://veles-voyage.ru/wiki/${name.toLowerCase()}`,
+    url: `${SITE_URL}/wiki/${name.toLowerCase()}`,
   };
 }
 

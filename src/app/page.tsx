@@ -750,7 +750,7 @@ export default async function Home() {
         <BookingSteps />
 
         {/* FAQ Section */}
-        <FAQSection faqs={faqData} schemaId="https://veles-voyage.ru/#faq-home" />
+        <FAQSection faqs={faqData} schemaId="https://www.veles-voyage.ru/#faq-home" />
 
         {/* CTA Section */}
         <section aria-label="Призыв к действию" className="py-10 sm:py-12 lg:py-16 bg-blue-600">

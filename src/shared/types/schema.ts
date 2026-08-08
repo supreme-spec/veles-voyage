@@ -35,6 +35,7 @@ export interface ArticleSchema extends SchemaContext, SchemaType {
 // Organization Schema
 export interface OrganizationSchema extends SchemaContext, SchemaType {
   '@type': 'Organization';
+  '@id'?: string;
   name: string;
   url: string;
   logo: string | ImageObject;

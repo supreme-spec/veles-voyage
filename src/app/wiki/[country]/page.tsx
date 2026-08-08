@@ -62,7 +62,7 @@ const CountryMap = ({ countryName }: any) => (
 // на этапе сборки: статическая компиляция next-mdx-remote/rsc для сотен страниц
 // переполняет зону компилятора V8 в воркере сборки и обрывает `next build`.
 // SEO сохраняется — страницы отдаются сервером и индексируются.
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 // Translation dictionary removed as it is no longer used for image searching fallbacks.
 
@@ -105,7 +105,7 @@ export async function generateMetadata({
     // Сначала пробуем использовать существующую функцию генерации метаданных
     const metadata = await generateCountrySEOMetadata({
       countryId: normalizedCountry,
-      url: `https://veles-voyage.ru/wiki/${normalizedCountry}`,
+      url: `https://www.veles-voyage.ru/wiki/${normalizedCountry}`,
     });
 
     return metadata;

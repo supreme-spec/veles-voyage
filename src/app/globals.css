@@ -1657,17 +1657,6 @@ span[style*='filter: none'] {
    МОБИЛЬНАЯ АДАПТАЦИЯ
 ═══════════════════════════════════════ */
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-  -webkit-text-size-adjust: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 /* Контейнеры */
 .container {
   width: 100%;
@@ -1715,18 +1704,6 @@ iframe[src*="google.com/maps"] {
 .maplibregl-map {
   width: 100% !important;
   height: 100% !important;
-}
-
-/* Touch-friendly */
-button, a, [role="button"] {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-/* Крошки: не растягивать ссылки до 44px, иначе стрелка уезжает вниз */
-.breadcrumbs a {
-  min-height: 0;
-  min-width: 0;
 }
 
 /* Мобильные отступы */
@@ -1925,8 +1902,10 @@ button, a, [role="button"], input[type="submit"] {
   touch-action: manipulation;
 }
 
-/* Крошки: не растягивать ссылки до 44px, иначе стрелка уезжает вниз */
-.breadcrumbs a {
+/* Don't stretch inline text links in content areas */
+.breadcrumbs a,
+.wiki-content a,
+.prose a {
   min-height: 0;
   min-width: 0;
 }

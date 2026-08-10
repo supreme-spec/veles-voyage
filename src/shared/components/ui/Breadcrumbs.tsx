@@ -58,23 +58,23 @@ export default function Breadcrumbs({ items, disableSchema }: BreadcrumbsProps) 
   return (
     <>
       <nav aria-label="Breadcrumb" className="mb-6 overflow-x-auto py-2">
-        <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+        <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap leading-none">
           {allItems.map((item, index) => {
             const isLast = index === allItems.length - 1;
 
             return (
-              <li key={item.href + index} className="flex items-center">
+              <li key={item.href + index} className="flex items-center leading-none">
                 {index > 0 && (
-                  <ChevronRightIcon className="h-4 w-4 mx-1 text-gray-500 flex-shrink-0" />
+                  <ChevronRightIcon className="h-3.5 w-3.5 mx-1 text-gray-500 flex-shrink-0" />
                 )}
                 {isLast ? (
-                  <span className="font-medium text-gray-900 dark:text-white" aria-current="page">
+                  <span className="font-medium text-gray-900 dark:text-white leading-none" aria-current="page">
                     {item.name}
                   </span>
                 ) : (
                   <Link
                     href={item.href}
-                    className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors leading-none"
                   >
                     {item.name}
                   </Link>

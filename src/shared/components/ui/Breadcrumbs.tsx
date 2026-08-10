@@ -57,7 +57,7 @@ export default function Breadcrumbs({ items, disableSchema }: BreadcrumbsProps) 
 
   return (
     <>
-      <nav aria-label="Breadcrumb" className="mb-6 overflow-x-auto py-2">
+      <nav aria-label="Breadcrumb" className="breadcrumbs mb-6 overflow-x-auto py-2">
         <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap leading-none">
           {allItems.map((item, index) => {
             const isLast = index === allItems.length - 1;

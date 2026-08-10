@@ -1723,6 +1723,12 @@ button, a, [role="button"] {
   min-width: 44px;
 }
 
+/* Крошки: не растягивать ссылки до 44px, иначе стрелка уезжает вниз */
+.breadcrumbs a {
+  min-height: 0;
+  min-width: 0;
+}
+
 /* Мобильные отступы */
 @media (max-width: 640px) {
   html { 
@@ -1917,6 +1923,12 @@ button, a, [role="button"], input[type="submit"] {
   min-height: 44px;
   min-width: 44px;
   touch-action: manipulation;
+}
+
+/* Крошки: не растягивать ссылки до 44px, иначе стрелка уезжает вниз */
+.breadcrumbs a {
+  min-height: 0;
+  min-width: 0;
 }
 
 @media (max-width: 639px) {

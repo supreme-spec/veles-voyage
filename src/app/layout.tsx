@@ -15,6 +15,7 @@ import { AiSearchAssistant } from '@/shared/components/ui/AiSearchAssistant';
 import { ChunkLoadErrorBoundary } from '@/components/ChunkLoadErrorBoundary';
 import { SITE_URL } from '@/shared/constants/seo';
 import { SOCIAL_LINKS } from '@/shared/constants/seo';
+import { SiteReviewSchema } from '@/shared/components/seo/SiteReviewSchema';
 
 // Optimized font loading for Core Web Vitals (LCP/CLS)
 const mainFont = Inter({
@@ -463,6 +464,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Web Vitals */}
         <WebVitals />
         {/* JSON-LD */}
+        <SiteReviewSchema />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

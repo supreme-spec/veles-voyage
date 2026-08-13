@@ -2,123 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { StarIcon, MapPinIcon, ClockIcon, BanknotesIcon, BuildingOfficeIcon, PaperAirplaneIcon, InformationCircleIcon, GlobeAltIcon, CameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import StructuredData from '@/components/SEO/StructuredData';
+import { asianSchemas } from '@/shared/data/cruises/asian';
 
-// --- Динамические даты для SEO ---
-let asianDatePublished = new Date().toISOString().split('T')[0];
-let asianDateModified = new Date().toISOString().split('T')[0];
-
-const asianArticleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Азиатские воды 2026 | Велес Вояж - Круизы по Юго-Восточной Азии",
-  "description": "Азиатские воды: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия. Бангкок, Хошимин, Куала-Лумпур, Сингапур, Бали. Экзотика, древние храмы, богатая культура, бронирование от 110 000₽.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
-    "caption": "Азиатские воды - Велес Вояж",
-    "height": 630,
-    "width": 1200
-  },
-  "datePublished": asianDatePublished,
-  "dateModified": asianDateModified,
-  "author": [
-    { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Велес Вояж | Экспертная редакция",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
-      "caption": "Логотип Велес Вояж"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/asian"
-  },
-  "articleSection": "Азиатские круизы",
-  "keywords": ["азиатские круизы", "круизы по Юго-Восточной Азии", "экзотические острова", "древние храмы"],
-  "wordCount": 8000,
-  "inLanguage": "ru-RU",
-  "temporalCoverage": "2026",
-  "contentReferenceTime": asianDatePublished
-};
-
-const asianReviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Азиатские воды от Велес Вояж",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "38"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Дмитрий Козлов" },
-      "datePublished": asianDatePublished,
-      "reviewBody": "Удивительная культура и природа Юго-Восточной Азии! Таиланд и Вьетнам запомнятся надолго."
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "от 70000",
-    "priceCurrency": "RUB",
-    "availability": "https://schema.org/InStock"
-  }
-};
-
-const asianFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Какие страны посещает азиатский круиз?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Азиатские круизы охватывают Таиланд, Вьетнам, Малайзию, Сингапур и Индонезию."
-      }
-    }
-  ]
-};
-
-const asianOrganizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
-  "foundingDate": "2023",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "89850635134",
-    "contactType": "customer service",
-    "email": "hello@veles-voyage.ru"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "пр-т. Керамиков, 103",
-    "addressLocality": "Голицыно",
-    "postalCode": "143041",
-    "addressCountry": "RU"
-  },
-  "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
-  "priceRange": "₽₽",
-  "areaServed": { "@type": "Country", "name": "Russia" }
-};
-
-const asianBreadcrumbsSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Азиатские воды", "item": "https://www.veles-voyage.ru/cruises/asian" }
-  ]
-};
 
 export const metadata: Metadata = {
   title: 'Азиатские воды 2026 | Велес Вояж - Круизы по Юго-Восточной Азии',
@@ -128,13 +13,7 @@ export const metadata: Metadata = {
 export default function AsianCruisePage() {
   return (
     <>
-      <StructuredData schemas={[
-        asianArticleSchema,
-        asianReviewSchema,
-        asianFAQSchema,
-        asianOrganizationSchema,
-        asianBreadcrumbsSchema
-      ]} />
+      <StructuredData schemas={asianSchemas} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-20 pt-24">

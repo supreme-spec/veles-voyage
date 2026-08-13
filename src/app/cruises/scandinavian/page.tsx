@@ -2,123 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { StarIcon, MapPinIcon, ClockIcon, BanknotesIcon, BuildingOfficeIcon, PaperAirplaneIcon, InformationCircleIcon, GlobeAltIcon, CameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import StructuredData from '@/components/SEO/StructuredData';
+import { scandinavianSchemas } from '@/shared/data/cruises/scandinavian';
 
-// --- Динамические даты для SEO ---
-let scandinavianDatePublished = new Date().toISOString().split('T')[0];
-let scandinavianDateModified = new Date().toISOString().split('T')[0];
-
-const scandinavianArticleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Скандинавские фьорды 2026 | Велес Вояж - Круизы по Норвегии и Скандинавии",
-  "description": "Скандинавские фьорды: Норвегия, Швеция, Дания. Осло, Берген, Ставангер, Гейрангер, Хельсинки, Стокгольм, Копенгаген. Величественные фьорды, дикая природа, северное сияние, скандинавская кухня, бронирование от 120 000₽.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
-    "caption": "Скандинавские фьорды - Велес Вояж",
-    "height": 630,
-    "width": 1200
-  },
-  "datePublished": scandinavianDatePublished,
-  "dateModified": scandinavianDateModified,
-  "author": [
-    { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Велес Вояж | Экспертная редакция",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
-      "caption": "Логотип Велес Вояж"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/scandinavian"
-  },
-  "articleSection": "Круизы по Скандинавии",
-  "keywords": ["скандинавские фьорды круиз", "круизы по Норвегии", "скандинавские круизы 2026"],
-  "wordCount": 8000,
-  "inLanguage": "ru-RU",
-  "temporalCoverage": "2026",
-  "contentReferenceTime": scandinavianDatePublished
-};
-
-const scandinavianReviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Скандинавские фьорды от Велес Вояж",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "52"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Игорь Новиков" },
-      "datePublished": scandinavianDatePublished,
-      "reviewBody": "Незабываемый круиз по норвежским фьордам! Природа потрясающая, особенно Гейрангер-фьорд."
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "от 70000",
-    "priceCurrency": "RUB",
-    "availability": "https://schema.org/InStock"
-  }
-};
-
-const scandinavianFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Какие страны посещает круиз по скандинавским фьордам?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Круизы по скандинавским фьордам охватывают Норвегию, Швецию и Данию."
-      }
-    }
-  ]
-};
-
-const scandinavianOrganizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
-  "foundingDate": "2023",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "89850635134",
-    "contactType": "customer service",
-    "email": "hello@veles-voyage.ru"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "пр-т. Керамиков, 103",
-    "addressLocality": "Голицыно",
-    "postalCode": "143041",
-    "addressCountry": "RU"
-  },
-  "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
-  "priceRange": "₽₽",
-  "areaServed": { "@type": "Country", "name": "Russia" }
-};
-
-const scandinavianBreadcrumbsSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Скандинавские фьорды", "item": "https://www.veles-voyage.ru/cruises/scandinavian" }
-  ]
-};
 
 export const metadata: Metadata = {
   title: 'Скандинавские фьорды 2026 | Велес Вояж - Круизы по Норвегии и Скандинавии',
@@ -128,13 +13,7 @@ export const metadata: Metadata = {
 export default function ScandinavianCruisePage() {
   return (
     <>
-      <StructuredData schemas={[
-        scandinavianArticleSchema,
-        scandinavianReviewSchema,
-        scandinavianFAQSchema,
-        scandinavianOrganizationSchema,
-        scandinavianBreadcrumbsSchema
-      ]} />
+      <StructuredData schemas={scandinavianSchemas} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-20 pt-24">

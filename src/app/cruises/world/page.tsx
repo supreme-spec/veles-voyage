@@ -2,123 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { StarIcon, MapPinIcon, ClockIcon, BanknotesIcon, BuildingOfficeIcon, PaperAirplaneIcon, InformationCircleIcon, GlobeAltIcon, CameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import StructuredData from '@/components/SEO/StructuredData';
+import { worldSchemas } from '@/shared/data/cruises/world';
 
-// --- Динамические даты для SEO ---
-let worldDatePublished = new Date().toISOString().split('T')[0];
-let worldDateModified = new Date().toISOString().split('T')[0];
-
-const worldArticleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Кругосветные круизы 2026 | Велес Вояж - Уникальное приключение по экзотическим уголкам планеты",
-  "description": "Кругосветные круизы: Европа, Азия, Африка, Северная и Южная Америка, Австралия, Океания. Барселона, Дубай, Сингапур, Сидней, Сан-Франциско, Рио-де-Жанейро, Кейптаун. Все континенты, экзотические уголки планеты, бронирование от 250 000₽.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
-    "caption": "Кругосветные круизы - Велес Вояж",
-    "height": 630,
-    "width": 1200
-  },
-  "datePublished": worldDatePublished,
-  "dateModified": worldDateModified,
-  "author": [
-    { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Велес Вояж | Экспертная редакция",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
-      "caption": "Логотип Велес Вояж"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/world"
-  },
-  "articleSection": "Кругосветные круизы",
-  "keywords": ["кругосветные круизы", "круизы по всему миру", "путешествие вокруг света", "все континенты"],
-  "wordCount": 8000,
-  "inLanguage": "ru-RU",
-  "temporalCoverage": "2026",
-  "contentReferenceTime": worldDatePublished
-};
-
-const worldReviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Кругосветные круизы от Велес Вояж",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "28"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Сергей Лебедев" },
-      "datePublished": worldDatePublished,
-      "reviewBody": "Мечта всей жизни сбылась! Кругосветный круиз - это невероятное приключение. Посетили все континенты!"
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "от 70000",
-    "priceCurrency": "RUB",
-    "availability": "https://schema.org/InStock"
-  }
-};
-
-const worldFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Какие континенты посещает кругосветный круиз?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Кругосветные круизы охватывают Европу, Азию, Африку, Северную и Южную Америку, Австралию и Океанию."
-      }
-    }
-  ]
-};
-
-const worldOrganizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
-  "foundingDate": "2023",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "89850635134",
-    "contactType": "customer service",
-    "email": "hello@veles-voyage.ru"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "пр-т. Керамиков, 103",
-    "addressLocality": "Голицыно",
-    "postalCode": "143041",
-    "addressCountry": "RU"
-  },
-  "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
-  "priceRange": "₽₽",
-  "areaServed": { "@type": "Country", "name": "Russia" }
-};
-
-const worldBreadcrumbsSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Кругосветные круизы", "item": "https://www.veles-voyage.ru/cruises/world" }
-  ]
-};
 
 export const metadata: Metadata = {
   title: 'Кругосветные круизы 2026 | Велес Вояж - Уникальное приключение по экзотическим уголкам планеты',
@@ -128,13 +13,7 @@ export const metadata: Metadata = {
 export default function WorldCruisePage() {
   return (
     <>
-      <StructuredData schemas={[
-        worldArticleSchema,
-        worldReviewSchema,
-        worldFAQSchema,
-        worldOrganizationSchema,
-        worldBreadcrumbsSchema
-      ]} />
+      <StructuredData schemas={worldSchemas} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-20 pt-24">

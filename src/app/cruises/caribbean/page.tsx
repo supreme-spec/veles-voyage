@@ -2,123 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { StarIcon, MapPinIcon, ClockIcon, BanknotesIcon, BuildingOfficeIcon, PaperAirplaneIcon, InformationCircleIcon, GlobeAltIcon, CameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import StructuredData from '@/components/SEO/StructuredData';
+import { caribbeanSchemas } from '@/shared/data/cruises/caribbean';
 
-// --- Динамические даты для SEO ---
-let caribbeanDatePublished = new Date().toISOString().split('T')[0];
-let caribbeanDateModified = new Date().toISOString().split('T')[0];
-
-const caribbeanArticleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Карибские круизы 2026 | Велес Вояж - Тропические круизы по Карибам",
-  "description": "Карибские круизы: Ямайка, Багамы, Куба, Доминиканская Республика, Аруба. Монтего-Бей, Нассау, Гавана, Пунта-Кана, Ораньестад. Тропические пляжи, пальмы, кристальная вода, бронирование от 85 000₽.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
-    "caption": "Карибские круизы - Велес Вояж",
-    "height": 630,
-    "width": 1200
-  },
-  "datePublished": caribbeanDatePublished,
-  "dateModified": caribbeanDateModified,
-  "author": [
-    { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция" }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Велес Вояж | Экспертная редакция",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
-      "caption": "Логотип Велес Вояж"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/caribbean"
-  },
-  "articleSection": "Карибские круизы",
-  "keywords": ["карибские круизы", "тропические круизы", "круизы по Карибам", "белоснежные пляжи"],
-  "wordCount": 8000,
-  "inLanguage": "ru-RU",
-  "temporalCoverage": "2026",
-  "contentReferenceTime": caribbeanDatePublished
-};
-
-const caribbeanReviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Карибские круизы от Велес Вояж",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.7",
-    "reviewCount": "45"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Анна Смирнова" },
-      "datePublished": caribbeanDatePublished,
-      "reviewBody": "Мечта детства сбылась! Карибские острова потрясающие, вода как стекло."
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "от 70000",
-    "priceCurrency": "RUB",
-    "availability": "https://schema.org/InStock"
-  }
-};
-
-const caribbeanFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Какие острова посещает карибский круиз?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Карибские круизы охватывают Ямайку, Багамы, Кубу, Доминиканскую Республику и Арубу."
-      }
-    }
-  ]
-};
-
-const caribbeanOrganizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
-  "foundingDate": "2023",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "89850635134",
-    "contactType": "customer service",
-    "email": "hello@veles-voyage.ru"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "пр-т. Керамиков, 103",
-    "addressLocality": "Голицыно",
-    "postalCode": "143041",
-    "addressCountry": "RU"
-  },
-  "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
-  "priceRange": "₽₽",
-  "areaServed": { "@type": "Country", "name": "Russia" }
-};
-
-const caribbeanBreadcrumbsSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Карибские круизы", "item": "https://www.veles-voyage.ru/cruises/caribbean" }
-  ]
-};
 
 export const metadata: Metadata = {
   title: 'Карибские круизы 2026 | Велес Вояж - Тропические круизы по Карибам',
@@ -128,13 +13,7 @@ export const metadata: Metadata = {
 export default function CaribbeanCruisePage() {
   return (
     <>
-      <StructuredData schemas={[
-        caribbeanArticleSchema,
-        caribbeanReviewSchema,
-        caribbeanFAQSchema,
-        caribbeanOrganizationSchema,
-        caribbeanBreadcrumbsSchema
-      ]} />
+      <StructuredData schemas={caribbeanSchemas} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-20 pt-24">

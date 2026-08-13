@@ -93,6 +93,20 @@ const MoscowPage = () => {
               acceptedAnswer: { '@type': 'Answer', text: f.answer },
             })),
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'TouristTrip',
+            name: 'Туры из Москвы 2026',
+            description: 'Туры из Москвы в Турцию, Египет, ОАЭ, круизы и другие страны с вылетом из Шереметьево, Домодедово, Внуково.',
+            touristType: ['CulturalTourism', 'AdventureTourism', 'BeachTourism'],
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'RUB',
+              price: '100000',
+              availability: 'InStock',
+              validFrom: '2026-01-01',
+            },
+          },
         ]}
       />
 

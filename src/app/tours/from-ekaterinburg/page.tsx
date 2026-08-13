@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import StructuredData from '@/components/SEO/StructuredData';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Туры из Екатеринбурга 2026: Турция, Египет, ОАЭ, Таиланд | Велес Вояж',
@@ -34,6 +35,52 @@ export const metadata: Metadata = generateEnhancedSEOMetadata({
   ]
 });
 
+const fromEkaterinburgTouristTripSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Туры из Екатеринбурга 2026",
+  "description": "Туры из Екатеринбурга в Турцию, Египет, ОАЭ, Таиланд и другие страны с вылетом из аэропорта Кольцово.",
+  "touristType": ["CulturalTourism", "AdventureTourism", "BeachTourism"],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "115000",
+    "availability": "InStock",
+    "validFrom": "2026-01-01"
+  }
+};
+
+const fromEkaterinburgFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие туры из Екатеринбурга самые популярные?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самые популярные туры из Екатеринбурга: Турция (Анталья, Стамбул), Египет (Хургада, Шарм-эль-Шейх), ОАЭ (Дубай), Таиланд (Пхукет). Вылеты из аэропорта Кольцово."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоят туры из Екатеринбурга?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Туры из Екатеринбурга на двоих на 7 ночей: Турция от 115 000 ₽, Египет от 135 000 ₽, ОАЭ от 165 000 ₽, Таиланд от 195 000 ₽. Цены зависят от сезона и отеля."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой аэропорт вылета из Екатеринбурга?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вылеты из Екатеринбурга: аэропорт Кольцово (SVX). Рейсы Turkish Airlines, Аэрофлот, Ural Airlines, Nordwind в Турцию, Египет, ОАЭ, Таиланд."
+      }
+    }
+  ]
+};
+
 export default function ToursFromEkaterinburgPage() {
   const popularDestinations = [
     WORLD_DESTINATIONS_DATA['турция'],
@@ -45,6 +92,7 @@ export default function ToursFromEkaterinburgPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <StructuredData schemas={[fromEkaterinburgTouristTripSchema, fromEkaterinburgFAQSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Туры из Екатеринбурга 2026

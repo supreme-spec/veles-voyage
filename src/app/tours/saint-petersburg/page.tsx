@@ -74,6 +74,20 @@ const SaintPetersburgPage = () => {
               acceptedAnswer: { '@type': 'Answer', text: f.answer },
             })),
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'TouristTrip',
+            name: 'Туры из Санкт-Петербурга 2026',
+            description: 'Туры из Санкт-Петербурга в Турцию, Египет, ОАЭ, круизы и другие страны с вылетом из аэропорта Пулково.',
+            touristType: ['CulturalTourism', 'AdventureTourism', 'BeachTourism'],
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'RUB',
+              price: '110000',
+              availability: 'InStock',
+              validFrom: '2026-01-01',
+            },
+          },
         ]}
       />
 

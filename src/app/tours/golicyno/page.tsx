@@ -109,6 +109,20 @@ const GolicynoPage = () => {
           },
           {
             '@context': 'https://schema.org',
+            '@type': 'TouristTrip',
+            name: 'Туры из Голицыно 2026',
+            description: 'Туры из Голицыно с вылетом из Домодедово и Внуково. Турция, Египет, ОАЭ, Таиланд и другие направления.',
+            touristType: ['CulturalTourism', 'AdventureTourism', 'BeachTourism'],
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'RUB',
+              price: '100000',
+              availability: 'InStock',
+              validFrom: '2026-01-01',
+            },
+          },
+          {
+            '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: faqs.map((f) => ({
               '@type': 'Question',

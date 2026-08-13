@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import StructuredData from '@/components/SEO/StructuredData';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Туры из Санкт-Петербурга 2026: Турция, Египет, ОАЭ, Таиланд | Велес Вояж',
@@ -34,6 +35,52 @@ export const metadata: Metadata = generateEnhancedSEOMetadata({
   ]
 });
 
+const fromSpbTouristTripSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Туры из Санкт-Петербурга 2026",
+  "description": "Туры из Санкт-Петербурга в Турцию, Египет, ОАЭ, Таиланд и другие страны с вылетом из аэропорта Пулково.",
+  "touristType": ["CulturalTourism", "AdventureTourism", "BeachTourism"],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "110000",
+    "availability": "InStock",
+    "validFrom": "2026-01-01"
+  }
+};
+
+const fromSpbFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие туры из Санкт-Петербурга самые популярные?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самые популярные туры из Санкт-Петербурга: Турция (Анталья, Стамбул), Египет (Хургада, Шарм-эль-Шейх), ОАЭ (Дубай), Таиланд (Пхукет). Вылеты из аэропорта Пулково."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоят туры из Санкт-Петербурга?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Туры из Санкт-Петербурга на двоих на 7 ночей: Турция от 110 000 ₽, Египет от 130 000 ₽, ОАЭ от 160 000 ₽, Таиланд от 190 000 ₽. Цены зависят от сезона и отеля."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой аэропорт вылета из Санкт-Петербурга?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вылеты из Санкт-Петербурга: аэропорт Пулково (LED). Рейсы Turkish Airlines, Аэрофлот, Pegasus, Nordwind и других авиакомпаний."
+      }
+    }
+  ]
+};
+
 export default function ToursFromSpbPage() {
   const popularDestinations = [
     WORLD_DESTINATIONS_DATA['турция'],
@@ -45,6 +92,7 @@ export default function ToursFromSpbPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <StructuredData schemas={[fromSpbTouristTripSchema, fromSpbFAQSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Туры из Санкт-Петербурга 2026

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateEnhancedSEOMetadata } from '@/lib/seo/unifiedSEO';
 import { SITE_URL } from '@/shared/constants/seo';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
+import StructuredData from '@/components/SEO/StructuredData';
 
 export const metadata: Metadata = generateEnhancedSEOMetadata({
   title: 'Туры из Москвы 2026: Турция, Египет, ОАЭ, Таиланд | Велес Вояж',
@@ -34,6 +35,52 @@ export const metadata: Metadata = generateEnhancedSEOMetadata({
   ]
 });
 
+const fromMoscowTouristTripSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Туры из Москвы 2026",
+  "description": "Туры из Москвы в Турцию, Египет, ОАЭ, Таиланд и другие страны с вылетом из Шереметьево, Домодедово, Внуково.",
+  "touristType": ["CulturalTourism", "AdventureTourism", "BeachTourism"],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "100000",
+    "availability": "InStock",
+    "validFrom": "2026-01-01"
+  }
+};
+
+const fromMoscowFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие туры из Москвы самые популярные?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самые популярные туры из Москвы: Турция (Анталья, Стамбул), Египет (Хургада, Шарм-эль-Шейх), ОАЭ (Дубай), Таиланд (Пхукет). Вылеты из Шереметьево, Домодедово, Внуково."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоят туры из Москвы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Туры из Москвы на двоих на 7 ночей: Турция от 100 000 ₽, Египет от 120 000 ₽, ОАЭ от 150 000 ₽, Таиланд от 180 000 ₽. Цены зависят от сезона и отеля."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие аэропорты вылетов из Москвы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вылеты из Москвы: Шереметьево (SVO), Домодедово (DME), Внуково (VKO). Рейсы Turkish Airlines, Аэрофлот, Pegasus, S7 и других авиакомпаний."
+      }
+    }
+  ]
+};
+
 export default function ToursFromMoscowPage() {
   const popularDestinations = [
     WORLD_DESTINATIONS_DATA['турция'],
@@ -45,6 +92,7 @@ export default function ToursFromMoscowPage() {
 
   return (
     <div className="container mx-auto px-4 max-w-4xl py-12">
+      <StructuredData schemas={[fromMoscowTouristTripSchema, fromMoscowFAQSchema]} />
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Туры из Москвы 2026

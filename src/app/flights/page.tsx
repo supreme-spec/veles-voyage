@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AviakassaFlights from '@/components/widgets/AviakassaFlights';
+import VelesFlightsWidget from '@/components/widgets/VelesFlightsWidget';
 
 export const metadata: Metadata = {
   title: 'Авиабилеты: поиск и бронирование по миру 2026',
@@ -153,300 +153,210 @@ const articleSchema = {
 
 export default function FlightsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-7xl mx-auto px-4 py-20 pt-20 md:pt-24">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            ✈️ Авиабилеты по всему миру: поиск и бронирование по лучшим ценам
+    <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 py-10 sm:py-12 lg:py-16">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6">
+            <span className="text-gradient-animated drop-shadow-md">
+              ✈️ Авиабилеты по всему миру
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Находите и бронируйте билеты у официальных перевозчиков без скрытых комиссий
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+            Поиск и бронирование у официальных перевозчиков по лучшим ценам
           </p>
+        </div>
 
-          {/* Speakable summary for AI/GEO */}
-          <div id="speakable-summary" className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-6 max-w-3xl mx-auto text-left">
-            <h2 className="text-xl font-bold mb-3 text-blue-900">Авиабилеты от Велес Вояж</h2>
-            <p className="text-gray-700 dark:text-gray-700 leading-relaxed">
-              Мы помогаем находить и бронировать авиабилеты у официальных перевозчиков без скрытых комиссий. Система сравнивает сотни вариантов, чтобы предложить самые удобные стыковки и честные цены на даты вашей поездки. Выбирайте прямые рейсы и пересадки, ориентируйтесь на бюджет и время в пути, получайте электронный билет сразу после оплаты. Поддержка 24/7 помогает с оформлением, возвратом и обменом билетов, а также с подбором оптимального маршрута под ваши цели — будь то отдых, командировка или транзит.
-            </p>
+        {/* Search Widget */}
+        <section className="mb-12 sm:mb-16" aria-label="Поиск авиабилетов">
+          <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-modern-lg p-4 sm:p-6 md:p-8 border border-gray-100 dark:border-gray-700">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+              Поиск авиабилетов
+            </h2>
+            <VelesFlightsWidget />
           </div>
-        </div>
-
-        {/* Travelpayouts Search Widget */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 mb-12 max-w-6xl mx-auto border border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            Поиск авиабилетов
-          </h2>
-
-          {/* Aviakassa.Partner */}
-          <AviakassaFlights />
-          {/* Aviakassa.Partner */}
-        </div>
+        </section>
 
         {/* Services Section */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-            <div className="text-3xl mb-4">🌍</div>
-            <h3 className="font-bold text-lg mb-2">По всему миру</h3>
-            <p className="text-gray-600 dark:text-gray-400">Более 200 стран и регионов</p>
+        <section aria-label="Преимущества" className="py-10 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
+                <span className="text-gradient-animated drop-shadow-md">
+                  Почему выбирают нас
+                </span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+                Мы создаём удобные решения для путешествий
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+              <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern pointer-events-none z-0"></div>
+                <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-6">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float">🌍</div>
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2">По всему миру</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Более 200 стран и регионов</p>
+                </div>
+              </div>
+
+              <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern pointer-events-none z-0"></div>
+                <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-6">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float">💰</div>
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Лучшие цены</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Сравнение цен от ведущих авиакомпаний</p>
+                </div>
+              </div>
+
+              <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern pointer-events-none z-0"></div>
+                <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-6">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float">⚡</div>
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Мгновенно</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Бронирование в несколько кликов</p>
+                </div>
+              </div>
+
+              <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-xl sm:rounded-2xl shadow-modern hover-lift text-center overflow-hidden transition-modern">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-modern pointer-events-none z-0"></div>
+                <div className="relative z-10 p-3 sm:p-4 md:p-5 lg:p-6">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 animate-float">🛡️</div>
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Надежно</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Гарантия безопасности платежей</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-            <div className="text-3xl mb-4">💰</div>
-            <h3 className="font-bold text-lg mb-2">Лучшие цены</h3>
-            <p className="text-gray-600 dark:text-gray-400">Сравнение цен от ведущих авиакомпаний</p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-            <div className="text-3xl mb-4">⚡</div>
-            <h3 className="font-bold text-lg mb-2">Мгновенно</h3>
-            <p className="text-gray-600 dark:text-gray-400">Бронирование в несколько кликов</p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-            <div className="text-3xl mb-4">🛡️</div>
-            <h3 className="font-bold text-lg mb-2">Надежно</h3>
-            <p className="text-gray-600 dark:text-gray-400">Гарантия безопасности платежей</p>
-          </div>
-        </div>
+        </section>
 
         {/* Features Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Почему выбирают нас
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
-                  <div className="text-2xl">🌍</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Индивидуальный подбор рейсов</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Наши специалисты помогут подобрать оптимальный рейс, учитывая ваши интересы, 
-                    бюджет и время поездки. Мы предлагаем перелеты различной продолжительности и направлений 
-                    по всему миру через партнерскую платформу поиска авиабилетов.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
-                  <div className="text-2xl">🔍</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Экспертная консультация</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Профессиональная помощь в планировании путешествий. Наши менеджеры проконсультируют 
-                    по всем вопросам, помогут с выбором направления, отелей и достопримечательностей.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
-                  <div className="text-2xl">💳</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Гибкие условия бронирования</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Различные варианты оплаты, рассрочка, возможность изменений и отмены бронирования. 
-                    Прозрачные условия без скрытых комиссий при работе через нашу партнерскую платформу поиска.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
-                  <div className="text-2xl">📞</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Сопровождение 24/7</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Поддержка на всех этапах путешествия - до, во время и после поездки. 
-                    Помощь в решении любых вопросов, возникающих в ходе путешествия через нашу службу поддержки.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Partnership with largest aggregator */}
-        <div className="bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-800 rounded-2xl shadow-xl p-8 mb-16 text-white">
-          <h2 className="text-3xl font-bold mb-6 text-center">Поиск через крупнейший агрегатор</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="flex justify-center">
-              <div className="bg-white/20 rounded-xl p-6 text-center max-w-md">
-                <div className="text-5xl mb-4">✈️</div>
-                <h3 className="text-2xl font-bold mb-2">Крупнейший агрегатор</h3>
-                <p className="text-lg">билетов в мире</p>
-              </div>
-            </div>
-            
-            <div>
-              <p className="text-lg mb-4">
-                Мы сотрудничаем с крупнейшим агрегатором билетов, предоставляя доступ к тысячам 
-                предложений от ведущих авиакомпаний и туроператоров по лучшим ценам.
+        <section className="py-10 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900" aria-label="Преимущества сервиса">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
+                <span className="text-gradient-animated drop-shadow-md">
+                  Индивидуальный подход к каждому рейсу
+                </span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-balance">
+                Мы помогаем подобрать билеты под ваши задачи, бюджет и график
               </p>
             </div>
-          </div>
-          
-          <div className="mt-8 pt-8 border-t border-white/20">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white/10 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="mr-2">🔍</span>
-                  Удобный поиск
-                </h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Сравнение цен</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Фильтрация по различным параметрам</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Мгновенное бронирование</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white/10 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="mr-2">🛡️</span>
-                  Надежность
-                </h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Прямое бронирование через платформу</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Гарантия безопасности платежей</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Поддержка 24/7</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="mt-8 text-center">
-              <p className="text-lg">
-                Все бронирования осуществляются напрямую через партнерскую платформу поиска билетов.
-              </p>
-            </div>
-          </div>
-        </div>
 
-        {/* GEO/AEO comparison table: Plane vs Train */}
-        <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-16" aria-labelledby="flights-compare-heading">
-          <h2 id="flights-compare-heading" className="text-3xl font-extrabold mb-6 text-gray-900 dark:text-white">
-            Самолет vs Поезд: что выбрать для вашей поездки
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-sm">
-              <caption style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0 }}>Сравнение перелета и поездки на поезде по критериям: время в пути, комфорт, багаж и цена</caption>
-              <thead>
-                <tr className="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-200">
-                  <th scope="col" className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-semibold">Критерий</th>
-                  <th scope="col" className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-semibold">Самолет</th>
-                  <th scope="col" className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-semibold">Поезд</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium">Время в пути</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Самый быстрый способ на дальние расстояния</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Дольше, но без времени на регистрацию и досмотр</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium">Комфорт</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Кресла с откидной спинкой, питание на борту</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Можно ходить, больше личного пространства, спальные места</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium">Багаж</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Лимит по весу и габаритам, доплата за сверхнорму</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Без жестких ограничений, можно взять больше вещей</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium">Цена</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Выгоднее при раннем бронировании и в сезон распродаж</td>
-                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-3">Часто дешевле на средние расстояния внутри страны</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 p-3 rounded-lg mr-4">
+                    <div className="text-2xl">🌍</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Индивидуальный подбор рейсов</h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                      Наши специалисты помогут подобрать оптимальный рейс, учитывая ваши интересы, бюджет и время поездки. Мы предлагаем перелёты различной продолжительности и направлений по всему миру.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 p-3 rounded-lg mr-4">
+                    <div className="text-2xl">🔍</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Экспертная консультация</h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                      Профессиональная помощь в планировании путешествий. Наши менеджеры проконсультируют по всем вопросам, помогут с выбором направления и маршрута.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 p-3 rounded-lg mr-4">
+                    <div className="text-2xl">💳</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Гибкие условия бронирования</h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                      Различные варианты оплаты, возможность изменений и отмены бронирования. Прозрачные условия без скрытых комиссий.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 p-3 rounded-lg mr-4">
+                    <div className="text-2xl">📞</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Сопровождение 24/7</h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                      Поддержка на всех этапах путешествия — до, во время и после поездки. Помощь в решении любых вопросов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-4">Готовы к путешествию?</h2>
-            <p className="text-indigo-100 mb-6">
-              Найдите лучшие предложения на авиабилеты через нашу партнерскую платформу
-            </p>
-            <a 
-              href="https://t.me/Anastasiiiiyyaa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-bold text-lg shadow-lg transform hover:scale-105 no-underline"
-            >
-              Связаться с нами
-            </a>
+        <section className="py-10 sm:py-12 lg:py-16" aria-label="Контакты">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 md:p-10 text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Готовы к путешествию?</h2>
+              <p className="text-sm sm:text-base md:text-lg text-indigo-100 mb-6 sm:mb-8">
+                Найдите лучшие предложения на авиабилеты через нашу партнёрскую платформу
+              </p>
+              <a
+                href="https://t.me/Anastasiiiiyyaa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-indigo-600 px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg hover:bg-gray-100 transition-colors font-bold text-base sm:text-lg shadow-lg transform hover:scale-105 no-underline"
+              >
+                Связаться с нами
+              </a>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* FAQ Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">Часто задаваемые вопросы</h2>
-          
-          <div className="space-y-6">
-            <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Как найти самые дешевые авиабилеты?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Ищите билеты заранее, сравнивайте даты вылета с гибким окном плюс-минус несколько дней и 
-                рассматривайте рейсы с пересадками наравне с прямыми. Подпишитесь на уведомления о снижении 
-                цен и бронируйте через проверенных партнеров без скрытых комиссий. Наша система сравнивает 
-                сотни вариантов, чтобы предложить честную цену на выбранные даты.
-              </p>
-            </div>
-            
-            <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Можно ли вернуть авиабилет, если передумал?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Возврат зависит от тарифа: возвратные билеты можно сдать полностью или частично, а невозвратные 
-                обычно допускают возврат только при болезни или отмене рейса перевозчиком. Обмен и возврат 
-                оформляются в личном кабинете или через службу поддержки 24/7. Точные условия всегда указаны 
-                при бронировании до оплаты.
-              </p>
-            </div>
-            
-            <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Нужна ли виза при покупке авиабилета?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Сам билет можно купить без визы, но для въезда в страну назначения может потребоваться виза, 
-                загранпаспорт со сроком действия не менее 6 месяцев и проездной документ. Наши специалисты 
-                помогут проверить визовые требования по направлению и подобрать подходящий маршрут.
-              </p>
+        <section className="py-10 sm:py-12 lg:py-16 bg-white dark:bg-gray-900" aria-labelledby="faq-heading">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="faq-heading" className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-10 text-center text-gray-900 dark:text-white">
+              Часто задаваемые вопросы
+            </h2>
+
+            <div className="space-y-6 sm:space-y-8">
+              <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  Как найти самые дешевые авиабилеты?
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                  Ищите билеты заранее, сравнивайте даты вылета с гибким окном плюс-минус несколько дней и рассматривайте рейсы с пересадками наравне с прямыми. Подпишитесь на уведомления о снижении цен и бронируйте через проверенных партнеров без скрытых комиссий.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  Можно ли вернуть авиабилет, если передумал?
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                  Возврат зависит от тарифа: возвратные билеты можно сдать полностью или частично, а невозвратные обычно допускают возврат только при болезни или отмене рейса перевозчиком. Точные условия всегда указаны при бронировании до оплаты.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  Нужна ли виза при покупке авиабилета?
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                  Сам билет можно купить без визы, но для въезда в страну назначения может потребоваться виза, загранпаспорт со сроком действия не менее 6 месяцев и проездной документ. Наши специалисты помогут проверить визовые требования.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Structured Data for SEO, voice search, AI and web3 */}
         <script

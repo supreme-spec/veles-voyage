@@ -106,6 +106,17 @@ const Egypt2026Page = () => {
                     availability: 'https://schema.org/InStock',
                     validFrom: '2026-06-01',
                     validThrough: '2026-08-31',
+                    category: 'TourPackage',
+                    url: `${SITE_URL}/tours/egypt-2026`,
+                    seller: {
+                      '@type': 'Organization',
+                      name: 'Велес Вояж',
+                      url: SITE_URL,
+                    },
+                    eligibleRegion: {
+                      '@type': 'Country',
+                      name: 'Egypt',
+                    },
                   },
                   aggregateRating: {
                     '@type': 'AggregateRating',

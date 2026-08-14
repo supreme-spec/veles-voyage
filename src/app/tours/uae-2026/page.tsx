@@ -104,6 +104,17 @@ const UAE2026Page = () => {
                     availability: 'https://schema.org/InStock',
                     validFrom: '2026-11-01',
                     validThrough: '2027-03-31',
+                    category: 'TourPackage',
+                    url: `${SITE_URL}/tours/uae-2026`,
+                    seller: {
+                      '@type': 'Organization',
+                      name: 'Велес Вояж',
+                      url: SITE_URL,
+                    },
+                    eligibleRegion: {
+                      '@type': 'Country',
+                      name: 'United Arab Emirates',
+                    },
                   },
                   aggregateRating: {
                     '@type': 'AggregateRating',

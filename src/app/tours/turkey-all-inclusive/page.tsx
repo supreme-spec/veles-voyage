@@ -105,6 +105,17 @@ const TurkeyAllInclusivePage = () => {
                     availability: 'https://schema.org/InStock',
                     validFrom: '2026-05-01',
                     validThrough: '2026-10-31',
+                    category: 'TourPackage',
+                    url: `${SITE_URL}/tours/turkey-all-inclusive`,
+                    seller: {
+                      '@type': 'Organization',
+                      name: 'Велес Вояж',
+                      url: SITE_URL,
+                    },
+                    eligibleRegion: {
+                      '@type': 'Country',
+                      name: 'Turkey',
+                    },
                   },
                   aggregateRating: {
                     '@type': 'AggregateRating',

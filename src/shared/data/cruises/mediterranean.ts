@@ -30,7 +30,7 @@ export const mediterraneanArticleSchema = {
   "description": "Средиземноморские круизы: Греция, Италия, Испания, Франция, Хорватия, Турция. Лучшие маршруты, порты, достопримечательности. Бронирование онлайн от 85 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Средиземноморские круизы - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const mediterraneanArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/mediterranean"
+    "@id": "https://veles-voyage.ru/cruises/mediterranean"
   },
   "articleSection": "Круизы по Средиземному морю",
   "keywords": ["средиземноморские круизы", "круизы по средиземному морю", "средиземноморские круизы 2026", "круизы по Средиземному морю", "круизы Греция", "круизы Италия", "круизы Испания", "круизы Франция", "круизы Хорватия", "круизы Турция", "греческие острова круиз", "итальянские порты круиз", "испанские побережья круиз", "французская ривьера круиз", "турецкие берега круиз", "хорватское побережье круиз", "Афины круиз", "Рим круиз", "Венеция круиз", "Барселона круиз", "Ницца круиз", "Стамбул круиз", "Дубровник круиз", "Санторини круиз", "Миконос круиз", "Крит круиз", "Пирей порт", "Чивитавеккья порт", "Венеция порт", "Барселона порт", "Ницца порт", "Стамбул порт", "Дубровник порт", "древние цивилизации", "исторические достопримечательности", "средиземноморская кухня", "круизные лайнеры", "морские путешествия", "круизные туры", "средиземноморские порты", "экскурсии в портах", "что посмотреть в Средиземноморье", "лучшие маршруты круизов", "сколько стоит круиз по Средиземному морю", "когда лучше ехать в круиз", "продолжительность круиза", "какие страны посещает круиз", "палубные зоны", "развлечения на лайнере", "рестораны на круизном лайнере", "спа-зоны на круизе", "детские клубы на круизе", "круизы для семей", "романтические круизы", "круизы для пожилых", "круизы для молодых", "бронирование круизов", "цены на круизы", "скидки на круизы", "раннее бронирование", "последняя минута круизы", "морские круизы 2026"],
@@ -65,7 +65,7 @@ export const mediterraneanArticleSchema = {
 export const mediterraneanSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/cruises/mediterranean",
+  "url": "https://veles-voyage.ru/cruises/mediterranean",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": [
@@ -139,10 +139,10 @@ export const mediterraneanOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
+  "url": "https://veles-voyage.ru/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png"
+    "url": "https://veles-voyage.ru/images/logo.png"
   },
   "foundingDate": "2023",
   "contactPoint": {
@@ -175,7 +175,7 @@ export const mediterraneanVideoSchema = {
   "description": "Видеообзоры средиземноморских круизов, портов и достопримечательностей на Rutube-канале Велес Вояж",
   "thumbnailUrl": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Средиземноморские круизы - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -186,7 +186,7 @@ export const mediterraneanVideoSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
@@ -203,19 +203,19 @@ export const mediterraneanBreadcrumbsSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Главная",
-      "item": "https://www.veles-voyage.ru/"
+      "item": "https://veles-voyage.ru/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Круизы",
-      "item": "https://www.veles-voyage.ru/cruises"
+      "item": "https://veles-voyage.ru/cruises"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Средиземноморские круизы",
-      "item": "https://www.veles-voyage.ru/cruises/mediterranean"
+      "item": "https://veles-voyage.ru/cruises/mediterranean"
     }
   ]
 };
@@ -233,7 +233,7 @@ export const mediterraneanWeb3Schema = {
   },
   "distribution": {
     "@type": "DataDownload",
-    "contentUrl": "https://www.veles-voyage.ru/cruises/mediterranean",
+    "contentUrl": "https://veles-voyage.ru/cruises/mediterranean",
     "encodingFormat": "application/json-ld"
   },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -254,7 +254,7 @@ export const mediterraneanDarkWebSchema = {
   },
   "potentialAction": {
     "@type": "ReadAction",
-    "target": "https://www.veles-voyage.ru/cruises/mediterranean"
+    "target": "https://veles-voyage.ru/cruises/mediterranean"
   }
 };
 
@@ -272,7 +272,7 @@ export const mediterraneanAltSearchSchema = {
   "distribution": [
     {
       "@type": "DataDownload",
-      "contentUrl": "https://www.veles-voyage.ru/cruises/mediterranean.json",
+      "contentUrl": "https://veles-voyage.ru/cruises/mediterranean.json",
       "encodingFormat": "application/json"
     }
   ],
@@ -334,7 +334,7 @@ export const mediterraneanSocialSchema = {
   "text": "Средиземноморские круизы: Греция, Италия, Испания, Франция, Хорватия, Турция. Лучшие маршруты, порты, достопримечательности. Бронирование онлайн от 85 000₽. #СредиземноморскиеКруизы #Круизы2026",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Средиземноморские круизы - Велес Вояж"
   },
   "author": {
@@ -349,7 +349,7 @@ export const mediterraneanSocialSchema = {
   "datePublished": mediterraneanDatePublished,
   "sharedContent": {
     "@type": "WebPage",
-    "url": "https://www.veles-voyage.ru/cruises/mediterranean"
+    "url": "https://veles-voyage.ru/cruises/mediterranean"
   }
 };
 
@@ -390,12 +390,12 @@ export const mediterraneanAISchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png"
+      "url": "https://veles-voyage.ru/images/logo.png"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/mediterranean"
+    "@id": "https://veles-voyage.ru/cruises/mediterranean"
   },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
@@ -431,7 +431,7 @@ export const mediterraneanAEOSchema = {
     "ratingValue": "4.9",
     "reviewCount": "1242"
   },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 // GEO Enhanced Schema
@@ -509,7 +509,7 @@ export const mediterraneanSchemas = [
 
 // Hreflang
 export const mediterraneanHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises/mediterranean" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises/mediterranean" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/mediterranean" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/mediterranean" }
 ];
 

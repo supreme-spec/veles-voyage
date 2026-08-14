@@ -120,7 +120,7 @@ export function generatePageSchemas(options: PageSchemaOptions) {
     schemas.push(generateBreadcrumbSchema(options.url, breadcrumbs.map(b => ({ name: b.name, url: b.item }))));
   }
 
-  schemas.push(generateSpeakableSchema(options.url));
+  schemas.push(generateSpeakableSchema(options.url, options.title || ''));
 
   if (faqs && faqs.length > 0) {
     schemas.push(generateFAQSchema(faqs));

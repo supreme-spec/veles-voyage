@@ -400,8 +400,11 @@ export function generatePlaceSchema(data: {
 export function generateSpeakableSchema(cssSelectors: string[] = [".voice-snippet", ".faq-answer", ".article-summary"]): object {
   return {
     "@context": "https://schema.org",
-    "@type": "SpeakableSpecification",
-    "cssSelector": cssSelectors
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": cssSelectors
+    }
   };
 }
 

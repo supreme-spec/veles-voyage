@@ -23,7 +23,7 @@ const faqSchema = toursSouthAmericaSchemas.find(s => s['@type'] === 'FAQPage') a
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Туры в Южную Америку 2026 | Велес Вояж',
   description: articleSchema?.description || 'Туры в Южную Америку: Бразилия, Аргентина, Чили, Перу, Колумбия, Уругвай, Боливия, Эквадор. Рио-де-Жанейро, Мачу-Пикчу, Амазония, Патагония. Индивидуальные маршруты под запрос, комфортное проживание, профессиональные гиды, бронирование онлайн.',
-  url: 'https://www.veles-voyage.ru/tours/south-america',
+  url: 'https://veles-voyage.ru/tours/south-america',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursSouthAmericaDatePublished,

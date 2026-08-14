@@ -31,7 +31,7 @@ export const metadata: Metadata = generateSEOMetadata({
   description:
     articleSchema?.description ||
     'Американские туры: США, Канада, Мексика, Бразилия, Аргентина, Чили, Перу, Коста-Рика. Небоскребы, национальные парки, пляжи, горы, комфортное проживание, профессиональные гиды, бронирование онлайн, туризм 2026.',
-  url: 'https://www.veles-voyage.ru/tours/america',
+  url: 'https://veles-voyage.ru/tours/america',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursAmericaDatePublished,

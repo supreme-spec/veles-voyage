@@ -4,7 +4,7 @@ import { generateMetadata as generateSEOMetadata } from '@/shared/utils/generate
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Путеводитель по странам мира | Все страны | Велес Вояж',
   description: 'Полный каталог путеводителей по всем странам мира: Европа, Азия, Африка, Америка, Океания. Достопримечательности, визы, цены, туризм, культура, кухня 2026.',
-  url: 'https://www.veles-voyage.ru/wiki/countries',
+  url: 'https://veles-voyage.ru/wiki/countries',
   type: 'website',
   keywords: [
     'путеводитель по странам',

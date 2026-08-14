@@ -1,17 +1,21 @@
-import type { SpeakableSpecification } from '@/shared/types/schema';
+export function generateSpeakableSchema(url: string, title: string, selectors?: string[]): { '@context': string; '@type': string; url: string; name: string; speakable: { '@type': string; cssSelector: string[] } } {
+  const defaultSelectors = [
+    'h1',
+    'h2',
+    '.speakable-summary',
+    '.voice-answer',
+    '.faq-answer',
+    '[data-voice="true"]',
+  ];
 
-export function generateSpeakableSchema(url: string): { '@context': string; '@type': string; url: string; speakable: SpeakableSpecification } {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url,
+    name: title,
     speakable: {
       '@type': 'SpeakableSpecification',
-      xpath: [
-        '/html/body//h1',
-        '/html/body//h2[1]',
-        '/html/body//p[1]',
-      ],
+      cssSelector: selectors || defaultSelectors,
     },
   };
 }

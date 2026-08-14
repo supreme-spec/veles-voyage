@@ -30,7 +30,7 @@ export const contactsArticleSchema = {
   "description": "Контакты турагентства Велес Вояж: телефон +7 985 063-51-34, email hello@veles-voyage.ru, Telegram @Anastasiiiiyyaa. Голицыно, пр-т. Керамиков, 103. Поддержка 24/7, консультации, бронирование.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Контакты - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -45,13 +45,13 @@ export const contactsArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/contacts"
+    "@id": "https://veles-voyage.ru/contacts"
   },
   "articleSection": "Контакты",
   "keywords": ["контакты Велес Вояж", "связаться с турагентством", "телефон турагентства", "email турагентства", "адрес турагентства", "Голицыно", "поддержка 24/7", "консультации по турам", "бронирование туров", "путешествия 2026", "турагентство контакты", "связь с турагентством"],
@@ -64,7 +64,7 @@ export const contactsArticleSchema = {
 export const contactsSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/contacts",
+  "url": "https://veles-voyage.ru/contacts",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -133,7 +133,7 @@ export const contactsOrganizationSchema = {
     "postalCode": "143041",
     "addressCountry": "RU"
   },
-  "url": "https://www.veles-voyage.ru/contacts",
+  "url": "https://veles-voyage.ru/contacts",
   "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"],
   "geo": {
     "@type": "GeoCoordinates",
@@ -149,9 +149,9 @@ export const contactsVideoSchema = {
   "@type": "VideoObject",
   "name": "Контакты - Велес Вояж",
   "description": "Видео о контактах турагентства Велес Вояж на Rutube-канале",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Контакты - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Контакты - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": contactsDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -160,8 +160,8 @@ export const contactsBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Контакты", "item": "https://www.veles-voyage.ru/contacts" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Контакты", "item": "https://veles-voyage.ru/contacts" }
   ]
 };
 
@@ -172,7 +172,7 @@ export const contactsWeb3Schema = {
   "description": "Контакты турагентства Велес Вояж: телефон, email, адрес, поддержка 24/7.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/contacts", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/contacts", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -184,7 +184,7 @@ export const contactsDarkWebSchema = {
   "description": "Контакты турагентства Велес Вояж: телефон, email, адрес, поддержка 24/7.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/contacts" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/contacts" }
 };
 
 export const contactsAltSearchSchema = {
@@ -194,7 +194,7 @@ export const contactsAltSearchSchema = {
   "description": "Контакты турагентства Велес Вояж: телефон, email, адрес, поддержка 24/7.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/contacts.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/contacts.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -226,10 +226,10 @@ export const contactsSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Контакты | Велес Вояж - Свяжитесь с нами",
   "text": "Контакты турагентства Велес Вояж: телефон +7 985 063-51-34, email hello@veles-voyage.ru, Telegram @Anastasiiiiyyaa. Поддержка 24/7. #ВелесВояж #Контакты",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Контакты - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Контакты - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": contactsDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/contacts" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/contacts" }
 };
 
 export const contactsAccessibilitySchema = {
@@ -249,8 +249,8 @@ export const contactsAISchema = {
   "datePublished": contactsDatePublished,
   "dateModified": contactsDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/contacts" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/contacts" },
   "wordCount": 5000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -268,7 +268,7 @@ export const contactsAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const contactsGEOEnhancedSchema = {
@@ -321,16 +321,16 @@ export const contactsMetaTags = {
   keywords: "контакты Велес Вояж, телефон турагентства, email турагентства, адрес турагентства, связь с турагентством, поддержка 24/7, консультации по турам, бронирование туров, турагентство Голицыно, турагентство Москва, турагентство Россия, путешествия 2026",
   "og:title": "Контакты | Велес Вояж - Свяжитесь с нами",
   "og:description": "Контакты турагентства Велес Вояж: телефон +7 985 063-51-34, email hello@veles-voyage.ru, Telegram @Anastasiiiiyyaa. Адрес: Голицыно, пр-т. Керамиков, 103.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Контакты",
-  "og:url": "https://www.veles-voyage.ru/contacts",
+  "og:url": "https://veles-voyage.ru/contacts",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Контакты | Велес Вояж - Свяжитесь с нами",
   "twitter:description": "Контакты турагентства Велес Вояж: телефон +7 985 063-51-34, email hello@veles-voyage.ru, Telegram @Anastasiiiiyyaa.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Контакты - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -359,7 +359,7 @@ export const contactsMetaTags = {
 };
 
 export const contactsHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/contacts" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/contacts" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/contacts" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/contacts" }
 ];
 

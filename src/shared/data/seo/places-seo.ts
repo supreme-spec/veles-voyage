@@ -39,21 +39,21 @@ export const placesArticleSchema: Record<string, any> = {
   "@type": "WebPage",
   "name": "Ключевые места мира: интерактивная карта городов, достопримечательностей и курортов",
   "description": "Интерактивная карта и каталог ключевых мест из всех стран мира: города, достопримечательности, курорты и аэропорты. Координаты, описания, путеводители. Велес Вояж.",
-  "url": "https://www.veles-voyage.ru/wiki/places",
+  "url": "https://veles-voyage.ru/wiki/places",
   "datePublished": getPlacesDates().published,
   "dateModified": getPlacesDates().modified,
   "inLanguage": "ru-RU",
   "author": {
     "@type": "Organization",
     "name": "Велес Вояж | Экспертная редакция",
-    "url": "https://www.veles-voyage.ru/"
+    "url": "https://veles-voyage.ru/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png"
+      "url": "https://veles-voyage.ru/images/logo.png"
     }
   },
   "mainEntity": {
@@ -108,19 +108,19 @@ export const placesBreadcrumbsSchema: Record<string, any> = {
       "@type": "ListItem",
       "position": 1,
       "name": "Главная",
-      "item": "https://www.veles-voyage.ru/"
+      "item": "https://veles-voyage.ru/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Путеводитель по странам",
-      "item": "https://www.veles-voyage.ru/wiki/"
+      "item": "https://veles-voyage.ru/wiki/"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Ключевые места мира",
-      "item": "https://www.veles-voyage.ru/wiki/places",
+      "item": "https://veles-voyage.ru/wiki/places",
       "dateModified": getPlacesDates().modified
     }
   ]
@@ -131,10 +131,10 @@ export const placesOrganizationSchema: Record<string, any> = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
+  "url": "https://veles-voyage.ru/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png"
+    "url": "https://veles-voyage.ru/images/logo.png"
   },
   "foundingDate": "2023",
   "contactPoint": {
@@ -174,9 +174,9 @@ export const placesMetaTags: Record<string, string> = {
   "article:modified_time": getPlacesDates().modified || new Date().toISOString(),
   "og:title": "Ключевые места мира: интерактивная карта | Велес Вояж",
   "og:description": "Интерактивная карта ключевых мест мира: города, достопримечательности, курорты, аэропорты. Координаты и путеводители",
-  "og:url": "https://www.veles-voyage.ru/wiki/places",
+  "og:url": "https://veles-voyage.ru/wiki/places",
   "og:type": "website",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:width": "1200",
   "og:image:height": "630",
   "og:site_name": "Велес Вояж",
@@ -185,7 +185,7 @@ export const placesMetaTags: Record<string, string> = {
   "twitter:card": "summary_large_image",
   "twitter:title": "Ключевые места мира: интерактивная карта | Велес Вояж",
   "twitter:description": "Интерактивная карта ключевых мест мира: города, достопримечательности, курорты, аэропорты",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:site": "@velesvoyage",
   "twitter:creator": "@velesvoyage",
   // Только реальные верификации
@@ -198,8 +198,8 @@ export const placesMetaTags: Record<string, string> = {
 
 // Hreflang
 export const placesHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/wiki/places" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/wiki/places" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/wiki/places" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/wiki/places" }
 ];
 
 // Единый массив для JSON-LD (только валидные схемы)

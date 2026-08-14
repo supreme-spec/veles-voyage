@@ -38,7 +38,7 @@ export const toursAsiaArticleSchema = {
   "description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Бангкок, Ханой, Токио, Пекин, Дели, Бали, Куала-Лумпур, Сеул, Манила. Экзотические культуры, древние храмы, современные мегаполисы, комфортное проживание, профессиональные гиды.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Азиатские туры - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -53,13 +53,13 @@ export const toursAsiaArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/tours/asia"
+    "@id": "https://veles-voyage.ru/tours/asia"
   },
   "articleSection": "Азиатские туры",
   "keywords": ["азиатские туры", "туры по Азии", "азиатские туры 2026", "путешествия по Азии", "Таиланд туры", "Вьетнам туры", "Япония туры", "Китай туры", "Индия туры", "Индонезия туры", "Малайзия туры", "Сингапур туры", "Бангкок", "Токио", "Пекин", "Дели", "Бали", "экзотические культуры", "древние храмы", "профессиональные гиды", "туризм 2026"],
@@ -72,7 +72,7 @@ export const toursAsiaArticleSchema = {
 export const toursAsiaSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/tours/asia",
+  "url": "https://veles-voyage.ru/tours/asia",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -141,8 +141,8 @@ export const toursAsiaOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -167,9 +167,9 @@ export const toursAsiaVideoSchema = {
   "@type": "VideoObject",
   "name": "Азиатские туры - Видеогид",
   "description": "Видеообзоры азиатских туров на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Азиатские туры - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Азиатские туры - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursAsiaDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -178,9 +178,9 @@ export const toursAsiaBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" },
-    { "@type": "ListItem", "position": 3, "name": "Азиатские туры", "item": "https://www.veles-voyage.ru/tours/asia" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" },
+    { "@type": "ListItem", "position": 3, "name": "Азиатские туры", "item": "https://veles-voyage.ru/tours/asia" }
   ]
 };
 
@@ -191,7 +191,7 @@ export const toursAsiaWeb3Schema = {
   "description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Экзотические культуры, древние храмы, современные мегаполисы.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/asia", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/asia", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -203,7 +203,7 @@ export const toursAsiaDarkWebSchema = {
   "description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Экзотические культуры, древние храмы, современные мегаполисы.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Азии", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours/asia" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours/asia" }
 };
 
 export const toursAsiaAltSearchSchema = {
@@ -213,7 +213,7 @@ export const toursAsiaAltSearchSchema = {
   "description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Экзотические культуры, древние храмы, современные мегаполисы.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours/asia.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours/asia.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -250,10 +250,10 @@ export const toursAsiaSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Азиатские туры 2026 | Велес Вояж",
   "text": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Экзотические культуры, древние храмы, современные мегаполисы, комфортное проживание. #АзиатскиеТуры2026 #Путешествия",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Азиатские туры - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Азиатские туры - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursAsiaDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours/asia" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours/asia" }
 };
 
 export const toursAsiaAccessibilitySchema = {
@@ -273,8 +273,8 @@ export const toursAsiaAISchema = {
   "datePublished": toursAsiaDatePublished,
   "dateModified": toursAsiaDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours/asia" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours/asia" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -292,7 +292,7 @@ export const toursAsiaAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const toursAsiaGEOEnhancedSchema = {
@@ -354,16 +354,16 @@ export const toursAsiaMetaTags = {
   keywords: "азиатские туры, туры по Азии, Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Бангкок, Токио, Пекин, Дели, Бали, экзотические культуры, древние храмы, современные мегаполисы, профессиональные гиды, туризм 2026",
   "og:title": "Азиатские туры 2026 | Велес Вояж",
   "og:description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Бангкок, Ханой, Токио, Пекин, Дели, Бали, Куала-Лумпур, Сеул, Манила.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Азиатские туры",
-  "og:url": "https://www.veles-voyage.ru/tours/asia",
+  "og:url": "https://veles-voyage.ru/tours/asia",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Азиатские туры 2026 | Велес Вояж",
   "twitter:description": "Азиатские туры: Таиланд, Вьетнам, Япония, Китай, Индия, Индонезия, Малайзия, Сингапур, Южная Корея, Филиппины. Бангкок, Ханой, Токио, Пекин, Дели, Бали, Куала-Лумпур, Сеул, Манила.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Азиатские туры - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -391,6 +391,6 @@ export const toursAsiaMetaTags = {
 };
 
 export const toursAsiaHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours/asia" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours/asia" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours/asia" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours/asia" }
 ];

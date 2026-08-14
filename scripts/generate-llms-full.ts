@@ -312,7 +312,7 @@ ${Object.entries(this.stats.finalize().byContinent)
 **Юридическое лицо:** ООО «Велес»
 **Лицензия:** РТА 0035678
 **Контакты:** +7-985-063-51-34, hello@veles-voyage.ru
-**Сайт:** https://www.veles-voyage.ru
+**Сайт:** https://veles-voyage.ru
 
 ---
 
@@ -364,7 +364,7 @@ ${Object.entries(this.stats.finalize().byContinent)
         contact: {
           phone: '+7-985-063-51-34',
           email: 'hello@veles-voyage.ru',
-          website: 'https://www.veles-voyage.ru',
+          website: 'https://veles-voyage.ru',
         },
       },
       countries: this.countries.map(country => ContentFormatter.formatCountryJSON(country)),

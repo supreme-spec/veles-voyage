@@ -25,7 +25,7 @@ export const asianArticleSchema = {
   "description": "Азиатские круизы: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины, Камбоджа. Бангкок, Хошимин, Куала-Лумпур, Бали, Манила, Сием-Риеп. Экзотические острова, буддийские храмы, древние храмы Ангкор-Ват, азиатская кухня, тропики, бронирование от 110 000₽.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://www.veles-voyage.ru/images/logo.png",
+    "url": "https://veles-voyage.ru/images/logo.png",
     "caption": "Азиатские воды - Велес Вояж",
     "height": 630,
     "width": 1200
@@ -40,13 +40,13 @@ export const asianArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/cruises/asian"
+    "@id": "https://veles-voyage.ru/cruises/asian"
   },
   "articleSection": "Круизы по Азии",
   "keywords": ["азиатские воды круиз", "круизы по Юго-Восточной Азии", "азиатские круизы 2026", "круизы Таиланд", "круизы Вьетнам", "круизы Малайзия", "круизы Сингапур", "круизы Индонезия", "круизы Филиппины", "круизы Камбоджа", "Бангкок круиз", "Хошимин круиз", "Куала-Лумпур круиз", "Сингапур круиз", "Бали круиз", "Манила круиз", "Сием-Риеп круиз", "экзотические круизы Азия", "круизы по Азии", "Юго-Восточная Азия", "экзотические острова", "буддийские храмы", "рисовые террасы", "древние храмы Ангкор-Ват", "колониальная архитектура", "азиатская кухня", "тропики", "круизные лайнеры", "морские путешествия", "круизные туры", "азиатские порты", "экскурсии в портах", "что посмотреть в Азии", "лучшие маршруты круизов", "сколько стоит круиз по Азии", "когда лучше ехать в круиз", "продолжительность круиза", "какие страны посещает круиз", "культурные особенности", "традиционные рынки", "местная кухня", "экзотические специи", "круизы для семей", "романтические круизы", "круизы для пожилых", "круизы для молодых", "бронирование круизов", "цены на круизы", "скидки на круизы", "раннее бронирование", "последняя минута круизы", "морские круизы 2026"],
@@ -59,7 +59,7 @@ export const asianArticleSchema = {
 export const asianSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/cruises/asian",
+  "url": "https://veles-voyage.ru/cruises/asian",
   "speakable": {
     "@type": "SpeakableSpecification",
     "xpath": ["/html/body//h1", "/html/body//h2[1]", "/html/body//p[1]"]
@@ -120,8 +120,8 @@ export const asianOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -146,9 +146,9 @@ export const asianVideoSchema = {
   "@type": "VideoObject",
   "name": "Азиатские воды - Видеогид",
   "description": "Видеообзоры круизов по азиатским водам и достопримечательностей на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Азиатские воды - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Азиатские воды - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": asianDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -157,9 +157,9 @@ export const asianBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://www.veles-voyage.ru/cruises" },
-    { "@type": "ListItem", "position": 3, "name": "Азиатские воды", "item": "https://www.veles-voyage.ru/cruises/asian" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Круизы", "item": "https://veles-voyage.ru/cruises" },
+    { "@type": "ListItem", "position": 3, "name": "Азиатские воды", "item": "https://veles-voyage.ru/cruises/asian" }
   ]
 };
 
@@ -170,7 +170,7 @@ export const asianWeb3Schema = {
   "description": "Азиатские круизы: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины, Камбоджа. Бангкок, Хошимин, Куала-Лумпур, Сингапур, Бали, Манила, Сием-Риеп. Экзотические острова, буддийские храмы, рисовые террасы, древние храмы Ангкор-Ват, колониальная архитектура, азиатская кухня, тропики.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/asian", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/asian", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -182,7 +182,7 @@ export const asianDarkWebSchema = {
   "description": "Азиатские круизы: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины, Камбоджа. Бангкок, Хошимин, Куала-Лумпур, Сингапур, Бали, Манила, Сием-Риеп. Экзотические острова, буддийские храмы, рисовые террасы, древние храмы Ангкор-Ват, колониальная архитектура, азиатская кухня, тропики.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по Азии", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/cruises/asian" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/cruises/asian" }
 };
 
 export const asianAltSearchSchema = {
@@ -192,7 +192,7 @@ export const asianAltSearchSchema = {
   "description": "Азиатские круизы: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины, Камбоджа. Бангкок, Хошимин, Куала-Лумпур, Сингапур, Бали, Манила, Сием-Риеп. Экзотические острова, буддийские храмы, рисовые террасы, древние храмы Ангкор-Ват, колониальная архитектура, азиатская кухня, тропики.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/cruises/asian.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/cruises/asian.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -229,10 +229,10 @@ export const asianSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Азиатские воды 2026 | Велес Вояж",
   "text": "Азиатские круизы: Таиланд, Вьетнам, Малайзия, Сингапур, Индонезия, Филиппины. Экзотические острова, буддийские храмы, тропики. От 110 000₽. #АзиатскиеКруизы #Круизы2026",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Азиатские воды - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Азиатские воды - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": asianDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/cruises/asian" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/cruises/asian" }
 };
 
 export const asianAccessibilitySchema = {
@@ -252,8 +252,8 @@ export const asianAISchema = {
   "datePublished": asianDatePublished,
   "dateModified": asianDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/cruises/asian" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/cruises/asian" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -271,7 +271,7 @@ export const asianAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты круизов", "Порты и достопримечательности", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const asianGEOEnhancedSchema = {
@@ -329,7 +329,7 @@ export const asianSchemas = [
 ];
 
 export const asianHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/cruises/asian" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/cruises/asian" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/cruises/asian" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/cruises/asian" }
 ];
 

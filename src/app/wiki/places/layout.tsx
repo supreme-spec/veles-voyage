@@ -47,20 +47,20 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     alternates: {
-      canonical: 'https://www.veles-voyage.ru/wiki/places',
+      canonical: 'https://veles-voyage.ru/wiki/places',
       languages: {
-        ru: 'https://www.veles-voyage.ru/wiki/places',
-        'x-default': 'https://www.veles-voyage.ru/wiki/places',
+        ru: 'https://veles-voyage.ru/wiki/places',
+        'x-default': 'https://veles-voyage.ru/wiki/places',
       },
     },
     openGraph: {
       title: placesMetaTags['og:title'] || title,
       description: placesMetaTags['og:description'] || description,
-      url: placesMetaTags['og:url'] || 'https://www.veles-voyage.ru/wiki/places',
+      url: placesMetaTags['og:url'] || 'https://veles-voyage.ru/wiki/places',
       siteName: placesMetaTags['og:site_name'] || 'Велес Вояж',
       images: [
         {
-          url: placesMetaTags['og:image'] || 'https://www.veles-voyage.ru/images/logo.png',
+          url: placesMetaTags['og:image'] || 'https://veles-voyage.ru/images/logo.png',
           width: parseInt(placesMetaTags['og:image:width'] || '1200'),
           height: parseInt(placesMetaTags['og:image:height'] || '630'),
           alt: 'Ключевые места мира - интерактивная карта и каталог',
@@ -73,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: (placesMetaTags['twitter:card'] as 'summary_large_image') || 'summary_large_image',
       title: placesMetaTags['twitter:title'] || title,
       description: placesMetaTags['twitter:description'] || description,
-      images: [placesMetaTags['twitter:image'] || 'https://www.veles-voyage.ru/images/logo.png'],
+      images: [placesMetaTags['twitter:image'] || 'https://veles-voyage.ru/images/logo.png'],
       site: placesMetaTags['twitter:site'] || '@velesvoyage',
       creator: placesMetaTags['twitter:creator'] || '@velesvoyage',
     },

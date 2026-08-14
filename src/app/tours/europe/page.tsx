@@ -16,7 +16,7 @@ const faqSchema = toursEuropeSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Туры в Европу 2026 | Велес Вояж',
   description: articleSchema?.description || 'Туры в Европу: Франция, Италия, Испания, Германия, Греция, Австрия, Швейцария. Актуальные маршруты и цены 2026, шенгенская виза для граждан РФ, русскоговорящие гиды, поддержка 24/7.',
-  url: 'https://www.veles-voyage.ru/tours/europe',
+  url: 'https://veles-voyage.ru/tours/europe',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursEuropeDatePublished,

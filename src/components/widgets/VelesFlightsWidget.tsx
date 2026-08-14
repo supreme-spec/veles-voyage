@@ -29,7 +29,7 @@ export default function VelesFlightsWidget() {
         links.forEach((link) => {
           const href = link.getAttribute('href');
           if (href && href.includes('https://veles-voyage.ru/')) {
-            link.setAttribute('href', href.replace('https://veles-voyage.ru/', 'https://www.veles-voyage.ru/'));
+            link.setAttribute('href', href.replace('https://veles-voyage.ru/', 'https://veles-voyage.ru/'));
           }
         });
       };

@@ -6,6 +6,7 @@ import { generateEnhancedSEOMetadata as generateSEOMetadata } from '@/lib/seo/un
 import { generateUniversalSchemas } from '@/lib/seo/universalSEO';
 import { SchemaScripts } from '@/components/SchemaScripts';
 import { FAQSection } from '@/components/FAQSection';
+import { AggregateReviewSchema } from '@/shared/components/seo/AggregateReviewSchema';
 import { BookingSteps } from '@/components/BookingSteps';
 import { WeeklyHeroBackground } from '@/shared/components/ui/WeeklyHeroBackground';
 import { WORLD_DESTINATIONS_DATA } from '@/shared/data/worldDestinationsData';
@@ -86,6 +87,7 @@ export default async function Home() {
   return (
     <>
       <SchemaScripts schemas={schemas} />
+      <AggregateReviewSchema ratingValue={4.9} reviewCount={1242} itemName="Велес Вояж" itemType="TravelAgency" />
       <main className="min-h-screen">
         {/* Hero Section */}
         <WeeklyHeroBackground>
@@ -750,7 +752,7 @@ export default async function Home() {
         <BookingSteps />
 
         {/* FAQ Section */}
-        <FAQSection faqs={faqData} schemaId="https://www.veles-voyage.ru/#faq-home" />
+        <FAQSection faqs={faqData} title="Полезные вопросы" schemaId={`${SITE_URL}/#faq-home`} />
 
         {/* CTA Section */}
         <section aria-label="Призыв к действию" className="py-10 sm:py-12 lg:py-16 bg-blue-600">

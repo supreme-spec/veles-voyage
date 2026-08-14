@@ -23,7 +23,7 @@ const faqSchema = toursCruiseSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: articleSchema?.headline || 'Круизные туры 2026 | Велес Вояж',
   description: articleSchema?.description || 'Круизные туры: Средиземное море, Карибы, Скандинавия, Азия, Аляска, кругосветные путешествия. Океанские острова, побережья, круизные лайнеры, порты, комфортное проживание, профессиональные гиды, бронирование онлайн, туризм 2026.',
-  url: 'https://www.veles-voyage.ru/tours/cruise',
+  url: 'https://veles-voyage.ru/tours/cruise',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: toursCruiseDatePublished,

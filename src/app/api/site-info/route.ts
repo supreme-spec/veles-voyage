@@ -6,17 +6,17 @@ export async function GET(_request: NextRequest) {
     const siteInfo = {
       name: "Велес Вояж",
       description: "Энциклопедия путешествий и Web3 туристическое агентство",
-      url: "https://www.veles-voyage.ru",
-      sitemap: "https://www.veles-voyage.ru/sitemap.xml",
-      robots: "https://www.veles-voyage.ru/robots.txt",
-      manifest: "https://www.veles-voyage.ru/manifest.json",
+      url: "https://veles-voyage.ru",
+      sitemap: "https://veles-voyage.ru/sitemap.xml",
+      robots: "https://veles-voyage.ru/robots.txt",
+      manifest: "https://veles-voyage.ru/manifest.json",
       
       // Web3 информация
       web3: {
         enabled: true,
         blockchain: "TON",
         walletSupport: ["TonConnect", "TonKeeper"],
-        dappInfo: "https://www.veles-voyage.ru/dapp.json"
+        dappInfo: "https://veles-voyage.ru/dapp.json"
       },
       
       // SEO информация

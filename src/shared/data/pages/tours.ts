@@ -47,13 +47,13 @@ export const toursArticleSchema = {
     "name": "Велес Вояж | Экспертная редакция",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.veles-voyage.ru/images/logo.png",
+      "url": "https://veles-voyage.ru/images/logo.png",
       "caption": "Логотип Велес Вояж"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.veles-voyage.ru/tours"
+    "@id": "https://veles-voyage.ru/tours"
   },
   "articleSection": "Туры и Путешествия",
   "keywords": ["туры", "путешествия", "турагентство онлайн", "бронирование туров", "европейские туры", "азиатские туры", "африканские сафари", "американские туры", "круизы", "экстремальные туры", "индивидуальные туры", "туры 2026", "профессиональные гиды", "поддержка 24/7", "туристические услуги", "туризм 2026"],
@@ -66,7 +66,7 @@ export const toursArticleSchema = {
 export const toursSpeakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://www.veles-voyage.ru/tours",
+  "url": "https://veles-voyage.ru/tours",
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": ["h1", "#speakable-summary"]
@@ -127,8 +127,8 @@ export const toursOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Велес Вояж | Экспертная редакция",
-  "url": "https://www.veles-voyage.ru/",
-  "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" },
+  "url": "https://veles-voyage.ru/",
+  "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" },
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -153,9 +153,9 @@ export const toursVideoSchema = {
   "@type": "VideoObject",
   "name": "Туры и Путешествия - Видеогид",
   "description": "Видеообзоры туров и путешествий на Rutube-канале Велес Вояж",
-  "thumbnailUrl": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Туры и Путешествия - Велес Вояж", "height": 630, "width": 1200 },
+  "thumbnailUrl": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Туры и Путешествия - Велес Вояж", "height": 630, "width": 1200 },
   "uploadDate": toursDatePublished,
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Логотип Велес Вояж" } },
   "contentUrl": "https://rutube.ru/u/velesvoyage/",
   "embedUrl": "https://rutube.ru/u/velesvoyage/"
 };
@@ -164,8 +164,8 @@ export const toursBreadcrumbsSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.veles-voyage.ru/" },
-    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://www.veles-voyage.ru/tours" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://veles-voyage.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Туры", "item": "https://veles-voyage.ru/tours" }
   ]
 };
 
@@ -176,7 +176,7 @@ export const toursWeb3Schema = {
   "description": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы.",
   "keywords": "Web3 путешествия, NFT туризм, криптопутешествия, децентрализованный путеводитель",
   "author": { "@type": "Organization", "name": "Велес Вояж DAO" },
-  "distribution": { "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours", "encodingFormat": "application/json-ld" },
+  "distribution": { "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours", "encodingFormat": "application/json-ld" },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true
 };
@@ -188,7 +188,7 @@ export const toursDarkWebSchema = {
   "description": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы.",
   "keywords": "анонимный туризм, приватные путешествия, Tor туризм",
   "mainEntity": { "@type": "TravelGuide", "name": "Приватный гид по турам", "about": "Анонимные маршруты, офлайн карты, приватные места" },
-  "potentialAction": { "@type": "ReadAction", "target": "https://www.veles-voyage.ru/tours" }
+  "potentialAction": { "@type": "ReadAction", "target": "https://veles-voyage.ru/tours" }
 };
 
 export const toursAltSearchSchema = {
@@ -198,7 +198,7 @@ export const toursAltSearchSchema = {
   "description": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы.",
   "keywords": "DuckDuckGo туризм, Startpage путешествия, Searx туризм, Brave search, Ecosia travel, независимый поиск",
   "creator": { "@type": "Organization", "name": "Велес Вояж Независимые Медиа" },
-  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://www.veles-voyage.ru/tours.json", "encodingFormat": "application/json" }],
+  "distribution": [{ "@type": "DataDownload", "contentUrl": "https://veles-voyage.ru/tours.json", "encodingFormat": "application/json" }],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 };
 
@@ -235,10 +235,10 @@ export const toursSocialSchema = {
   "@type": "SocialMediaPosting",
   "headline": "Туры и Путешествия 2026 | Велес Вояж",
   "text": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы. Бронирование онлайн, поддержка 24/7. #Туры2026 #Путешествия",
-  "image": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png", "caption": "Туры и Путешествия - Велес Вояж" },
+  "image": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png", "caption": "Туры и Путешествия - Велес Вояж" },
   "author": { "@type": "Organization", "name": "Велес Вояж", "sameAs": ["https://vk.com/veles__voyage", "https://t.me/veles_voyage", "https://rutube.ru/u/velesvoyage/"] },
   "datePublished": toursDatePublished,
-  "sharedContent": { "@type": "WebPage", "url": "https://www.veles-voyage.ru/tours" }
+  "sharedContent": { "@type": "WebPage", "url": "https://veles-voyage.ru/tours" }
 };
 
 export const toursAccessibilitySchema = {
@@ -258,8 +258,8 @@ export const toursAISchema = {
   "datePublished": toursDatePublished,
   "dateModified": toursDateModified,
   "author": [{ "@type": "Organization", "name": "Велес Вояж | Экспертная редакция с AI анализом" }],
-  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://www.veles-voyage.ru/images/logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.veles-voyage.ru/tours" },
+  "publisher": { "@type": "Organization", "name": "Велес Вояж | Экспертная редакция", "logo": { "@type": "ImageObject", "url": "https://veles-voyage.ru/images/logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://veles-voyage.ru/tours" },
   "wordCount": 8000,
   "inLanguage": "ru-RU",
   "temporalCoverage": "2026",
@@ -277,7 +277,7 @@ export const toursAEOSchema = {
   "featureList": ["Офлайн карты", "GPS навигация", "Маршруты туров", "Бронирование онлайн", "AI персонализация", "Голосовой помощник", "Офлайн режим"],
   "softwareVersion": "2026.1.0",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1242" },
-  "privacyPolicy": "https://www.veles-voyage.ru/privacy"
+  "privacyPolicy": "https://veles-voyage.ru/privacy"
 };
 
 export const toursGEOEnhancedSchema = {
@@ -369,16 +369,16 @@ export const toursMetaTags = {
   keywords: "туры, путешествия, турагентство онлайн, бронирование туров, европейские туры, азиатские туры, африканские сафари, американские туры, круизы, экстремальные туры, индивидуальные туры, туры 2026, профессиональные гиды, поддержка 24/7, туристические услуги",
   "og:title": "Туры и Путешествия 2026 | Велес Вояж",
   "og:description": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы.",
-  "og:image": "https://www.veles-voyage.ru/images/logo.png",
+  "og:image": "https://veles-voyage.ru/images/logo.png",
   "og:image:alt": "Логотип Велес Вояж - Туры и Путешествия",
-  "og:url": "https://www.veles-voyage.ru/tours",
+  "og:url": "https://veles-voyage.ru/tours",
   "og:type": "article",
   "og:site_name": "Велес Вояж",
   "og:locale": "ru_RU",
   "twitter:card": "summary_large_image",
   "twitter:title": "Туры и Путешествия 2026 | Велес Вояж",
   "twitter:description": "Туры и путешествия: Европа, Азия, Африка, Америка, круизы, экстремальные туры. Индивидуальные маршруты под ваш бюджет и интересы.",
-  "twitter:image": "https://www.veles-voyage.ru/images/logo.png",
+  "twitter:image": "https://veles-voyage.ru/images/logo.png",
   "twitter:image:alt": "Туры и Путешествия - Велес Вояж",
   "twitter:site": "@velesvoyage",
   "tg:site_verification": process.env.NEXT_PUBLIC_TELEGRAM_VERIFICATION || "veles_voyage_official",
@@ -406,7 +406,7 @@ export const toursMetaTags = {
 };
 
 export const toursHreflang = [
-  { rel: "alternate", hreflang: "ru", href: "https://www.veles-voyage.ru/tours" },
-  { rel: "alternate", hreflang: "x-default", href: "https://www.veles-voyage.ru/tours" }
+  { rel: "alternate", hreflang: "ru", href: "https://veles-voyage.ru/tours" },
+  { rel: "alternate", hreflang: "x-default", href: "https://veles-voyage.ru/tours" }
 ];
 

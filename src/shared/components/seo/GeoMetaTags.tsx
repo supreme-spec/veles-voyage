@@ -47,7 +47,7 @@ export const GeoMetaTags: React.FC<GeoMetaTagsProps> = ({
       
       {/* Performance hints */}
       <link rel="dns-prefetch" href="//veles-voyage.ru" />
-      <link rel="preconnect" href="https://www.veles-voyage.ru" />
+      <link rel="preconnect" href="https://veles-voyage.ru" />
     </Head>
   );
 };

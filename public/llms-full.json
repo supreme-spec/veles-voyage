@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.0",
-    "generated": "2026-08-13T16:18:43.031Z",
+    "generated": "2026-08-14T13:55:28.868Z",
     "provider": "ООО «Велес» (РТА 0035678)",
     "website": "https://veles-voyage.ru"
   },
@@ -18,8 +18,8 @@
       "south-america": 12,
       "oceania": 16
     },
-    "totalSize": 241606,
-    "processingTime": 50
+    "totalSize": 241602,
+    "processingTime": 53
   },
   "organization": {
     "name": "Велес Вояж",
@@ -28,7 +28,7 @@
     "contact": {
       "phone": "+7-985-063-51-34",
       "email": "hello@veles-voyage.ru",
-      "website": "https://www.veles-voyage.ru"
+      "website": "https://veles-voyage.ru"
     }
   },
   "countries": [

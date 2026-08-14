@@ -12,10 +12,10 @@ export async function GET() {
       const defaultContent = `# Web3 Discovery File for Veles Voyage
 # This file helps Web3 search engines discover our content
 
-Sitemap: https://www.veles-voyage.ru/sitemap.xml
-Main Page: https://www.veles-voyage.ru
-Wiki: https://www.veles-voyage.ru/wiki
-Countries: https://www.veles-voyage.ru/wiki/countries
+Sitemap: https://veles-voyage.ru/sitemap.xml
+Main Page: https://veles-voyage.ru
+Wiki: https://veles-voyage.ru/wiki
+Countries: https://veles-voyage.ru/wiki/countries
 `;
       return new NextResponse(defaultContent, {
         headers: {
@@ -34,8 +34,8 @@ Countries: https://www.veles-voyage.ru/wiki/countries
   } catch (error) {
     // Возвращаем базовое содержимое при любой ошибке
     const defaultContent = `# Web3 Discovery File for Veles Voyage
-Sitemap: https://www.veles-voyage.ru/sitemap.xml
-Main Page: https://www.veles-voyage.ru
+Sitemap: https://veles-voyage.ru/sitemap.xml
+Main Page: https://veles-voyage.ru
 `;
     return new NextResponse(defaultContent, {
       status: 200,

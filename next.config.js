@@ -10,6 +10,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.veles-voyage.ru',
+          },
+        ],
+        destination: 'https://veles-voyage.ru/:path*',
+        permanent: true,
+      },
+      {
         source: '/places/:path*',
         destination: '/wiki/places',
         permanent: true,

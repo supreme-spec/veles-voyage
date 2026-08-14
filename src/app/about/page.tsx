@@ -16,7 +16,7 @@ const faqSchema = aboutSchemas.find(s => s['@type'] === 'FAQPage') as any;
 export const metadata: Metadata = generateSEOMetadata({
   title: 'О компании Велес Вояж: экспертные путешествия с 2023 года',
   description: 'Турагентство Велес Вояж с лицензией РТА 0035678. Индивидуальные туры и круизы по России и миру, энциклопедия по 200+ странам, круглосуточная поддержка.',
-  url: 'https://www.veles-voyage.ru/about',
+  url: 'https://veles-voyage.ru/about',
   type: 'article',
   keywords: articleSchema?.keywords || [],
   publishedTime: aboutDatePublished,

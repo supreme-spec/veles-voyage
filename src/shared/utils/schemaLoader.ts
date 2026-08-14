@@ -59,7 +59,7 @@ export async function loadSchemas(config: SchemaConfig): Promise<Array<Record<st
       case 'speakable':
         const { generateSpeakableSchema } =
           await import('@/shared/utils/schemaGenerators/speakable');
-        return generateSpeakableSchema(config.url || '');
+        return generateSpeakableSchema(config.url || '', config.title || '');
 
       case 'review':
         const { generateReviewSchema } = await import('@/shared/utils/schemaGenerators/review');
